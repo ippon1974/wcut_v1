@@ -1,5 +1,20 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+##############################
+## IntelliJ
+##############################
+target/classes
+.settings/
+.apt_generated
+.sts4-cache
+.springBeans
+out/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
 # dependencies
 /node_modules
 /.pnp
