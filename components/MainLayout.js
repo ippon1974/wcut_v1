@@ -2,11 +2,11 @@ import Link from "next/link";
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-export function MainLayout({props, title='Civek Water Jet'}) {
+export function MainLayout({children, title='Civek Water Jet'}) {
     const { asPath, pathname } = useRouter();
 
     const menu = [
-        {id: '1', title: 'Главаня', uri: '/'},
+        {id: '1', title: 'Главная', uri: '/'},
         {id: '2', title: 'Услуги', uri: '/services'},
         {id: '3', title: 'Работы', uri: '/works'},
         {id: '4', title: 'Станки', uri: '/equipment'},
@@ -27,9 +27,7 @@ export function MainLayout({props, title='Civek Water Jet'}) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
 
-            <header>
-                {props}
-            </header>
+
 
             <nav>
                 <ul>
@@ -51,7 +49,9 @@ export function MainLayout({props, title='Civek Water Jet'}) {
                 </ul>
             </nav>
 
-
+            <header>
+                {children}
+            </header>
 
             {/*<footer>*/}
             {/*    <hr/>footer*/}
