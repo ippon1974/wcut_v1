@@ -1,9 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
+import Layout from "../../components/Layout";
 
 export default function Works() {
     return(
-        <MainLayout title={'Works Page'}>
-            <h1>Works Page</h1>
-        </MainLayout>
+        <Layout title={'Работы'}>
+            <h1>Работы</h1>
+        </Layout>
     );
 }

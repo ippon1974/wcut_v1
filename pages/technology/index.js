@@ -1,9 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
+import Layout from "../../components/Layout";
 
 export default function Technology() {
     return(
-        <MainLayout title={'Technology Page'}>
-            <h1>Technology Page</h1>
-        </MainLayout>
+        <Layout title={'Технология'}>
+            <h1>Технология</h1>
+        </Layout>
     );
 }

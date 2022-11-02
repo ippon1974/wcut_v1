@@ -1,6 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
 import Layout from "../../components/Layout";
 
-const Price = () => <Layout>Welcome to WHATABYTE!</Layout>;
-
-export default Price;
+export default function Price() {
+    return(
+        <Layout title={'Цены'}>
+            <h1>Цены</h1>
+        </Layout>
+    );
+}

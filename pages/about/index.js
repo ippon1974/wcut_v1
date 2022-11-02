@@ -1,9 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
+import Layout from "../../components/Layout";
 
 export default function About() {
     return(
-        <MainLayout title={'About Page'}>
-            <h1>About Page</h1>
-        </MainLayout>
+        <Layout title={'О компании'}>
+            <h1>О компании</h1>
+        </Layout>
     );
 }

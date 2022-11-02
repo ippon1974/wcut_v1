@@ -1,9 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
+import Layout from "../../components/Layout";
 
 export default function News() {
     return(
-        <MainLayout title={'News Page'}>
-            <h1>News Page</h1>
-        </MainLayout>
+        <Layout title={'Новости'}>
+            <h1>Новости</h1>
+        </Layout>
     );
 }

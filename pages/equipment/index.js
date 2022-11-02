@@ -1,9 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
+import Layout from "../../components/Layout";
 
 export default function Equipment() {
     return(
-        <MainLayout title={'Equipment Page'}>
-            <h1>Equipment Page</h1>
-        </MainLayout>
+        <Layout title={'Станки | Гидроабразивная резка в Москве и Москвовской области'}>
+            <h1>Станки</h1>
+        </Layout>
     );
 }

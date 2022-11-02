@@ -1,7 +1,7 @@
 const Footer = () => (
     <div className="Footer">
         <hr/>
-        FOOTER
+        © 2022 «Сивек Water Jet»
     </div>
 );
 

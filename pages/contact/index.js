@@ -1,9 +1,9 @@
-import {MainLayout} from "../../components/MainLayout";
+import Layout from "../../components/Layout";
 
 export default function Contact() {
     return(
-        <MainLayout title={'About Page'}>
-            <h1>Contact Page</h1>
-        </MainLayout>
+        <Layout title={'Контакты | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Контакты'} keywords={'Ключ про Контакты'}>
+            <h1>Контакты</h1>
+        </Layout>
     );
 }
