@@ -15,12 +15,13 @@ const Layout = ({children, title = 'Civek Water Jet', description = 'Можем 
                     </Head>
 
                 <div className="Layout">
-                <Header/>
-                <NavBar/>
-                        <div className="Content">
-                                {children}
-                        </div>
-                <Footer/>
+                {/*<Header/>*/}
+                {/*<NavBar/>*/}
+                {/*        <div className="wrapper-main">*/}
+                {/*                */}
+                {/*        </div>*/}
+                    {children}
+                {/*<Footer/>*/}
                 </div>
             </>
         )

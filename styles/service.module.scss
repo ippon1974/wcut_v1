@@ -1,21 +1,16 @@
-
-.wrapper-main{
-
-}
-
 .wrapper {
   margin: 0 auto;
   display: grid;
-  background: gold;
+  background: white;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2px;
-  width: 65%;
+  grid-gap: 1px;
+  width: 750pt;
   align-items: center;
 }
 
 .box {
-  background-color: blanchedalmond;
-  padding: 20px;
+  background-color: black;
+  padding: 22px 20px 20px 20px;
 }
 
 .a {
@@ -23,6 +18,8 @@
 }
 
 .b {
+  padding: 0;
+  margin: 0;
   grid-column: 1 / 4;
 }
 
@@ -35,6 +32,8 @@
 .i {}
 
 .wrapHeader{
+  margin: 0;
+  padding: 0;
   display: grid;
   grid-template-columns: 224px 1fr;
   grid-gap: 2px;
@@ -43,28 +42,47 @@
 .headpage{
   padding: 0;
   margin: 0;
-  background-color: gold;
 }
 
 .logo{
 
 }
 
+.headdesc {
+  margin: 0 0 0 20px;
+}
+
+
 .headdesc h2 {
-    color: red;
+    color: white;
     padding: 0;
     margin: 0;
+    background: green;
 }
 
 .headdesc h3 {
   padding: 0;
   margin: 0;
+  color: beige;
+  background: green;
 }
 
 .headdesc p {
-  padding: 0;
-  margin: 0;
-  color: green;
+  margin: 2px 0 0 0;
+  background: green;
+  color: beige;
+}
+
+.menunav {
+  margin: 0; /* Обнуляем значение отступов */
+  padding: 4px; /* Значение полей */
+  background: aqua;
+}
+
+.menunav li {
+  display: inline; /* Отображать как строчный элемент */
+  margin-right: 5px; /* Отступ слева */
+  padding: 3px; /* Поля вокруг текста */
 }
 
 

@@ -6,8 +6,6 @@ export default function Services() {
     return(
        <Layout title={'Услуги'}>
 
-         <h1>Услуги</h1>
-
            <div className={classes.wrapper}>
                <div className={`${classes.box} ${classes.a}`}>
                    <div className={classes.wrapHeader}>
@@ -20,7 +18,7 @@ export default function Services() {
                    </div>
                </div>
                <div className={`${classes.box} ${classes.b}`}>
-                   <ul>
+                   <ul className={classes.menunav}>
                        <li>Главная</li>
                        <li>Услуги</li>
                        <li>Работы</li>
