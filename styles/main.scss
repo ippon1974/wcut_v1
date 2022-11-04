@@ -1,4 +1,9 @@
+* {
+    /*  width и height элементов включают в
+        себя значения полей и границ  */
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    //font-family: SansSerif;
 }

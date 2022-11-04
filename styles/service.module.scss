@@ -1,0 +1,81 @@
+
+.wrapper-main{
+
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  background: gold;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
+  width: 65%;
+  align-items: center;
+}
+
+.box {
+  background-color: blanchedalmond;
+  padding: 20px;
+}
+
+.a {
+  grid-column: 1 / 4;
+}
+
+.b {
+  grid-column: 1 / 4;
+}
+
+.c {}
+.d {}
+.e {}
+.f {}
+.g {}
+.h {}
+.i {}
+
+.wrapHeader{
+  display: grid;
+  grid-template-columns: 224px 1fr;
+  grid-gap: 2px;
+}
+
+.headpage{
+  padding: 0;
+  margin: 0;
+  background-color: gold;
+}
+
+.logo{
+
+}
+
+.headdesc h2 {
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.headdesc h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.headdesc p {
+  padding: 0;
+  margin: 0;
+  color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
