@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function Services() {
     return(
        <Layout title={'Услуги'}>
-
            <div className={classes.wrapper}>
                <div className={`${classes.box} ${classes.a}`}>
                    <div className={classes.wrapHeader}>
@@ -30,7 +29,7 @@ export default function Services() {
                        <li>Контакты</li>
                    </ul>
                </div>
-               <div className={`${classes.box} ${classes.c}`}>c</div>
+               <div className={`${classes.box} ${classes.nav}`}>c</div>
                <div className={`${classes.box} ${classes.d}`}>d</div>
                <div className={`${classes.box} ${classes.e}`}>e</div>
                <div className={`${classes.box} ${classes.f}`}>f</div>

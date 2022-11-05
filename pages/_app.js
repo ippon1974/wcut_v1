@@ -1,3 +1,4 @@
+import '../styles/reset.scss';
 import '../styles/main.scss';
 import '../styles/test.scss';
 import '../js/main';
