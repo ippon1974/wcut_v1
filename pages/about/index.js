@@ -9,12 +9,22 @@ export default function About() {
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
                     <div className={classes.wrapperLogo}>
-                        <div className={`${classes.itemLogo} ${classes.logo}`}><Link title='Сивек Water Jet' href={'/'}><img src="/logo.jpg" alt="Сивек Water Jet"/></Link></div>
+                        <div className={`${classes.itemLogo} ${classes.logo}`}>
+                            <Link title='Сивек Water Jet' href={'/'}>
+
+                                <picture>
+                                    <img src="/logo.jpg" alt="Landscape picture" />
+                                </picture>
+
+                                {/*<img src={"/logo.jpg"} alt="Сивек Water Jet"/>*/}
+
+                            </Link>
+                        </div>
                         <div className={`${classes.itemLogo} ${classes.texthead}`}>
                             <div>
                                 <h2>Гидроабразивная резка в Москве</h2>
                                 <h3>Металл, стекло, камень, агломерат, полимеры, пластик, керамика.</h3>
-                                <p>140080 ул. Карла Маркса д. 117'Б', офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»</p>
+                                <p>140080 ул. Карла Маркса д. 117 Б, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института ВНИИСТРОМ</p>
                             </div>
                         </div>
                     </div>

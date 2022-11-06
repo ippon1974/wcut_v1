@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const Header = () => {
 
@@ -11,7 +12,7 @@ const Header = () => {
         <div id="page-wrapper">
             <div id="header">
                 <div className={"section clearfix"}>
-                    {asPath === '/' ?  <img src="/logo.jpg" alt="Сивек Water Jet"/> :  <Link title='Сивек Water Jet' href={'/'}><img src="/logo.jpg" alt="Сивек Water Jet"/></Link>}
+                    {/*{asPath === '/' ?  <img src="/logo.jpg" alt="Сивек Water Jet"/> :  <Link title='Сивек Water Jet' href={'/'}><img src="/logo.jpg" alt="Сивек Water Jet"/></Link>}*/}
                     <div className={"region region-header"}>
                         <div id="block-block-2" className={"block block-block first last odd"}>
                             <div className={"content"}>
@@ -19,7 +20,7 @@ const Header = () => {
                                     <h2>Гидроабразивная резка в Москве</h2>
                                     <h3>Металл, стекло, камень, агломерат, полимеры, пластик, керамика.</h3>
                                 </div>
-                                <p>140080 ул. Карла Маркса д. 117'Б', офис № 503 Люберецкий р-н, пос. Красково, МО.
+                                <p>140080 ул. Карла Маркса д. 117 Б, офис № 503 Люберецкий р-н, пос. Красково, МО.
                                     Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                             </div>
                         </div>
