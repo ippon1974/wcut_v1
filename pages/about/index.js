@@ -24,14 +24,14 @@ export default function About() {
                 <div className={`${classes.item} ${classes.nav}`}>
 
                     <ul className={classes.menunav}>
-                        <li><a href="/">Главная</a></li>
+                        <li><Link href={"/"}>Главная</Link></li>
                         <li><a href="">Услуги</a></li>
                         <li><a href="">Работы</a></li>
                         <li><a href="">Станки</a></li>
                         <li><a href="">Цены</a></li>
                         <li><a href="">Технология</a></li>
                         <li><a href="">Новости</a></li>
-                        <li><a href="">О компании</a></li>
+                        <li><Link href={"/about"}>О компании</Link></li>
                         <li><a href="">Контакты</a></li>
                     </ul>
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../components/Layout";
 
 export  default function Index() {
@@ -7,7 +8,7 @@ export  default function Index() {
            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita iure minima neque nostrum perspiciatis porro provident saepe temporibus veniam voluptatem?</p>
            <p className={'text_p'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita iure minima neque nostrum perspiciatis porro provident saepe temporibus veniam voluptatem?</p>
            <p><a href="/services">Service</a></p>
-           <p><a href="/about">About</a></p>
+           <p><Link href={"/about"}>About</Link></p>
        </Layout>
    );
 }
