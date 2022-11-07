@@ -10,7 +10,12 @@ export default function About() {
         <Layout title={'О компании'}>
 
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                {/* <meta name="viewport" content="width=device-width"/> */}
+                <meta name='viewport' content='width=device-width,initial-scale=1'/>
+                <meta content='true' name='HandheldFriendly'/>
+                <meta content='width' name='MobileOptimized'/>
+                <meta content='yes' name='apple-mobile-web-app-capable'/>
+
             </Head>
 
             <div className={classes.wrapper}>
@@ -56,7 +61,7 @@ export default function About() {
                         <h2>О компании</h2>
                         <div className={classes.hr}></div>
                         <h3>Компания</h3>
-                        <p>Компания  &laquo;Сивек Water Jet&raquo была создана в 2012 году.</p>
+                        <p>Компания  &laquo;Сивек Water Jet&raquo; была создана в 2012 году.</p>
                         <p>Основное наше направление раскрой различных материалов с помощью технологии гидрпоабразивной резки.</p>
                         <p>За это время накоплен опыт, знания, расширилась собственная клиентская база.</p>
                         <h3>Станки</h3>
@@ -72,9 +77,7 @@ export default function About() {
                             <span><Link href={'/contact'} title='Контакты'>
                             <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />
                             Контакты</Link></span></div>
-
                         </div>
-                    
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
                     <div className={classes.redhead}>
@@ -86,9 +89,14 @@ export default function About() {
                         <Link href={"/contact"} title="Контакты"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Контакты</Link>
                     </div>
                 </div>
-                <div className={`${classes.item} ${classes.footer}`}>Footer</div>
+                <div className={`${classes.item} ${classes.footer}`}>
+                   <div>
+                        <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
+                   </div>
+                </div>
+                <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
             </div>
-
+            <div className={classes.endpage}></div>
         </Layout>
     );
 }
