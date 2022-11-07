@@ -1,34 +1,36 @@
 import Layout from "../../components/Layout";
 import classes from '../../styles/about.module.scss';
 import Link from "next/link";
+import Head from 'next/head';
+import Image from "next/image";
 
 export default function About() {
     return(
+
         <Layout title={'О компании'}>
+
+            <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            </Head>
 
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
                     <div className={classes.wrapperLogo}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>
                             <Link title='Сивек Water Jet' href={'/'}>
-
                                 <picture>
-                                    <img src="/logo.jpg" alt="Landscape picture" />
+                                    <img src="/logo.jpg" alt="Сивек Water Jet" />
                                 </picture>
-
-                                {/*<img src={"/logo.jpg"} alt="Сивек Water Jet"/>*/}
-
                             </Link>
                         </div>
                         <div className={`${classes.itemLogo} ${classes.texthead}`}>
                             <div>
                                 <h2>Гидроабразивная резка в Москве</h2>
                                 <h3>Металл, стекло, камень, агломерат, полимеры, пластик, керамика.</h3>
-                                <p>140080 ул. Карла Маркса д. 117 Б, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института ВНИИСТРОМ</p>
+                                <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                             </div>
                         </div>
                     </div>
-
 
                 </div>
                 <div className={`${classes.item} ${classes.nav}`}>
@@ -46,9 +48,44 @@ export default function About() {
                     </ul>
 
                 </div>
-                <div className={`${classes.item} ${classes.asideleft}`}>Aside</div>
-                <div className={`${classes.item} ${classes.maincontext}`}>Main</div>
-                <div className={`${classes.item} ${classes.asideright}`}>Aside</div>
+                <div className={`${classes.item} ${classes.asideleft}`}>
+                    <div><p>О компании</p></div>
+                </div>
+                <div className={`${classes.item} ${classes.maincontext}`}>
+                    <div>
+                        <h2>О компании</h2>
+                        <div className={classes.hr}></div>
+                        <h3>Компания</h3>
+                        <p>Компания  &laquo;Сивек Water Jet&raquo была создана в 2012 году.</p>
+                        <p>Основное наше направление раскрой различных материалов с помощью технологии гидрпоабразивной резки.</p>
+                        <p>За это время накоплен опыт, знания, расширилась собственная клиентская база.</p>
+                        <h3>Станки</h3>
+                        <p>Оборудование на котором мы работаем &laquo;MultiCam&raquo;</p>
+                        <p>&laquo;MultiCam&raquo; — это американская компания, которая производит станки для гидроабразивной, лазерной, плазменной резки. Компания является одним из лидеров на мировом рыне оборудования данного направления.</p>
+                        <h3>Сотрудничество</h3>
+                        <p>Мы готовы сотрудничать с Вами. Готовы принять различные заказы на раскрой материалов.</p>
+                        <h3>Расположение производство</h3>
+                        <p>Адрес: 140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
+                        <p>Ждем Вас у себя на производстве.</p>
+                        <p><em>С уважение коллектив компании &laquo;Сивек Water Jet&raquo;</em></p>
+                        <div className={classes.mainlinefooter}>
+                            <span><Link href={'/contact'} title='Контакты'>
+                            <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />
+                            Контакты</Link></span></div>
+
+                        </div>
+                    
+                    </div>
+                <div className={`${classes.item} ${classes.asideright}`}>
+                    <div className={classes.redhead}>
+                            <Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" />
+                        <span>Контакты</span>
+                        <p>
+                        Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни. Телефон в Москве<br />+7 (925) 585-33-71 (Мегафон) 
+                        </p>
+                        <Link href={"/contact"} title="Контакты"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Контакты</Link>
+                    </div>
+                </div>
                 <div className={`${classes.item} ${classes.footer}`}>Footer</div>
             </div>
 
