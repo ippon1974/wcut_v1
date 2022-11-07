@@ -37,14 +37,14 @@ export default function About() {
 
                     <ul className={classes.menunav}>
                         <li><Link href={"/"}>Главная</Link></li>
-                        <li><a href="">Услуги</a></li>
-                        <li><a href="">Работы</a></li>
-                        <li><a href="">Станки</a></li>
-                        <li><a href="">Цены</a></li>
-                        <li><a href="">Технология</a></li>
-                        <li><a href="">Новости</a></li>
+                        <li><Link href={"/services"}>Услуги</Link></li>
+                        <li><Link href={"/works"}>Работы</Link></li>
+                        <li><Link href={"/equipment"}>Станки</Link></li>
+                        <li><Link href={"/materials"}>Цены</Link></li>
+                        <li><Link href={"/technology"}>Технология</Link></li>
+                        <li><Link href={"/news"}>Новости</Link></li>
                         <li><Link href={"/about"}>О компании</Link></li>
-                        <li><a href="">Контакты</a></li>
+                        <li><Link href={"/contact"}>Контакты</Link></li>
                     </ul>
 
                 </div>
