@@ -15,7 +15,6 @@ export default function About() {
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>
-
             </Head>
 
             <div className={classes.wrapper}>
