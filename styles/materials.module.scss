@@ -1,0 +1,342 @@
+.wrapper{
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+            "head head head"
+            "nav nav nav"
+            "aleft main aright"
+            "footer footer footer";
+    grid-template-columns: 12.488em 1fr 21.875em;
+    grid-gap: 0px;
+    width: 63em;
+    background-image: url("/contentbg.jpg");
+    background-repeat: repeat-y;
+    background-position: 12px 0;
+  }
+  
+  .item {
+    margin: 0;
+  }
+  
+  .header {
+    grid-area: head;
+  }
+  
+  .itemLogo {
+    margin: 0;
+  }
+  
+  .logo {
+    grid-area: logo;
+    margin: 20px 0 0 37px;
+  }
+  
+  .wrapperLogo {
+    display: grid;
+    grid-template-areas:
+            "logo texthead";
+    grid-template-columns: 224px 1fr;
+    grid-template-rows: 6.9375em;
+  }
+  
+  .texthead {
+    margin: 0;
+  }
+  
+  .texthead div {
+    margin: 20px 35px 0 50px;
+    padding: 0 0 0 0;
+    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    color: #f1f1c5;
+    background: url("/texture.png") repeat #280000;
+  }
+  
+  .texthead h2 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    padding: 16px 0 0 12px;
+  }
+  
+  .texthead h3 {
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    padding: 0px 0 4px 12px;
+  }
+  
+  .texthead p {
+    font-size: 0.7em;
+    margin: 0;
+    padding: 3px 12px;  
+    color: #cb4c00; 
+    border-top: 1px solid wheat;
+  }
+  
+  .nav {
+    grid-area: nav;
+    background-image: url(/greenbg.png);
+    width: 58.4375em;
+    margin: 34px 0 0 37px;
+  }
+  
+  ul.menunav {
+    padding: 5px 0 2px 0;
+  }
+  
+  ul.menunav li {
+    display: inline;
+    list-style-type: none;
+    padding: 4px 14px 3px 14px;
+    background-image: url(/greenbg.png);
+    border-right-color: wheat;
+    border-right-style: solid;
+    border-right-width: 1px;
+  }
+  
+  .menunav li a {
+    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f2f2bf;
+  }
+  
+  .asideleft {
+    grid-area: aleft;
+  }
+  .asideleft div {
+    margin: 15px 0 0 37px;
+  }
+  .asideleft div > p {
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1.5em;
+  }
+  
+  .maincontext {
+    grid-area: main;
+  }
+  .maincontext div {
+    margin: 15px 0 0 0;
+  }
+  
+  .maincontext div > h2 {
+    font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+    color: #303028;
+    font-size: 2.3em;
+    line-height: 1em;
+    font-weight: bold;
+  }
+  
+  .maincontext div > h3 {
+    margin: 1em 0 1em 0;
+    font-weight: bold;
+    color: #303028;
+  }
+  
+  .maincontext div > p {
+    margin: 1.5em 0;
+    font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+    color: #303028;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+  
+  .maincontext div p .activecalc {
+    color: red;
+  } 
+  
+  .maincontext div p > strong {
+    font-weight: bold;
+  }
+  
+  .maincontext div > ul {
+    list-style-type: disc;
+    margin-left: 0;
+    padding-left: 2em;
+  }
+  
+  .maincontext div ul > li {
+    margin: 0;
+    padding: 0;
+    color: #303028;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+  
+  .maincontext div p > em {
+    font-style: italic;
+  }
+  
+  .maincontext .mainlinefooter {
+    border-top: 1px solid #303028;
+    border-bottom: 2px solid #303028;
+    height: 20px;
+    margin: 1em 0 5em 0;
+    padding: 0 0 7px 0;
+  }
+  
+  .maincontext .mainlinefooter > span {
+    line-height: 1.5em;
+  }
+  
+  .maincontext .mainlinefooter span > a {
+    line-height: 2em;
+    display: block;
+    letter-spacing: -1px;
+    font-size: 0.9em;
+    color: #303028;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .maincontext .mainlinefooter span > a:hover{
+    color: #ee3124;
+    outline: none;
+  }
+  
+  .maincontext .mainlinefooter span a > img {
+      margin: 0 5px -2px 0;
+  }
+
+  .maincontext .pricematerials {
+    width: 100%;
+  }
+
+  .maincontext .pricematerials > tr {
+    border-bottom-color: #b3aeae;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    padding: 0.5em 0 0.5em 0;
+  }
+
+  .maincontext .pricematerials tr > th {
+    font-size: 0.8em;
+    font-weight: bold;
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-top-color: gray;
+    border-top-style: solid;
+    border-top-width: thin;
+    padding: 0.5em 0 0.5em 0;
+    text-align: left;
+    color: #303028;
+  }
+
+  .maincontext .pricematerials tr > td {
+    font-size: 0.8em;
+    color: #303028;
+    padding: 5px 0 6px 0;
+
+    border-bottom-color: #b3aeae;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    padding: 0.5em 0 0.5em 0;
+
+
+  }
+
+  .maincontext .pricematerials tr td > a {
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: #4a4d45;
+    text-decoration: none;
+    border-bottom: 1px solid #4a4d45;
+  }
+  
+  .asideright {
+    grid-area: aright;
+  }
+  
+  .asideright .redhead {
+    height: 33px;
+    margin: 15px 37px 0 90px;
+    background: url("/texture.png") repeat top left #E72519;
+  }
+  
+  .asideright .redhead img {
+    padding: 0px 5px 5px 4px;
+    vertical-align: middle;
+    border: 0;
+  }
+  
+  .asideright .redhead span {
+    display: inline-table;
+    margin: 10px 0 0 0;
+    font-size: 1.1em;
+    color: #F6F6C2 !important;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+  }
+  
+  .asideright .redhead p {
+    font-size: 0.8em;
+    line-height: 1.4em;
+    color: #303028;
+  }
+  
+  .asideright .redhead a {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-top: 1px solid #303028;
+    border-bottom: 2px solid #303028;
+    color: #303028;
+    text-decoration: none;
+  }
+  
+  .asideright .redhead a:hover {
+    color: #ee3124;
+    outline: none;
+  }
+  
+  .asideright .redhead a img {
+    vertical-align: middle;
+    padding: 4px 4px 3px 0;
+    border: 0;
+  }
+  
+  .hr {
+    border-bottom: 1px solid #303028;
+    padding-bottom: 0.8em;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+  
+  .footer div {
+    margin: 0 40px 40px 40px;
+    background: url('/texture.png') repeat #280000;
+  }
+  
+  .footer div p {
+    display: inline-block;
+    width: 895px;
+    margin: 24px 20px;  
+    padding: 12px 0px;
+    text-align: center;
+    border-top: 1px solid #f1f1c5;
+    border-bottom: 1px solid #f1f1c5;
+    font-weight: bold;
+    font: 1.446em/1em 'BebasNeueRegular', Arial, sans-serif;
+    color: #cb4c00;
+    text-transform: uppercase;  
+  }
+  
+  .footerline {
+    width: 935px;
+    margin: 0 40px 20px 40px;
+    line-height: 1.2em;
+    height: 21px;
+    background: url('/footerline.png') no-repeat;
+    color: #a4b394;
+    font-size: 0.7em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .endpage {
+    height: 3.0em;
+  }

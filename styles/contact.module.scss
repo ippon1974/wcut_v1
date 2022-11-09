@@ -1,0 +1,210 @@
+.wrapper{
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+            "head head"
+            "nav nav"
+            "aleft main"
+            "footer footer";
+    grid-template-columns: 330px 1fr;
+    grid-gap: 0px;
+    width: 63em;
+    background-image: url("/contentbg.jpg");
+    background-repeat: repeat-y;
+    background-position: 12px 0;
+  }
+  
+  .item {
+    margin: 0;
+  }
+
+  .header {
+    grid-area: head;
+  }
+
+  .itemLogo {
+    margin: 0;
+  }
+  
+  .logo {
+    grid-area: logo;
+    margin: 20px 0 0 37px;
+  }
+  
+  .wrapperLogo {
+    display: grid;
+    grid-template-areas:
+            "logo texthead";
+    grid-template-columns: 224px 1fr;
+    grid-template-rows: 6.9375em;
+  }
+  
+  .texthead {
+    margin: 0;
+  }
+  
+  .texthead div {
+    margin: 20px 35px 0 50px;
+    padding: 0 0 0 0;
+    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    color: #f1f1c5;
+    background: url("/texture.png") repeat #280000;
+  }
+  
+  .texthead h2 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    padding: 16px 0 0 12px;
+  }
+  
+  .texthead h3 {
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    padding: 0px 0 4px 12px;
+  }
+  
+  .texthead p {
+    font-size: 0.7em;
+    margin: 0;
+    padding: 3px 12px;  
+    color: #cb4c00; 
+    border-top: 1px solid wheat;
+  }
+
+  .nav {
+    grid-area: nav;
+    background-image: url(/greenbg.png);
+    width: 58.4375em;
+    margin: 34px 0 0 37px;
+  }
+  
+  ul.menunav {
+    padding: 5px 0 2px 0;
+  }
+  
+  ul.menunav li {
+    display: inline;
+    list-style-type: none;
+    padding: 4px 14px 3px 14px;
+    background-image: url(/greenbg.png);
+    border-right-color: wheat;
+    border-right-style: solid;
+    border-right-width: 1px;
+  }
+  
+  .menunav li a {
+    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f2f2bf;
+  }
+  
+  .asideleft {
+    grid-area: aleft;
+  }
+  .asideleft div {
+    margin: 15px 0 0 37px;
+  }
+  .asideleft div > p {
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 1.5em;
+  }
+
+  .maincontext {
+    grid-area: main;
+  }
+  .maincontext div {
+    background-color: #2ac0a5;
+    margin: 1em 37px 0 25px;
+    padding: 20px 20px 10px 20px;
+  }
+
+  .maincontext div .map {
+    width: 550px;
+    height: 650px;
+    margin: 0;
+    padding: 0;
+    border: 10px solid #339999;
+  }
+
+  .maincontext div h2 {
+        color: #f6f6c2;
+        font-size: 2.36em;
+        letter-spacing: -2px;
+        margin: 2.5em 0 0 0;
+        padding: 0;
+        font-weight: bold;
+    }
+  
+ .maincontext .address {
+    margin: 1px 37px 0 25px;
+ }
+ 
+ .maincontext .address p {
+    margin: 0 0 0.5em 0;
+    font-size: 1.3em;
+    color: #F6F6C2;
+    font-weight: bold;
+    line-height: 1.25em;
+ }
+
+    .maincontext .address p.adrsmall {
+        font-size: 0.9em;
+    }
+
+    .maincontext .address p.adrsmall > a:link {
+        color: #F6F6C2;
+        text-decoration: none;
+    }
+
+    .maincontext .address p.address > a:hover {
+        color: #cb4c00;
+    }
+
+  
+  .hr {
+    border-bottom: 1px solid #303028;
+    padding-bottom: 0.8em;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+  
+  .footer div {
+    margin: 5em 40px 40px 40px;
+    background: url('/texture.png') repeat #280000;
+  }
+  
+  .footer div p {
+    display: inline-block;
+    width: 895px;
+    margin: 24px 18px;  
+    padding: 12px 0px;
+    text-align: center;
+    border-top: 1px solid #f1f1c5;
+    border-bottom: 1px solid #f1f1c5;
+    font-weight: bold;
+    font: 1.446em/1em 'BebasNeueRegular', Arial, sans-serif;
+    color: #cb4c00;
+    text-transform: uppercase;  
+  }
+  
+  .footerline {
+    width: 935px;
+    margin: 0 40px 20px 40px;
+    line-height: 1.2em;
+    height: 21px;
+    background: url('/footerline.png') no-repeat;
+    color: #a4b394;
+    font-size: 0.7em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .endpage {
+    height: 3.0em;
+  }
+
