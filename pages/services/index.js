@@ -87,14 +87,12 @@ export default function Services() {
                         </div>
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
-                    <div className={classes.redhead}>
-                            <Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" />
-                        <span>Станки</span>
-                        <p>
-                        Мы работаем на станках от ведущей компании &laquo;MultiCam&laquo;
-                        </p>
-                        <Link href={"/equipment"} title="Станки"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Станки</Link>
+                    <div className={classes.newredhead}>
+                        <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                        <div className={classes.gtxt}>Станки</div>
                     </div>
+                    <p className={`${classes.asideright} ${classes.predhead}`}>Мы работаем на станках от ведущей компании &laquo;MultiCam&raquo;</p>
+                    <Link className={`${classes.asideright} ${classes.aredhead}`} href={"/equipment"} title="Станки"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Станки</Link>
                 </div>
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>
