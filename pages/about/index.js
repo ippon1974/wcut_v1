@@ -79,14 +79,12 @@ export default function About() {
                         </div>
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
-                    <div className={classes.redhead}>
-                            <Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" />
-                        <span>Контакты</span>
-                        <p>
-                        Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни. Телефон в Москве<br />+7 (925) 585-33-71 (Мегафон) 
-                        </p>
-                        <Link href={"/contact"} title="Контакты"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Контакты</Link>
+                    <div className={classes.newredhead}>
+                        <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                        <div className={classes.gtxt}>Контакты</div>
                     </div>
+                    <p className={`${classes.asideright} ${classes.predhead}`}>Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни. Телефон в Москве: +7 (925) 585-33-71 (Мегафон)</p>
+                    <Link className={`${classes.asideright} ${classes.aredhead}`} href={"/contact"} title="Контакты"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Контакты</Link>
                 </div>
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>

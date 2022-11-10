@@ -309,6 +309,9 @@
 
   .asideright .newredhead .gtxt {
     margin: 3px 0 0 8px;
+    font-size: 1.1em;
+    color: #F6F6C2 !important;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
   }
 
   .asideright .newredhead .gtxt a {
@@ -323,7 +326,6 @@
     background: blue;
     font-size: 0.95em;
     line-height: 1.5em;
-    width: 100%;
   }
 
   .asideright .newredhead p > a {
@@ -357,6 +359,41 @@
   border-bottom: 2px solid #303028;
   padding-bottom: 1em;
  }
+
+
+
+ .asideright .predhead {
+  margin: 5px 30px 0 90px;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  color: #303028;
+}
+
+.asideright .aredhead img {
+  vertical-align: middle;
+  padding: 3px 3px 2px 0;
+}
+
+.asideright .aredhead {
+  display: block;
+  margin: 15px 40px 0 90px;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-top: 1px solid #303028;
+  border-bottom: 2px solid #303028;
+  color: #303028;
+  text-decoration: none;
+}
+
+.asideright .aredhead:hover {
+  color: #ee3124;
+  outline: none;
+}
+
+
+
+
+
 
   .hr {
     border-bottom: 1px solid #303028;

@@ -131,12 +131,14 @@ export default function Technology() {
                         </div>
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
-                    <div className={classes.redhead}>
-                        <Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" />
-                        <span>Услуги</span>
-                        <p>Раскрой различных материалов с помощью технологии гидрообразивной резки.</p>
-                        <Link href={"/services"} title="Станки"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Услуги</Link>
+                    <div className={classes.newredhead}>
+                        <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                        <div className={classes.gtxt}>Услуги</div>
                     </div>
+                    <p className={`${classes.asideright} ${classes.predhead}`}>Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни. Телефон в Москве: +7 (925) 585-33-71 (Мегафон)</p>
+                    <Link className={`${classes.asideright} ${classes.aredhead}`} href={"/services"} title="Услуги"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Услуги</Link>
+                    
+
                 </div>
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>

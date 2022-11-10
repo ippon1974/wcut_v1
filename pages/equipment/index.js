@@ -117,13 +117,14 @@ export default function Equipment() {
                         </div>
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
-                    <div className={classes.redhead}>
-                        <Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" />
-                        <span>Услуги</span>
-                        <p>Раскрой различных материалов с помощью технологии гидрообразивной резки.</p>
-                        <Link href={"/services"} title="Услуги"><Image src={"/lightarrow.png"} width={"16"} height={"16"} alt="" />Услуги</Link>
+                    
+                    <div className={classes.newredhead}>
+                        <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                        <div className={classes.gtxt}>Услуги</div>
                     </div>
-
+                    <p className={`${classes.asideright} ${classes.predhead}`}>Раскрой различных материалов с помощью технологии гидрообразивной резки.</p>
+                    <Link className={`${classes.asideright} ${classes.aredhead}`} href={"/services"} title="Услуги"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Услуги</Link>
+                    
                     <div className={classes.newredhead}>
                         <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
                         <div className={classes.gtxt}><Link href={"/materials"}>Стоимость раскроя</Link></div>
