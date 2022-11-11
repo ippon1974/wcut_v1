@@ -248,57 +248,53 @@
     grid-area: aright;
   }
   
-  
-  
-  .asideright .newredhead {
+  .testHeadBlockOne {
     display: grid;
     margin: 1em 35px 0 90px;
     grid-template-columns: 29px 1fr;
     align-items: center;
-    height: 33px;
+    //height: 33px;
     background: url("/texture.png") repeat top left #E72519;
   }
-
-
-  .asideright .newredhead .gimg{
-    margin: 0 0 0 5px;
+  .testHeadBlockOneImg {
+    margin:0;
   }
-
-  .asideright .newredhead .gtxt {
-    margin: 3px 0 0 8px;
+  
+  .testHeadBlockOneText {
+    margin: 5px 0 0 4px;
     font-size: 1.1em;
     color: #F6F6C2 !important;
     font-family: 'BebasNeueRegular',Arial,sans-serif;
   }
-
-  .asideright .predhead {
-    margin: 5px 30px 0 90px;
+  
+  .testHeadBlockBody {
+    margin: 5px 30px 1em 90px;
     font-size: 0.8em;
     line-height: 1.4em;
     color: #303028;
   }
   
-  .asideright .aredhead img {
-    vertical-align: middle;
-    padding: 3px 3px 2px 0;
-  }
-  
-  .asideright .aredhead {
-    display: block;
-    margin: 15px 40px 0 90px;
-    font-size: 0.8em;
-    font-weight: bold;
+  .testHeadBlockTwo{
+    display: grid;
+    margin: 0 35px 0 90px;
+    padding: 3px 0 0 0;
+    grid-template-columns: 16px 1fr;
     border-top: 1px solid #303028;
     border-bottom: 2px solid #303028;
-    color: #303028;
-    text-decoration: none;
   }
   
-  .asideright .aredhead:hover {
-    color: #ee3124;
-    outline: none;
+  .testHeadBlockTwoImg {
+    margin: 0;
   }
-
+  
+  .testHeadBlockTwoLink a {
+    display: block;
+    margin: 1px 0 0 4px;
+    text-decoration: none;
+    color: #303028;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
 
   .hr {
     border-bottom: 1px solid #303028;

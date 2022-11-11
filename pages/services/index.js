@@ -86,13 +86,21 @@ export default function Services() {
                             Станки</Link></span></div>
                         </div>
                     </div>
+
                 <div className={`${classes.item} ${classes.asideright}`}>
-                    <div className={classes.newredhead}>
-                        <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
-                        <div className={classes.gtxt}>Станки</div>
+
+                <div className={`${classes.testHeadBlockOne}`}> 
+                    <div className={classes.testHeadBlockOneImg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                    <div className={classes.testHeadBlockOneText}>Станки</div>
+                </div>
+                <div className={classes.testHeadBlockBody}>Мы работаем на станках от ведущей компании &laquo;MultiCam&raquo;</div>
+                <div className={classes.testHeadBlockTwo}>
+                    <div className={classes.testHeadBlockTwoImg}><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" /></div>
+                    <div className={classes.testHeadBlockTwoLink}>
+                        <Link href={"/equipment"} title="Станки">Станки</Link>
                     </div>
-                    <p className={`${classes.asideright} ${classes.predhead}`}>Мы работаем на станках от ведущей компании &laquo;MultiCam&raquo;</p>
-                    <Link className={`${classes.asideright} ${classes.aredhead}`} href={"/equipment"} title="Станки"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Станки</Link>
+                </div>
+                
                 </div>
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>

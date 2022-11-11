@@ -103,6 +103,7 @@ export default function Equipment() {
                             <li>Специальная быстросменная насадка для резки с водой без абразива и с абразивом</li>
                             <li>Насос высокого давления KMT NEOLine™ 40i 40 л.с./ 30 кВт, 55 000 PSI, 2.73 л/мин</li>
                         </ul>
+
                         <Image src={"/mf1.jpg"} width={"460"} height={"345"} alt="img"></Image>
                         <Image src={"/mf2.jpg"} width={"460"} height={"345"} alt="img"></Image>
                         <Image src={"/mf3.jpg"} width={"460"} height={"345"} alt="img"></Image>
@@ -118,13 +119,19 @@ export default function Equipment() {
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
                     
-                    <div className={classes.newredhead}>
-                        <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
-                        <div className={classes.gtxt}>Услуги</div>
+                    <div className={`${classes.testHeadBlockOne}`}> 
+                        <div className={classes.testHeadBlockOneImg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                        <div className={classes.testHeadBlockOneText}>Услуги</div>
                     </div>
-                    <p className={`${classes.asideright} ${classes.predhead}`}>Раскрой различных материалов с помощью технологии гидрообразивной резки.</p>
-                    <Link className={`${classes.asideright} ${classes.aredhead}`} href={"/services"} title="Услуги"><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" />Услуги</Link>
-                    
+                    <div className={classes.testHeadBlockBody}>Раскрой различных материалов с помощью технологии гидрообразивной резки.</div>
+                    <div className={classes.testHeadBlockTwo}>
+                        <div className={classes.testHeadBlockTwoImg}><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" /></div>
+                        <div className={classes.testHeadBlockTwoLink}>
+                            <Link href={"/services"} title="Услуги">Услуги</Link>
+                        </div>
+                    </div>
+
+                   
                     <div className={classes.newredhead}>
                         <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
                         <div className={classes.gtxt}><Link href={"/materials"}>Стоимость раскроя</Link></div>
