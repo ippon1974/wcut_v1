@@ -233,6 +233,61 @@ ul.menunav li {
 }
 
 
+.testHeadBlockOne {
+  display: grid;
+  margin: 25em 35px 0 90px;
+  grid-template-columns: 29px 1fr;
+  align-items: center;
+  //height: 33px;
+  background: url("/texture.png") repeat top left #E72519;
+}
+.testHeadBlockOneImg {
+  margin:0;
+}
+
+.testHeadBlockOneText {
+  margin: 5px 0 0 4px;
+  font-size: 1.1em;
+  color: #F6F6C2 !important;
+  font-family: 'BebasNeueRegular',Arial,sans-serif;
+}
+
+.testHeadBlockBody {
+  margin: 5px 30px 1em 90px;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  color: #303028;
+}
+
+.testHeadBlockTwo{
+  display: grid;
+  margin: 0 35px 0 90px;
+  padding: 3px 0 0 0;
+  grid-template-columns: 16px 1fr;
+  border-top: 1px solid #303028;
+  border-bottom: 2px solid #303028;
+}
+.testHeadBlockTwoImg {
+  
+}
+
+.testHeadBlockTwoLink a {
+  display: block;
+  margin: 1px 0 0 4px;
+  text-decoration: none;
+  color: #303028;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.testHeadBlockTwoLink a:hover {
+  color: #ee3124;
+}
+
+
+
+
+
 .hr {
   border-bottom: 1px solid #303028;
   padding-bottom: 0.8em;
