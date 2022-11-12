@@ -4,14 +4,13 @@ import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
 
-
 export default function Contact() {
     return(
         <Layout title={'Контакты | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Контакты'} keywords={'Ключ про Контакты'}>
             
             <Head>
-                {/* <meta name="viewport" content="width=device-width"/> */}
-                <meta name='viewport' content='width=device-width,initial-scale=1'/>
+                <meta name="viewport" content="width=device-width"/>
+                {/* <meta name='viewport' content='width=device-width,initial-scale=1'/> */}
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>
