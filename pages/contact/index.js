@@ -10,12 +10,7 @@ export default function Contact() {
             
             <Head>
                 <meta name="viewport" content="width=device-width"/>
-                {/* <meta name='viewport' content='width=device-width,initial-scale=1'/> */}
-                <meta content='true' name='HandheldFriendly'/>
-                <meta content='width' name='MobileOptimized'/>
-                <meta content='yes' name='apple-mobile-web-app-capable'/>
             </Head>
-
 
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
