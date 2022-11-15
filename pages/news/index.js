@@ -7,6 +7,14 @@ import Image from "next/image";
 export default function News() {
     return(
         <Layout title={'Новости'}>
+
+            <Head>
+                <meta name='viewport' content='width=device-width,initial-scale=1'/>
+                <meta content='true' name='HandheldFriendly'/>
+                <meta content='width' name='MobileOptimized'/>
+                <meta content='yes' name='apple-mobile-web-app-capable'/>
+            </Head>
+
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
                     <div className={classes.wrapperLogo}>
