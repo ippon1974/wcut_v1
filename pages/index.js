@@ -52,11 +52,12 @@ export  default function Index() {
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     
+                
+
+
+
                 </div>
-                <div className={`${classes.item} ${classes.asideright}`}>
-                    
-                </div>
-               
+                
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>
                         <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&laquo;</p>
