@@ -55,7 +55,6 @@ export default function Contact() {
                         <div className={classes.map}>
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade84ff7336f23544fdfd2395bf3a76bf62c3e486a7449dd5f751dba73997184a&amp;source=constructor" width="550" height="650" frameborder="0"></iframe>
                         </div>
-                    
                         <h2>Контакты</h2>
                     </div>
                     

@@ -6,7 +6,7 @@
             "nav nav"
             "aleft main"
             "footer footer";
-    grid-template-columns: 330px 1fr;
+    grid-template-columns: 330px 42.8125em;
     grid-gap: 0px;
     width: 63em;
     background-image: url("/contentbg.jpg");
@@ -16,7 +16,6 @@
   
   .item {
     margin: 0;
-    border: 2px solid red;
   }
 
   .header {
@@ -45,7 +44,7 @@
   }
   
   .texthead div {
-    margin: 20px 35px 0 50px;
+    margin: 20px 42px 0 50px;
     padding: 0 0 0 0;
     font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
     color: #f1f1c5;
@@ -119,7 +118,8 @@
   .maincontext div {
     background-color: #2ac0a5;
     margin: 1em 37px 0 25px;
-    padding: 25px 15px 10px 25px;
+    padding: 25px 15px 10px 22px;
+    width: 36.25em;
   }
 
   .maincontext div .map {
