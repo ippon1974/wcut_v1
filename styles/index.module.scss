@@ -4,9 +4,9 @@
   grid-template-areas:
           "head head"
           "nav nav"
-          "main main"
+          "main aright"
           "footer footer";
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 650px 365px;
   grid-gap: 0px;
   width: 63em;
   background-image: url("/contentbg.jpg");
@@ -16,7 +16,6 @@
 
 .item {
   margin: 0;
-  border: 3px solid red;
 }
 
 .header {
@@ -45,7 +44,7 @@
 }
 
 .texthead div {
-  margin: 20px 35px 0 50px;
+  margin: 20px 42px 0 50px;
   padding: 0 0 0 0;
   font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
   color: #f1f1c5;
@@ -101,10 +100,83 @@ ul.menunav li {
   color: #f2f2bf;
 }
 
-
 .maincontext {
   grid-area: main;
 }
+
+.maincontext div {
+  margin: 15px 0 0 35px;
+  width: 619px;
+}
+
+.maincontext div img {
+  display: block;
+}
+
+.maincontext div h2 {
+  background: black;
+  font-size: 2.3em;
+  font-weight: bold;
+  line-height: 1.2em;
+  letter-spacing: -1px;
+  margin: 0;
+  padding: 5px 0 0 10px;
+}
+
+.maincontext div h2 a {
+  text-decoration: none;
+  color: #f6f6c2;
+}
+
+.maincontext div p {
+  background: black;
+  margin: 0;
+  padding: 15px 20px 20px 17px;
+  font-size: 1.192em;
+  color: #f6f6c2;
+  font-weight: bold;
+}
+
+.maincontext .banner {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  margin: 0 0 0 35px;
+}
+
+.banner .bannerArrow{
+   display: block;
+   margin: 0;
+}
+
+.banner .bannerLinkText {
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.asideright {
+  grid-area: aright;
+}
+
+.asideright div{
+  margin: 15px 0 0 20px;
+}
+
+.asideright div img{
+  display: block;
+}
+
+
+
 
 
 .hr {

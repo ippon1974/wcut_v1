@@ -51,11 +51,28 @@ export  default function Index() {
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    
-                
+                   <div>
+                        <Image src={'/jack_home_off_0.jpg'} width={"619"} height={"351"} alt={""}></Image>
+                        <h2><Link href={"#"}>Гидроабразивная резка</Link></h2>
+                        <p>Более 70 видов материалов для раскроя. Холодный раскрой без тепловой деформации материала. Подготовка чертежей.</p>
+                       
+                   </div>
 
+                    <div className={`${classes.maincontext} ${classes.banner}`}>
+                        <div className={`${classes.bannerArrow}`}>
+                            <Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image>
+                        </div>
+                        <div className={`${classes.bannerLinkText}`}>
+                            Технология гидроабразивной резки
+                        </div>
+                    </div>
 
+                </div>
 
+                <div className={`${classes.asideright}`}>
+                    <div>
+                        <Image src={'/home_intro.gif'} width={"303"} height={"1961"} alt={""}></Image>
+                    </div>
                 </div>
                 
                 <div className={`${classes.item} ${classes.footer}`}>
