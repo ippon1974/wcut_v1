@@ -59,20 +59,31 @@ export  default function Index() {
                    </div>
 
                     <div className={`${classes.maincontext} ${classes.banner}`}>
+                        <div className={`${classes.itemBanner} ${classes.bannerArrow}`}>
+                         <Link href={"#"}><Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image></Link>
+                        </div>
+                        <div className={`${classes.bannerLinkText}`}>
+                          <Link href={"#"}>Технология гидроабразивной резки</Link>
+                        </div>
+                    </div>
+
+
+                    {/* <div className={`${classes.maincontext} ${classes.banner}`}>
                         <div className={`${classes.bannerArrow}`}>
                             <Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image>
                         </div>
                         <div className={`${classes.bannerLinkText}`}>
                             Технология гидроабразивной резки
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 
-                <div className={`${classes.asideright}`}>
+                <div className={`${classes.item} ${classes.asideright}`}>
                     <div>
                         <Image src={'/home_intro.gif'} width={"303"} height={"1961"} alt={""}></Image>
                     </div>
+                    
                 </div>
                 
                 <div className={`${classes.item} ${classes.footer}`}>

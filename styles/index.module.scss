@@ -6,7 +6,7 @@
           "nav nav"
           "main aright"
           "footer footer";
-  grid-template-columns: 650px 365px;
+  grid-template-columns: 40.938em 1fr;
   grid-gap: 0px;
   width: 63em;
   background-image: url("/contentbg.jpg");
@@ -44,8 +44,8 @@
 }
 
 .texthead div {
-  margin: 20px 42px 0 50px;
-  padding: 0 0 0 0;
+  margin: 20px 37px 0 50px;
+  padding: 0;
   font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
   color: #f1f1c5;
   background: url("/texture.png") repeat #280000;
@@ -105,7 +105,7 @@ ul.menunav li {
 }
 
 .maincontext div {
-  margin: 15px 0 0 35px;
+  margin: 15px 65px 0 35px;
   width: 619px;
 }
 
@@ -141,15 +141,39 @@ ul.menunav li {
   display: grid;
   grid-template-columns: 50px 1fr;
   margin: 0 0 0 35px;
+  padding: 0;
+  justify-content: center;
+  background: black;
+  border-top: 1px solid #f6f6c2;;
+}
+
+.itemBanner {
+  margin: 0;
 }
 
 .banner .bannerArrow{
-   display: block;
    margin: 0;
+   padding: 0;
 }
+
 
 .banner .bannerLinkText {
   margin: 0;
+  padding: 11px 0 0 10px;
+  width: 558px;
+  font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+  border-left: 1px solid #f6f6c2;;
+}
+
+.banner .bannerLinkText a {
+  color: #f6f6c2;;
+  text-decoration: none;
+  line-height: 1.2em;
+  letter-spacing: 1px;
+}
+
+.banner .bannerLinkText a:hover {
+  color: #ee3124;
 }
 
 
@@ -168,7 +192,7 @@ ul.menunav li {
 }
 
 .asideright div{
-  margin: 15px 0 0 20px;
+  margin: 15px 0 0 15px;
 }
 
 .asideright div img{
