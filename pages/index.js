@@ -57,7 +57,7 @@ export  default function Index() {
 
                     <div className={`${classes.maincontext} ${classes.banner}`}>
                         <div className={`${classes.itemBanner} ${classes.bannerArrow}`}>
-                         <Link href={"#"}><Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image></Link>
+                         <Link href={"/technology"}><Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image></Link>
                         </div>
                         <div className={`${classes.bannerLinkText}`}>
                           <Link href={"/technology"}>Технология гидроабразивной резки</Link>
@@ -80,7 +80,7 @@ export  default function Index() {
                         <figure className={`${classes.itemWorks}`}>
                             <Link href={'#'}><Image src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
                             <figcaption>
-                                <h2><Link href={'#'}>Адресная табличка из стали</Link></h2>
+                                <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую</Link></h2>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magnam eum voluptas mollitia, eveniet cupiditate.</p>
                             </figcaption>
                             <div className={classes.blokImgWorkLink}>
