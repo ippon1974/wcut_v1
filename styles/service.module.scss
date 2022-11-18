@@ -74,19 +74,19 @@
 
 .nav {
   grid-area: nav;
-  background-image: url(/greenbg.png);
   width: 58.4375em;
   margin: 34px 0 0 37px;
 }
 
 ul.menunav {
-  padding: 5px 0 2px 0;
+  padding: 3px 0 0 0;
+  background-image: url(/greenbg.png);
 }
 
 ul.menunav li {
   display: inline;
   list-style-type: none;
-  padding: 4px 14px 3px 14px;
+  padding: 8px 14px 4px 14px;
   background-image: url(/greenbg.png);
   border-right-color: wheat;
   border-right-style: solid;
