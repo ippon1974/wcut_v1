@@ -63,17 +63,6 @@ export  default function Index() {
                           <Link href={"#"}>Технология гидроабразивной резки</Link>
                         </div>
                     </div>
-
-
-                    {/* <div className={`${classes.maincontext} ${classes.banner}`}>
-                        <div className={`${classes.bannerArrow}`}>
-                            <Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image>
-                        </div>
-                        <div className={`${classes.bannerLinkText}`}>
-                            Технология гидроабразивной резки
-                        </div>
-                    </div> */}
-
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>
