@@ -176,11 +176,130 @@ ul.menunav li {
   color: #ee3124;
 }
 
+.maincontext .worksList {
+  display: grid;
+  padding: 0;
+  grid-template-columns: 303px 303px;
+  gap: 11px;
+}
+
+.itemWorks {
+  margin: 0;
+}
+
+.maincontext .worksList figure{
+  background: black;
+}
+
+.maincontext .worksList figure img{
+  display: block;
+}
+
+.maincontext .worksList figcaption {
+  padding: 5px 0 4em 0;
+  height: 70px;
+}
+
+.maincontext .worksList figcaption h2{
+  font-size: 1.4em;
+  font-weight: bold;
+  line-height: 0.9em;
+  margin: 0 0 0.2em 0;
+}
+
+.maincontext .worksList figcaption h2 a {
+  color: #F2F2BF;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+.maincontext .worksList figcaption p {
+  padding: 0 0 10px 15px;
+  font-size: 0.8em;
+  color: #F2F2BF;
+}
+
+.maincontext .worksList figure .blokImgWorkLink {
+  display: grid;
+  grid-template-columns: 33px 1fr;
+  margin: 0; padding: 0;
+}
 
 
+.blokImgWorkLink .itemBox {
+  margin: 0;
+}
 
+.maincontext .worksList figure .blokImgWorkLink .blokImgWorkLInkImg {
+  padding: 0;
+  border-top: 1px solid #F2F2BF;
+}
 
+.maincontext .worksList figure .blokImgWorkLink .blokImgWorkLInkImg img{
+  display: block;
+}
 
+.maincontext .worksList figure .blokImgWorkLink .blokImgWorkLInkText {
+  padding: 5px 0 0 10px;
+  font: 18px/28px 'BebasNeueRegular',Arial,sans-serif;
+  border-top: 1px solid #F2F2BF;
+  border-left: 1px solid #F2F2BF;
+  color: #F2F2BF;
+}
+
+.maincontext .worksList figure .blokImgWorkLink .blokImgWorkLInkText a {
+  color: #F2F2BF;
+  text-decoration: none;
+}
+
+.maincontext .worksList figure .blokImgWorkLink .blokImgWorkLInkText a:hover {
+  color: #ee3124;
+}
+
+.maincontext .blockRedPrice {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  background: url("/texture.png") repeat 144px 51px #E72519;
+  align-items: center;
+  gap: 15px;
+}
+
+.maincontext .blockRedPrice .itemRedPrice {
+  margin: 0;
+  padding: 0;
+}
+
+.maincontext .blockRedPrice .itemRedPrice img {
+  display: block;
+  padding: 7px 0 7px 5px;
+}
+
+.maincontext .blockRedPrice .textLinkRedBlock h2 {
+  margin: 0 0 2px 0;
+  letter-spacing: 1px;
+  padding: 0 0 0 5px;
+  font-size: 1.8em;
+  width: 400px;
+  color: #f2f2bf;
+  font-size: 1.399999em;
+  font-family: 'BebasNeueRegular',Arial,sans-serif;
+  background: inherit;
+}
+
+.maincontext .blockRedPrice .textLinkRedBlock p {
+  margin: 0;
+  padding: 0 0 0 5px;
+  letter-spacing: 1px;
+  font-size: 0.99em;
+  color: #f2f2bf;
+  font-family:'BebasNeueRegular',Arial,sans-serif;
+  width: 400px;
+  background: inherit;
+}
+
+.maincontext .blockRedPrice .textLinkRedBlock p a {
+  color: #f2f2bf;
+  text-decoration: none;
+}
 
 
 

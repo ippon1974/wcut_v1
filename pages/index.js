@@ -50,7 +50,7 @@ export  default function Index() {
                 <div className={`${classes.item} ${classes.maincontext}`}>
                    <div>
                         <Image src={'/jack_home_off_0.jpg'} width={"619"} height={"351"} alt={""}></Image>
-                        <h2><Link href={"#"}>Гидроабразивная резка</Link></h2>
+                        <h2><Link href={"/equipment"}>Гидроабразивная резка</Link></h2>
                         <p>Более 70 видов материалов для раскроя. Холодный раскрой без тепловой деформации материала. Подготовка чертежей.</p>
                        
                    </div>
@@ -60,9 +60,46 @@ export  default function Index() {
                          <Link href={"#"}><Image src={'/arrowBanner.png'} width={"50"} height={"48"} alt={""}></Image></Link>
                         </div>
                         <div className={`${classes.bannerLinkText}`}>
-                          <Link href={"#"}>Технология гидроабразивной резки</Link>
+                          <Link href={"/technology"}>Технология гидроабразивной резки</Link>
                         </div>
                     </div>
+
+                    <div className={`${classes.worksList}`}>
+                        <figure className={`${classes.itemWorks}`}>
+                            <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                            <figcaption>
+                                <h2><Link href={'#'}>Адресная табличка из стали. Охуенная табличка рекомендую</Link></h2>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit explicabo voluptas culpa obcaecati molestiae. Quos.</p>
+                            </figcaption>
+                            <div className={classes.blokImgWorkLink}>
+                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkImg}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkText}`}><Link href={'#'}>Подробнее</Link></div>
+                            </div>
+                        </figure>
+                        
+                        <figure className={`${classes.itemWorks}`}>
+                            <Link href={'#'}><Image src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                            <figcaption>
+                                <h2><Link href={'#'}>Адресная табличка из стали</Link></h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magnam eum voluptas mollitia, eveniet cupiditate.</p>
+                            </figcaption>
+                            <div className={classes.blokImgWorkLink}>
+                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkImg}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkText}`}><Link href={'#'}>Подробнее</Link></div>
+                            </div>
+                        </figure>
+                    </div>
+
+                    <div className={`${classes.blockRedPrice}`}>
+                        <div className={`${classes.itemRedPrice}`}>
+                            <Image src={'/twitcircle.gif'} width={'60'} height={'60'} alt={''}></Image>
+                        </div>
+                        <div className={`${classes.itemRedPrice} ${classes.textLinkRedBlock}`}>
+                            <h2><Link href={'/materials'}>Стоимость реза различного материала</Link></h2>
+                            <p><Link href={'/materials'}>Сталь, мрамор, гранит, латунь, медь, капролон, керамогранит</Link></p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>

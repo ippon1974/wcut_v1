@@ -56,7 +56,15 @@ export default function Works() {
                     <div className={classes.worksList}>
 
                     <figure className={`${classes.itemWorks}`}>
-                        <Image src={'/work_intro.gif'} width={'303'} height={'365'} alt={''}></Image>
+                        <Link href={'#'}><Image src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                        <figcaption>
+                            <h2><Link href={'#'}>Адресная табличка из стали</Link></h2>
+                            <p>Рез стали 2мм. Гидроабразив.</p>
+                        </figcaption>
+                        <div className={classes.blokImgWorkLink}>
+                            <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkImg}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                            <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkText}`}><Link href={'#'}>Подробнее</Link></div>
+                        </div>
                     </figure>
 
                     <figure className={`${classes.itemWorks}`}>
