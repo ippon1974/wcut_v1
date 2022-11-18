@@ -96,7 +96,7 @@ export  default function Index() {
                         </div>
                         <div className={`${classes.itemRedPrice} ${classes.textLinkRedBlock}`}>
                             <h2><Link href={'/materials'}>Стоимость реза различного материала</Link></h2>
-                            <p><Link href={'/materials'}>Сталь, мрамор, гранит, латунь, медь, капролон, керамогранит</Link></p>
+                            <p><Link href={'/materials'}>Сталь, мрамор, гранит, латунь, медь, капролон, керамогранит, титан, стекло</Link></p>
                         </div>
                     </div>
 

@@ -156,7 +156,6 @@ ul.menunav li {
    padding: 0;
 }
 
-
 .banner .bannerLinkText {
   margin: 0;
   padding: 11px 0 0 10px;
@@ -256,6 +255,7 @@ ul.menunav li {
 }
 
 .maincontext .blockRedPrice {
+  margin-top: 2em;
   display: grid;
   grid-template-columns: 60px 1fr;
   background: url("/texture.png") repeat 144px 51px #E72519;
@@ -274,10 +274,11 @@ ul.menunav li {
 }
 
 .maincontext .blockRedPrice .textLinkRedBlock h2 {
-  margin: 0 0 2px 0;
+  margin: 0;
   letter-spacing: 1px;
-  padding: 0 0 0 5px;
-  font-size: 1.8em;
+  padding: 0;
+  font-size: 1.85em;
+  font-weight: normal;
   width: 400px;
   color: #f2f2bf;
   font-size: 1.399999em;
@@ -287,9 +288,10 @@ ul.menunav li {
 
 .maincontext .blockRedPrice .textLinkRedBlock p {
   margin: 0;
-  padding: 0 0 0 5px;
+  padding: 0;
   letter-spacing: 1px;
-  font-size: 0.99em;
+  font-size: 0.8em;
+  font-weight: normal;
   color: #f2f2bf;
   font-family:'BebasNeueRegular',Arial,sans-serif;
   width: 400px;
@@ -300,8 +302,6 @@ ul.menunav li {
   color: #f2f2bf;
   text-decoration: none;
 }
-
-
 
 
 
