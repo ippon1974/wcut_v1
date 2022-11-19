@@ -100,6 +100,22 @@ export  default function Index() {
                         </div>
                     </div>
 
+                    <section>
+                        <ul className={`${classes.priceline}`}>
+                            <li><Link href={"#"}>Медь</Link>. Толщина: 10 мм. Стоимость раскроя за пог.м. — 1060 руб.<p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
+                            <li><Link href={"#"}>Алюминий</Link>. Толщина: 10 мм. Стоимость раскроя за пог.м. — 1340 руб. <p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
+                        </ul>
+                    </section>
+
+                    <div className={`${classes.maincontext} ${classes.allPriceLine}`}>
+                        <div className={`${classes.imgAllPrice} ${classes.itemAllPrice}`}>
+                            <Link href={'/materials'}><Image src={'/nextRed.gif'} width={'23'} height={'23'} alt={''}></Image></Link>
+                        </div>
+                        <div className={`${classes.linkAllPrice} ${classes.itemAllPrice}`}><Link href={'/materials'}>Весь прайс-лист на раскрой гидроабразивом</Link></div>
+                    </div>
+                    <div>
+                        <Image src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image>
+                    </div>
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>

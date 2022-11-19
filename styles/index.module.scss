@@ -301,6 +301,77 @@ ul.menunav li {
   text-decoration: none;
 }
 
+.maincontext .priceline{
+  margin: 0 0 0 35px;
+}
+
+.maincontext .priceline li {
+  padding: 15px 0 15px 70px;
+  font-size: 0.8em;
+  color: #303028;
+  border-top: 1px dotted #303028;
+}
+
+.maincontext .priceline li:hover {
+  background: url(/texture.png) repeat 0% 79% #dcdcab;
+}
+
+.maincontext .priceline li a {
+  color: #ee3124;
+  text-decoration: none;
+}
+.maincontext .priceline li a:hover {
+  color: #768263;
+}
+
+.maincontext .priceline li p {
+  font-size: 0.6em;
+  margin: 0.9em 0 0 0;
+}
+
+.maincontext .priceline li p a {
+  color: #768263;
+  text-decoration: none;
+}
+
+.maincontext .priceline li p a:hover {
+  color: #ee3124;
+}
+
+.maincontext .allPriceLine {
+  display: grid;
+  grid-template-columns: 23px 1fr;
+  background: url("/texture.png") repeat 144px 51px #E72519;
+  //align-items: center;
+  margin: 0 0 2em 35px;
+}
+
+.itemAllPrice {
+  margin: 0;
+  padding: 0;
+}
+
+.maincontext .allPriceLine .imgAllPrice {
+  padding: 4px 0 4px 3px;
+  margin: 0;
+}
+
+.maincontext .allPriceLine .linkAllPrice {
+  margin: 0 0 0 10px;
+  padding: 10px 0 0 10px;
+  letter-spacing: 1px;
+  border-left: 1px solid #f2f2bf;;
+  font: 22px/0.7em 'BebasNeueRegular',Arial,sans-serif;
+}
+
+.maincontext .allPriceLine .linkAllPrice a {
+  color: #F6F6C2;
+  text-decoration: none;
+}
+
+.maincontext .allPriceLine .linkAllPrice a:hover {
+  color: black;
+}
 
 
 
@@ -315,10 +386,6 @@ ul.menunav li {
 .asideright div img{
   display: block;
 }
-
-
-
-
 
 .hr {
   border-bottom: 1px solid #303028;
