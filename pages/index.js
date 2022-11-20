@@ -116,13 +116,38 @@ export  default function Index() {
                     <div>
                         <Image src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image>
                     </div>
+                    
+                    <div className = {`${classes.containerNews}`}>
+                        <figure className={`${classes.news_all}`}>
+                            <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                            <figcaption className={classes.newsfigcaption}>
+                                <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                            </figcaption>
+                            <div className={classes.dtNews}>07 07 2015</div>
+                            <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Link></p>
+                        </figure>
+                        <figure className={`${classes.news_all}`}>
+                            <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                            <figcaption className={classes.newsfigcaption}>
+                                <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                            </figcaption>
+                            <div className={classes.dtNews}>07 07 2015</div>
+                            <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusantium, harum est nulla ex velit commodi repudiandae non sed earum aliquam placeat cumque tenetur deleniti!</Link></p>
+                        </figure>
+                    </div>
+                    <div className={classes.containerNewsBotton}>
+                        <div className={classes.newsImg}>
+                        <Link href={'/news'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt={''}></Image></Link>
+                        </div>
+                        <div className={classes.newsLink}><Link href={'/news'}>Все новости</Link></div>
+                    </div>
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>
                     <div>
                         <Image src={'/home_intro.gif'} width={"303"} height={"1961"} alt={""}></Image>
                     </div>
-                    
+                   
                 </div>
                 
                 <div className={`${classes.item} ${classes.footer}`}>
