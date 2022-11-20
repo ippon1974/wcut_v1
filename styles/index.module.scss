@@ -195,7 +195,7 @@ ul.menunav li {
 }
 
 .maincontext .worksList figcaption {
-  padding: 5px 5px 4em 5px;
+  padding: 5px 5px 4em 2px;
   height: 70px;
 }
 
@@ -212,7 +212,7 @@ ul.menunav li {
   text-decoration: none;
 }
 .maincontext .worksList figcaption p {
-  padding: 0 0 10px 15px;
+  padding: 0 0 10px 10px;
   font-size: 0.8em;
   color: #F2F2BF;
 }
@@ -277,7 +277,6 @@ ul.menunav li {
   margin: 0;
   letter-spacing: 1px;
   padding: 0;
-  font-size: 1.95em;
   font-weight: normal;
   color: #f2f2bf;
   font-size: 1.399999em;
@@ -307,6 +306,7 @@ ul.menunav li {
 
 .maincontext .priceline li {
   padding: 15px 0 15px 70px;
+  line-height: 1.5em;
   font-size: 0.8em;
   color: #303028;
   border-top: 1px dotted #303028;
@@ -450,6 +450,127 @@ ul.menunav li {
   color: #ee3124;
 }
 
+.maincontext .containerItem {
+  display: grid;
+  background: url("/texture.png") repeat 144px 51px #E72519;
+  grid-template-columns: 60px auto;
+  margin: 2em 0 0 35px;
+}
+
+.maincontext .itemImg {
+  margin: 0;
+}
+
+.maincontext .itemText {
+  margin: 0;
+  width: 559px;
+}
+
+.maincontext .itemText h2 {
+  margin: 0;
+  padding: 10px 0 0 10px;
+  background: inherit;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #f2f2bf;
+  font-size: 1.399999em;
+  font-family: 'BebasNeueRegular',Arial,sans-serif;
+}
+
+.maincontext .itemText p {
+  margin: 0;
+  padding: 0 0 0 10px;
+  background: inherit;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  font-weight: normal;
+  color: #f2f2bf;
+  font-family:'BebasNeueRegular',Arial,sans-serif;
+}
+.maincontext .itemText p a{
+  color: #f2f2bf;
+  text-decoration: none;
+}
+
+.maincontext .containerVideo {
+  display: grid;
+  background: url("/texture.png") repeat 144px 51px #E72519;
+  grid-template-columns: 60px auto;
+  margin: 2em 0 0 35px;
+}
+
+.maincontext .videoImg {
+  margin: 0;
+}
+
+.maincontext .videoText {
+  margin: 0;
+  width: 559px;
+}
+
+.maincontext .videoText h2 {
+  margin: 0;
+  padding: 10px 0 0 10px;
+  background: inherit;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #f2f2bf;
+  font-size: 1.399999em;
+  font-family: 'BebasNeueRegular',Arial,sans-serif;
+}
+
+.maincontext .videoText p {
+  margin: 0;
+  padding: 0 0 0 10px;
+  background: inherit;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  font-weight: normal;
+  color: #f2f2bf;
+  font-family:'BebasNeueRegular',Arial,sans-serif;
+}
+
+.maincontext .videoText p a{
+  color: #f2f2bf;
+  text-decoration: none;
+}
+
+.maincontext .allVideoLine {
+  display: grid;
+  grid-template-columns: 23px 1fr;
+  background: url("/texture.png") repeat 144px 51px #E72519;
+  //align-items: center;
+  margin: 0 0 0 35px;
+}
+
+.itemAllVideo {
+  margin: 0;
+  padding: 0;
+}
+
+.maincontext .allVideoLine .imgAllVideo {
+  padding: 4px 0 4px 3px;
+  margin: 0;
+}
+
+.maincontext .allVideoLine .linkAllVideo {
+  margin: 0 0 0 10px;
+  padding: 10px 0 0 10px;
+  letter-spacing: 1px;
+  border-left: 1px solid #f2f2bf;;
+  font: 22px/0.7em 'BebasNeueRegular',Arial,sans-serif;
+}
+
+.maincontext .allVideoLine .linkAllVideo a {
+  color: #F6F6C2;
+  text-decoration: none;
+}
+
+.maincontext .allVideoLine .linkAllVideo a:hover {
+  color: black;
+}
+
+
 
 
 
@@ -477,7 +598,7 @@ ul.menunav li {
 }
 
 .footer div {
-  margin: 5em 40px 40px 40px;
+  margin: 5em 35px 40px 35px;
   background: url('/texture.png') repeat #280000;
 }
 

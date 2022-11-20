@@ -114,7 +114,7 @@ export  default function Index() {
                         <div className={`${classes.linkAllPrice} ${classes.itemAllPrice}`}><Link href={'/materials'}>Весь прайс-лист на раскрой гидроабразивом</Link></div>
                     </div>
                     <div>
-                        <Image src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image>
+                        <Link href={'/equipment'}><Image src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image></Link>
                     </div>
                     
                     <div className = {`${classes.containerNews}`}>
@@ -137,9 +137,53 @@ export  default function Index() {
                     </div>
                     <div className={classes.containerNewsBotton}>
                         <div className={classes.newsImg}>
-                        <Link href={'/news'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt={''}></Image></Link>
+                            <Link href={'/news'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt={''}></Image></Link>
                         </div>
                         <div className={classes.newsLink}><Link href={'/news'}>Все новости</Link></div>
+                    </div>
+                    
+                    <div className={classes.containerItem}>
+                        <div className={classes.itemImg}>
+                            <Image src={'/item.gif'} width={'60'} height={'60'} alt={''}></Image>
+                        </div>
+                        <div className={classes.itemText}>
+                            <h2><Link href={"/news/item"}>Статьи</Link></h2>
+                            <p><Link href={"/news/item"}>Тематические статьи</Link></p>
+                        </div>
+                    </div>
+                    <section>
+                            <ul className={`${classes.priceline}`}>
+                                <li>История CAM систем. <Link href={'#'}>Весь текст</Link></li>
+                                <li>Обработка латуни. <Link href={'#'}>Весь текст</Link></li>
+                            </ul>
+                    </section>
+                    <div className={`${classes.maincontext} ${classes.allPriceLine}`}>
+                        <div className={`${classes.imgAllPrice} ${classes.itemAllPrice}`}>
+                            <Link href={'/materials'}><Image src={'/nextRed.gif'} width={'23'} height={'23'} alt={''}></Image></Link>
+                        </div>
+                        <div className={`${classes.linkAllPrice} ${classes.itemAllPrice}`}><Link href={'/news/item'}>Все статьи</Link></div>
+                    </div>
+
+                    <div className={classes.containerVideo}>
+                        <div className={classes.videoImg}>
+                            <Image src={'/video.gif'} width={'60'} height={'60'} alt={''}></Image>
+                        </div>
+                        <div className={classes.videoText}>
+                            <h2><Link href={"/news/video"}>Видео</Link></h2>
+                            <p><Link href={"/news/video"}>Видеоматериалы на тему раскроя гидроабразивом</Link></p>
+                        </div>
+                    </div>
+                    <section>
+                            <ul className={`${classes.priceline}`}>
+                                <li><Link href={'#'}>Раскрой гранита 80 мм.</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
+                                <li><Link href={'#'}>Раскрой стали 2 мм.</Link> Создание чертежа для изготовления адресной таблички. Гидроабразивная резка.</li>
+                            </ul>
+                    </section>
+                    <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
+                        <div className={`${classes.imgAllVideo} ${classes.itemAllVideo}`}>
+                            <Link href={'/news/video'}><Image src={'/nextRed.gif'} width={'23'} height={'23'} alt={''}></Image></Link>
+                        </div>
+                        <div className={`${classes.linkAllVideo} ${classes.itemAllVideo}`}><Link href={'/news/video'}>Все видеоматериалы</Link></div>
                     </div>
                 </div>
 
