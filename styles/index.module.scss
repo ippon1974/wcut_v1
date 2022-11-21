@@ -632,22 +632,15 @@ ul.menunav li {
   height: 3.0em;
 }
 
-.viewportcontainer {
-  width: 619px;
-  overflow:hidden;
-  position:relative;
-  width:303px;
+.maincontext .viewportcontainer {
+  margin: 0;
+
 }
 
-.viewport{
-  height:600px;
-  top:-228px;
-  margin:0;
-  position:relative;
+.maincontext .viewport {
+  
 }
   
-  .viewport img{
-    top:0;
-    left:0;
-    border:0;
-  }
+.maincontext .viewport img {
+   
+}

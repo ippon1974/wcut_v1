@@ -4,14 +4,23 @@ import classes from '../styles/index.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
-//import '../js/jquery.min.js';
+import React, { useState, useEffect } from 'react';
+import $ from 'jquery';         
 
 export  default function Index() {
+
+    useEffect(() => {
+        $(window).ready(function(){
+            console.log("hi vovan ");
+            });
+      
+      })
+
    return (
        <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+                {/* <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous" /> */}
             </Head>
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
@@ -50,6 +59,7 @@ export  default function Index() {
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
+                  
                    <div className={`${classes.viewportcontainer}`}>
                    <div className={`${classes.viewport}`}>
                         <Image src={'/jack_home_on.jpg'} width={"619"} height={"351"} alt={""}></Image>
@@ -57,7 +67,7 @@ export  default function Index() {
                         <h2><Link href={"/equipment"}>Гидроабразивная резка</Link></h2>
                         <p>Более 70 видов материалов для раскроя. Холодный раскрой без тепловой деформации материала. Подготовка чертежей.</p>
                    </div>
-                   </div>
+                   </div> 
 
                     <div className={`${classes.maincontext} ${classes.banner}`}>
                         <div className={`${classes.itemBanner} ${classes.bannerArrow}`}>
@@ -206,7 +216,6 @@ export  default function Index() {
                 <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
             </div>
             <div className={classes.endpage}></div>
-
        </Layout>
    );
 }
