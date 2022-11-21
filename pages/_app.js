@@ -1,7 +1,8 @@
 import '../styles/reset.scss';
 import '../styles/main.scss';
 import '../styles/test.scss';
-import '../js/main';
+//import '../js/main';
+//import '../js/jquery.min.js';
 import NextNProgress from "nextjs-progressbar";
 
 export default function MyApp({Component, pageProps}) {

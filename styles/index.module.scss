@@ -631,3 +631,23 @@ ul.menunav li {
 .endpage {
   height: 3.0em;
 }
+
+.viewportcontainer {
+  width: 619px;
+  overflow:hidden;
+  position:relative;
+  width:303px;
+}
+
+.viewport{
+  height:600px;
+  top:-228px;
+  margin:0;
+  position:relative;
+}
+  
+  .viewport img{
+    top:0;
+    left:0;
+    border:0;
+  }

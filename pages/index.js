@@ -4,12 +4,14 @@ import classes from '../styles/index.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+//import '../js/jquery.min.js';
 
 export  default function Index() {
    return (
        <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
             </Head>
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
@@ -48,11 +50,13 @@ export  default function Index() {
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                   <div>
+                   <div className={`${classes.viewportcontainer}`}>
+                   <div className={`${classes.viewport}`}>
+                        <Image src={'/jack_home_on.jpg'} width={"619"} height={"351"} alt={""}></Image>
                         <Image src={'/jack_home_off_0.jpg'} width={"619"} height={"351"} alt={""}></Image>
                         <h2><Link href={"/equipment"}>Гидроабразивная резка</Link></h2>
                         <p>Более 70 видов материалов для раскроя. Холодный раскрой без тепловой деформации материала. Подготовка чертежей.</p>
-                       
+                   </div>
                    </div>
 
                     <div className={`${classes.maincontext} ${classes.banner}`}>
