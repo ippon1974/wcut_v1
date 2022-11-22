@@ -1,0 +1,19 @@
+.viewportcontainer {
+  margin: 50px auto;
+  overflow:hidden;
+  position:relative;
+  width: 303px;
+}
+
+.viewport {
+  height:0;
+  top:-228px;
+  margin:0;
+  position:relative;
+}
+
+.viewport img {
+  top:0;
+  left:0;
+  border:0;
+}

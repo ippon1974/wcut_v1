@@ -10,6 +10,17 @@ import {Helmet} from "react-helmet";
 
 export  default function Index() {
    
+    useEffect(() => {
+     //$("#mydiv").css( "border","3px solid red" );
+    
+     $(window).on('load', function() {
+        $('.viewport').each(function () { var imgHeight = $(this).find('>img').css('height'); 
+        $(this).animate({ height: imgHeight, top: '-' + imgHeight }, { queue: false, duration: 100, easing: 'swing' }).css('overflow', 'visible'); });
+        setTimeout("$('.viewport').parent().parent().closest('div').parent().hover(function(){ $(this).find('.viewport').stop().animate({top: 0},{queue:false,duration:250,easing:'swing'}); }, function() {var imgHeight = $(this).find('.viewport').find('>img').css('height'); $(this).find('.viewport').stop().animate({top:'-'+imgHeight},{queue:false,duration:200,easing:'swing'}); });", 500);
+     })
+     
+  })
+
    return (
        <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
             <Head>
@@ -74,7 +85,9 @@ export  default function Index() {
 
                     <div className={`${classes.worksList}`}>
                         <figure className={`${classes.itemWorks}`}>
-                            <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                            <Link href={'#'}>
+                                <Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
+                            </Link>
                             <figcaption>
                                 <h2><Link href={'#'}>Адресная табличка из стали. Охуенная табличка рекомендую</Link></h2>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit explicabo voluptas culpa obcaecati molestiae. Quos.</p>
@@ -210,6 +223,10 @@ export  default function Index() {
                 <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
             </div>
             <div className={classes.endpage}></div>
+            <div id="mydiv">5555555</div>
+           
+        
+
        </Layout>
 
        

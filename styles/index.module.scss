@@ -633,14 +633,20 @@ ul.menunav li {
 }
 
 .maincontext .viewportcontainer {
-  margin: 0;
-
+  overflow:hidden;
+  position:relative;
+  width: 303px;
 }
 
 .maincontext .viewport {
-  
+  height:0px;
+  top:-228px;
+  margin:0;
+  position:relative;
 }
   
 .maincontext .viewport img {
-   
+  top:0;
+  left:0;
+  border:0;
 }
