@@ -5,17 +5,11 @@ import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
-import $ from 'jquery';         
+import $ from 'jquery';
+import {Helmet} from "react-helmet";  
 
 export  default function Index() {
-
-    useEffect(() => {
-        $(window).ready(function(){
-            console.log("hi vovan ");
-            });
-      
-      })
-
+   
    return (
        <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
             <Head>
@@ -217,5 +211,7 @@ export  default function Index() {
             </div>
             <div className={classes.endpage}></div>
        </Layout>
+
+       
    );
 }

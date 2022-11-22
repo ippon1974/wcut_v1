@@ -1,7 +1,7 @@
 import '../styles/reset.scss';
 import '../styles/main.scss';
 import '../styles/test.scss';
-//import '../js/main';
+//import '../js/test.js';
 //import '../js/jquery.min.js';
 import NextNProgress from "nextjs-progressbar";
 
@@ -13,8 +13,7 @@ export default function MyApp({Component, pageProps}) {
                 startPosition={0.3}
                 stopDelayMs={200}
                 height={2}
-                showOnShallow={true} />
-      
+                showOnShallow={true} />      
         <Component {...pageProps} />
       </>
   );
