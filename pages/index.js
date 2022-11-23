@@ -6,7 +6,8 @@ import Head from 'next/head';
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
-import {Helmet} from "react-helmet";  
+import {Helmet} from "react-helmet";
+import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 
 export  default function Index() {
    
@@ -16,9 +17,7 @@ export  default function Index() {
      $(window).on('load', function() {
         $('.viewport').each(function () { var imgHeight = $(this).find('>img').css('height'); 
         $(this).animate({ height: imgHeight, top: '-' + imgHeight }, { queue: false, duration: 100, easing: 'swing' }).css('overflow', 'visible'); });
-        setTimeout("$('.viewport').parent().parent().closest('div').parent().hover(function(){ $(this).find('.viewport').stop().animate({top: 0},{queue:false,duration:250,easing:'swing'}); }, function() {var imgHeight = $(this).find('.viewport').find('>img').css('height'); $(this).find('.viewport').stop().animate({top:'-'+imgHeight},{queue:false,duration:200,easing:'swing'}); });", 500);
      })
-     
   })
 
    return (

@@ -3,6 +3,7 @@
   overflow:hidden;
   position:relative;
   width: 303px;
+  background: green;
 }
 
 .viewport {
@@ -10,10 +11,27 @@
   top:-228px;
   margin:0;
   position:relative;
+  background: gold;
 }
 
 .viewport img {
   top:0;
   left:0;
   border:0;
+}
+
+.myportcontainer {
+  overflow:hidden;
+  position:relative;
+  width:303px;
+}
+
+.myport {
+  height:0px;top:-228px;margin:0;position:relative;clear:both;
+}
+
+.myport img {
+  top:0;
+  left:0;
+  border: 1px solid black;
 }
