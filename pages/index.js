@@ -211,7 +211,6 @@ export  default function Index() {
                     <div>
                         <Image src={'/home_intro.gif'} width={"303"} height={"1961"} alt={""}></Image>
                     </div>
-                   
                 </div>
                 
                 <div className={`${classes.item} ${classes.footer}`}>
@@ -221,13 +220,7 @@ export  default function Index() {
                 </div>
                 <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
             </div>
-            <div className={classes.endpage}></div>
-            <div id="mydiv">5555555</div>
-           
-        
-
+            <div className={classes.endpage}></div>`
        </Layout>
-
-       
    );
 }
