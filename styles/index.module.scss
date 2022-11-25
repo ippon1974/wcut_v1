@@ -113,6 +113,19 @@ ul.menunav li {
   display: block;
 }
 
+.maincontext .viewportcontainer {
+  margin: 0;
+  overflow:hidden;
+  position:relative;
+  height: 351px;
+  width: 655px;
+}
+
+.maincontext .blockDesc {
+  margin: 0 0 0 35px;
+  padding: 0 0 0 0;
+}
+
 .maincontext div h2 {
   background: black;
   font-size: 2.3em;
@@ -179,8 +192,37 @@ ul.menunav li {
   display: grid;
   padding: 0;
   grid-template-columns: 303px 303px;
-  gap: 11px;
+  gap: 10px;
 }
+
+.maincontext .viewportcontainerWork{
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+  position:relative;
+  height: 228px;
+  width:303px;
+}
+
+.maincontext .worksListDesc {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: 303px 303px;
+}
+
+.maincontext .worksListDesc div{
+  border: 2px solid black;
+  grid-auto-flow: column;
+  background: gold;
+}
+
+
+
+
+// .maincontext .worksList .descriptionWorks {
+//   margin: 0;
+// }
 
 .itemWorks {
   margin: 0;
@@ -630,23 +672,4 @@ ul.menunav li {
 
 .endpage {
   height: 3.0em;
-}
-
-.maincontext .viewportcontainer {
-  overflow:hidden;
-  position:relative;
-  width: 303px;
-}
-
-.maincontext .viewport {
-  height:0px;
-  top:-228px;
-  margin:0;
-  position:relative;
-}
-  
-.maincontext .viewport img {
-  top:0;
-  left:0;
-  border:0;
 }
