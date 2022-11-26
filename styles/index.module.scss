@@ -192,7 +192,11 @@ ul.menunav li {
   display: grid;
   padding: 0;
   grid-template-columns: 303px 303px;
-  gap: 10px;
+  gap: 13px;
+}
+
+.maincontext .worksList div {
+  background: black;
 }
 
 .maincontext .viewportcontainerWork{
@@ -206,23 +210,100 @@ ul.menunav li {
 
 .maincontext .worksListDesc {
   display: grid;
+  margin: 0 0 0 35px;
   padding: 0;
-  margin: 0;
-  grid-template-columns: 303px 303px;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
 }
 
-.maincontext .worksListDesc div{
-  border: 2px solid black;
-  grid-auto-flow: column;
-  background: gold;
+.maincontext .worksListDesc div {
+  margin: 0; padding: 0;
+}
+
+.maincontext .worksListDesc .one,
+.maincontext .worksListDesc .two {
+  width: 303px;
+  background: black;
+}
+
+.maincontext .worksListDesc .one h2,
+.maincontext .worksListDesc .two h2 {
+  margin: 0; padding: 5px 10px 5px 10px;
+  font-size: 1.3em;
+}
+
+.maincontext .worksListDesc .one p,
+.maincontext .worksListDesc .two p {
+  margin: 0; padding: 0 10px 10px 10px;
+  font-size: 0.8em;
+}
+
+.maincontext .worksListDesc .one h2 > a,
+.maincontext .worksListDesc .two h2 > a {
+  margin: 0; padding: 0;
+  text-decoration: none;
+}
+
+
+.maincontext .worksListArrowLink{
+  display: grid;
+  margin: 0 0 0 35px; 
+  padding: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.maincontext .worksListArrowLink div{
+  margin: 0; padding: 0;
+}
+
+.maincontext .worksListArrowLink .block_all {
+  border-top: 1px solid #F6F6C2;
+  width: 303px;
+  background: black;
+}
+
+.maincontext .worksListArrowLink .block_all .info_block {
+  display: grid;
+  grid-template-columns: 43px 1fr;
+}
+
+.maincontext .worksListArrowLink .block_all .info_block div{
+  margin: 0; padding: 0;
+}
+
+.maincontext .worksListArrowLink .block_all .info_block .info_block_arrow{
+  padding: 0 0 0 5px;
+}
+
+.maincontext .worksListArrowLink .block_all .info_block .info_block_link {
+  border-left: 1px solid #F6F6C2;
+  padding: 3px 0 0 8px;
+  font: 18px/28px 'BebasNeueRegular',Arial,sans-serif;
+}
+
+.info_block .info_block_link a {
+  text-decoration: none;
+  color: #F6F6C2;
+}
+
+.info_block .info_block_link a:hover {
+  color: #ee3124;
 }
 
 
 
 
-// .maincontext .worksList .descriptionWorks {
-//   margin: 0;
-// }
+
+
+
+
+
+
+
+
+
+
 
 .itemWorks {
   margin: 0;

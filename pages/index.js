@@ -25,9 +25,10 @@ export  default function Index() {
     }  
 
     const imgWork = {
-        top:0,
-        left:0,
-        border:0
+        top: 0,
+        left: 0,
+        border: 0,
+        display: 'block'
     }
 
     useEffect(() => {
@@ -113,23 +114,6 @@ export  default function Index() {
 
                     <div className={`${classes.worksList}`}>
                         
-                        {/* <div className={classes.viewportcontainerWork}>
-                        <figure>
-                            <div className={'viewportWork'} style={workPort}>
-                            <Image style={imgWork} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
-                            <Image style={imgWork} src={'/works/1013_2.jpg'} width={'303'} height={'227'} alt={''}></Image>
-                            </div>
-                            <figcaption>
-                                <h2><Link href={'#'}>Адресная табличка из стали. Охуенная табличка рекомендую</Link></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit explicabo voluptas culpa obcaecati molestiae. Quos.</p>
-                            </figcaption>
-                            <div className={classes.blokImgWorkLink}>
-                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkImg}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
-                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkText}`}><Link href={'#'}>Подробнее</Link></div>
-                            </div>
-                        </figure>
-                        </div> */}
-
                         <Link href={'#'}>    
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
@@ -147,24 +131,34 @@ export  default function Index() {
                             </div>
                         </div>
                         </Link>
-                        
-                        {/* <figure className={`${classes.itemWorks}`}>
-                            <Link href={'#'}><Image src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
-                            <figcaption>
-                                <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую</Link></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magnam eum voluptas mollitia, eveniet cupiditate.</p>
-                            </figcaption>
-                            <div className={classes.blokImgWorkLink}>
-                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkImg}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
-                                <div className={`${classes.blokImgWorkLink} ${classes.itemBox} ${classes.blokImgWorkLInkText}`}><Link href={'#'}>Подробнее</Link></div>
-                            </div>
-                        </figure> */}
+                    
                     </div>
 
                     <div className={`${classes.worksListDesc}`}>
-                        <div>Lorem ipsum </div>
-                        <div>Lorem i</div>
+                        <div className={`${classes.one}`}>
+                        <h2><Link href={'$'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
+                        </div>
+                        <div className={`${classes.two}`}>
+                            <h2><Link href={'$'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
+                        </div>
                     </div>
+
+                    <div className={`${classes.worksListArrowLink}`}>
+                            <div className={`${classes.block_all}`}>
+                                <div className={`${classes.info_block}`}>
+                                    <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                    <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
+                                </div>
+                            </div>
+                            <div className={`${classes.block_all}`}>
+                                <div className={`${classes.info_block}`}>
+                                    <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                    <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
+                                </div>
+                            </div>
+                    </div>    
 
 
                     <div className={`${classes.blockRedPrice}`}>
