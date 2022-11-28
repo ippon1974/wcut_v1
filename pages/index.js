@@ -192,11 +192,12 @@ export  default function Index() {
                         <figure className={`${classes.news_all}`}>
                             <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
                             <figcaption className={classes.newsfigcaption}>
-                                <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                                <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую. Проверка длины строки мать ее так прямо тут</Link></h2>
                             </figcaption>
                             <div className={classes.dtNews}>07 07 2015</div>
-                            <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</Link></p>
+                            <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusantium, harum est null</Link></p>
                         </figure>
+                       
                         <figure className={`${classes.news_all}`}>
                             <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
                             <figcaption className={classes.newsfigcaption}>

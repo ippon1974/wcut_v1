@@ -301,10 +301,6 @@ ul.menunav li {
 
 
 
-
-
-
-
 .itemWorks {
   margin: 0;
 }
@@ -500,6 +496,10 @@ ul.menunav li {
   display: grid;
   grid-template-columns: 303px 303px;
   gap: 11px;
+}
+
+.news_all .newsfigcaption {
+  height: 5em;
 }
 
 .news_all .newsfigcaption h2 {
