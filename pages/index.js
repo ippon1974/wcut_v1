@@ -68,8 +68,8 @@ export  default function Index() {
                             </div>
                         </div>
                     </div>
-
                 </div>
+                
                 <div className={`${classes.item} ${classes.nav}`}>
 
                     <ul className={classes.menunav}>

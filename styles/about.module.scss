@@ -26,17 +26,17 @@
   margin: 0;
 }
 
-.logo {
-  grid-area: logo;
-  margin: 20px 0 0 37px;
-}
-
 .wrapperLogo {
   display: grid;
   grid-template-areas:
           "logo texthead";
   grid-template-columns: 224px 1fr;
   grid-template-rows: 6.9375em;
+}
+
+.logo {
+  grid-area: logo;
+  margin: 20px 0 0 37px;
 }
 
 .texthead {

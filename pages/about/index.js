@@ -5,8 +5,8 @@ import Head from 'next/head';
 import Image from "next/image";
 
 export default function About() {
-    return(
 
+    return(
         <Layout title={'О компании'}>
 
             <Head>
@@ -17,10 +17,12 @@ export default function About() {
                 <meta content='yes' name='apple-mobile-web-app-capable'/>
             </Head>
 
-            <div className={classes.wrapper}>
+            
+            <div className={`${classes.wrapper}`}>
 
-            {/* <div className={`${classes.item} ${classes.header}`}>
-                    <div className={classes.wrapperLogo}>
+            <div className={`${classes.header}`}>
+            
+                    <div className={`${classes.wrapperLogo}`}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>
                             <Link title='Сивек Water Jet' href={'/'}>
                                 <picture>
@@ -36,8 +38,7 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-
-                </div> */}
+            </div>
                 
                 <div className={`${classes.item} ${classes.nav}`}>
 
@@ -113,3 +114,4 @@ export default function About() {
         </Layout>
     );
 }
+
