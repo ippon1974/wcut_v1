@@ -6,7 +6,6 @@
           "nav nav nav"
           "aleft main aright"
           "footer footer footer";
-  //grid-template-columns: 9.25em 1fr 15.25em;
   grid-template-columns: 12.488em 1fr 21.875em;
   grid-gap: 0px;
   width: 63em;
@@ -237,11 +236,12 @@ ul.menunav li {
 
 
 
-
 .hr {
   border-bottom: 1px solid #303028;
   padding-bottom: 0.8em;
 }
+
+
 
 .footer {
   grid-area: footer;

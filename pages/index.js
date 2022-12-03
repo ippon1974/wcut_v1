@@ -50,6 +50,7 @@ export  default function Index() {
                 {/* <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous" /> */}
             </Head>
             <div className={classes.wrapper}>
+                
                 <div className={`${classes.item} ${classes.header}`}>
                     <div className={classes.wrapperLogo}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>

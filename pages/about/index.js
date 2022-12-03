@@ -18,7 +18,8 @@ export default function About() {
             </Head>
 
             <div className={classes.wrapper}>
-                <div className={`${classes.item} ${classes.header}`}>
+
+            {/* <div className={`${classes.item} ${classes.header}`}>
                     <div className={classes.wrapperLogo}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>
                             <Link title='Сивек Water Jet' href={'/'}>
@@ -36,7 +37,8 @@ export default function About() {
                         </div>
                     </div>
 
-                </div>
+                </div> */}
+                
                 <div className={`${classes.item} ${classes.nav}`}>
 
                     <ul className={classes.menunav}>
@@ -52,9 +54,11 @@ export default function About() {
                     </ul>
 
                 </div>
+
                 <div className={`${classes.item} ${classes.asideleft}`}>
                     <div><p>О компании</p></div>
                 </div>
+
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     <div>
                         <h2>О компании</h2>
@@ -94,13 +98,17 @@ export default function About() {
                 </div>
 
                 </div>
+
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>
                         <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                    </div>
                 </div>
+
                 <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
+
             </div>
+
             <div className={classes.endpage}></div>
         </Layout>
     );

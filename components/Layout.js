@@ -13,15 +13,20 @@ const Layout = ({children, title = 'Civek Water Jet', description = 'Можем 
                             <meta name="keywords" content={keywords} />
                             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     </Head>
-
+                    
                 <div className="Layout">
-                {/*<Header/>*/}
+
+                {/* <div className={'wrapper'}> */}
+                
+                <Header/>
+                
                 {/*<NavBar/>*/}
                 {/*        <div className="wrapper-main">*/}
                 {/*                */}
                 {/*        </div>*/}
                     {children}
                 {/*<Footer/>*/}
+                {/* </div> */}
                 </div>
             </>
         )

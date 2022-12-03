@@ -3,8 +3,12 @@ import classes from '../../styles/materials.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+import { getFontOverrideCss } from "next/dist/server/font-utils";
 
 export default function Price() {
+
+   
+
     return(
         <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
              <Head>
@@ -16,26 +20,9 @@ export default function Price() {
             </Head>
 
 
-            <div className={classes.wrapper}>
-                <div className={`${classes.item} ${classes.header}`}>
-                    <div className={classes.wrapperLogo}>
-                        <div className={`${classes.itemLogo} ${classes.logo}`}>
-                            <Link title='Сивек Water Jet' href={'/'}>
-                                <picture>
-                                    <img src="/logo.jpg" alt="Сивек Water Jet" />
-                                </picture>
-                            </Link>
-                        </div>
-                        <div className={`${classes.itemLogo} ${classes.texthead}`}>
-                            <div>
-                                <h2>Гидроабразивная резка в Москве</h2>
-                                <h3>Металл, стекло, камень, агломерат, полимеры, пластик, керамика.</h3>
-                                <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
-                            </div>
-                        </div>
-                    </div>
+            {/* <div className={classes.wrapper}> */}
 
-                </div>
+
                 <div className={`${classes.item} ${classes.nav}`}>
 
                     <ul className={classes.menunav}>
@@ -51,11 +38,13 @@ export default function Price() {
                     </ul>
 
                 </div>
+
                 <div className={`${classes.item} ${classes.asideleft}`}>
                     <div><p>Цены на раскрой</p></div>
                 </div>
+
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    <div>
+                     <div>
                         <h2>Стоимость раскроя материала с применением технологии гидроабразивной резки</h2>
                         <div className={classes.hr}></div>
                         <h3>Стоимость</h3>
@@ -91,15 +80,19 @@ export default function Price() {
                         <p>Адрес: 140080 ул. Карла Маркса 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института  &laquo;ВНИИСТРОМ&raquo;</p>
                         <h3>Доставка</h3>
                         <p>Доставка заказа в любой регион России. Доставка по Москве и Московской области.</p>
+                        
                         <div className={classes.mainlinefooter}>
                             <span><Link href={'/equipment'} title='Контакты'>
                             <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />
                             Станки</Link></span></div>
                         </div>
-                    </div>
+                   
+                </div>
+
+
                 <div className={`${classes.item} ${classes.asideright}`}>
 
-                <div className={`${classes.testHeadBlockOne}`}> 
+                  <div className={`${classes.testHeadBlockOne}`}> 
                     <div className={classes.testHeadBlockOneImg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
                     <div className={classes.testHeadBlockOneText}>Контакты</div>
                 </div>
@@ -112,14 +105,21 @@ export default function Price() {
                 </div>
                 
                 </div>
+
+
+
                 <div className={`${classes.item} ${classes.footer}`}>
                    <div>
-                        <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&laquo;</p>
+                        <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                    </div>
                 </div>
+
                 <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
-            </div>
-            <div className={classes.endpage}></div>
+            
+            {/* </div> */}
+
+        
+
         </Layout>
     );
 }

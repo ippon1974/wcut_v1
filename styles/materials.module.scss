@@ -1,17 +1,17 @@
 .wrapper{
-    margin: 0 auto;
-    display: grid;
-    grid-template-areas:
-            "head head head"
-            "nav nav nav"
-            "aleft main aright"
-            "footer footer footer";
-    grid-template-columns: 12.488em 1fr 21.875em;
-    grid-gap: 0px;
-    width: 63em;
-    background-image: url("/contentbg.jpg");
-    background-repeat: repeat-y;
-    background-position: 12px 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+          "head head head"
+          "nav nav nav"
+          "aleft main aright"
+          "footer footer footer";
+  grid-template-columns: 12.488em 1fr 21.875em;
+  grid-gap: 0px;
+  width: 63em;
+  background-image: url("/contentbg.jpg");
+  background-repeat: repeat-y;
+  background-position: 12px 0;
   }
   
   .item {
@@ -300,7 +300,9 @@
     border-bottom: 1px solid #303028;
     padding-bottom: 0.8em;
   }
+
   
+
   .footer {
     grid-area: footer;
   }

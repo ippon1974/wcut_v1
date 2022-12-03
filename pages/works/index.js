@@ -37,7 +37,9 @@ export default function Works() {
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>
             </Head>
+
             <div className={classes.wrapper}>
+
                 <div className={`${classes.item} ${classes.header}`}>
                     <div className={classes.wrapperLogo}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>
@@ -228,7 +230,9 @@ export default function Works() {
                    </div>
                 </div>
                 <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
+            
             </div>
+
             <div className={classes.endpage}></div>
         </Layout>
     );
