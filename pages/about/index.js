@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import Navigation from "../../components/ui/navigation"
 import classes from '../../styles/about.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
@@ -21,7 +22,7 @@ export default function About() {
             <div className={`${classes.wrapper}`}>
 
             <div className={`${classes.header}`}>
-            
+            <Navigation />
                     <div className={`${classes.wrapperLogo}`}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>
                             <Link title='Сивек Water Jet' href={'/'}>
