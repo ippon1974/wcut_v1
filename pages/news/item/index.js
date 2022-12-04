@@ -1,5 +1,6 @@
-import Layout from "../../../components/Layout";
+import Layout from "../../../components/layout/Layout";
 import classes from '../../../styles/articleItem.module.scss';
+import Header from "../../../components/ui/header/header";
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
@@ -15,23 +16,7 @@ export default function Item() {
             </Head>
              <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
-                    <div className={classes.wrapperLogo}>
-                        <div className={`${classes.itemLogo} ${classes.logo}`}>
-                            <Link title='Сивек Water Jet' href={'/'}>
-                                <picture>
-                                    <img src="/logo.jpg" alt="Сивек Water Jet" />
-                                </picture>
-                            </Link>
-                        </div>
-                        <div className={`${classes.itemLogo} ${classes.texthead}`}>
-                            <div>
-                                <h2>Гидроабразивная резка в Москве</h2>
-                                <h3>Металл, стекло, камень, агломерат, полимеры, пластик, керамика.</h3>
-                                <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
-                            </div>
-                        </div>
-                    </div>
-
+                    <Header />
                 </div>
                 <div className={`${classes.item} ${classes.nav}`}>
 

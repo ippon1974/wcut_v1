@@ -1,5 +1,6 @@
-import Layout from "../../components/Layout";
-import Navigation from "../../components/ui/navigation"
+import Layout from "../../components/layout/Layout";
+import Navigation from "../../components/ui/navigation/navigation";
+import Header from "../../components/ui/header/header";
 import classes from '../../styles/about.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
@@ -20,10 +21,11 @@ export default function About() {
 
             
             <div className={`${classes.wrapper}`}>
-
             <div className={`${classes.header}`}>
-            <Navigation />
-                    <div className={`${classes.wrapperLogo}`}>
+            <Header />
+            {/* <Navigation /> */}
+
+                    {/* <div className={`${classes.wrapperLogo}`}>
                         <div className={`${classes.itemLogo} ${classes.logo}`}>
                             <Link title='Сивек Water Jet' href={'/'}>
                                 <picture>
@@ -38,7 +40,7 @@ export default function About() {
                                 <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
             </div>
                 
                 <div className={`${classes.item} ${classes.nav}`}>

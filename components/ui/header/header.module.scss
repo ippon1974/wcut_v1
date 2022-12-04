@@ -1,0 +1,46 @@
+.wrapperLogo {
+  display: grid;
+  grid-template-areas:
+          "logo texthead";
+  grid-template-columns: 224px 1fr;
+  grid-template-rows: 6.9375em;
+}
+
+.itemLogo {}
+
+.logo{
+    grid-area: logo;
+    margin: 20px 0 0 37px;
+}
+
+.texthead{
+    margin: 0;
+}
+
+.texthead div {
+  margin: 20px 35px 0 50px;
+  padding: 0 0 0 0;
+  font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+  color: #f1f1c5;
+  background: url("/texture.png") repeat #280000;
+}
+
+.texthead h2 {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  padding: 16px 0 0 12px;
+}
+
+.texthead h3 {
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  padding: 0px 0 4px 12px;
+}
+
+.texthead p {
+  font-size: 0.7em;
+  margin: 0;
+  padding: 3px 12px;  
+  color: #cb4c00; 
+  border-top: 1px solid wheat;
+}

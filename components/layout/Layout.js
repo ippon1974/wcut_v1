@@ -1,7 +1,4 @@
 import Head from 'next/head';
-import Header from "./Header";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
 
 const Layout = ({children, title = 'Civek Water Jet', description = 'Можем отрезать что хочешь',keywords = 'Ключевые слова прямо тут бля' }) => {
 
@@ -14,7 +11,7 @@ const Layout = ({children, title = 'Civek Water Jet', description = 'Можем 
                             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     </Head>
                     
-                <div className="wrapperOselOsel">
+        
 
                 {/* <Header/> */}
 
@@ -23,7 +20,7 @@ const Layout = ({children, title = 'Civek Water Jet', description = 'Можем 
                 {/* <NavBar/> */}
                 {/*<Footer/>*/}
                 
-                </div>
+                
             </>
         )
 }

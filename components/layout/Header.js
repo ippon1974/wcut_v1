@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useRouter } from 'next/router';
-import Image from 'next/image';
-import classes from '../styles/Header.module.scss';
+import Image from 'next/image'; 
 
 const Header = () => {
 
