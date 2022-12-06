@@ -1,18 +1,15 @@
-.nav {
-    grid-area: nav;
-    width: 58.4375em;
-    margin: 34px 0 0 37px;
-  }
-  
   ul.menunav {
-    padding: 3px 0 0 0;
+    padding: 5px 0 0 0;
     background-image: url(/greenbg.png);
   }
   
   ul.menunav li {
     display: inline;
+    font-size: 1.5em;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+    background: green;
     list-style-type: none;
-    padding: 8px 14px 4px 14px;
+    padding: 5px 14px 0 14px;
     background-image: url(/greenbg.png);
     border-right-color: wheat;
     border-right-style: solid;
@@ -20,7 +17,6 @@
   }
   
   .menunav li a {
-    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
     letter-spacing: 0;
     text-transform: uppercase;
     text-decoration: none;
