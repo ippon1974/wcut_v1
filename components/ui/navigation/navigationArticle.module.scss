@@ -1,0 +1,31 @@
+.blockNewsNavRight {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1px;
+    margin: 15px 35px 3em 90px;
+  }
+
+.blockNewsNavRight .boxnews {
+    margin: 0;
+    padding: 0;
+  }
+
+  .blockNewsNavRight .nameItem {
+    grid-column: 1 / 4;
+    background: url("/texture.png") repeat top left #E72519;
+    font-size: 1.1em;
+    color: #F6F6C2 !important;
+    height: 33px;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+  }
+  .blockNewsNavRight .boxnews a > img {
+    display: block;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .blockNewsNavRight .boxnews .news{margin: 0; padding: 0;}
+  .blockNewsNavRight .market{margin: 0; padding: 0;}
+  .blockNewsNavRight .cnews{margin: 0; padding: 0;}

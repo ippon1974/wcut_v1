@@ -1,6 +1,7 @@
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/header";
 import Navigation from "../../components/ui/navigation/navigation";
+import NavigationArticle from "../../components/ui/navigation/navigationArticle";
 import Footer from "../../components/ui/footer/footer";
 import classes from '../../styles/article.module.scss';
 import Link from "next/link";
@@ -72,8 +73,10 @@ export default function News() {
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 
-                <div className={classes.blockNewsNavRight}>
-                    <div className={`${classes.boxnews} ${classes.nameItem}`}>
+                {/* <div className={classes.blockNewsNavRight}> */}
+
+                    <NavigationArticle />
+                    {/* <div className={`${classes.boxnews} ${classes.nameItem}`}>
                         <Image src="/filterby.png" width={"224"} height={"33"} alt="" />
                     </div>
                     <div className={`${classes.boxnews} ${classes.news}`}>
@@ -105,8 +108,8 @@ export default function News() {
                         <Link href={"/news/video"} title="Видео">
                             <Image src={"/fun_off.jpg"} width={"74"} height={"74"} alt="Видио"></Image>
                         </Link>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
 
                 <div className={`${classes.testHeadBlockOne}`}> 
                     <div className={classes.testHeadBlockOneImg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>

@@ -40,18 +40,6 @@ const Navigation = () => {
 
                 })}
                 </ul>
-
-                {/* <ul className={`${classes.menunav}`}>
-                    <li><Link href={"/"}>Главная</Link></li>
-                    <li><Link href={"/services"}>Услуги</Link></li>
-                    <li><Link href={"/works"}>Работы</Link></li>
-                    <li><Link href={"/equipment"}>Станки</Link></li>
-                    <li><Link href={"/materials"}>Цены</Link></li>
-                    <li><Link href={"/technology"}>Технология</Link></li>
-                    <li><Link href={"/news"}>Новости</Link></li>
-                    <li><Link href={"/about"}>О компании</Link></li>
-                    <li><Link href={"/contact"}>Контакты</Link></li>
-                </ul> */}
         </>
     )
 }
