@@ -1,6 +1,8 @@
 import Layout from "../components/layout/Layout";
-import classes from '../styles/index.module.scss';
 import Header from "../components/ui/header/header";
+import Navigation from "../components/ui/navigation/navigation";
+import Footer from "../components/ui/footer/footer";
+import classes from '../styles/index.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
@@ -58,17 +60,7 @@ export  default function Index() {
                 
                 <div className={`${classes.item} ${classes.nav}`}>
 
-                    <ul className={classes.menunav}>
-                        <li><Link href={"/"}>Главная</Link></li>
-                        <li><Link href={"/services"}>Услуги</Link></li>
-                        <li><Link href={"/works"}>Работы</Link></li>
-                        <li><Link href={"/equipment"}>Станки</Link></li>
-                        <li><Link href={"/materials"}>Цены</Link></li>
-                        <li><Link href={"/technology"}>Технология</Link></li>
-                        <li><Link href={"/news"}>Новости</Link></li>
-                        <li><Link href={"/about"}>О компании</Link></li>
-                        <li><Link href={"/contact"}>Контакты</Link></li>
-                    </ul>
+                   <Navigation />
 
                 </div>
                
@@ -253,13 +245,17 @@ export  default function Index() {
                    
                 </div>
                 
-                <div className={`${classes.item} ${classes.footer}`}>
-                   <div>
-                        <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&laquo;</p>
-                   </div>
+                <div className={classes.componentfooter}>
+
+                {/* <div> */}
+                    <Footer />
                 </div>
-                <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
+            
             </div>
+
+
+            
+
             <div className={classes.endpage}></div>
        </Layout>
 

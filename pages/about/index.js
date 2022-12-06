@@ -1,6 +1,7 @@
 import Layout from "../../components/layout/Layout";
-import Navigation from "../../components/ui/navigation/navigation";
 import Header from "../../components/ui/header/header";
+import Navigation from "../../components/ui/navigation/navigation";
+import Footer from "../../components/ui/footer/footer";
 import classes from '../../styles/about.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
@@ -22,41 +23,13 @@ export default function About() {
             
             <div className={`${classes.wrapper}`}>
             <div className={`${classes.header}`}>
-            <Header />
-            {/* <Navigation /> */}
 
-                    {/* <div className={`${classes.wrapperLogo}`}>
-                        <div className={`${classes.itemLogo} ${classes.logo}`}>
-                            <Link title='Сивек Water Jet' href={'/'}>
-                                <picture>
-                                    <img src="/logo.jpg" alt="Сивек Water Jet" />
-                                </picture>
-                            </Link>
-                        </div>
-                        <div className={`${classes.itemLogo} ${classes.texthead}`}>
-                            <div>
-                                <h2>Гидроабразивная резка в Москве</h2>
-                                <h3>Металл, стекло, камень, агломерат, полимеры, пластик, керамика.</h3>
-                                <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
-                            </div>
-                        </div>
-                    </div> */}
+            <Header />
+            
             </div>
                 
-                <div className={`${classes.item} ${classes.nav}`}>
-
-                    <ul className={classes.menunav}>
-                        <li><Link href={"/"}>Главная</Link></li>
-                        <li><Link href={"/services"}>Услуги</Link></li>
-                        <li><Link href={"/works"}>Работы</Link></li>
-                        <li><Link href={"/equipment"}>Станки</Link></li>
-                        <li><Link href={"/materials"}>Цены</Link></li>
-                        <li><Link href={"/technology"}>Технология</Link></li>
-                        <li><Link href={"/news"}>Новости</Link></li>
-                        <li><Link href={"/about"}>О компании</Link></li>
-                        <li><Link href={"/contact"}>Контакты</Link></li>
-                    </ul>
-
+                <div className={`${classes.nav}`}>
+                    <Navigation />
                 </div>
 
                 <div className={`${classes.item} ${classes.asideleft}`}>
@@ -103,14 +76,8 @@ export default function About() {
 
                 </div>
 
-                <div className={`${classes.item} ${classes.footer}`}>
-                   <div>
-                        <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
-                   </div>
-                </div>
-
-                <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
-
+                <Footer />   
+                 
             </div>
 
             <div className={classes.endpage}></div>

@@ -1,4 +1,5 @@
 import Layout from "../../components/layout/Layout";
+import Navigation from "../../components/ui/navigation/navigation";
 import classes from '../../styles/technology.module.scss';
 import Header from "../../components/ui/header/header";
 import Link from "next/link";
@@ -24,18 +25,8 @@ export default function Technology() {
                 
                 <div className={`${classes.item} ${classes.nav}`}>
 
-                    <ul className={classes.menunav}>
-                        <li><Link href={"/"}>Главная</Link></li>
-                        <li><Link href={"/services"}>Услуги</Link></li>
-                        <li><Link href={"/works"}>Работы</Link></li>
-                        <li><Link href={"/equipment"}>Станки</Link></li>
-                        <li><Link href={"/materials"}>Цены</Link></li>
-                        <li><Link href={"/technology"}>Технология</Link></li>
-                        <li><Link href={"/news"}>Новости</Link></li>
-                        <li><Link href={"/about"}>О компании</Link></li>
-                        <li><Link href={"/contact"}>Контакты</Link></li>
-                    </ul>
-
+                    <Navigation />
+                   
                 </div>
                 <div className={`${classes.item} ${classes.asideleft}`}>
                     <div><p>Технология</p></div>
