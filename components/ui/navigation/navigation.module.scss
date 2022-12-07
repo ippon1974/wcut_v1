@@ -31,15 +31,14 @@
     display: grid;
     //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    grid-auto-rows: 30px;
+    //grid-auto-rows: 2.3em;
     background-image: url(/greenbg.png);
-    //align-items: center;
   }
 
   .itemMenu {
     color: #f2f2bf;
     text-align: center;
-    padding: 5px 0 0 0;
+    padding: 0.1em 0;
     border-right: 1px solid white;
     font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
     background-image: url(/greenbg.png);
