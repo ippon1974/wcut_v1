@@ -31,17 +31,22 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    //grid-auto-rows: 4vh;
+    justify-content: left;
+    align-content: center;
+    //grid-auto-rows: 5vh;
+    //justify-items: center;
     background-image: url(/greenbg.png);
+    //background:black;
   }
 
   .itemMenu {
+    display: block;
     color: #f2f2bf;
-    text-align: center;
-    padding: 5px;
-    border-right: 1px solid white;
-    //font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
-    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    padding: 5px 15px 0px 15px;
+    border-right: 1px solid #f2f2bf;
+    font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
+    //font: 28px/38px 'BebasNeueRegular',Arial,sans-serif;
+    //background-image: url(/greenbg.png);
     background-image: url(/greenbg.png);
   }
 
