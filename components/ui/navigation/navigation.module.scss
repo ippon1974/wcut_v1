@@ -28,19 +28,20 @@
   }
 
   .menuContainer {
+    box-sizing: border-box;
     display: grid;
-    //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    //grid-auto-rows: 2.3em;
+    //grid-auto-rows: 4vh;
     background-image: url(/greenbg.png);
   }
 
   .itemMenu {
     color: #f2f2bf;
     text-align: center;
-    padding: 0.2em 0 0.0em 0;
+    padding: 5px;
     border-right: 1px solid white;
-    font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
+    //font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
+    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
     background-image: url(/greenbg.png);
   }
 
