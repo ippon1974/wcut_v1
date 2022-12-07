@@ -23,7 +23,19 @@ const Navigation = () => {
 
     return (
         <>
-                <ul className={`${classes.menunav}`}>
+
+                <ul className={classes.menuContainer}>
+                    <li className={`${classes.itemMenu}`}><Link href={'/'}>Главная</Link></li>
+                    <li className={`${classes.itemMenu}`}>Услуги</li>
+                    <li className={`${classes.itemMenu}`}>Работы</li>
+                    <li className={`${classes.itemMenu}`}>Станки</li>
+                    <li className={`${classes.itemMenu}`}>Цены</li>
+                    <li className={`${classes.itemMenu}`}>Технология</li>
+                    <li className={`${classes.itemMenu}`}>Новости</li>
+                    <li className={`${classes.itemMenu} ${classes.activenew}`}><Link href={'/about'}>О компании</Link></li>
+                    <li className={`${classes.itemMenu}`}>Контакты</li>
+                </ul>
+                {/* <ul className={`${classes.menunav}`}>
                 {menu.map(menu => {
                     if (asPath === menu.uri || pathItem === menu.item)
                     {
@@ -39,7 +51,7 @@ const Navigation = () => {
                     }
 
                 })}
-                </ul>
+                </ul> */}
         </>
     )
 }

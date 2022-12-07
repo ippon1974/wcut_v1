@@ -26,3 +26,33 @@
   .menunav .active {
     background-image: url(/activenavbg.png);
   }
+
+  .menuContainer {
+    display: grid;
+    //grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    background-image: url(/greenbg.png);
+    //align-items: center;
+  }
+
+  .itemMenu {
+    color: #f2f2bf;
+    text-align: center;
+    padding: 5px 0 0 0;
+    border-right: 1px solid white;
+    font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
+    background-image: url(/greenbg.png);
+  }
+
+  .itemMenu a {
+    text-decoration: none;
+    color: #f2f2bf;
+  }
+
+  .itemMenu:hover {
+    background-image: url(/activenavbg.png);
+  }
+
+  .activenew {
+    background-image: url(/activenavbg.png);
+  }
