@@ -14,7 +14,7 @@ const Navigation = () => {
         {id: '5', title: 'Цены', uri: '/materials'},
         {id: '6', title: 'Технология', uri: '/technology'},
         {id: '7', title: 'Новости', uri: '/news', item: "news"},
-        {id: '8', title: 'О компании', uri: '/about'},
+        {id: '8', title: 'О компании 2', uri: '/about'},
         {id: '9', title: 'Контакты', uri: '/contact'}
         ];
 
