@@ -1,14 +1,14 @@
   ul.menunav {
-    padding: 5px 0 7px 0;
+    padding: 0px 0 42px 0;
     background-image: url(/greenbg.png);
   }
   
   ul.menunav li {
-    display: inline;
+    //display: inline;
+    float: left;
     font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
-    background: green;
     list-style-type: none;
-    padding: 6px 14px 7px 14px;
+    padding: 7px 14px 7px 14px;
     background-image: url(/greenbg.png);
     border-right-color: wheat;
     border-right-style: solid;
