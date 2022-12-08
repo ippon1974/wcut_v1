@@ -4,17 +4,12 @@ import Image from "next/image";
 import classes from '../../../components/ui/navigation/navigationArticle.module.scss';
 import { useRouter } from 'next/router';
 
+let i = 0; 
 const NavigationArticle = () => { 
 
     const { asPath, pathname } = useRouter();
-    const [over, setOver] = useState(false);
-    
-    const handleName = name => {
-        setOver({
-          name: name.target.value
-        });
-      };
-   
+    //const [over, setOver] = useState(false);
+
     const menuArticle = [
         {id: '1', title: 'Новости', uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
         {id: '2', title: 'Новости рынка', uri: '/news/marketnews', img: "/news_off.jpg", active: "/news_on.jpg"},
@@ -36,11 +31,11 @@ const NavigationArticle = () => {
                         <Image src="/filterby.png" width={"224"} height={"33"} alt="" />
                     </div>
 
-                   
                     {menuArticle.map(menuArticle => {
-                        //const [over, setOver] = useState(false);
-                        {handleName}
+
                         
+
+                       const [over, setOver] = useState(false);
                         if (asPath === menuArticle.uri)
                         {
                             return (
@@ -59,8 +54,8 @@ const NavigationArticle = () => {
                                 <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
                                     <Link href={menuArticle.uri} title={menuArticle.title}>
                                         <Image
-                                          onMouseOver={() => setOver(true)}
-                                          onMouseOut={() => setOver(false)}
+                                          onMouseOver={()=>setOver(true)}
+                                          onMouseOut={()=>setOver(false)}
                                           src = { over ? menuArticle.active : menuArticle.img}
                                           width={"74"} 
                                           height={"74"} 
