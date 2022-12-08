@@ -21,6 +21,7 @@ export default function Cnews() {
                 <div className={`${classes.item} ${classes.header}`}>
                     <Header />
                 </div>
+                
                 <div className={`${classes.item} ${classes.nav}`}>
 
                    <Navigation />

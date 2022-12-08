@@ -1,39 +1,7 @@
-  ul.menunav {
-    padding: 0px 0 30px 0;
-    background-image: url(/greenbg.png);
-  }
-  
-  ul.menunav li {
-    //display: inline;
-    float: left;
-    //font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
-    font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
-    list-style-type: none;
-    padding: 1px 14px 2px 14px;
-    background-image: url(/greenbg.png);
-    border-right-color: wheat;
-    border-right-style: solid;
-    border-right-width: 1px;
-  }
-  
-  .menunav li a {
-    letter-spacing: 0;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #f2f2bf;
-  }
-
-  .menunav .active {
-    background-image: url(/activenavbg.png);
-  }
-
   .menuContainer {
-    //box-sizing: border-box;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     justify-content: left;
-    //align-content: center;
-    //justify-items: center;
     grid-auto-rows: auto;
     background-image: url(/greenbg.png);
   }
@@ -43,9 +11,6 @@
     color: #f2f2bf;
     padding: 7px;
     border-right: 1px solid #f2f2bf;
-    //font: 20px 'BebasNeueRegular',Arial,sans-serif;
-    //background-image: url(/greenbg.png);
-    //background-image: url(/greenbg.png);
   }
 
   .itemMenu a {

@@ -73,32 +73,10 @@
   
   .nav {
     grid-area: nav;
-    background-image: url(/greenbg.png);
     width: 58.4375em;
     margin: 34px 0 0 37px;
   }
   
-  ul.menunav {
-    padding: 5px 0 2px 0;
-  }
-  
-  ul.menunav li {
-    display: inline;
-    list-style-type: none;
-    padding: 4px 14px 3px 14px;
-    background-image: url(/greenbg.png);
-    border-right-color: wheat;
-    border-right-style: solid;
-    border-right-width: 1px;
-  }
-  
-  .menunav li a {
-    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #f2f2bf;
-  }
   
   .asideleft {
     grid-area: aleft;

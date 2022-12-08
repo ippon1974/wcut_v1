@@ -25,33 +25,22 @@ const Navigation = () => {
         <>
 
                 <ul className={classes.menuContainer}>
-                    <li className={`${classes.itemMenu}`}><Link href={'/'}>Главная</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/services'}>Услуги</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/works'}>Работы</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/equipment'}>Станки</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/materials'}>Цены</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/technology'}>Технология</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/news'}>Новости</Link></li>
-                    <li className={`${classes.itemMenu} ${classes.activenew}`}><Link href={'/about'}>О компании</Link></li>
-                    <li className={`${classes.itemMenu}`}><Link href={'/contact'}>Контакты</Link></li>
-                </ul>
-                {/* <ul className={`${classes.menunav}`}>
                 {menu.map(menu => {
                     if (asPath === menu.uri || pathItem === menu.item)
                     {
                         return (
-                        <li className={classes.active} key={menu.id}>
-                            <Link title={menu.title} href={`${menu.uri}`}>{menu.title}</Link>
-                        </li>)
-                    }else {
-                        return (
-                            <li key={menu.id}>
+                            <li className={`${classes.itemMenu} ${classes.activenew}`} key={menu.id}>
                                 <Link title={menu.title} href={`${menu.uri}`}>{menu.title}</Link>
                             </li>)
-                    }
+                        }else {
+                            return (
+                                <li className={`${classes.itemMenu}`} key={menu.id}>
+                                    <Link title={menu.title} href={`${menu.uri}`}>{menu.title}</Link>
+                                </li>)
+                        }
 
-                })}
-                </ul> */}
+                    })}
+                </ul>
         </>
     )
 }

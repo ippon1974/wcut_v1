@@ -77,29 +77,6 @@
     margin: 34px 0 0 37px;
   }
   
-  ul.menunav {
-    padding: 3px 0 0 0;
-    background-image: url(/greenbg.png);
-  }
-  
-  ul.menunav li {
-    display: inline;
-    list-style-type: none;
-    padding: 8px 14px 4px 14px;
-    background-image: url(/greenbg.png);
-    border-right-color: wheat;
-    border-right-style: solid;
-    border-right-width: 1px;
-  }
-  
-  .menunav li a {
-    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #f2f2bf;
-  }
-  
   .asideleft {
     grid-area: aleft;
   }
