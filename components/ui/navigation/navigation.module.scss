@@ -28,12 +28,12 @@
   }
 
   .menuContainer {
-    box-sizing: border-box;
+    //box-sizing: border-box;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
     justify-content: left;
     align-content: center;
-    //grid-auto-rows: 5vh;
+    //grid-auto-rows: 4vh;
     //justify-items: center;
     background-image: url(/greenbg.png);
     //background:black;
@@ -42,15 +42,17 @@
   .itemMenu {
     display: block;
     color: #f2f2bf;
-    padding: 5px 15px 0px 15px;
+    padding: 15px;
     border-right: 1px solid #f2f2bf;
-    font: 1.5em 'BebasNeueRegular',Arial,sans-serif;
+    //font: 25px 'BebasNeueRegular',Arial,sans-serif;
     //font: 28px/38px 'BebasNeueRegular',Arial,sans-serif;
     //background-image: url(/greenbg.png);
-    background-image: url(/greenbg.png);
+    //background-image: url(/greenbg.png);
   }
 
   .itemMenu a {
+    padding:inherit;
+    font: 15px 'BebasNeueRegular',Arial,sans-serif;
     text-decoration: none;
     color: #f2f2bf;
   }
