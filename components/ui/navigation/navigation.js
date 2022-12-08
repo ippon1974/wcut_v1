@@ -26,14 +26,14 @@ const Navigation = () => {
 
                 <ul className={classes.menuContainer}>
                     <li className={`${classes.itemMenu}`}><Link href={'/'}>Главная</Link></li>
-                    <li className={`${classes.itemMenu}`}>Услуги</li>
-                    <li className={`${classes.itemMenu}`}>Работы</li>
-                    <li className={`${classes.itemMenu}`}>Станки</li>
-                    <li className={`${classes.itemMenu}`}>Цены</li>
-                    <li className={`${classes.itemMenu}`}><strong>Технология</strong></li>
-                    <li className={`${classes.itemMenu}`}>Новости</li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/services'}>Услуги</Link></li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/works'}>Работы</Link></li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/equipment'}>Станки</Link></li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/materials'}>Цены</Link></li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/technology'}>Технология</Link></li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/news'}>Новости</Link></li>
                     <li className={`${classes.itemMenu} ${classes.activenew}`}><Link href={'/about'}>О компании</Link></li>
-                    <li className={`${classes.itemMenu}`}>Контакты</li>
+                    <li className={`${classes.itemMenu}`}><Link href={'/contact'}>Контакты</Link></li>
                 </ul>
                 {/* <ul className={`${classes.menunav}`}>
                 {menu.map(menu => {
