@@ -4,11 +4,11 @@ import Image from "next/image";
 import classes from '../../../components/ui/navigation/navigationArticle.module.scss';
 import { useRouter } from 'next/router';
 
-let i = 0; 
+
 const NavigationArticle = () => { 
 
     const { asPath, pathname } = useRouter();
-    //const [over, setOver] = useState(false);
+    const [over, setOver] = useState(false);
 
     const menuArticle = [
         {id: '1', title: 'Новости', uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
@@ -19,26 +19,21 @@ const NavigationArticle = () => {
         {id: '6', title: 'Видео', uri: '/news/video', img: "/fun_off.jpg", active: "/fun_on.jpg"}
         ];
 
-    const item = asPath.split('/');
-    const pathItem = item[1];
-
     return (
         <>
-
+            
             <div className={classes.blockNewsNavRight}>
-                   
+            
                     <div className={`${classes.boxnews} ${classes.nameItem}`}>
                         <Image src="/filterby.png" width={"224"} height={"33"} alt="" />
                     </div>
-
+                    
                     {menuArticle.map(menuArticle => {
-
-                        
-
-                       const [over, setOver] = useState(false);
+                        console.log(over);
                         if (asPath === menuArticle.uri)
                         {
                             return (
+                                
                                 <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
                                     <Link href={menuArticle.uri} title={menuArticle.title}>
                                         <Image
@@ -47,13 +42,14 @@ const NavigationArticle = () => {
                                          height={"74"} 
                                          alt={menuArticle.title} />
                                     </Link>
+                                    
                                 </div>
                             )
                         }else {
                             return (
                                 <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
                                     <Link href={menuArticle.uri} title={menuArticle.title}>
-                                        <Image
+                                        <Image   
                                           onMouseOver={()=>setOver(true)}
                                           onMouseOut={()=>setOver(false)}
                                           src = { over ? menuArticle.active : menuArticle.img}
@@ -64,7 +60,6 @@ const NavigationArticle = () => {
                                 </div>
                             )
                         }
-
                     })}
             </div>
         </>
