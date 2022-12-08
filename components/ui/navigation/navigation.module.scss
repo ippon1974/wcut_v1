@@ -41,7 +41,7 @@
   .itemMenu {
     display: block;
     color: #f2f2bf;
-    //padding: 15px;
+    padding: 10px;
     border-right: 1px solid #f2f2bf;
     //font: 20px 'BebasNeueRegular',Arial,sans-serif;
     //background-image: url(/greenbg.png);
@@ -49,8 +49,8 @@
   }
 
   .itemMenu a {
-    padding: 0 15px;
-    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    padding: inherit;
+    font: 23px/17px 'BebasNeueRegular',Arial,sans-serif;
     text-decoration: none;
     color: #f2f2bf;
   }

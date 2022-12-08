@@ -30,7 +30,7 @@ const Navigation = () => {
                     <li className={`${classes.itemMenu}`}>Работы</li>
                     <li className={`${classes.itemMenu}`}>Станки</li>
                     <li className={`${classes.itemMenu}`}>Цены</li>
-                    <li className={`${classes.itemMenu}`}>Технология</li>
+                    <li className={`${classes.itemMenu}`}><strong>Технология</strong></li>
                     <li className={`${classes.itemMenu}`}>Новости</li>
                     <li className={`${classes.itemMenu} ${classes.activenew}`}><Link href={'/about'}>О компании</Link></li>
                     <li className={`${classes.itemMenu}`}>Контакты</li>
