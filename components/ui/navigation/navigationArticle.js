@@ -9,7 +9,34 @@ const NavigationArticle = () => {
 
     const { asPath, pathname } = useRouter();
     const [over, setOver] = useState(false);
+    console.log('HOOK REACT ...' ,over);
 
+    function useMyHook(){
+        return 100;
+    }
+    
+    function useFriendStatus(friendID) {
+        const [isOnline, setIsOnline] = useState(false);
+        return isOnline;
+      }
+
+      console.log("HOOK ...", useFriendStatus());
+    
+      function FriendStatus(props) {
+        const isOnline = useFriendStatus(props);
+        if (isOnline === null) {
+          return 'Загрузка...';
+        }
+        return isOnline;
+      }
+      console.log("Status ...", FriendStatus(true));
+
+
+      
+    
+   
+    
+    
     const menuArticle = [
         {id: '1', title: 'Новости', uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
         {id: '2', title: 'Новости рынка', uri: '/news/marketnews', img: "/news_off.jpg", active: "/news_on.jpg"},
@@ -21,15 +48,14 @@ const NavigationArticle = () => {
 
     return (
         <>
-            
             <div className={classes.blockNewsNavRight}>
-            
+
                     <div className={`${classes.boxnews} ${classes.nameItem}`}>
                         <Image src="/filterby.png" width={"224"} height={"33"} alt="" />
                     </div>
                     
                     {menuArticle.map(menuArticle => {
-                        console.log(over);
+                        
                         if (asPath === menuArticle.uri)
                         {
                             return (
@@ -50,9 +76,11 @@ const NavigationArticle = () => {
                                 <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
                                     <Link href={menuArticle.uri} title={menuArticle.title}>
                                         <Image   
-                                          onMouseOver={()=>setOver(true)}
-                                          onMouseOut={()=>setOver(false)}
-                                          src = { over ? menuArticle.active : menuArticle.img}
+                                          onMouseOver={()=>{}}
+                                          onMouseOut={()=>{}}
+
+                                          src = { false ? menuArticle.active : menuArticle.img}
+                                          //src = {menuArticle.active}
                                           width={"74"} 
                                           height={"74"} 
                                           alt={menuArticle.title} />
