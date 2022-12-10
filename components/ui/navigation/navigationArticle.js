@@ -6,10 +6,27 @@ import { useRouter } from 'next/router';
 
 
 const NavigationArticle = () => { 
-    const [value, setValue] = useState('')
+   
     const { asPath, pathname } = useRouter();
+
     const [over, setOver] = useState(false);
-    
+
+    const setMyOver = () => {
+        setOver(true);
+    };
+
+    const setMyOut = () => {
+        setOver(false)
+    }
+
+
+    const [news, setNews] = useState("osel");
+    const [marketnews, setMarketnews] = useState(false);
+    const [cnews, setCnews] = useState(false);
+    const [show, setShow] = useState(false);
+    const [item, setItem] = useState(false);
+    const [video, setVideo] = useState(false);
+
     const menuArticle = [
         {id: '1', title: 'Новости', uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
         {id: '2', title: 'Новости рынка', uri: '/news/marketnews', img: "/news_off.jpg", active: "/news_on.jpg"},
@@ -22,17 +39,18 @@ const NavigationArticle = () => {
     return (
         <>
             <div className={classes.blockNewsNavRight}>
-
+                    {/* <button onClick={setMyOver}>START</button>
+                    <button onClick={setMyOut}>BACK</button> */}
                     <div className={`${classes.boxnews} ${classes.nameItem}`}>
                         <Image src="/filterby.png" width={"224"} height={"33"} alt="" />
                     </div>
                     
-                    {menuArticle.map(menuArticle => {
-                        
+                    {menuArticle.map((menuArticle) => {
+                           
                         if (asPath === menuArticle.uri)
                         {
                             return (
-                                
+                        
                                 <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
                                     <Link href={menuArticle.uri} title={menuArticle.title}>
                                         <Image
@@ -46,18 +64,19 @@ const NavigationArticle = () => {
                             )
                         }else {
                             return (
+                               
                                 <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
+                                    
                                     <Link href={menuArticle.uri} title={menuArticle.title}>
-                                        <Image   
-                                          onMouseOver={()=>{}}
-                                          onMouseOut={()=>{}}
-
-                                          src = { false ? menuArticle.active : menuArticle.img}
-                                          //src = {menuArticle.active}
+                                        <Image
+                                          onMouseOver={()=>setOver(true)}
+                                          onMouseOut={()=>setOver(false)}
+                                          src = { over ? menuArticle.active : menuArticle.img}
                                           width={"74"} 
                                           height={"74"} 
                                           alt={menuArticle.title} />
-                                    </Link>
+                                      </Link>
+                                       
                                 </div>
                             )
                         }
