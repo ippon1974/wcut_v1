@@ -8,19 +8,9 @@ import { useRouter } from 'next/router';
 const NavigationArticle = () => { 
    
     const { asPath, pathname } = useRouter();
-
     const [over, setOver] = useState(false);
-
-    const setMyOver = () => {
-        setOver(true);
-    };
-
-    const setMyOut = () => {
-        setOver(false)
-    }
-
-
-    const [news, setNews] = useState("osel");
+    
+    const [news, setNews] = useState(false);
     const [marketnews, setMarketnews] = useState(false);
     const [cnews, setCnews] = useState(false);
     const [show, setShow] = useState(false);
@@ -39,48 +29,150 @@ const NavigationArticle = () => {
     return (
         <>
             <div className={classes.blockNewsNavRight}>
-                    {/* <button onClick={setMyOver}>START</button>
-                    <button onClick={setMyOut}>BACK</button> */}
                     <div className={`${classes.boxnews} ${classes.nameItem}`}>
                         <Image src="/filterby.png" width={"224"} height={"33"} alt="" />
                     </div>
                     
-                    {menuArticle.map((menuArticle) => {
-                           
-                        if (asPath === menuArticle.uri)
-                        {
-                            return (
-                        
-                                <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
-                                    <Link href={menuArticle.uri} title={menuArticle.title}>
+                    {asPath === menuArticle[0].uri ? 
+                        <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
+                        <Link href={menuArticle[0].uri} title={menuArticle[0].title}>
+                            <Image
+                             src={menuArticle[0].active}
+                             width={"74"} 
+                             height={"74"} 
+                             alt={menuArticle[0].title} />
+                        </Link>
+                    </div>
+                     : 
+                     <div className={`${classes.boxnews} ${classes.news}`}>
+                                    <Link href={menuArticle[0].uri} title={menuArticle[0].title}>
                                         <Image
-                                         src={menuArticle.active}
-                                         width={"74"} 
-                                         height={"74"} 
-                                         alt={menuArticle.title} />
-                                    </Link>
-                                    
-                                </div>
-                            )
-                        }else {
-                            return (
-                               
-                                <div className={`${classes.boxnews} ${classes.news}`} key={menuArticle.id}>
-                                    
-                                    <Link href={menuArticle.uri} title={menuArticle.title}>
-                                        <Image
-                                          onMouseOver={()=>setOver(true)}
-                                          onMouseOut={()=>setOver(false)}
-                                          src = { over ? menuArticle.active : menuArticle.img}
+                                          onMouseOver={()=>setNews(true)}
+                                          onMouseOut={()=>setNews(false)}
+                                          src = { news ? menuArticle[0].active : menuArticle[0].img}
                                           width={"74"} 
                                           height={"74"} 
-                                          alt={menuArticle.title} />
+                                          alt={menuArticle[0].title} />
                                       </Link>
-                                       
                                 </div>
-                            )
-                        }
-                    })}
+                     }
+
+                    {asPath === menuArticle[1].uri ? 
+                        <div className={`${classes.boxnews} ${classes.news}`}>
+                        <Link href={menuArticle[1].uri} title={menuArticle[1].title}>
+                            <Image
+                             src={menuArticle[1].active}
+                             width={"74"} 
+                             height={"74"} 
+                             alt={menuArticle[1].title} />
+                        </Link>
+                    </div>
+                     : 
+                     <div className={`${classes.boxnews} ${classes.news}`}>
+                                    <Link href={menuArticle[1].uri} title={menuArticle[1].title}>
+                                        <Image
+                                          onMouseOver={()=>setMarketnews(true)}
+                                          onMouseOut={()=>setMarketnews(false)}
+                                          src = { marketnews ? menuArticle[1].active : menuArticle[1].img}
+                                          width={"74"} 
+                                          height={"74"} 
+                                          alt={menuArticle[1].title} />
+                                      </Link>
+                    </div>
+                     }
+                     {asPath === menuArticle[2].uri ? 
+                        <div className={`${classes.boxnews} ${classes.news}`}>
+                        <Link href={menuArticle[2].uri} title={menuArticle[2].title}>
+                            <Image
+                             src={menuArticle[2].active}
+                             width={"74"} 
+                             height={"74"} 
+                             alt={menuArticle[2].title} />
+                        </Link>
+                    </div>
+                     : 
+                     <div className={`${classes.boxnews} ${classes.news}`}>
+                                    <Link href={menuArticle[2].uri} title={menuArticle[2].title}>
+                                        <Image
+                                          onMouseOver={()=>setCnews(true)}
+                                          onMouseOut={()=>setCnews(false)}
+                                          src = { cnews ? menuArticle[2].active : menuArticle[2].img}
+                                          width={"74"} 
+                                          height={"74"} 
+                                          alt={menuArticle[2].title} />
+                                      </Link>
+                    </div>
+                     }
+                     {asPath === menuArticle[3].uri ? 
+                        <div className={`${classes.boxnews} ${classes.news}`}>
+                        <Link href={menuArticle[3].uri} title={menuArticle[3].title}>
+                            <Image
+                             src={menuArticle[3].active}
+                             width={"74"} 
+                             height={"74"} 
+                             alt={menuArticle[3].title} />
+                        </Link>
+                    </div>
+                     : 
+                     <div className={`${classes.boxnews} ${classes.news}`}>
+                                    <Link href={menuArticle[3].uri} title={menuArticle[3].title}>
+                                        <Image
+                                          onMouseOver={()=>setShow(true)}
+                                          onMouseOut={()=>setShow(false)}
+                                          src = { show ? menuArticle[3].active : menuArticle[3].img}
+                                          width={"74"} 
+                                          height={"74"} 
+                                          alt={menuArticle[3].title} />
+                                      </Link>
+                    </div>
+                     }
+                     {asPath === menuArticle[4].uri ? 
+                        <div className={`${classes.boxnews} ${classes.news}`}>
+                        <Link href={menuArticle[4].uri} title={menuArticle[4].title}>
+                            <Image
+                             src={menuArticle[4].active}
+                             width={"74"} 
+                             height={"74"} 
+                             alt={menuArticle[4].title} />
+                        </Link>
+                    </div>
+                     : 
+                     <div className={`${classes.boxnews} ${classes.news}`}>
+                                    <Link href={menuArticle[4].uri} title={menuArticle[4].title}>
+                                        <Image
+                                          onMouseOver={()=>setItem(true)}
+                                          onMouseOut={()=>setItem(false)}
+                                          src = { item ? menuArticle[4].active : menuArticle[4].img}
+                                          width={"74"} 
+                                          height={"74"} 
+                                          alt={menuArticle[4].title} />
+                                      </Link>
+                    </div>
+                     }
+                      {asPath === menuArticle[5].uri ? 
+                        <div className={`${classes.boxnews} ${classes.news}`}>
+                        <Link href={menuArticle[5].uri} title={menuArticle[5].title}>
+                            <Image
+                             src={menuArticle[5].active}
+                             width={"74"} 
+                             height={"74"} 
+                             alt={menuArticle[5].title} />
+                        </Link>
+                    </div>
+                     : 
+                     <div className={`${classes.boxnews} ${classes.news}`}>
+                                    <Link href={menuArticle[5].uri} title={menuArticle[5].title}>
+                                        <Image
+                                          onMouseOver={()=>setVideo(true)}
+                                          onMouseOut={()=>setVideo(false)}
+                                          src = { video ? menuArticle[5].active : menuArticle[5].img}
+                                          width={"74"} 
+                                          height={"74"} 
+                                          alt={menuArticle[5].title} />
+                                      </Link>
+                    </div>
+                     }
+                    
             </div>
         </>
     )
