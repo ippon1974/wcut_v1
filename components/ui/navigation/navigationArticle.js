@@ -6,36 +6,9 @@ import { useRouter } from 'next/router';
 
 
 const NavigationArticle = () => { 
-
+    const [value, setValue] = useState('')
     const { asPath, pathname } = useRouter();
     const [over, setOver] = useState(false);
-    console.log('HOOK REACT ...' ,over);
-
-    function useMyHook(){
-        return 100;
-    }
-    
-    function useFriendStatus(friendID) {
-        const [isOnline, setIsOnline] = useState(false);
-        return isOnline;
-      }
-
-      console.log("HOOK ...", useFriendStatus());
-    
-      function FriendStatus(props) {
-        const isOnline = useFriendStatus(props);
-        if (isOnline === null) {
-          return 'Загрузка...';
-        }
-        return isOnline;
-      }
-      console.log("Status ...", FriendStatus(true));
-
-
-      
-    
-   
-    
     
     const menuArticle = [
         {id: '1', title: 'Новости', uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
