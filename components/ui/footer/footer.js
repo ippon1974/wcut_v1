@@ -12,7 +12,7 @@ const Footer = () => {
                         <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                    </div>
             </div>
-            <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; {year}</div>
+            <div className={classes.footerline}>&copy; {year} &laquo;Сивек Water Jet&raquo;</div>
         </>
     )
 }
