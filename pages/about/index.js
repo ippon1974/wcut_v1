@@ -1,13 +1,19 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
-import Header from "../../components/ui/header/header";
-import Navigation from "../../components/ui/navigation/navigation";
-import Footer from "../../components/ui/footer/footer";
+import Header from "../../components/ui/header/Header";
+import Navigation from "../../components/ui/navigation/Navigation";
+import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/about.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive'
 
 export default function About() {
+
+    const [modile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 321px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
         <Layout title={'О компании'}>
@@ -25,11 +31,13 @@ export default function About() {
             <div className={`${classes.header}`}>
 
             <Header />
-            
+
             </div>
                 
                 <div className={`${classes.nav}`}>
-                    <Navigation />
+                     {modile ? <Navigation/> : <Navigation/>}   
+                     {/* {modile &&  <Navigation />} */}
+                    
                 </div>
 
                 <div className={`${classes.item} ${classes.asideleft}`}>

@@ -16,9 +16,10 @@ export default function Test() {
   useEffect(() => setColorTwo(isLaptop), [isLaptop]);
 
     return(
-        <>
-          {color && <p>You are iphone</p>}
-          {colortwo && <p>You are laptop</p>}
-        </>
+        <div>
+          <h1>VOVAN HOW ARE YOU</h1>
+          {color && <div>You are iphone</div>}
+          {colortwo && <div>You are laptop</div>}
+        </div>
     )
 }
