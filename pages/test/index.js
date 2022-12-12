@@ -12,15 +12,13 @@ export default function Test() {
   const isPhone = useMediaQuery({ query: '(max-width: 321px)'})
   const isLaptop = useMediaQuery({ query: '((max-width: 811px) and (min-width: 321px))'})
 
-  useEffect(() => setColor(isPhone))
-  useEffect(() => setColorTwo(isLaptop))
-
-  console.log(color);
+  useEffect(() => setColor(isPhone));
+  //useEffect(() => setColorTwo(isLaptop), [])
 
     return(
         <>
           {color && <p>You are iphone</p>}
-          {colortwo && <p>You are laptop</p>}
+          {/* {colortwo && <p>You are laptop</p>} */}
         </>
     )
 }
