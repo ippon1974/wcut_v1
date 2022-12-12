@@ -12,8 +12,8 @@ export default function Test() {
   const isPhone = useMediaQuery({ query: '(max-width: 321px)'})
   const isLaptop = useMediaQuery({ query: '((max-width: 811px) and (min-width: 321px))'})
 
-  useEffect(() => setColor(isPhone));
-  //useEffect(() => setColorTwo(isLaptop), [])
+  useEffect(() => setColor(isPhone), [isPhone]);
+
 
     return(
         <>
