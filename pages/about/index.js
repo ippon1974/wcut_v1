@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/Navigation";
+import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import MobileFooter from "../../components/ui/footer/MobileFooter";
 import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/about.module.scss';
 import Link from "next/link";
@@ -11,7 +13,7 @@ import { useMediaQuery } from 'react-responsive'
 
 export default function About() {
 
-    const [modile, setMobile] = useState(false)
+    const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 321px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
 
@@ -35,9 +37,7 @@ export default function About() {
             </div>
                 
                 <div className={`${classes.nav}`}>
-                     {modile ? <Navigation/> : <Navigation/>}   
-                     {/* {modile &&  <Navigation />} */}
-                    
+                     {mobile ? <MobileNavigation /> : <Navigation />}   
                 </div>
 
                 <div className={`${classes.item} ${classes.asideleft}`}>
@@ -84,7 +84,7 @@ export default function About() {
 
                 </div>
 
-                <Footer />   
+                {mobile ? <MobileFooter /> : <Footer />}
                  
             </div>
 

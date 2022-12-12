@@ -164,7 +164,6 @@
   margin: 1em 35px 0 90px;
   grid-template-columns: 29px 1fr;
   align-items: center;
-  //height: 33px;
   background: url("/texture.png") repeat top left #E72519;
 }
 .testHeadBlockOneImg {
@@ -257,4 +256,58 @@
 
 .endpage {
   height: 3.0em;
+}
+
+
+@media (max-width: 321px) {
+  .wrapper{
+    grid-template-areas:
+            "nav"
+            "main"
+            "footer";
+    grid-template-columns: auto;
+    background-image: url("/contentbg_mobile.jpg");
+    background-color: #F6F6C2;
+  }
+
+
+  .header{
+    display: none;
+  }
+
+  .nav {
+    margin: 0;
+    padding: 0 10px;
+  }
+
+  .asideleft{
+    display: none;
+  }
+
+  .maincontext {
+    margin: 0 5px 0 10px;
+    width: 300px;
+  }
+
+  .maincontext div h2 {
+    font-size: 4.5vh;
+  }
+
+  .maincontext div p {
+    font-size: 2.5vh;
+  }
+
+  
+
+  .mainlinefooter {
+    display: none;
+  }
+
+  .asideright{
+    display: none;
+  }
+
+  .endpage {
+    display: none;
+  }
 }
