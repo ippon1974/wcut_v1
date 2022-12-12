@@ -14,7 +14,7 @@ import { useMediaQuery } from 'react-responsive'
 export default function About() {
 
     const [mobile, setMobile] = useState(false)
-    const isPhone = useMediaQuery({ query: '(max-width: 321px)'})
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
