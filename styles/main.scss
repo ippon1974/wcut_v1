@@ -1,3 +1,10 @@
+html{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
 @font-face{
     src:url(/font/BebasNeue-webfont.eot);
     src:url(/font/BebasNeue-webfont.eot?iefix) format('eot'),
@@ -16,4 +23,11 @@ body {
     background-image: url('/bgtile.png');
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 481px) {
+    body {
+        background: #ee3124;
+        overflow-x: hidden;
+    }
 }

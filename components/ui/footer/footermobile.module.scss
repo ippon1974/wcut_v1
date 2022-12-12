@@ -1,15 +1,15 @@
 .footerMobile {
-    margin: 0 5px 0 5px;
+    margin: 0;
     border-top:  1px solid #280000;
-    width: 300px;
+    max-width: 400px;
 }
 
 .footerMobile div {
-    padding: 10px 5px;
+    padding: 10px 15px;
 }
 
 .footerMobile div p {
-    font-size: 2vh;
+    font-size: 2.2vh;
     color: gray;
 }
 

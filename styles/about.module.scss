@@ -209,9 +209,6 @@
   color: #ee3124;
 }
 
-
-
-
 .hr {
   border-bottom: 1px solid #303028;
   padding-bottom: 0.8em;
@@ -314,11 +311,12 @@
 
 @media (max-width: 481px) {
   .wrapper{
+    margin: 0 5px 0 3px;
     grid-template-areas:
             "nav"
             "main"
             "footer";
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     background-image: url("/contentbg_mobile.jpg");
     background-color: #F6F6C2;
     width: auto;
@@ -331,7 +329,7 @@
 
   .nav {
     margin: 0;
-    padding: 0 10px;
+    padding: 10px 20px 0 20px;
   }
 
   .asideleft{
@@ -339,19 +337,26 @@
   }
 
   .maincontext {
-    margin: 0 5px 0 10px;
-    width: 300px;
+    margin: 0;
+    padding: 10px 20px 0 15px;
+    max-width: 380px;
   }
 
   .maincontext div h2 {
     font-size: 4.5vh;
   }
 
+  .maincontext div h3 {
+    font-size: 3.0vh;
+  }
+
+  // .maincontext div {
+  //   width: auto;
+  // }
+
   .maincontext div p {
     font-size: 2.5vh;
   }
-
-  
 
   .mainlinefooter {
     display: none;
