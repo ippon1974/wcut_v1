@@ -273,8 +273,7 @@
   }
 
   .nav {
-    margin: 0;
-    padding: 0 10px;
+    
   }
 
   .asideleft{
@@ -282,7 +281,6 @@
   }
 
   .maincontext {
-    margin: 0 5px 0 10px;
     width: 300px;
   }
 
@@ -292,9 +290,8 @@
 
   .maincontext div p {
     font-size: 2.5vh;
+    margin: 0 10px 10px 0;
   }
-
-  
 
   .mainlinefooter {
     display: none;
