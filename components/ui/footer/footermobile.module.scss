@@ -1,23 +1,30 @@
-.footerMobile {
-    margin: 0;
-    border-top:  1px solid #280000;
-    max-width: 400px;
+@media (max-width: 321px) {
+    .footerMobile div {
+        max-width: 290px;
+        margin: 10px;
+        border-top: 1px solid #280000;
+    }
+
+    .footerMobile div p {
+        padding: 10px 0 0 0;
+    }
 }
 
+@media (max-width: 481px) {
 .footerMobile div {
-    padding: 10px 15px;
+    max-width: 385px;
+    margin: 10px;
+    border-top: 1px solid #280000;
 }
 
 .footerMobile div p {
     font-size: 2.2vh;
+    padding: 10px 0 0 0;
     color: gray;
 }
 
 
 .footerlineMobile {
     display: none;
-    width: 300px;
-    font-size: 2vh;
-    color: gray;
-    padding: 0 10px 10em 10px;
+}
 }

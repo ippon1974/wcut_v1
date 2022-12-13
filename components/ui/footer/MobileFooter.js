@@ -7,7 +7,6 @@ const MobileFooter = () => {
 
     return (
         <>
-        
            <div className={`${classes.footerMobile}`}>
                    <div>
                         <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
