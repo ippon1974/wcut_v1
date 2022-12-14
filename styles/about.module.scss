@@ -152,7 +152,7 @@
 }
 
 .maincontext .mainlinefooter span a > img {
-    margin: 0 5px -2px 0;
+  margin: 0 5px -2px 0;
 }
 
 .asideright {
@@ -162,18 +162,19 @@
 .rightOnecContaner {
   display: grid;
   margin: 1em 35px 0 90px;
-  grid-template-columns: 37px auto;
+  grid-template-columns: 29px auto;
   align-items: center;
   background: url("/texture.png") repeat top left #E72519;
 }
 
 .itemOne{
-  margin: 1px 0 0 0;
+  //margin: 1px 0 0 0;
+  padding:  0 2px 0 2px;
 }
 
 .rightOneImg {
   display: block;
-  padding: 1px 0px 0 3px;
+  //padding: 1px 0px 0 3px;
 }
 
 .rightOneText {
