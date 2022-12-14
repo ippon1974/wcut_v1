@@ -69,11 +69,11 @@ export default function About() {
                     </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 
-            
-                <div className={`${classes.testHeadBlockOne}`}> 
-                    <div className={classes.testHeadBlockOneImg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
-                    <div className={classes.testHeadBlockOneText}>Контакты</div>
+                <div className={`${classes.rightOnecContaner}`}> 
+                    <div className={`${classes.itemOne} ${classes.rightOneImg}`}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
+                    <div className={`${classes.itemOne} ${classes.rightOneText}`}>Контакты</div>
                 </div>
+
                 <div className={classes.testHeadBlockBody}>Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни. Телефон в Москве: +7 (925) 585-33-71 (Мегафон)</div>
                 <div className={classes.testHeadBlockTwo}>
                     <div className={classes.testHeadBlockTwoImg}><Image src="/lightarrow.png" width={"16"} height={"16"} alt="" /></div>

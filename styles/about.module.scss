@@ -159,22 +159,30 @@
   grid-area: aright;
 }
 
-.testHeadBlockOne {
+.rightOnecContaner {
   display: grid;
   margin: 1em 35px 0 90px;
-  grid-template-columns: 29px 1fr;
+  grid-template-columns: 37px auto;
   align-items: center;
   background: url("/texture.png") repeat top left #E72519;
 }
-.testHeadBlockOneImg {
-  margin:0;
+
+.itemOne{
+  margin: 1px 0 0 0;
 }
 
-.testHeadBlockOneText {
-  margin: 5px 0 0 4px;
+.rightOneImg {
+  //display: block;
+  padding: 1px 0px 0 3px;
+}
+
+.rightOneText {
+  padding: 0;
+  margin: 5px 0 0 0;
   font-size: 1.1em;
   color: #F6F6C2 !important;
   font-family: 'BebasNeueRegular',Arial,sans-serif;
+  letter-spacing: 1.5px;
 }
 
 .testHeadBlockBody {
