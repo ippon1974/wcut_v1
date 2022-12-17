@@ -84,7 +84,7 @@ export default function About() {
 
                 </div>
 
-                {/* {mobile ? <MobileFooter /> : <Footer />} */}
+                {mobile ? <MobileFooter /> : <Footer />}
                  
             </div>
 

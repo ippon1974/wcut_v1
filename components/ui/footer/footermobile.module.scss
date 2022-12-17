@@ -1,32 +1,88 @@
-@media (max-width: 321px) {
-    
+@media (max-width: 429px) {
     .footerMobile div {
-        width: 285px;
-        margin: 0;
-        padding: 0;
-        border-top: 1px solid #280000;
+        width: 400px;
     }
 
     .footerMobile div p {
-        padding: 10px 0 0 0;
+        font-size: 2.0vh;
+        padding-top:10px;
+        padding-bottom: 10px;
+        color: gray;
+    }
+
+    .footerlineMobile {
+        display: none;
     }
 }
 
-@media (max-width: 481px) {
-.footerMobile div {
-    max-width: 385px;
-    margin: 10px;
-    border-top: 1px solid #280000;
+@media (max-width: 415px) {
+    .footerMobile div {
+        width: 375px;
+    }
+
+    .footerMobile div p {
+        font-size: 2.0vh;
+        padding-top:10px;
+        padding-bottom: 10px;
+        color: gray;
+    }
+
+
+    .footerlineMobile {
+        display: none;
+    }
 }
 
-.footerMobile div p {
-    font-size: 2.2vh;
-    padding: 10px 0 0 0;
-    color: gray;
+@media (max-width: 376px) {
+    .footerMobile div {
+        width: 365px;
+    }
+    
+    .footerMobile div p {
+        font-size: 2.0vh;
+        padding-top:10px;
+        padding-bottom: 10px;
+        color: gray;
+    }
+    
+    
+    .footerlineMobile {
+        display: none;
+    }
 }
 
-
-.footerlineMobile {
-    display: none;
+@media (max-width: 361px) {
+    .footerMobile div {
+        width: 340px;
+    }
+    
+    .footerMobile div p {
+        font-size: 2.0vh;
+        padding-top:10px;
+        padding-bottom: 10px;
+        color: gray;
+    }
+    
+    
+    .footerlineMobile {
+        display: none;
+    }
 }
+
+@media (max-width: 321px) {
+    .footerMobile div {
+        width: 310px;
+    }
+    
+    .footerMobile div p {
+        font-size: 2.0vh;
+        padding-top:10px;
+        padding-bottom: 10px;
+        color: gray;
+    }
+    
+    
+    .footerlineMobile {
+        display: none;
+    }
 }
