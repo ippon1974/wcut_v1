@@ -14,7 +14,7 @@ const MobileNavigation = () => {
 
     return (
         <>
-          this is mobile navigation
+         <p>Mobil Nav</p>
         </>
     )
 }
