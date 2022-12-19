@@ -221,8 +221,6 @@
   padding-bottom: 0.8em;
 }
 
-
-
 .footer {
   grid-area: footer;
 }
@@ -262,7 +260,7 @@
   height: 3.0em;
 }
 
-@media (max-width: 429px){
+@media (max-width: 429px){ // Begin of responsive
   .wrapper{
     grid-template-areas:
             "nav"
@@ -662,7 +660,7 @@
   }
 }
 
-@media (max-width: 321px){ //iPhone5
+@media (max-width: 321px){ //the end of responsive
   .wrapper{
     grid-template-areas:
             "nav"

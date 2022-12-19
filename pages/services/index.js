@@ -1,13 +1,22 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/Navigation";
+import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import MobileFooter from "../../components/ui/footer/MobileFooter";
 import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/service.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive'
 
 export default function Services() {
+
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
+
     return(
        <Layout title={'Услуги'}>
 
@@ -23,9 +32,9 @@ export default function Services() {
                 <Header />
             </div>
                 
-                <div className={`${classes.item} ${classes.nav}`}>
+                <div className={`${classes.nav}`}>
 
-                   <Navigation />
+                {mobile ? <MobileNavigation /> : <Navigation />}   
 
                 </div>
                 <div className={`${classes.item} ${classes.asideleft}`}>
@@ -78,7 +87,8 @@ export default function Services() {
                 </div>
                 
                 </div>
-                <Footer />
+
+                 {mobile ? <MobileFooter /> : <Footer />}
 
 
             </div>
