@@ -4,6 +4,7 @@
     }
 
     .footerMobile div p {
+        display: none;
         font-size: 2.0vh;
         padding-top:10px;
         padding-bottom: 10px;
@@ -33,7 +34,7 @@
     }
 
     .footerlineMobile div {
-        
+       
     }
 }
 
@@ -42,13 +43,14 @@
         width: 330px;
     }
     .footerMobile div p {
+        display: none;
         font-size: 2.0vh;
         padding-top:10px;
         padding-bottom: 10px;
         color: gray;
     }
     .footerlineMobile {
-        display: none;
+        
     }
 }
 
@@ -66,7 +68,7 @@
         color: gray;
     }
     .footerlineMobile {
-        display: none;
+        width: 320px;
     }
 }
 
@@ -81,7 +83,7 @@
         color: gray;
     }
     .footerlineMobile {
-        display: none;
+        width: 290px;
     }
 }
 
@@ -96,6 +98,6 @@
         color: gray;
     }
     .footerlineMobile {
-        display: none;
+        width: 245px;
     }
 }
