@@ -1,3 +1,6 @@
+import Link from "next/link";
+import classes from '../../../components/ui/navigation/navigationMobile.module.scss';
+
 const MobileNavigation = () => {
 
     const menu = [
@@ -14,7 +17,24 @@ const MobileNavigation = () => {
 
     return (
         <>
-         <p>Mobil Nav</p>
+          <div className={classes.hamburger-menu}>
+                <input id={classes.menu__toggle} type="checkbox" />
+                <label className={classes.menu__btn} for={classes.menu__toggle}>
+                    <span></span>
+                </label>
+
+            <ul className={classes.menu__box}>
+                <li><Link className={classes.menu__item} href={'/'} title="Главная">Главная</Link></li>
+                <li><Link className={classes.menu__item} href={'/services'}  title="Услуги">Услуги</Link></li>
+                <li><Link className={classes.menu__item} href={'/works'}  title="Работы">Работы</Link></li>
+                <li><Link className={classes.menu__item} href={'/equipment'} title="Станки">Станки</Link></li>
+                <li><Link className={classes.menu__item} href={'/materials'}  title="Цены">Цены</Link></li>
+                <li><Link className={classes.menu__item} href={'/technology'}  title="Технология">Технология</Link></li>
+                <li><Link className={classes.menu__item} href={'/news'}  title="Новости">Новости</Link></li>
+                <li><Link className={classes.menu__item} href={'/about'}  title="О компании">О компании</Link></li>
+                <li><Link className={classes.menu__item} href={'/contact'}  title="Контакты">Контакты</Link></li>
+            </ul>
+          </div>
         </>
     )
 }
