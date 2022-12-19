@@ -11,7 +11,11 @@
     }
 
     .footerlineMobile {
-        display: none;
+        text-align: center;
+        font-size: 1.9vh;
+        color: gray;
+        padding: 10px;
+        width: 350px;
     }
 }
 
@@ -21,15 +25,15 @@
     }
 
     .footerMobile div p {
+        display: none;
         font-size: 2.0vh;
         padding-top:10px;
         padding-bottom: 10px;
         color: gray;
     }
 
-
-    .footerlineMobile {
-        display: none;
+    .footerlineMobile div {
+        
     }
 }
 
