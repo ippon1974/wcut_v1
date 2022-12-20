@@ -34,7 +34,7 @@ export default function Services() {
                 
                 <div className={`${classes.nav}`}>
 
-                {mobile ? <MobileNavigation /> : <Navigation />}   
+                    {mobile ? <MobileNavigation /> : <Navigation />}   
 
                 </div>
                 <div className={`${classes.item} ${classes.asideleft}`}>
