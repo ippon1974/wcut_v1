@@ -1,13 +1,22 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/Navigation";
+import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import MobileFooter from "../../components/ui/footer/MobileFooter";
 import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/equipment.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive';
 
 export default function Equipment() {
+
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
+
     return(
         <Layout title={'Станки | Гидроабразивная резка в Москве и Москвовской области'}>
             <Head>
@@ -25,10 +34,9 @@ export default function Equipment() {
             </div>
             
                 <div className={`${classes.item} ${classes.nav}`}>
-
-                <Navigation />
-
+                 {mobile ? <MobileNavigation /> : <Navigation />}   
                 </div>
+
                 <div className={`${classes.item} ${classes.asideleft}`}>
                     <div><p>Станки</p></div>
                 </div>
@@ -36,8 +44,9 @@ export default function Equipment() {
                     <div>
                         <h2>Мы работаем на станках от станкостроительной компании «MultiCam»</h2>
                         <div className={classes.hr}></div>
+                        <br />
                         <p>&laquo;<strong>MultiCam</strong>&raquo; — это американская компания, которая производит станки для гидрообразивной, лазерной, плазменной резки. Компания является одним из лидеров на мировом рыне оборудования данного направления.</p>
-                        <Image src="/logomulticam.jpg" width={"460"} height={"120"} alt="img" />
+                        <Image className={classes.responseImg} src="/logomulticam.jpg" width={"460"} height={"120"} alt="img" />
                         <h3>Технические характеристики станка V204-W-40 гидроабразивной резки V серии производство компании «MultiCam»</h3>
                         <ul>
                             <li>Клиренс по оси Z -254 мм</li>
@@ -82,10 +91,10 @@ export default function Equipment() {
                             <li>Насос высокого давления KMT NEOLine™ 40i 40 л.с./ 30 кВт, 55 000 PSI, 2.73 л/мин</li>
                         </ul>
 
-                        <Image src={"/mf1.jpg"} width={"460"} height={"345"} alt="img"></Image>
-                        <Image src={"/mf2.jpg"} width={"460"} height={"345"} alt="img"></Image>
-                        <Image src={"/mf3.jpg"} width={"460"} height={"345"} alt="img"></Image>
-                        <Image src={"/mf4.jpg"} width={"460"} height={"345"} alt="img"></Image>
+                        <Image className={classes.responseImg} src={"/mf1.jpg"} width={"460"} height={"345"} alt="img"></Image>
+                        <Image className={classes.responseImg} src={"/mf2.jpg"} width={"460"} height={"345"} alt="img"></Image>
+                        <Image className={classes.responseImg} src={"/mf3.jpg"} width={"460"} height={"345"} alt="img"></Image>
+                        <Image className={classes.responseImg} src={"/mf4.jpg"} width={"460"} height={"345"} alt="img"></Image>
 
                         <h3>Расположение производства</h3>
                         <p>Адрес: 140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
@@ -122,7 +131,7 @@ export default function Equipment() {
                     <div className={classes.linehedhead}></div>
                 </div>
 
-               <Footer />
+                {mobile ? <MobileFooter /> : <Footer />}
             
             </div>
 

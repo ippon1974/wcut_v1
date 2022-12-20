@@ -23,7 +23,6 @@ const Navigation = () => {
 
     return (
         <>
-
                 <ul className={classes.menuContainer}>
                 {menu.map(menu => {
                     if (asPath === menu.uri || pathItem === menu.item)

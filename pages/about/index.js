@@ -9,7 +9,7 @@ import classes from '../../styles/about.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 export default function About() {
 
