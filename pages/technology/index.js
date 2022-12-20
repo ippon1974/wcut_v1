@@ -1,12 +1,22 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Navigation from "../../components/ui/navigation/Navigation";
+import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import MobileFooter from "../../components/ui/footer/MobileFooter";
+import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/technology.module.scss';
 import Header from "../../components/ui/header/Header";
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive';
 
 export default function Technology() {
+
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
+
     return(
         <Layout title={'Технология'}>
             <Head>
@@ -25,7 +35,7 @@ export default function Technology() {
                 
                 <div className={`${classes.item} ${classes.nav}`}>
 
-                    <Navigation />
+                {mobile ? <MobileNavigation /> : <Navigation />} 
                    
                 </div>
                 <div className={`${classes.item} ${classes.asideleft}`}>
@@ -36,12 +46,20 @@ export default function Technology() {
                         <h2>Технология раскроя материала с помощью гидроабразивной резки</h2>
                         <div className={classes.hr}></div>
                         <p><strong>Гидроабразивная резка</strong> — вид обработки материалов резанием, где в качестве режущего инструмента вместо резца используется струя воды или смеси воды и абразивного материала, выходящая из сопла с высокой скоростью и под высоким давлением.</p>
-                        <iframe width="460" height="280" src="https://www.youtube.com/embed/LyA7VLRZA7k" frameborder="0" allowfullscreen></iframe>
+                        
+                        <div className={classes.containerIframe}>
+                            <iframe className={classes.responsiveiframe} src="https://www.youtube.com/embed/LyA7VLRZA7k"></iframe>
+                        </div>
+
                         <p>В основе <strong>технологии гидроабразивной резки</strong> лежит принцип эрозионного воздействия смеси высокоскоростной водяной струи и твёрдых абразивных частиц на обрабатываемый материал. </p>
                         <p>Физическая суть механизма гидроабразивной резки состоит в отрыве и уносе из полости реза частиц материала скоростным потоком твердофазных частиц.</p>
                         <p>Устойчивость истечения и эффективность воздействия двухфазной струи (вода и абразив) обеспечиваются оптимальным выбором целого ряда параметров резки, включая давление и расход воды, а также расход и размер частиц абразивного материала.</p>
                         <h3>Нестинг (Nesting)</h3>
-                        <iframe width="460" height="280" src="https://www.youtube.com/embed/fkQTZxc3YxY" frameborder="0" allowfullscreen></iframe>
+
+                        <div className={classes.containerIframe}>
+                            <iframe className={classes.responsiveiframe} src="https://www.youtube.com/embed/fkQTZxc3YxY" frameborder="0" allowfullscreen></iframe>
+                        </div>
+
                         <p><strong>Технология нестинга</strong> — это способ раскроя плит (облицованных и необлицованных) режущим инструментом с получением деталей разных форм, расположенных на карте раскроя с максимальной плотностью.</p>
                         <h3>Достоинства гидроабразивной резки</h3>
                         <ul>
@@ -122,12 +140,7 @@ export default function Technology() {
                 </div>
                 
                 </div>
-                <div className={`${classes.item} ${classes.footer}`}>
-                   <div>
-                        <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&laquo;</p>
-                   </div>
-                </div>
-                <div className={classes.footerline}>&copy; &laquo;Сивек Water Jet&raquo; 2022</div>
+                {mobile ? <MobileFooter /> : <Footer />}
             
             </div>
 
