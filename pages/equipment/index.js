@@ -20,8 +20,7 @@ export default function Equipment() {
     return(
         <Layout title={'Станки | Гидроабразивная резка в Москве и Москвовской области'}>
             <Head>
-                {/* <meta name="viewport" content="width=device-width"/> */}
-                <meta name='viewport' content='width=device-width,initial-scale=1'/>
+                <meta name="viewport" content="width=device-width"/>
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>

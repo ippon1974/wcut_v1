@@ -660,7 +660,7 @@
   }
 }
 
-@media (max-width: 321px){ //the end of responsive
+@media (max-width: 321px){
   .wrapper{
     grid-template-areas:
             "nav"
@@ -714,4 +714,4 @@
   .endpage {
     display: none;
   }
-}
+}//the end of responsive
