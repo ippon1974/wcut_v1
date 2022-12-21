@@ -120,7 +120,7 @@ export  default function Index() {
 
             <div className={`${classes.worksListDesc}`}>
                 <div className={`${classes.one}`}>
-                <h2><Link href={'$'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                <h2><Link href={'$'}>Адресная табличка. Охуенная рекомендую. Процесс строка тест проверка длины строки</Link></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                 </div>
                 <div className={`${classes.two}`}>
@@ -163,13 +163,13 @@ export  default function Index() {
             </section>
 
             <div className={`${classes.maincontext} ${classes.allPriceLine}`}>
-                <div className={`${classes.imgAllPrice} ${classes.itemAllPrice}`}>
+                <div className={`${classes.itemAllPrice} ${classes.imgAllPrice}`}>
                     <Link href={'/materials'}><Image src={'/nextRed.gif'} width={'23'} height={'23'} alt={''}></Image></Link>
                 </div>
-                <div className={`${classes.linkAllPrice} ${classes.itemAllPrice}`}><Link href={'/materials'}>Весь прайс-лист на раскрой гидроабразивом</Link></div>
+                <div className={`${classes.itemAllPrice} ${classes.linkAllPrice}`}><Link href={'/materials'}>Весь прайс-лист на раскрой гидроабразивом</Link></div>
             </div>
             <div>
-                <Link href={'/equipment'}><Image src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image></Link>
+                <Link href={'/equipment'}><Image className={classes.responseImg} src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image></Link>
             </div>
             
             <div className = {`${classes.containerNews}`}>

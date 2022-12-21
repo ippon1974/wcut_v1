@@ -745,6 +745,7 @@ ul.menunav li {
   .maincontext .blockDesc h2, .maincontext .blockDesc p {
     margin: 0; padding: 5px 0;
     color: #303028;
+    font-size: 2.2vh;
     font-weight: normal;
     background: inherit;
   }
@@ -796,7 +797,8 @@ ul.menunav li {
   {
     width: 100%;
     margin: 0; padding: 0;
-    font-size: 2.2vh;
+    font-size: 1.7vh;
+    font-weight: bolder;
     background: #F6F6C2;
   }
 
@@ -811,21 +813,71 @@ ul.menunav li {
   .maincontext .worksListDesc .two p
   {
     margin: 0; 
-    padding: 5px 0;
+    padding: 5px 0 0 0;
     width: 100%;
     color: #303028;
     font-weight: normal;
-    font-size: 2vh;
+    font-size: 1.7vh;
     background: #F6F6C2;
   }
-
-
-
-
-
+  
   .maincontext .worksListArrowLink {
     display: none;
   }
+
+  .maincontext .blockRedPrice {
+    margin: 15px 0 0 25px; 
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 385px;
+  }
+
+  .maincontext .blockRedPrice .itemRedPrice img {
+    display: none;
+  }
+
+  .maincontext .blockRedPrice .textLinkRedBlock h2 {
+      padding: 0 0 6px 32px;
+  }
+  .maincontext .blockRedPrice .textLinkRedBlock p{
+    display: none;
+  }
+
+  .maincontext .priceline {
+    margin: 0 0 0 25px; 
+    padding: 0;
+    width: 385px;
+  }
+  .maincontext .priceline li {
+    padding: 10px 10px 0 10px;
+    margin: 0;
+  }
+  
+  .maincontext .allPriceLine {
+    margin: 15px 0 0 25px; 
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 385px;
+  }
+  .maincontext .allPriceLine .imgAllPrice {
+    display: none;
+  }
+  .maincontext .allPriceLine .linkAllPrice{
+    margin: 0; 
+    padding: 10px 0 5px 30px;
+    font-size: 2.6vh;
+  }
+
+  .responseImg {
+    margin: 0 0 0 -10px; 
+    padding: 0;
+    width: 385px;
+    height: auto;
+  }
+
+
 
 
 
