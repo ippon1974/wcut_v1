@@ -57,7 +57,6 @@ export  default function Index() {
     <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
     <Head>
         <meta name="viewport" content="width=device-width"/>
-        
     </Head>
     <div className={classes.wrapper}>
         
@@ -120,11 +119,11 @@ export  default function Index() {
 
             <div className={`${classes.worksListDesc}`}>
                 <div className={`${classes.one}`}>
-                <h2><Link href={'$'}>Адресная табличка. Охуенная рекомендую. Процесс строка тест проверка длины строки</Link></h2>
+                <h2><Link href={'$'} title={'Адресная табличка. Охуенная рекомендую.'}>Адресная табличка. Охуенная рекомендую.</Link></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                 </div>
                 <div className={`${classes.two}`}>
-                    <h2><Link href={'$'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
+                    <h2><Link href={'$'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                 </div>
             </div>
@@ -150,7 +149,7 @@ export  default function Index() {
                     <Image src={'/twitcircle.gif'} width={'60'} height={'60'} alt={''}></Image>
                 </div>
                 <div className={`${classes.itemRedPrice} ${classes.textLinkRedBlock}`}>
-                    <h2><Link href={'/materials'}>Стоимость реза различного материала</Link></h2>
+                    <h2><Link href={'/materials'} title={'Стоимость реза различного материала'}>Стоимость реза различного материала</Link></h2>
                     <p><Link href={'/materials'}>Сталь, мрамор, гранит, латунь, медь, капролон, керамогранит, титан, стекло</Link></p>
                 </div>
             </div>
@@ -166,7 +165,7 @@ export  default function Index() {
                 <div className={`${classes.itemAllPrice} ${classes.imgAllPrice}`}>
                     <Link href={'/materials'}><Image src={'/nextRed.gif'} width={'23'} height={'23'} alt={''}></Image></Link>
                 </div>
-                <div className={`${classes.itemAllPrice} ${classes.linkAllPrice}`}><Link href={'/materials'}>Весь прайс-лист на раскрой гидроабразивом</Link></div>
+                <div className={`${classes.itemAllPrice} ${classes.linkAllPrice}`}><Link href={'/materials'} title={'Весь прайс-лист на раскрой гидроабразивом'}>Весь прайс-лист на раскрой гидроабразивом</Link></div>
             </div>
             <div>
                 <Link href={'/equipment'}><Image className={classes.responseImg} src={'/logoindexmulticam.jpg'} width={'619'} height={'108'} alt={''}></Image></Link>
@@ -174,18 +173,18 @@ export  default function Index() {
             
             <div className = {`${classes.containerNews}`}>
                 <figure className={`${classes.news_all}`}>
-                    <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                    <Link href={'#'}><Image className={classes.responseImg} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
                     <figcaption className={classes.newsfigcaption}>
-                        <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую. Проверка длины строки мать ее так прямо тут</Link></h2>
+                        <h2><Link href={'#'}>Новости производство рынка и другой херни </Link></h2>
                     </figcaption>
                     <div className={classes.dtNews}>07 07 2015</div>
-                    <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusantium, harum est null</Link></p>
+                    <p className={classes.leadNews}><Link href={"#"}>Lorem ium, harum est null</Link></p>
                 </figure>
-               
+                
                 <figure className={`${classes.news_all}`}>
-                    <Link href={'#'}><Image src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                    <Link href={'#'}><Image className={classes.responseImg} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
                     <figcaption className={classes.newsfigcaption}>
-                        <h2><Link href={'#'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                        <h2><Link href={'#'}>Новости станки материалы запчасти рынок и т д</Link></h2>
                     </figcaption>
                     <div className={classes.dtNews}>07 07 2015</div>
                     <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusantium, harum est nulla ex velit commodi repudiandae non sed earum aliquam placeat cumque tenetur deleniti!</Link></p>
@@ -195,7 +194,7 @@ export  default function Index() {
                 <div className={classes.newsImg}>
                     <Link href={'/news'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt={''}></Image></Link>
                 </div>
-                <div className={classes.newsLink}><Link href={'/news'}>Все новости</Link></div>
+                <div className={classes.newsLink}><Link href={'/news'} title={'Все новости'}>Все новости</Link></div>
             </div>
             
             <div className={classes.containerItem}>
@@ -203,21 +202,21 @@ export  default function Index() {
                     <Image src={'/item.gif'} width={'60'} height={'60'} alt={''}></Image>
                 </div>
                 <div className={classes.itemText}>
-                    <h2><Link href={"/news/item"}>Статьи</Link></h2>
-                    <p><Link href={"/news/item"}>Тематические статьи</Link></p>
+                    <h2><Link href={"/news/item"} title={'Статьи'}>Статьи</Link></h2>
+                    <p><Link href={"/news/item"} title={'Тематические статьи'}>Тематические статьи</Link></p>
                 </div>
             </div>
             <section>
-                    <ul className={`${classes.priceline}`}>
+                    <ul className={`${classes.itemline}`}>
                         <li>История CAM систем. <Link href={'#'}>Весь текст</Link></li>
                         <li>Обработка латуни. <Link href={'#'}>Весь текст</Link></li>
                     </ul>
             </section>
-            <div className={`${classes.maincontext} ${classes.allPriceLine}`}>
-                <div className={`${classes.imgAllPrice} ${classes.itemAllPrice}`}>
+            <div className={`${classes.maincontext} ${classes.allItemLine}`}>
+                <div className={`${classes.imgAllItem} ${classes.itemAllItem}`}>
                     <Link href={'/materials'}><Image src={'/nextRed.gif'} width={'23'} height={'23'} alt={''}></Image></Link>
                 </div>
-                <div className={`${classes.linkAllPrice} ${classes.itemAllPrice}`}><Link href={'/news/item'}>Все статьи</Link></div>
+                <div className={`${classes.linkAllItem} ${classes.itemAllItem}`}><Link href={'/news/item'} title={'Все статьи'}>Все статьи</Link></div>
             </div>
 
             <div className={classes.containerVideo}>
@@ -230,7 +229,7 @@ export  default function Index() {
                 </div>
             </div>
             <section>
-                    <ul className={`${classes.priceline}`}>
+                    <ul className={`${classes.videoline}`}>
                         <li><Link href={'#'}>Раскрой гранита 80 мм.</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
                         <li><Link href={'#'}>Раскрой стали 2 мм.</Link> Создание чертежа для изготовления адресной таблички. Гидроабразивная резка.</li>
                     </ul>
