@@ -156,8 +156,8 @@ export  default function Index() {
 
             <section>
                 <ul className={`${classes.priceline}`}>
-                    <li><Link href={"#"}>Медь</Link>. Толщина: 10 мм. Стоимость раскроя за пог.м. — 1060 руб.<p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
-                    <li><Link href={"#"}>Алюминий</Link>. Толщина: 10 мм. Стоимость раскроя за пог.м. — 1340 руб. <p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
+                    <li><Link href={"#"}>Медь</Link>. Лист: 10 мм. Стоимость за пог.м. — 1060 руб.<p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
+                    <li><Link href={"#"}>Алюминий</Link>. Лист: 10 мм. Стоимость за пог.м. — 1340 руб. <p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
                 </ul>
             </section>
 
