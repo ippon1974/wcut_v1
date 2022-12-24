@@ -15,11 +15,7 @@ export default function Price() {
     return(
         <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
              <Head>
-                {/* <meta name="viewport" content="width=device-width"/> */}
-                <meta name='viewport' content='width=device-width,initial-scale=1'/>
-                <meta content='true' name='HandheldFriendly'/>
-                <meta content='width' name='MobileOptimized'/>
-                <meta content='yes' name='apple-mobile-web-app-capable'/>
+                <meta name="viewport" content="width=device-width"/>
             </Head>
 
 
