@@ -311,19 +311,80 @@
     height: 3.0em;
   }
 
-  @media (max-width: 429px){ // Begin of responsive
+  // @media (max-width: 429px){ // Begin of responsive
+  //   .wrapper{
+  //     grid-template-areas:
+  //             "nav"
+  //             "main"
+  //             "footer";
+  //     grid-template-columns: auto;
+  //     align-items: center;
+  //     justify-content: center;
+  //     background-image: url("/contentbg_mobile.jpg");
+  //     background-color: #F6F6C2;
+  //   }
+
+  //   .header{
+  //     display: none;
+  //   }
+  
+  //   .nav p {
+  //      margin: initial;
+  //      margin-left: -40px;
+  //      margin-top: -10px;
+  //   }
+  
+  //   .asideleft{
+  //     display: none;
+  //   }
+  
+  //   .maincontext {
+  //     width: 390px;
+  //     border-bottom: 2px solid #303028;
+  //   }
+
+  //   .containerIframe {
+  //     display: none;
+  //   }
+  
+  //   .maincontext div h2 {
+  //     font-size: 3.2vh;
+      
+  //   }
+    
+  //   .maincontext div h3 {
+  //     font-size: 2.8vh;
+  //   }
+  
+  //   .maincontext div p {
+  //     font-size: 2.2vh;
+  //     margin: 0 10px 10px 0;
+  //   }
+  
+  //   .mainlinefooter {
+  //     display: none;
+  //   }
+  
+  //   .asideright{
+  //     display: none;
+  //   }
+  
+  //   .endpage {
+  //     display: none;
+  //   }
+  // }
+  
+  @media (max-width: 415px){
+    $max-width: 374px;
     .wrapper{
       grid-template-areas:
               "nav"
               "main"
               "footer";
       grid-template-columns: auto;
-      align-items: center;
-      justify-content: center;
-      background-image: url("/contentbg_mobile.jpg");
-      background-color: #F6F6C2;
+      background: #F6F6C2;
     }
-
+  
     .header{
       display: none;
     }
@@ -339,86 +400,38 @@
     }
   
     .maincontext {
-      width: 390px;
+      margin: 0 0 1em 20px;
+      padding: 0 0 1em 0;
+      max-width: $max-width;
       border-bottom: 2px solid #303028;
     }
 
     .containerIframe {
-      display: none;
+          display: none;
     }
   
     .maincontext div h2 {
-      font-size: 3.2vh;
+      font-size: 155%;
       
     }
     
     .maincontext div h3 {
-      font-size: 2.8vh;
+      font-size: 115%;
     }
   
     .maincontext div p {
-      font-size: 2.2vh;
+      font-size: 100%;
       margin: 0 10px 10px 0;
     }
-  
-    .mainlinefooter {
-      display: none;
-    }
-  
-    .asideright{
-      display: none;
-    }
-  
-    .endpage {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 415px){ //iPhone7Plus
-    .wrapper{
-      grid-template-areas:
-              "nav"
-              "main"
-              "footer";
-      grid-template-columns: auto;
-      align-items: center;
-      justify-content: center;
-      background-image: url("/contentbg_mobile.jpg");
-      background-color: #F6F6C2;
-    }
-  
-    .header{
-      display: none;
-    }
-  
-    .nav p {
-       margin: initial;
-       margin-left: -40px;
-       margin-top: -10px;
-    }
-  
-    .asideleft{
-      display: none;
-    }
-  
-    .maincontext {
-      width: 375px;
-      border-bottom: 2px solid #303028;
-    }
-  
-    .maincontext div h2 {
-      font-size: 3.5vh;
-      
-    }
-    
-    .maincontext div h3 {
-      font-size: 3.0vh;
-    }
-  
-    .maincontext div p {
-      font-size: 2.5vh;
-      margin: 0 10px 10px 0;
-    }
+
+    .maincontext div ul {
+      max-width: $max-width; 
+      margin: 0 30px 1em 30px; 
+      padding: 0;
+   }
+   .maincontext div ul li {
+       font-size: 90%;
+   }
   
     .mainlinefooter {
       display: none;

@@ -1,0 +1,72 @@
+@media (max-width: 415px){
+    $max-width: 375px;
+    .wrapper{
+      grid-template-areas:
+              "nav"
+              "main"
+              "footer";
+      grid-template-columns: auto;
+      background: #F6F6C2;
+    }
+  
+    .header{
+      display: none;
+    }
+  
+    .nav p {
+       margin: initial;
+       margin-left: -40px;
+       margin-top: -10px;
+    }
+  
+    .asideleft{
+      display: none;
+    }
+  
+    .maincontext {
+      margin: 0 0 1em 20px;
+      padding: 0 0 1em 0;
+      max-width: $max-width;
+      border-bottom: 2px solid #303028;
+    }
+  
+    .maincontext div h2 {
+      font-size: 175%;
+      
+    }
+    
+    .maincontext div h3 {
+      font-size: 145%;
+    }
+  
+    .maincontext div p {
+      font-size: 100%;
+      margin: 0 10px 10px 0;
+    }
+  
+    .mainlinefooter {
+      display: none;
+    }
+
+    .maincontext .responseImg {
+      max-width: $max-width;
+      height: auto;
+    }
+
+    .maincontext div ul {
+       max-width: $max-width; 
+       margin: 0 30px 1em 30px; 
+       padding: 0;
+    }
+    .maincontext div ul li {
+        font-size: 90%;
+    }
+  
+    .asideright{
+      display: none;
+    }
+  
+    .endpage {
+      display: none;
+    }
+  }

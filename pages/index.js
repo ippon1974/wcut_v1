@@ -149,7 +149,7 @@ export  default function Index() {
                     <Image src={'/twitcircle.gif'} width={'60'} height={'60'} alt={''}></Image>
                 </div>
                 <div className={`${classes.itemRedPrice} ${classes.textLinkRedBlock}`}>
-                    <h2><Link href={'/materials'} title={'Стоимость реза различного материала'}>Стоимость реза различного материала</Link></h2>
+                    <h2><Link href={'/materials'} title={'Прайс лист на раскрой'}>Прайс лист на раскрой</Link></h2>
                     <p><Link href={'/materials'}>Сталь, мрамор, гранит, латунь, медь, капролон, керамогранит, титан, стекло</Link></p>
                 </div>
             </div>

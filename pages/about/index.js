@@ -22,12 +22,8 @@ export default function About() {
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>
-                <meta content='true' name='HandheldFriendly'/>
-                <meta content='width' name='MobileOptimized'/>
-                <meta content='yes' name='apple-mobile-web-app-capable'/>
             </Head>
 
-            
             <div className={`${classes.wrapper}`}>
             <div className={`${classes.header}`}>
 
