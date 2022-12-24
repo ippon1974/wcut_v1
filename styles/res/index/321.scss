@@ -1,9 +1,7 @@
-@media (max-width: 415px) {
-
-    $max-width: 374px;
-  
-    .wrapper{
-      margin: 0 0 0 -20px;
+@media (max-width: 331px) {
+    $max-width: 285px;
+    .wrapper{ 
+      margin: 0 0 0 -15px;
       grid-template-areas:
               "nav"
               "main"
@@ -39,7 +37,7 @@
   
     .maincontext .blockDesc h2 {
       padding: 0;
-      font-size: 245%;
+      font-size: 180%;
       font-family: 'BebasNeueRegular',Arial,sans-serif;
       letter-spacing: 1px;
       background: initial;
@@ -72,7 +70,7 @@
     .maincontext .banner .bannerLinkText {
       margin: 0;
       padding: 0;
-      font-size: 175%;
+      font-size: 120%;
       background: #F6F6C2;
     }
   
@@ -135,7 +133,8 @@
     }
   
     .maincontext .blockRedPrice .textLinkRedBlock h2 {
-        padding: 0 0 6px 25px;
+        font-size: 3.2vh;
+        padding: 0 0 6px 10px;
     }
     .maincontext .blockRedPrice .textLinkRedBlock p{
       display: none;
@@ -173,7 +172,7 @@
       height: auto;
     }
     .maincontext .containerNews .news_all .newsfigcaption h2 {
-      font-size: 1em;
+      font-size: 0.9em;
     }
   
     .maincontext .containerNews .news_all .dtNews,
