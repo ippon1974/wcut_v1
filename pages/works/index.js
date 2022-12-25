@@ -3,6 +3,8 @@ import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/Navigation";
 import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import BlockWork from "../works/blockWork";
+import BlockWorkMobile from "../works/blockWorkMobile";
 import MobileFooter from "../../components/ui/footer/MobileFooter";
 import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/works.module.scss';
@@ -39,7 +41,6 @@ export default function Works() {
         display: 'block'
     }
 
-
     return(
         <Layout title={'Работы'}>
              <Head>
@@ -54,11 +55,11 @@ export default function Works() {
                     {mobile ? <MobileNavigation /> : <Navigation />} 
                 </div>
             
-
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     
+                   {mobile ? <BlockWorkMobile /> : <BlockWork />}
 
-                    <div className={`${classes.newListWork}`}>
+                    {/* <div className={`${classes.newListWork}`}>
                         <Link href={'#'}>    
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
@@ -85,7 +86,9 @@ export default function Works() {
                             </div>
                         </div>
                         </Link>
-                    </div>
+                    </div> */}
+
+
                     
                     <div className={`${classes.worksListDesc}`}>
                         <div className={`${classes.one}`}>
