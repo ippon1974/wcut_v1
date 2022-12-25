@@ -1,16 +1,23 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/Navigation";
+import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import MobileFooter from "../../components/ui/footer/MobileFooter";
 import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/works.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
-import React, { useState, useEffect } from 'react';
 import $ from 'jquery';  
-import { calculateOverrideValues } from "next/dist/server/font-utils";
+import { useMediaQuery } from 'react-responsive';
 
 export default function Works() {
+
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
+
     useEffect(() => {
         $(function(){
             $('.viewportWork').each(function () { var imgHeight =  $(this).find('>img').css('height');  $(this).animate({ height: imgHeight, top: '-' + imgHeight }, { queue: false, duration: 100, easing: 'swing' }).css('overflow', 'visible'); });
@@ -44,9 +51,7 @@ export default function Works() {
                     <Header />
                 </div>
                 <div className={`${classes.item} ${classes.nav}`}>
-
-                    <Navigation />
-
+                    {mobile ? <MobileNavigation /> : <Navigation />} 
                 </div>
             
 
@@ -122,10 +127,9 @@ export default function Works() {
                 </div>
 
                <div className={classes.componentfooter}>
-                <Footer />
+                {mobile ? <MobileFooter /> : <Footer />}
                </div>         
                
-            
             </div>
 
             <div className={classes.endpage}></div>

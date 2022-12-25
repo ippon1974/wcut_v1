@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 import Header from "../components/ui/header/Header";
 import Navigation from "../components/ui/navigation/Navigation";
 import MobileNavigation from "../components/ui/navigation/MobileNavigation";
-import MobileFooter from "../components/ui/footer/MobileFooter";
+import MobileFooterIndex from "../components/ui/footer/MobileFooterIndex";
 import Footer from "../components/ui/footer/Footer";
 import classes from '../styles/index.module.scss';
 import Link from "next/link";
@@ -250,7 +250,7 @@ export  default function Index() {
         </div>
         
         <div className={classes.componentfooter}>
-            {mobile ? <MobileFooter /> : <Footer />}
+            {mobile ? <MobileFooterIndex /> : <Footer />}
         </div>
     
     </div>

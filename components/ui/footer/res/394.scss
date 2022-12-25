@@ -1,11 +1,10 @@
-@media (max-width: 415px) {
-    $max-width: 380px;
+@media (max-width: 394px) {
+    $max-width: 390px;
     .footerMobile div p {
         display: none;
     }
     .footerlineMobile {
        margin: initial; 
-       margin: 0 0 0 20px;
        padding: 0;
        height: 50px;
        max-width: $max-width;
