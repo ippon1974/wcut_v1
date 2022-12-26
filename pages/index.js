@@ -3,6 +3,8 @@ import Layout from "../components/layout/Layout";
 import Header from "../components/ui/header/Header";
 import Navigation from "../components/ui/navigation/Navigation";
 import MobileNavigation from "../components/ui/navigation/MobileNavigation";
+import BlockWork from "./blockWork";
+import BlockWorkMobile from "./blockWorkMobile";
 import MobileFooterIndex from "../components/ui/footer/MobileFooterIndex";
 import Footer from "../components/ui/footer/Footer";
 import classes from '../styles/index.module.scss';
@@ -94,8 +96,10 @@ export  default function Index() {
                   <Link href={"/technology"} title={'Технология гидроабразивной резки'}>Технология гидроабразивной резки</Link>
                 </div>
             </div>
+            
+            {mobile ? <BlockWorkMobile /> : <BlockWork />}
 
-            <div className={`${classes.worksList}`}>
+            {/* <div className={`${classes.worksList}`}>
                 
                 <Link href={'#'}>    
                 <div className={`${classes.viewportcontainerWork}`}>
@@ -115,9 +119,9 @@ export  default function Index() {
                 </div>
                 </Link>
             
-            </div>
+            </div> */}
 
-            <div className={`${classes.worksListDesc}`}>
+            {/* <div className={`${classes.worksListDesc}`}>
                 <div className={`${classes.one}`}>
                 <h2><Link href={'#'} title={'Адресная табличка. Охуенная рекомендую.'}>Адресная табличка. Охуенная рекомендую.</Link></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
@@ -126,7 +130,7 @@ export  default function Index() {
                     <h2><Link href={'#'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                 </div>
-            </div>
+            </div> */}
 
             <div className={`${classes.worksListArrowLink}`}>
                     <div className={`${classes.block_all}`}>
@@ -173,7 +177,7 @@ export  default function Index() {
             
             <div className = {`${classes.containerNews}`}>
                 <figure className={`${classes.news_all}`}>
-                    <Link href={'#'}><Image className={classes.responseImg} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
+                    <Link href={'#'}><Image className={classes.responseImg} src={'/news/1033.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
                     <figcaption className={classes.newsfigcaption}>
                         <h2><Link href={'#'}>Новости производство рынка и другой херни </Link></h2>
                     </figcaption>

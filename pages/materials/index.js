@@ -1,16 +1,21 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/Navigation";
+import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import MobileFooter from "../../components/ui/footer/MobileFooter";
 import Footer from "../../components/ui/footer/Footer";
 import classes from '../../styles/materials.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
-import { getFontOverrideCss } from "next/dist/server/font-utils";
+import { useMediaQuery } from 'react-responsive'; 
 
 export default function Price() {
 
-   
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
         <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
@@ -25,9 +30,7 @@ export default function Price() {
             </div>
                 
                 <div className={`${classes.item} ${classes.nav}`}>
-
-                   <Navigation />
-
+                    {mobile ? <MobileNavigation /> : <Navigation />} 
                 </div>
 
                 <div className={`${classes.item} ${classes.asideleft}`}>
@@ -41,7 +44,8 @@ export default function Price() {
                         <h3>Стоимость</h3>
                         <p>Точная стоимость услуг по гидроабразивной резке определяется после получения чертежей и составления технологии резки, оптимизации раскроя.</p>
                         <p><Link className={classes.activecalc} href="http://calculation.htz.ru/" target={'_blank'} title="Калькулятор гидроабразивной рhttp://localhost:7165/sites/all/themes/tommy/images/iconTwitter.gifезки"><strong>Калькулятор</strong></Link> гидроабразивной резки.</p>
-                        <p>Стоимость раскроя материала указана в рублях РФ за один погонный метр. Минимальная стоимость заказа не должна быть меньше 5000 тысяч рублей. Стоимость создания программы для раскроя — 2500 тысячи рублей.</p>
+                        <p>Стоимость раскроя материала указана в рублях РФ за один погонный метр <strong>без НДС</strong>. Минимальная стоимость заказа не должна быть <strong>меньше 5000 рублей</strong>.</p>
+                        <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
@@ -53,12 +57,17 @@ export default function Price() {
                                 <th>Стоимость</th>
                             </tr>
                             <tr>
-                                <td><a class="active" href="/materials/id/73/" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат 545454 5454</a></td>
+                                <td><a class="active" href="#" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
                                 <td>10 мм.</td>
                                 <td>960 руб. <span class="short">пог. м.</span></td>
                             </tr>
                             <tr>
-                                <td><a class="active" href="/materials/id/73/" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
+                                <td><a class="active" href="#" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
+                                <td>10 мм.</td>
+                                <td>960 руб. <span class="short">пог. м.</span></td>
+                            </tr>
+                            <tr>
+                                <td><a class="active" href="#" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
                                 <td>10 мм.</td>
                                 <td>960 руб. <span class="short">пог. м.</span></td>
                             </tr>
@@ -96,11 +105,11 @@ export default function Price() {
                 </div>
                 
                 </div>
-
-               <Footer />
+                
+                {mobile ? <MobileFooter /> : <Footer />}
             
             </div>
-
+            <div className={classes.endpage}></div>
         
 
         </Layout>

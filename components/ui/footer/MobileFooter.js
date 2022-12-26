@@ -1,4 +1,4 @@
-import classes from '../../../components/ui/footer/footermobile.module.scss';
+import classes from './footer_mobile.module.scss';
 
 const MobileFooter = () => {
 
