@@ -1,5 +1,5 @@
 @media (max-width: 415px){
-    $max-width: 374px;
+    $max-width: 375px;
     .wrapper{
       margin: 0;
       padding: 0;
@@ -26,34 +26,55 @@
     }
   
     .maincontext {
-      margin: 0 0 1em 20px;
-      padding: 0 0 1em 0;
-      max-width: $max-width;
+      margin: 0 0 0 20px;
+      padding: 0 0 0 0;
       border-bottom: 2px solid #303028;
+      max-width: $max-width;
     }
-  
-    .maincontext div h2 {
-      margin: 0;
+
+    .maincontext .newListWork .hr {
+      background: inherit;
+      border-top: 2px solid #303028;
+      border-bottom: none;
+    }
+
+   .maincontext .newListWork {
+      margin: 1em 0 0 0; 
       padding: 0;
+      grid-template-columns: auto;
+    }
+
+    .maincontext .newListWork h2 {
+      margin: 0 0 0.5em 0;
       font-size: 155%;
+      font-weight: bold;
+      color: #303028;
     }
-    
-    .maincontext div h3 {
-      margin: 1.0em 0 0 0;
-      padding: 0;
-      font-size: 115%;
+
+    .maincontext .newListWork div img {
+      display: block;
     }
-  
-    .maincontext div p {
-      margin: 1em 0 0 0;
-      padding: 0;
+
+    .maincontext .newListWork .responseImg {
+      width: 100%;
+      height: auto;
+    }
+
+
+    .maincontext .newListWork .descWork {
+      margin: -13px 0 1.0em 0;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    .maincontext .newListWork .descWork a {
+      color: #F2F2BF;
+      display: block;
+      text-decoration: none;
+      font-weight: bold;
       font-size: 100%;
     }
-  
-    .mainlinefooter {
-      display: none;
-    }
-  
+
     .asideright{
       display: none;
     }

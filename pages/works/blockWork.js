@@ -23,7 +23,7 @@ const blockWork = () => {
     return (
         <>
             <div className={`${classes.newListWork}`}>
-                        <Link href={'#'}>    
+                        <Link href={'#'}>  
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
                                 <Image style={imgWork} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
@@ -50,6 +50,42 @@ const blockWork = () => {
                         </div>
                         </Link>
                     </div>
+
+                    <div className={`${classes.worksListDesc}`}>
+                        <div className={`${classes.one}`}>
+                        <h2><Link href={'$'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
+                        </div>
+                        <div className={`${classes.two}`}>
+                            <h2><Link href={'$'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
+                        </div>
+                        <div className={`${classes.two}`}>
+                            <h2><Link href={'$'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
+                        </div>
+                    </div>
+
+                    <div className={`${classes.worksListArrowLink}`}>
+                            <div className={`${classes.block_all}`}>
+                                <div className={`${classes.info_block}`}>
+                                    <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                    <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
+                                </div>
+                            </div>
+                            <div className={`${classes.block_all}`}>
+                                <div className={`${classes.info_block}`}>
+                                    <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                    <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
+                                </div>
+                            </div>
+                            <div className={`${classes.block_all}`}>
+                                <div className={`${classes.info_block}`}>
+                                    <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                                    <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
+                                </div>
+                            </div>
+                    </div>   
         </>
     )                
 }
