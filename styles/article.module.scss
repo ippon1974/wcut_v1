@@ -284,9 +284,7 @@
   .blockNewsNavRight .market{margin: 0; padding: 0;}
   .blockNewsNavRight .cnews{margin: 0; padding: 0;}
 
-  .blockNewsNavRight .show{}
-  .blockNewsNavRight .item{}
-  .blockNewsNavRight .video{}
+  
   
   .hr {
     border-bottom: 1px solid #303028;
@@ -331,3 +329,13 @@
   .endpage {
     height: 3.0em;
   }
+
+  @import '/styles/res/news/429.scss';
+  @import '/styles/res/news/415.scss';
+  @import '/styles/res/news/394.scss';
+  @import '/styles/res/news/391.scss';
+  @import '/styles/res/news/386.scss';
+  @import '/styles/res/news/384.scss';
+  @import '/styles/res/news/376.scss';
+  @import '/styles/res/news/361.scss';
+  @import '/styles/res/news/321.scss';
