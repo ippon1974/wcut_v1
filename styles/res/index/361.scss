@@ -1,280 +1,275 @@
 @media (max-width: 361px) {
-    $max-width: 320px;
-    .wrapper{ 
-      margin: 0 0 0 -15px;
-      grid-template-areas:
-              "nav"
-              "main"
-              "footer";
-      grid-template-columns: auto;
-      background: #F6F6C2;
-    }
-  
-    .header{
-      display: none;
-    }
-  
-    
-    .maincontext {
-      margin: 0;
-      padding: 0;
-    }
-  
-    .viewportcontainer {
-      display: none;
-    }
-  
-  
-    .maincontext{
-       
-    }
-  
-    .maincontext .blockDesc { 
-     display: grid;
-     grid-template-columns: auto;
-     max-width: $max-width;
-    }
-  
-    .maincontext .blockDesc h2 {
-      padding: 0;
-      font-size: 200%;
-      font-family: 'BebasNeueRegular',Arial,sans-serif;
-      letter-spacing: 1px;
-      background: initial;
-    }
-  
-    .maincontext .blockDesc h2 a{
-      display: block;
-      color: #004d40;
-    }
-  
-    .maincontext .blockDesc p {
-      padding: 0;
-      color: #303028;
-      font-weight: normal;
-      font-size: 100%;
-      background: initial;
-    }
-  
-  
-    .maincontext .banner {
-      padding: 1.0em 0 1.0em 0;
-      background: initial;
-      max-width: $max-width;
-    }
-  
-    .maincontext .banner .bannerArrow {
-       display: none;
-    }
-  
-    .maincontext .banner .bannerLinkText {
-      margin: 0;
-      padding: 0;
-      font-size: 135%;
-      background: #F6F6C2;
-    }
-  
-    .maincontext .banner .bannerLinkText a {
-      color: #ee3124;
-    }
-     
-    .maincontext .worksList {
-      display: none;
-    }
-  
-    .maincontext .worksListDesc {
-      display: grid;
-      grid-template-columns: auto;
-      max-width: $max-width;
-    }
-  
-    .maincontext .worksListDesc .one,
-    .maincontext .worksListDesc .two {
-      width: 100%;
-    }
-  
-    .maincontext .worksListDesc .one h2,
-    .maincontext .worksListDesc .two h2
-    {
-      padding: 0 0 0.6em 0;
-      font-size: 95%;
-      background: #F6F6C2;
-    }
-  
-    .maincontext .worksListDesc .one h2 a,
-    .maincontext .worksListDesc .two h2 a
-    {
-      color: #004d40;
-    }
-  
-    .maincontext .worksListDesc .one p,
-    .maincontext .worksListDesc .two p
-    {
-      margin: 0; 
-      padding: 0;
-      color: #303028;
-      font-weight: normal;
-      font-size: 100%;
-      background: #F6F6C2;
-    }
-    
-    .maincontext .worksListArrowLink {
-      display: none;
-    }
-  
-    .maincontext .blockRedPrice {
-      display: grid;
-      grid-template-columns: auto;
-      max-width: $max-width;
-    }
-  
-    .maincontext .blockRedPrice .itemRedPrice img {
-      display: none;
-    }
-  
-    .maincontext .blockRedPrice .textLinkRedBlock h2 {
-        font-size: 2.9vh;
-        padding: 0 0 6px 10px;
-    }
-    .maincontext .blockRedPrice .textLinkRedBlock p{
-      display: none;
-    }
-  
-    .maincontext .priceline {
-      padding: 0;
-      font-size: 0.95em;
-      max-width: $max-width;
-    }
-    .maincontext .priceline li {
-      padding: 1.0em;
-      border-top: none;
-      border-bottom: 1px dotted #303028;
-    }
-  
-    .maincontext .priceline li p{display: none;}
-    
-    .maincontext .allPriceLine {
-      display: none;
-    }
-  
-    .maincontext .responseImg {
-      max-width: $max-width;
-      height: auto;
-    }
-  
-    .maincontext .containerNews {
-      display: grid;
-      grid-template-columns: auto;
-      max-width: $max-width;
-    }
-  
-    .maincontext .containerNews .news_all .responseImg {
-      min-width: 100%;
-      height: auto;
-    }
-    .maincontext .containerNews .news_all .newsfigcaption h2 {
-      font-size: 0.9em;
-    }
-  
-    .maincontext .containerNews .news_all .dtNews,
-    .maincontext .containerNews .news_all .leadNews {
-      display: none;
-    }
-  
-    .maincontext .containerNewsBotton {
-       max-width: $max-width;
-    }
-    .maincontext .containerNewsBotton .newsImg {
-      display: none;
-    }
-    .maincontext .containerNewsBotton .newsLink {
-      padding: 6px 0 3px 10px;
-      margin: 0 0 0 35px;
-      font-size: 120%;
-      max-width: $max-width - 10px;
-    }
-  
-    .maincontext .containerItem {
-      max-width: $max-width;
-    }
-    .maincontext .containerItem .itemImg {
-      display: none;
-    }
-    .maincontext .containerItem .itemText {
-      padding: 0 0 3px 0;
-    }
-  
-    .maincontext .containerItem .itemText p {
-      display: none;
-    }
-  
-    .maincontext .itemline { 
-      padding: 0;
-      max-width: $max-width;
-    }
-    .maincontext .itemline li {
-      padding: 1em 10px 1em 10px;
-      margin: 0;
-      border-top: none;
-      border-bottom:1px dotted #303028;
-    }
-  
-    .maincontext .allItemLine {
-      display: none;
-    }
-  
-    .maincontext .containerVideo {
-      max-width: $max-width;
-    }
-  
-    .maincontext .containerVideo .videoImg {
-      display: none;
-    }
-  
-    .maincontext .containerVideo .videoText {
-      padding: 3px 0 3px 0;
-    }
-  
-    .maincontext .containerVideo .videoText p {display: none;}
-  
-    .maincontext .videoline {
-      padding: 0;
-      max-width: $max-width;
-    }
-    .maincontext .videoline li {
-      padding: 1em 10px 1em 10px;
-      margin: 0;
-      border-top: none;
-      border-bottom:1px dotted #303028;
-    }
-    .maincontext .allVideoLine {
-      display: none;
-    }
-  
-    .maincontext div h2 {
-      font-size: 3.0vh;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .maincontext div h3 {
-      font-size: 2.8vh;
-    }
-  
-    .maincontext div p {
-      font-size: 2.2vh;
-      margin: 0 10px 10px 0;
-    }
-  
-    .mainlinefooter {
-      display: none;
-    }
-  
-    .asideright{
-      display: none;
-    }
-  
-    .endpage {
-      display: none;
-    }
+  $max-width: 320px;
+  .wrapper{
+    margin: 0 0 0 -15px;
+    grid-template-areas:
+            "nav"
+            "main"
+            "footer";
+    grid-template-columns: auto;
+    background: #F6F6C2;
   }
+
+  .header{
+    display: none;
+  }
+
+  
+  .maincontext {
+    margin: 0;
+    padding: 0;
+  }
+
+  .viewportcontainer {
+    display: none;
+  }
+
+
+  .maincontext{
+     background: inherit;
+  }
+
+  .maincontext .blockDesc { 
+   display: grid;
+   grid-template-columns: auto;
+   max-width: $max-width;
+  }
+
+  .maincontext .blockDesc h2 {
+    padding: 0;
+    font-size: 200%;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+    letter-spacing: 1px;
+    background: initial;
+  }
+
+  .maincontext .blockDesc h2 a{
+    display: block;
+    color: #004d40;
+  }
+
+  .maincontext .blockDesc p {
+    padding: 0;
+    color: #303028;
+    font-weight: normal;
+    font-size: 90%;
+    background: initial;
+  }
+
+
+  .maincontext .banner {
+    padding: 1.0em 0 1.0em 0;
+    background: initial;
+    max-width: $max-width;
+  }
+
+  .maincontext .banner .bannerArrow {
+     display: none;
+  }
+
+  .maincontext .banner .bannerLinkText {
+    margin: 0;
+    padding: 0;
+    font-size: 150%;
+    background: #F6F6C2;
+  }
+
+  .maincontext .banner .bannerLinkText a {
+    color: #ee3124;
+  }
+   
+  .maincontext .worksList {
+    margin: 0 0 0 40px; padding: 0;
+    grid-template-columns: auto;
+    width: $max-width;
+  }
+
+  .maincontext .worksList div {
+    margin: 0; padding: 0;
+    background: inherit;
+  }
+
+  .maincontext .worksList .responseImg {
+    width: 100%;
+    height: auto;
+  }
+
+  .maincontext .worksList .descWork {
+    margin: -13px 0 0 0;
+    padding: 0;
+    background: black;
+    font-size: 100%;
+    width: $max-width;
+    overflow-x:hidden;
+  }
+
+  .maincontext .worksList .descWork p {
+    margin: 0;
+    padding: 15px;
+  }
+  
+  .maincontext .worksList .descWork a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #F2F2BF;
+  }
+  
+  .maincontext .worksListArrowLink {
+    display: none;
+  }
+
+  .maincontext .blockRedPrice {
+    display: grid;
+    grid-template-columns: auto;
+    max-width: $max-width;
+  }
+
+  .maincontext .blockRedPrice .itemRedPrice img {
+    display: none;
+  }
+
+  .maincontext .blockRedPrice .textLinkRedBlock h2 {
+      padding: 0 0 6px 10px;
+  }
+  .maincontext .blockRedPrice .textLinkRedBlock p{
+    display: none;
+  }
+
+  .maincontext .priceline {
+    padding: 0;
+    max-width: $max-width;
+  }
+  .maincontext .priceline li {
+    padding: 1.0em;
+    border-top: none;
+    border-bottom: 1px dotted #303028;
+  }
+
+  .maincontext .priceline li p{display: none;}
+  
+  .maincontext .allPriceLine {
+    display: none;
+  }
+
+  .maincontext .responseImg {
+    max-width: $max-width;
+    height: auto;
+  }
+
+  .maincontext .containerNews {
+    display: grid;
+    grid-template-columns: auto;
+    max-width: $max-width;
+  }
+
+  .maincontext .containerNews .news_all .responseImg {
+    min-width: 100%;
+    height: auto;
+  }
+  .maincontext .containerNews .news_all .newsfigcaption h2 {
+    font-size: 1em;
+  }
+
+  .maincontext .containerNews .news_all .dtNews,
+  .maincontext .containerNews .news_all .leadNews {
+    display: none;
+  }
+
+  .maincontext .containerNewsBotton {
+     max-width: $max-width;
+  }
+  .maincontext .containerNewsBotton .newsImg {
+    display: none;
+  }
+  .maincontext .containerNewsBotton .newsLink {
+    padding: 6px 0 3px 10px;
+    margin: 0 0 0 35px;
+    font-size: 120%;
+    max-width: $max-width - 10px;
+  }
+
+  .maincontext .containerItem {
+    max-width: $max-width;
+  }
+  .maincontext .containerItem .itemImg {
+    display: none;
+  }
+  .maincontext .containerItem .itemText {
+    padding: 0 0 3px 0;
+  }
+
+  .maincontext .containerItem .itemText p {
+    display: none;
+  }
+
+  .maincontext .itemline { 
+    padding: 0;
+    max-width: $max-width;
+  }
+  .maincontext .itemline li {
+    padding: 1em 10px 1em 10px;
+    margin: 0;
+    border-top: none;
+    border-bottom:1px dotted #303028;
+  }
+
+  .maincontext .allItemLine {
+    display: none;
+  }
+
+  .maincontext .containerVideo {
+    max-width: $max-width;
+  }
+
+  .maincontext .containerVideo .videoImg {
+    display: none;
+  }
+
+  .maincontext .containerVideo .videoText {
+    padding: 3px 0 3px 0;
+  }
+
+  .maincontext .containerVideo .videoText p {display: none;}
+
+  .maincontext .videoline {
+    padding: 0;
+    max-width: $max-width;
+  }
+  .maincontext .videoline li {
+    padding: 1em 10px 1em 10px;
+    margin: 0;
+    border-top: none;
+    border-bottom:1px dotted #303028;
+  }
+  .maincontext .allVideoLine {
+    display: none;
+  }
+
+  .maincontext div h2 {
+    font-size: 3.0vh;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .maincontext div h3 {
+    font-size: 2.8vh;
+  }
+
+  .maincontext div p {
+    font-size: 2.2vh;
+    margin: 0 10px 10px 0;
+  }
+
+  .mainlinefooter {
+    display: none;
+  }
+
+  .asideright{
+    display: none;
+  }
+
+  .endpage {
+    display: none;
+  }
+}

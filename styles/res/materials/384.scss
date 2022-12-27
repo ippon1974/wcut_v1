@@ -1,0 +1,107 @@
+@media (max-width: 384px){
+    $max-width: 340px;
+    .wrapper{
+      margin: 0;
+      padding: 0;
+      grid-template-areas:
+              "nav"
+              "main"
+              "footer";
+      grid-template-columns: auto;
+      background: #F6F6C2;
+    }
+  
+    .header{
+      display: none;
+    }
+  
+    .nav p {
+       margin: initial;
+       margin-left: -40px;
+       margin-top: -10px;
+    }
+  
+    .asideleft{
+      display: none;
+    }
+  
+    .maincontext {
+      margin: 0 0 1em 20px;
+      padding: 0 0 0 0;
+      border-bottom: 2px solid #303028;
+      max-width: $max-width;
+    }
+
+    .maincontext div h2 {
+      font-size: 155%;
+    }
+
+    .maincontext div h3 {
+      font-size: 100%;
+    }
+
+    .maincontext div p {
+      font-size: 90%;
+    }
+
+
+
+    
+    .maincontext .pricematerials {
+      width: 100%;
+    }
+  
+    .maincontext .pricematerials > tr {
+      border-bottom-color: #b3aeae;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      padding: 0.5em 0 0.5em 0;
+    }
+  
+    .maincontext .pricematerials tr > th {
+      font-size: 0.8em;
+      font-weight: bold;
+      border-bottom-color: gray;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      border-top-color: gray;
+      border-top-style: solid;
+      border-top-width: thin;
+      padding: 0.5em 0 0.5em 0;
+      text-align: left;
+      color: #303028;
+    }
+  
+    .maincontext .pricematerials tr > td {
+      font-size: 0.8em;
+      color: #303028;
+      padding: 5px 0 6px 0;
+  
+      border-bottom-color: #b3aeae;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      padding: 0.5em 0 0.5em 0;
+  
+  
+    }
+  
+    .maincontext .pricematerials tr td > a {
+      font-size: 0.9em;
+      line-height: 1.4em;
+      color: #4a4d45;
+      text-decoration: none;
+      border-bottom: 1px solid #4a4d45;
+    }
+
+    .maincontext .mainlinefooter {
+      display: none;
+    }
+
+    .asideright{
+      display: none;
+    }
+  
+    .endpage {
+      display: none;
+    }
+  }
