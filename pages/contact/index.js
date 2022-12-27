@@ -53,7 +53,7 @@ export default function Contact() {
                         <p>Режим работы: Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни.</p>
                         <p><strong>Телефон</strong>: +7 (925) 585-33-71 (Мегафон)</p>
                         <p><strong>Электронная почта</strong>: box@wcut.ru</p>
-                        <p className={classes.adrsmall}><strong>Инстаграм</strong>: <Link style={linksmallcolor} href="https://www.instagram.com/civekwaterjet/" target="_blank">https://www.instagram.com/civekwaterjet/</Link></p>
+                        {/* <p className={classes.adrsmall}><strong>Инстаграм</strong>: <Link style={linksmallcolor} href="https://www.instagram.com/civekwaterjet/" target="_blank">https://www.instagram.com/civekwaterjet/</Link></p> */}
                         <p className={classes.adrsmall}><strong>Ютуб</strong>: <Link style={linksmallcolor} href="https://www.youtube.com/channel/UCuQWXTAmeMLsruthyDSI5Gg" target="_blank">https://www.youtube.com/</Link></p>
                         <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.663307,37.994535</p>
                         <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/-/CCUrmKWQdB" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
