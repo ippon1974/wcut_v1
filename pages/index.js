@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../components/layout/Layout";
 import Header from "../components/ui/header/Header";
+import TextHead from "./textHead";
+import TextHeadMobile from "./textHeadMobile";
 import Navigation from "../components/ui/navigation/Navigation";
 import MobileNavigation from "../components/ui/navigation/MobileNavigation";
 import BlockWork from "./blockWork";
@@ -83,12 +85,7 @@ export  default function Index() {
            </Link>
            </div>
 
-           {mobile ? <Image src={'/text_logo_414_2.png'} width={'378'} height={'43'} alt={''}></Image> : ""}
-
-           <div className={classes.blockDesc}>
-           <h2><Link href={"/technology"}>Гидроабразивная резка</Link></h2>
-           <p>Более 70 видов материалов для раскроя. Холодный раскрой без тепловой деформации материала. Подготовка чертежей.</p>
-           </div>
+           {mobile ? <TextHeadMobile /> : <TextHead />}
 
             <div className={`${classes.maincontext} ${classes.banner}`}>
                 <div className={`${classes.itemBanner} ${classes.bannerArrow}`}>
