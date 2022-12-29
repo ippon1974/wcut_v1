@@ -1,14 +1,25 @@
+import React, { useState, useEffect } from 'react';
 import Layout from "../../../components/layout/Layout";
 import Header from "../../../components/ui/header/Header";
 import Navigation from "../../../components/ui/navigation/Navigation";
 import NavigationArticle from "../../../components/ui/navigation/NavigationArticle";
+import MobileNavigation from "../../../components/ui/navigation/MobileNavigation";
+import BlockCNews from "../../news/cnews/blockCNews";
+import BlockCNewsMobile from '../../news/cnews/blockCNewsMobile';
+import MobileFooter from "../../../components/ui/footer/MobileFooter";
 import Footer from "../../../components/ui/footer/Footer";
 import classes from '../../../styles/articleCompany.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive';
 
 export default function Cnews() {
+
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
+
     return(
         <Layout title={'Новости компании'}>
              <Head>
@@ -26,13 +37,15 @@ export default function Cnews() {
                 
                 <div className={`${classes.item} ${classes.nav}`}>
 
-                   <Navigation />
+                    {mobile ? <MobileNavigation /> : <Navigation />} 
 
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     
-                    <div className={classes.blockNewsMain}>
+                {mobile ? <BlockCNewsMobile /> : <BlockCNews />}
+
+                    {/* <div className={classes.blockNewsMain}>
                         <div className={classes.dtMainList}>
                             <p>05 March 2020</p>
                             <span>Раздел: <Link href="">компания</Link></span>
@@ -64,7 +77,7 @@ export default function Cnews() {
                             </span>
                         </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
@@ -84,7 +97,7 @@ export default function Cnews() {
                 </div>
 
                 </div>
-               <Footer />
+                {mobile ? <MobileFooter /> : <Footer />}
             </div>
             <div className={classes.endpage}></div>
 

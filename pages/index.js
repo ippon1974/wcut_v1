@@ -98,8 +98,6 @@ export  default function Index() {
             
             {mobile ? <BlockWorkMobile /> : <BlockWork />}
 
-           
-
             <div className={`${classes.worksListArrowLink}`}>
                     <div className={`${classes.block_all}`}>
                         <div className={`${classes.info_block}`}>

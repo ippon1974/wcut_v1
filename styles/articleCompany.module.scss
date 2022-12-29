@@ -287,10 +287,6 @@
   .blockNewsNavRight .market{margin: 0; padding: 0;}
   .blockNewsNavRight .cnews{margin: 0; padding: 0;}
 
-  .blockNewsNavRight .show{}
-  .blockNewsNavRight .item{}
-  .blockNewsNavRight .video{}
-  
   .hr {
     border-bottom: 1px solid #303028;
     padding-bottom: 0.8em;
@@ -334,3 +330,13 @@
   .endpage {
     height: 3.0em;
   }
+
+  @import '/styles/res/news/cnews/429.scss';
+  @import '/styles/res/news/cnews/415.scss';
+  @import '/styles/res/news/cnews/394.scss';
+  @import '/styles/res/news/cnews/391.scss';
+  @import '/styles/res/news/cnews/386.scss';
+  @import '/styles/res/news/cnews/384.scss';
+  @import '/styles/res/news/cnews/376.scss';
+  @import '/styles/res/news/cnews/361.scss';
+  @import '/styles/res/news/cnews/321.scss';
