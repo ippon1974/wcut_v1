@@ -4,13 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
-
 const BlockCNewsMobile = () => {
 
+    const { asPath, pathname } = useRouter();
+    const item = asPath.split('/');
+    const itemNews = "/" + item[1] + "/" + item[2];
 
     return (
         <>
-            <BlockSubNavNews />
+            <BlockSubNavNews uri = {asPath} item = {itemNews} />
             
             <div className={classes.blockNewsMain}>
                 <div className={classes.newsListMain}>

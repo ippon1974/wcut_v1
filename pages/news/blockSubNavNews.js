@@ -1,10 +1,7 @@
 import Link from "next/link";
-import { useRouter } from 'next/router';
 
-const blockSubNavNews = (props) => { 
+const blockSubNavNews = (props) => {
 
-    // const { asPath, pathname } = useRouter();
-    
     const subMenuNews = [
         {id: '1', title: 'Рынок', uri: '/news/marketnews'},
         {id: '2', title: 'Компания', uri: '/news/cnews'},
@@ -13,29 +10,27 @@ const blockSubNavNews = (props) => {
         {id: '5', title: 'Видео', uri: '/news/video'}
     ];
 
-    // const item = asPath.split('/');
-    // const pathItem = "/" + item[1] + "/" + item[2];
-
     return (
         <>
-             {/* {asPath == '/news' ? <h2>Новости</h2> : <h2><Link href={'/news'} title={'Все новости'}>Новости</Link></h2>} */}
-            {/* <ul>
-                 {subMenuNews.map(subMenuNews => {
-                    if (asPath === subMenuNews.uri || pathItem === subMenuNews.item)
-                    {
-                        return (
-                            <li key={subMenuNews.id}>
-                                {subMenuNews.title}
-                            </li>)
-                        }else {
+           {props.uri === '/news' ? <h2>Новости</h2> : <h2><Link href={'/news'} title={'Все новости'}>Новости</Link></h2>}
+           <ul>
+                {subMenuNews.map(subMenuNews => {
+                        if (props.item === subMenuNews.uri || props.uri === subMenuNews.item)
+                        {
                             return (
                                 <li key={subMenuNews.id}>
-                                    <Link title={subMenuNews.title} href={`${subMenuNews.uri}`}>{subMenuNews.title}</Link>
-                                </li>)
-                        }
-
-                    })}
-            </ul> */}
+                                    {subMenuNews.title}
+                                </li>
+                                )
+                            }else {
+                                return (
+                                        <li key={subMenuNews.id}>
+                                            <Link title={subMenuNews.title} href={`${subMenuNews.uri}`}>{subMenuNews.title}</Link>
+                                        </li>
+                                    )
+                                   }
+                })}
+           </ul>
         </>
     );
 

@@ -1,13 +1,19 @@
+import { useRouter } from 'next/router';
 import classes from '../../styles/article.module.scss';
 import BlockSubNavNews from '../news/blockSubNavNews';
 import Link from "next/link";
 import Image from "next/image";
 
+
 const BlockNewsMobile = () => {
+
+    const { asPath, pathname } = useRouter();
+    const item = asPath.split('/');
+    const itemNews = "/" + item[1] + "/" + item[2];
 
     return (
         <>
-            {/* <BlockSubNavNews /> */}
+            <BlockSubNavNews uri = {asPath} item = {itemNews} />
 
             <div className={classes.hr}></div>
             <div className={classes.blockNewsMain}>
