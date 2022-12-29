@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from 'next/router';
 
-const blockSubNavNews = () =>{
+const blockSubNavNews = (props) => { 
 
-    const { asPath, pathname } = useRouter();
-    useEffect(() => useRouter(pathname), [pathname]);
-
+    // const { asPath, pathname } = useRouter();
+    
     const subMenuNews = [
         {id: '1', title: 'Рынок', uri: '/news/marketnews'},
         {id: '2', title: 'Компания', uri: '/news/cnews'},
@@ -16,13 +13,13 @@ const blockSubNavNews = () =>{
         {id: '5', title: 'Видео', uri: '/news/video'}
     ];
 
-    const item = asPath.split('/');
-    const pathItem = "/" + item[1] + "/" + item[2];
+    // const item = asPath.split('/');
+    // const pathItem = "/" + item[1] + "/" + item[2];
 
     return (
         <>
-             {asPath == '/news' ? <h2>Новости</h2> : <h2><Link href={'/news'} title={'Все новости'}>Новости</Link></h2>}
-            <ul>
+             {/* {asPath == '/news' ? <h2>Новости</h2> : <h2><Link href={'/news'} title={'Все новости'}>Новости</Link></h2>} */}
+            {/* <ul>
                  {subMenuNews.map(subMenuNews => {
                     if (asPath === subMenuNews.uri || pathItem === subMenuNews.item)
                     {
@@ -38,7 +35,7 @@ const blockSubNavNews = () =>{
                         }
 
                     })}
-            </ul>
+            </ul> */}
         </>
     );
 
