@@ -1,9 +1,12 @@
-import classes from '../../styles/article.module.scss';
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
 const blockSubNavNews = () =>{
+
+    const { asPath, pathname } = useRouter();
+    useEffect(() => useRouter(pathname), [pathname]);
 
     const subMenuNews = [
         {id: '1', title: 'Рынок', uri: '/news/marketnews'},
@@ -12,8 +15,6 @@ const blockSubNavNews = () =>{
         {id: '4', title: 'Статьи', uri: '/news/item'},
         {id: '5', title: 'Видео', uri: '/news/video'}
     ];
-
-    const { asPath, pathname } = useRouter();
 
     const item = asPath.split('/');
     const pathItem = "/" + item[1] + "/" + item[2];
