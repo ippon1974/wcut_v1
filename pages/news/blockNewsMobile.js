@@ -22,7 +22,7 @@ const BlockNewsMobile = () => {
             <ul>
                 {subMenuNews.map(subMenuNews => 
                 {return(
-                        <li><Link href={subMenuNews.uri} title={subMenuNews.title}>{subMenuNews.title}</Link></li>
+                        <li key={subMenuNews.id}><Link href={subMenuNews.uri} title={subMenuNews.title}>{subMenuNews.title}</Link></li>
                     )})}
             </ul>
             {/* <ul>
