@@ -6,6 +6,13 @@ const BlockNewsMobile = () => {
     return (
         <>
             <h2>Новости</h2>
+            <ul>
+                <li><Link href={'/news/marketnews'} title={'Новости рынка'}>Рынок</Link></li>
+                <li><Link href={'/news/cnews'} title={'Новости компании'}>Компания</Link></li>
+                <li><Link href={'/news/show'} title={'Выставки'}>Выставки</Link></li>
+                <li><Link href={'/news/item'} title={'Статьи'}>Статьи</Link></li>
+                <li><Link href={'/news/video'} title={'Видео'}>Видео</Link></li>
+            </ul>
             <div className={classes.hr}></div>
             <div className={classes.blockNewsMain}>
                 <div className={classes.newsListMain}>

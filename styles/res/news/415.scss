@@ -1,8 +1,6 @@
 @media (max-width: 415px){
     $max-width: 374px;
     .wrapper{
-    //   margin: 0;
-    //   padding: 0;
       grid-template-areas:
               "nav"
               "main"
@@ -37,6 +35,25 @@
         font-weight: bold;
         font-size: 150%;
         color: #303028;
+    }
+    .maincontext ul {
+      padding: 0.4em 0 0.1em 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      width: 80%;
+    }
+
+    .maincontext ul li {
+      padding: 0; 
+      margin: 0;
+      font-size: 70%;
+    }
+
+    .maincontext ul li a {
+      color: #ee3124;
+      display: block;
+      font-weight: bold;
     }
 
 
