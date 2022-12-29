@@ -31,11 +31,16 @@
     }
 
     .maincontext h2{
-        margin: 1em 0 0 0;
+        margin: 0.5em 0 0 0;
         font-weight: bold;
         font-size: 150%;
         color: #303028;
     }
+
+    .maincontext h2 a{
+      color: #ee3124;
+  }
+
     .maincontext ul {
       padding: 0.4em 0 0.1em 0;
       margin: 0;
@@ -47,7 +52,7 @@
     .maincontext ul li {
       padding: 0; 
       margin: 0;
-      font-size: 70%;
+      font-size: 80%;
     }
 
     .maincontext ul li a {

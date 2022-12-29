@@ -1,18 +1,37 @@
 import classes from '../../styles/article.module.scss';
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from 'next/router';
+
 
 const BlockNewsMobile = () => {
+
+    const subMenuNews = [
+        {id: '1', title: 'Рынок', uri: '/news/marketnews'},
+        {id: '2', title: 'Компания', uri: '/news/cnews'},
+        {id: '3', title: 'Выставки', uri: '/news/show'},
+        {id: '4', title: 'Статьи', uri: '/news/item'},
+        {id: '5', title: 'Видео', uri: '/news/video'}
+    ];
+
+    const { asPath, pathname } = useRouter();
+
     return (
         <>
-            <h2>Новости</h2>
+            {asPath == '/news' ? <h2>Новости</h2> : <h2><Link href={'/news'}>Новости</Link></h2>}
             <ul>
+                {subMenuNews.map(subMenuNews => 
+                {return(
+                        <li><Link href={subMenuNews.uri} title={subMenuNews.title}>{subMenuNews.title}</Link></li>
+                    )})}
+            </ul>
+            {/* <ul>
                 <li><Link href={'/news/marketnews'} title={'Новости рынка'}>Рынок</Link></li>
                 <li><Link href={'/news/cnews'} title={'Новости компании'}>Компания</Link></li>
                 <li><Link href={'/news/show'} title={'Выставки'}>Выставки</Link></li>
                 <li><Link href={'/news/item'} title={'Статьи'}>Статьи</Link></li>
                 <li><Link href={'/news/video'} title={'Видео'}>Видео</Link></li>
-            </ul>
+            </ul> */}
             <div className={classes.hr}></div>
             <div className={classes.blockNewsMain}>
                 <div className={classes.newsListMain}>
