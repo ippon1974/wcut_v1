@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import classes from '../../../components/ui/navigation/navigationArticle.module.scss';
+import classes from '../../../../../components/ui/navigation/main/news/navigationArticle.module.scss';
 import { useRouter } from 'next/router';
 
 

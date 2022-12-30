@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
-import Navigation from "../../components/ui/navigation/Navigation";
-import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import Navigation from "../../components/ui/navigation/main/Navigation";
+import MobileNavigation from "../../components/ui/navigation/mobile/MobileNavigation";
 import BlockWork from "../works/blockWork";
 import BlockWorkMobile from "../works/blockWorkMobile";
 import MobileFooter from "../../components/ui/footer/MobileFooter";

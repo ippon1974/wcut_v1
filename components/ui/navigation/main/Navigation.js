@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from '../../../components/ui/navigation/navigation.module.scss';
+import classes from '../../../../components/ui/navigation/main/navigation.module.scss';
 import { useRouter } from 'next/router';
 
 const Navigation = () => {

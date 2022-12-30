@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
-import Navigation from "../../components/ui/navigation/Navigation";
-import NavigationArticle from "../../components/ui/navigation/NavigationArticle";
-import MobileNavigation from "../../components/ui/navigation/MobileNavigation";
+import Navigation from "../../components/ui/navigation/main/Navigation";
+import NavigationArticle from "../../components/ui/navigation/main/news/NavigationArticle";
+import MobileNavigation from "../../components/ui/navigation/mobile/MobileNavigation";
 import BlockNews from "../news/blockNews";
 import BlockNewsMobile from '../news/blockNewsMobile';
 import MobileFooter from "../../components/ui/footer/MobileFooter";

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../../../components/layout/Layout";
 import Header from "../../../components/ui/header/Header";
-import Navigation from "../../../components/ui/navigation/Navigation";
-import NavigationArticle from "../../../components/ui/navigation/NavigationArticle";
-import MobileNavigation from "../../../components/ui/navigation/MobileNavigation";
+import Navigation from "../../../components/ui/navigation/main/Navigation";
+import NavigationArticle from "../../../components/ui/navigation/main/news/NavigationArticle";
+import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
 import BlockCNews from "../../news/cnews/blockCNews";
 import BlockCNewsMobile from '../../news/cnews/blockCNewsMobile';
 import MobileFooter from "../../../components/ui/footer/MobileFooter";
@@ -24,10 +24,6 @@ export default function Cnews() {
         <Layout title={'Новости компании'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
-                {/* <meta name='viewport' content='width=device-width,initial-scale=1'/>
-                <meta content='true' name='HandheldFriendly'/>
-                <meta content='width' name='MobileOptimized'/>
-                <meta content='yes' name='apple-mobile-web-app-capable'/> */}
             </Head>
 
             <div className={classes.wrapper}>

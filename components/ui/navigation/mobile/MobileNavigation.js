@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from '../../../components/ui/navigation/navigationMobile.module.scss';
+import classes from '../../../../components/ui/navigation/mobile/navigationMobile.module.scss'
 
 const MobileNavigation = () => {
 
