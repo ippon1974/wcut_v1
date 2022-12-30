@@ -1,8 +1,8 @@
-import classes from '../../../../styles/articleMarket.module.scss';
+import classes from '../../../../styles/articleShow.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 
-const BlockMarketNews = () => {
+const BlockShowNews = () => {
     return (
         <>
         <div className={classes.blockNewsMain}>
@@ -58,4 +58,4 @@ const BlockMarketNews = () => {
         </>
     )
 }
-export default BlockMarketNews;
+export default BlockShowNews;

@@ -1,10 +1,10 @@
-import classes from '../../../../styles/articleMarket.module.scss';
+import classes from '../../../../styles/articleVideo.module.scss';
 import BlockSubNavNews from '../../../ui/navigation/mobile/sub/blockSubNavNews';
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 
-const BlockMarketNewsMobile = () => {
+const BlockVideoNewsMobile = () => {
 
     const { asPath, pathname } = useRouter();
     const item = asPath.split('/');
@@ -52,4 +52,4 @@ const BlockMarketNewsMobile = () => {
         </>
     )
 }
-export default BlockMarketNewsMobile;
+export default BlockVideoNewsMobile;
