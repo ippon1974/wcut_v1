@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import classes from '../../styles/article.module.scss';
-import BlockSubNavNews from '../news/blockSubNavNews';
+import classes from '../../../styles/article.module.scss';
+import BlockSubNavNews from '../../ui/navigation/mobile/sub/blockSubNavNews';
 import Link from "next/link";
 import Image from "next/image";
 

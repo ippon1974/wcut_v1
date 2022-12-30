@@ -4,8 +4,8 @@ import Header from "../../../components/ui/header/Header";
 import Navigation from "../../../components/ui/navigation/main/Navigation";
 import NavigationArticle from "../../../components/ui/navigation/main/news/NavigationArticle";
 import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
-import BlockCNews from "../../news/cnews/blockCNews";
-import BlockCNewsMobile from '../../news/cnews/blockCNewsMobile';
+import BlockCNews from "../../../components/block_code_page/news/cnews/blockCNews";
+import BlockCNewsMobile from '../../../components/block_code_page/news/cnews/blockCNewsMobile';
 import MobileFooter from "../../../components/ui/footer/MobileFooter";
 import Footer from "../../../components/ui/footer/Footer";
 import classes from '../../../styles/articleCompany.module.scss';
@@ -32,9 +32,7 @@ export default function Cnews() {
                 </div>
                 
                 <div className={`${classes.item} ${classes.nav}`}>
-
-                    {mobile ? <MobileNavigation /> : <Navigation />} 
-
+                    {mobile ? <MobileNavigation /> : <Navigation />}
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>

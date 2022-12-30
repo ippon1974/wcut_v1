@@ -1,5 +1,5 @@
-@media (max-width: 429px){
-    $max-width: 388px;
+@media (max-width: 384px){
+    $max-width: 340px;
     .wrapper{
       grid-template-areas:
               "nav"
@@ -35,10 +35,6 @@
         font-weight: bold;
         font-size: 150%;
         color: #303028;
-    }
-
-    .maincontext h2 a{
-        color: #ee3124;
     }
 
     .maincontext ul {
@@ -94,14 +90,8 @@
         margin: 0.5em 0 0 0;
         font-size: 100%;
     }
+   
 
-    .maincontext .blockNewsMain .newsListMain img {
-      margin: 1.0em 0 0 0;
-      padding: 0;
-      width: 100%;
-      height: auto;
-    }
-    
     .mainlinefooter {
       display: none;
     }

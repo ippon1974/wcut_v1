@@ -1,5 +1,5 @@
-@media (max-width: 429px){
-    $max-width: 388px;
+@media (max-width: 361px){
+    $max-width: 320px;
     .wrapper{
       grid-template-areas:
               "nav"
@@ -37,16 +37,12 @@
         color: #303028;
     }
 
-    .maincontext h2 a{
-        color: #ee3124;
-    }
-
     .maincontext ul {
       padding: 0.7em 0 0 0;
       margin: 0;
       display: grid;
       grid-template-columns: auto auto auto auto auto;
-      width: 80%;
+      width: 90%;
     }
 
     .maincontext ul li {
@@ -94,14 +90,8 @@
         margin: 0.5em 0 0 0;
         font-size: 100%;
     }
+   
 
-    .maincontext .blockNewsMain .newsListMain img {
-      margin: 1.0em 0 0 0;
-      padding: 0;
-      width: 100%;
-      height: auto;
-    }
-    
     .mainlinefooter {
       display: none;
     }
