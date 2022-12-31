@@ -6,8 +6,8 @@ import NavigationArticle from "../../../components/ui/navigation/main/news/Navig
 import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
 import BlockMarketNews from "../../../components/block_code_page/news/marketnews/blockMarketNews";
 import BlockMarketNewsMobile from "../../../components/block_code_page/news/marketnews/blockMarketNewsMobile";
-import MobileFooter from "../../../components/ui/footer/MobileFooter";
-import Footer from "../../../components/ui/footer/Footer";
+import MobileFooter from "../../../components/ui/footer/mobile/MobileFooter";
+import Footer from "../../../components/ui/footer/main/Footer";
 import classes from '../../../styles/articleMarket.module.scss';
 import Link from "next/link";
 import Head from 'next/head';

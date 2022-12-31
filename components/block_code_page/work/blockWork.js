@@ -23,7 +23,7 @@ const blockWork = () => {
     return (
         <>
             <div className={`${classes.newListWork}`}>
-                        <Link href={'#'}>  
+                        <Link href={'/works/id/one'}>  
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
                                 <Image style={imgWork} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
@@ -32,7 +32,7 @@ const blockWork = () => {
                         </div>
                         </Link>
 
-                        <Link href={'#'}>    
+                        <Link href={'/works/id/one'}>    
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
                                 <Image style={imgWork} src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
@@ -41,7 +41,7 @@ const blockWork = () => {
                         </div>
                         </Link>
                         
-                        <Link href={'#'}>    
+                        <Link href={'/works/id/one'}>    
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
                                 <Image style={imgWork} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
@@ -53,15 +53,15 @@ const blockWork = () => {
 
                     <div className={`${classes.worksListDesc}`}>
                         <div className={`${classes.one}`}>
-                        <h2><Link href={'$'}>Адресная табличка. Охуенная рекомендую</Link></h2>
+                        <h2><Link href={'/works/id/one'}>Адресная табличка. Охуенная рекомендую</Link></h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                         </div>
                         <div className={`${classes.two}`}>
-                            <h2><Link href={'$'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
+                            <h2><Link href={'/works/id/one'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                         </div>
                         <div className={`${classes.two}`}>
-                            <h2><Link href={'$'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
+                            <h2><Link href={'/works/id/one'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
                         </div>
                     </div>

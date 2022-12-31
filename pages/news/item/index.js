@@ -6,8 +6,8 @@ import NavigationArticle from "../../../components/ui/navigation/main/news/Navig
 import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
 import BlockItemNews from "../../../components/block_code_page/news/item/blockItem";
 import BlockItemNewsMobile from "../../../components/block_code_page/news/item/blockItemMobile";
-import MobileFooter from "../../../components/ui/footer/MobileFooter";
-import Footer from "../../../components/ui/footer/Footer";
+import MobileFooter from "../../../components/ui/footer/mobile/MobileFooter";
+import Footer from "../../../components/ui/footer/main/Footer";
 import classes from '../../../styles/articleItem.module.scss';
 import Link from "next/link";
 import Head from 'next/head';

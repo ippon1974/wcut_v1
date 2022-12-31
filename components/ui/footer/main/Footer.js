@@ -1,4 +1,4 @@
-import classes from '../../../components/ui/footer/footer.module.scss';
+import classes from './footer.module.scss';
 
 const Footer = () => {
 
@@ -7,7 +7,7 @@ const Footer = () => {
 
     return (
         <>
-           <div className={`${classes.footer}`}>
+           <div className={`${classes.maincontext} ${classes.footer}`}>
                    <div>
                         <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                    </div>

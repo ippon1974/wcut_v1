@@ -8,9 +8,9 @@ import NavigationArticle from "../../../components/ui/navigation/main/news/Navig
 import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
 import BlockVideoNews from "../../../components/block_code_page/news/video/blockVideoNews";
 import BlockVideoNewsMobile from "../../../components/block_code_page/news/video/blockVideoNewsMobile";
-import MobileFooter from "../../../components/ui/footer/MobileFooter";
+import MobileFooter from "../../../components/ui/footer/mobile/MobileFooter";
 
-import Footer from "../../../components/ui/footer/Footer";
+import Footer from "../../../components/ui/footer/main/Footer";
 import classes from '../../../styles/articleVideo.module.scss';
 import Link from "next/link";
 import Head from 'next/head';

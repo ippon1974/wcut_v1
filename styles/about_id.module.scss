@@ -1,0 +1,145 @@
+.wrapper{
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+            "head head head"
+            "nav nav nav"
+            "main main main"
+            "footer footer footer";
+    grid-template-columns: 12.488em 1fr 21.875em;
+    grid-gap: 0px;
+    width: 63em;
+    background-image: url("/contentbg.jpg");
+    background-repeat: repeat-y;
+    background-position: 12px 0;
+  }
+  
+  .item {
+    margin: 0;
+  }
+  
+  .header {
+    grid-area: head;
+  }
+  
+  .itemLogo {
+    margin: 0;
+  }
+  
+  .wrapperLogo {
+    display: grid;
+    grid-template-areas:
+            "logo texthead";
+    grid-template-columns: 224px 1fr;
+    grid-template-rows: 6.9375em;
+  }
+  
+  .logo {
+    grid-area: logo;
+    margin: 20px 0 0 37px;
+  }
+  
+  .texthead {
+    margin: 0;
+  }
+  
+  .texthead div {
+    margin: 20px 35px 0 50px;
+    padding: 0 0 0 0;
+    font: 24px/28px 'BebasNeueRegular',Arial,sans-serif;
+    color: #f1f1c5;
+    background: url("/texture.png") repeat #280000;
+  }
+  
+  .texthead h2 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    padding: 16px 0 0 12px;
+  }
+  
+  .texthead h3 {
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    padding: 0px 0 4px 12px;
+  }
+  
+  .texthead p {
+    font-size: 0.7em;
+    margin: 0;
+    padding: 3px 12px;  
+    color: #cb4c00; 
+    border-top: 1px solid wheat;
+  }
+  
+  .nav {
+     grid-area: nav;
+     width: 58.4375em;
+     margin: 34px 0 0 37px;
+   }
+  
+  .asideleft {
+    grid-area: aleft;
+  }
+  .asideleft div {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .maincontext {
+    grid-area: main;
+  }
+
+  .maincontext .bannerHeadWork {
+    margin: 15px 0 0 35px;
+  }
+
+  .maincontext .bannerHeadWork img {
+    display: block;
+  }
+
+  .maincontext .logos_nameWork{
+    margin: 0 38px 0 35px;
+    padding:0;
+    background: black;
+  }
+
+  .maincontext .logos_works img {
+    //background: #ee3124;
+    position: absolute;
+    margin: -44px 0 0 65px;
+  }
+
+  .maincontext .nameWork {
+    margin: 0 38px 0 45px;
+    padding: 12px 0 20px 0;
+  }
+
+  .maincontext .nameWork h1 {
+    padding: 0em 0 0.1em 150px;
+    font-size: 235%;
+    font-weight: bold;
+    color: #f6f6c2;
+  }
+
+  .maincontext .nameWork p {
+    padding: 0.5em 0 0 150px;
+    color: #f6f6c2;
+  }
+
+  .asideright {
+    grid-area: aright;
+  }
+
+  .asideright div {
+    background: green;
+  }
+
+  .hr {
+    border-bottom: 1px solid #303028;
+    padding-bottom: 0.8em;
+  }
+  
+  
+  .endpage {
+    height: 3.0em;
+  }
