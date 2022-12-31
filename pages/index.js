@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Layout from "../components/layout/Layout";
 import Header from "../components/ui/header/Header";
-import TextHead from "./textHead";
-import TextHeadMobile from "./textHeadMobile";
+import TextHead from "../components/block_code_page/index/textHead";
+import TextHeadMobile from "../components/block_code_page/index/textHeadMobile";
 import Navigation from "../components/ui/navigation/main/Navigation";
 import MobileNavigation from "../components/ui/navigation/mobile/MobileNavigation";
-import BlockWork from "./blockWork";
-import BlockWorkMobile from "./blockWorkMobile";
+import BlockWork from "../components/block_code_page/index/blockWork";
+import BlockWorkMobile from "../components/block_code_page/index/blockWorkMobile";
 import MobileFooterIndex from "../components/ui/footer/MobileFooterIndex";
 import Footer from "../components/ui/footer/Footer";
 import classes from '../styles/index.module.scss';

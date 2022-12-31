@@ -1,4 +1,4 @@
-import classes from '../styles/index.module.scss';
+import classes from '../../../styles/index.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 

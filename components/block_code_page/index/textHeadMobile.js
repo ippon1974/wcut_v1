@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from '../styles/index.module.scss';
+import classes from '../../../styles/index.module.scss';
 import Image from "next/image";
 
 const TextHeadMobile = () => {

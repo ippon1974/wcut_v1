@@ -1,5 +1,5 @@
 import Link from "next/link";
-import classes from '../styles/index.module.scss';
+import classes from '../../../styles/index.module.scss';
 
 const TextHead = () => {
    return (
