@@ -39,15 +39,15 @@ const One = () => {
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     <div className={classes.bannerHeadWork}>
-                        <Image src={'/works/filter/8.jpg'} width={'935'} height={'172'} alt={''} />
+                        <Image src={'/works/filter/1020.jpg'} width={'935'} height={'172'} alt={''} />
                     </div>
 
                     <div className={classes.logos_nameWork}>
                         <div className={classes.logos_works}>
-                            <Image src={'/cs_client_logos.png'} width={'91'} height={'91'} alt={''} />
+                            <Image src={'/cs_client_logos.svg'} width={'91'} height={'91'} alt={''} />
                         </div>
                         <div className={classes.nameWork}>
-                            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi, ut minima omnis pariatur fuga!</h1>
+                            <h1>Lorem ipsum dolor sit amet minima omnis pariatur fuga!</h1>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, libero autem ratione voluptates itaque laboriosam, recusandae accusamus porro illo nobis aspernatur quisquam nisi, fugiat provident.</p>
                         </div>
                     </div>
