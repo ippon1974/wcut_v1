@@ -154,11 +154,13 @@
     padding: 0 10px 0 0;
     margin: 0;
     flex: 1 0;
-    font-family: 'BebasNeueRegular',Arial,sans-serif;
+    //font-family: 'BebasNeueRegular',Arial,sans-serif;
+    text-transform: uppercase;
     //height: 11px;
   }
 
   .maincontext .containerPreNextPage div.allwork span a {
+    font-size: 100%;
     text-decoration: none;
     color: #f6f6c2;
   }
