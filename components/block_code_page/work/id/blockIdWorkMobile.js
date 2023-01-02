@@ -8,10 +8,12 @@ const BlockIdWorkMobile = () => {
              <div className={`${classes.newListWork}`}>
 
                 <h2>Андресная табличка описане заголовок работы</h2>
-                <ul>
-                  <li></li>
-                  <li></li>
-                </ul>
+                <div className={classes.subMenuPreNext}>
+                  <div><Link href={'/works'} title={'Все работы'}>Работы</Link></div>
+                  <div></div>
+                  <div><Link href={'#'} title={"Предыдущая работа"}>&#8592; Предыдущая</Link></div>
+                  <div><Link href={'#'} title={"Следующая работа"}>Следующая &#8594;</Link></div>
+                </div>
              
              <div className={classes.hr}></div>
 

@@ -1,5 +1,5 @@
-@media (max-width: 415px){
-    $max-width: 375px;
+@media (max-width: 321px){
+    $max-width: 288px;
     .wrapper{
       margin: 0;
       padding: 0;
@@ -26,7 +26,7 @@
     }
   
     .maincontext {
-      margin: 0 0 1em 20px;
+      margin: 0 0 1em 15px;
       padding: 0 0 0 0;
       border-bottom: 2px solid #303028;
       max-width: $max-width;
