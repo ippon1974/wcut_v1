@@ -12,41 +12,41 @@ const BlockWorkMobile = () => {
 
                             <div className={classes.hr}></div>
 
-                        <Link href={'#'}>    
+                        <Link href={'/works/id/one'}>    
                         <div>
                             <Image className={classes.responseImg} src={'/works/2_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
                         </div>
                         </Link>
                         
                         <div className={classes.descWork}>
-                            <Link href={'#'} title={'Адресная табличка. Охуенная рекомендую'}>Адресная табличка. Охуенная рекомендую</Link>
+                            <Link href={'/works/id/one'} title={'Адресная табличка. Охуенная рекомендую'}>Адресная табличка. Охуенная рекомендую</Link>
                         </div>
 
-                        <Link href={'#'}>    
+                        <Link href={'/works/id/one'}>    
                         <div>
                              <Image className={classes.responseImg} src={'/works/12_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
                         </div>
                         </Link>
                         <div className={classes.descWork}>
-                            <Link href={'#'} title={'Адресная табличка. Охуенная рекомендую'}>Адресная табличка. Охуенная рекомендую. Проверка длины текста описания работы </Link>
+                            <Link href={'/works/id/one'} title={'Адресная табличка. Охуенная рекомендую'}>Адресная табличка. Охуенная рекомендую. Проверка длины текста описания работы </Link>
                         </div>
                         
-                        <Link href={'#'}>    
+                        <Link href={'/works/id/one'}>    
                         <div>
                             <Image className={classes.responseImg} src={'/works/3_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
                         </div>
                         </Link>
                         <div className={classes.descWork}>
-                            <Link href={'#'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link>
+                            <Link href={'/works/id/one'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link>
                         </div>
 
-                        <Link href={'#'}>    
+                        <Link href={'/works/id/one'}>    
                         <div>
                             <Image className={classes.responseImg} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
                         </div>
                         </Link>
                         <div className={classes.descWork}>
-                            <Link href={'#'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link>
+                            <Link href={'/works/id/one'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link>
                         </div>
                     </div>
                    
