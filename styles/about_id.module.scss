@@ -155,7 +155,6 @@
     margin: 0;
     flex: 1 0;
     font-family: 'BebasNeueRegular',Arial,sans-serif;
-    font-size: 1.1em;
     letter-spacing: 0;
     height: 11px;
   }
@@ -195,15 +194,11 @@
     margin: 0 5px 0 0;
     flex: 1 0;
     font-family: 'BebasNeueRegular',Arial,sans-serif;
-    line-height: 1.0em;
-    font-size: 1.1em;
-    letter-spacing: 0;
     height: 11px;
   }
 
   .maincontext .containerPreNextPage div.pre span a
   {
-    font-size: 100%;
     text-decoration: none;
     color: #f6f6c2;
   }
@@ -219,17 +214,13 @@
     margin: 0 1px 0 5px;
     flex: 1 0;
     font-family: 'BebasNeueRegular',Arial,sans-serif;
-    font-size: 1.1em;
-    letter-spacing: 0;
     height: 11px;
   }
 
   .maincontext .containerPreNextPage div.next span a
   {
-    font: 23px/17px 'BebasNeueRegular',Arial,sans-serif;
     text-decoration: none;
     color: #f6f6c2;
-    line-height: 25px;
   }
 
   .maincontext .containerPreNextPage div.next span a:hover
