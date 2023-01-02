@@ -90,29 +90,31 @@
   }
 
   .maincontext .bannerHeadWork {
-    margin: 15px 0 0 35px;
+    margin: 1em 0 0 35px;
+    padding: 0;
   }
 
   .maincontext .bannerHeadWork img {
+    margin: 0 0 0 2px;
+    padding: 0;
     display: block;
   }
 
   .maincontext .logos_nameWork{
-    margin: 0 38px 0 35px;
+    margin: 0 0 0 37px;
     padding:0;
     background: black;
-    width: 937px;
+    width: 935px;
   }
 
   .maincontext .logos_works img {
-    //background: #ee3124;
     position: absolute;
     margin: -44px 0 0 35px;
   }
 
   .maincontext .nameWork {
-    margin: 0 45px 0 25px;
-    padding: 12px 0 20px 0;
+     margin: 0 45px 0 25px;
+     padding: 12px 0 20px 0;
   }
 
   .maincontext .nameWork h1 {
@@ -129,7 +131,7 @@
 
   .maincontext .containerPreNextPage {
     display: grid;
-    margin: 0 38px 0 35px;
+    margin: 0 37px 0 37px;
     padding: 0;
     grid-template-columns: auto 1fr auto auto;
     background: black;
@@ -178,6 +180,7 @@
     display: flex;
     align-items: center;
     border-left: 1px solid #f6f6c2;
+    border-right: none;
   }
 
   .maincontext .containerPreNextPage div.pre img,

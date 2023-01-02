@@ -6,7 +6,8 @@ const BlockIdWork = () => {
     return (
         <>
             <div className={classes.bannerHeadWork}>
-                        <Image src={'/works/filter/1020.jpg'} width={'937'} height={'172'} alt={''} />
+                        <Image src={'/works/filter/1020.jpg'} width={'935'} height={'172'} alt={''} />
+            </div>
             
                     <div className={classes.logos_nameWork}>
                         <div className={classes.logos_works}>
@@ -50,9 +51,7 @@ const BlockIdWork = () => {
                             <Image src={'/works/big/8_1.jpg'} width={'461'} height={'345'} alt={''} />
                             <Image src={'/works/big/8_1.jpg'} width={'461'} height={'345'} alt={''} />
                         </div>
-                    </div>
-                    
-                    </div>
+                    </div> 
         </>
     )
 }

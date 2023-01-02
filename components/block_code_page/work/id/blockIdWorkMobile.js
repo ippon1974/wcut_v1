@@ -8,6 +8,10 @@ const BlockIdWorkMobile = () => {
              <div className={`${classes.newListWork}`}>
 
                 <h2>Андресная табличка описане заголовок работы</h2>
+                <ul>
+                  <li></li>
+                  <li></li>
+                </ul>
              
              <div className={classes.hr}></div>
 
@@ -17,10 +21,10 @@ const BlockIdWorkMobile = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident blanditiis pariatur sapiente tempora beatae, mollitia, quod officia neque quaerat eum atque accusamus obcaecati aperiam quo aliquid incidunt culpa. Molestias asperiores distinctio facilis voluptatem ratione doloremque eos vel beatae sequi quo accusantium, aspernatur dolorum nostrum quam neque vitae similique. Fugit illum voluptates laudantium accusamus, iure suscipit.</p>
              </div>
              <div>
-                <Image className={classes.responseImg} src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
+                <Image className={classes.responseImg} src={'/works/2_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
              </div> 
              <div>
-                <Image className={classes.responseImg} src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
+                <Image className={classes.responseImg} src={'/works/12_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
              </div>
             </div>
             
