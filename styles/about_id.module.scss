@@ -150,7 +150,7 @@
   }
 
   .maincontext .containerPreNextPage div.allwork span {
-    font-size: 92.5%;
+    font-size: 82.5%;
     padding: 0 10px 0 0;
     margin: 0;
     flex: 1 0;
@@ -188,7 +188,7 @@
     flex: 0 0;
   }
   .maincontext .containerPreNextPage div.pre span {
-    font-size: 92.5%;
+    font-size: 82.5%;
     padding: 0;
     margin: 0 5px 0 0;
     flex: 1 0;
@@ -209,7 +209,7 @@
 
   .maincontext .containerPreNextPage div.next span
   {
-    font-size: 92.5%;
+    font-size: 82.5%;
     padding: 0;
     margin: 0 1px 0 5px;
     flex: 1 0;
@@ -226,6 +226,49 @@
   .maincontext .containerPreNextPage div.next span a:hover
   {
     color: #ee3124;
+  }
+
+  .maincontext .contanerPageWork {
+    display: grid;
+    margin: 0 38px 0 35px;
+    padding: 0;
+    grid-template-columns: 150px auto 461px;
+    gap: 15px;
+  }
+
+  .maincontext .contanerPageWork div {
+      margin: 2em 0 0 0;
+      padding: 0;
+      border-top: 1px solid #280000;
+  }
+
+  .maincontext .contanerPageWork .rightDesc {
+    padding: 1.5em 0 0 0;
+  }
+
+  .maincontext .contanerPageWork .rightDesc span {
+    font-size: 90%;
+    font-weight: bold;
+  }
+
+  .maincontext .contanerPageWork div h3 {
+    margin: 1.0em 0 0 0;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+
+
+  .maincontext .contanerPageWork div p {
+    margin: 1em 0 0 0;
+    padding: 0 0 1em 0;
+    color: #303028;
+    letter-spacing: 1px;
+    line-height: 1.3em;
+    border-bottom: 1px solid #303028;
+  }
+
+  .maincontext .contanerPageWork .panelImg img {
+    margin: 0 0 0.5em 0;
   }
 
 

@@ -69,6 +69,23 @@ const One = () => {
                         </div>
                     </div>
 
+                    <div className={classes.contanerPageWork}>
+                        <div className={classes.rightDesc}>
+                            <span>Материал</span>
+                            <p>Lorem ipsum, dolor sit amet</p>
+                        </div>
+                        <div>
+                            <h3>Процесс</h3>
+                            <p>Русский текст описание подробное работы попадает все это добро из базы данных</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, numquam architecto asperiores id doloribus consectetur excepturi, modi sed molestias debitis repellendus. Quia soluta reiciendis obcaecati consequuntur sunt aut, rem enim explicabo sequi vitae ipsa velit harum totam. Vero animi quo minima iure ipsa, dicta adipisci?</p>
+                        </div>
+                        <div className={classes.panelImg}>
+                            <Image src={'/works/big/8_1.jpg'} width={'461'} height={'345'} alt={''} />
+                            <Image src={'/works/big/8_1.jpg'} width={'461'} height={'345'} alt={''} />
+                            <Image src={'/works/big/8_1.jpg'} width={'461'} height={'345'} alt={''} />
+                        </div>
+                    </div>
+
                 </div>
 
                 {/* <div className={`${classes.item} ${classes.asideleft}`}>
