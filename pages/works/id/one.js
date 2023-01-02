@@ -39,7 +39,7 @@ const One = () => {
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     <div className={classes.bannerHeadWork}>
-                        <Image src={'/works/filter/1020.jpg'} width={'935'} height={'172'} alt={''} />
+                        <Image src={'/works/filter/1020.jpg'} width={'937'} height={'172'} alt={''} />
                     </div>
 
                     <div className={classes.logos_nameWork}>
