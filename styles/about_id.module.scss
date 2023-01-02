@@ -149,18 +149,16 @@
     flex: 0 0;
   }
 
-
   .maincontext .containerPreNextPage div.allwork span {
+    font-size: 92.5%;
     padding: 0 10px 0 0;
     margin: 0;
     flex: 1 0;
-    //font-family: 'BebasNeueRegular',Arial,sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
-    //height: 11px;
   }
 
   .maincontext .containerPreNextPage div.allwork span a {
-    font-size: 100%;
     text-decoration: none;
     color: #f6f6c2;
   }
@@ -189,15 +187,13 @@
     height: 23px;
     flex: 0 0;
   }
-  .maincontext .containerPreNextPage div.pre span
-  {
+  .maincontext .containerPreNextPage div.pre span {
+    font-size: 92.5%;
     padding: 0;
     margin: 0 5px 0 0;
     flex: 1 0;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-    font-family: 'BebasNeueRegular',Arial,sans-serif;
-    height: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   .maincontext .containerPreNextPage div.pre span a
@@ -213,11 +209,12 @@
 
   .maincontext .containerPreNextPage div.next span
   {
+    font-size: 92.5%;
     padding: 0;
     margin: 0 1px 0 5px;
     flex: 1 0;
-    font-family: 'BebasNeueRegular',Arial,sans-serif;
-    height: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   .maincontext .containerPreNextPage div.next span a
@@ -230,9 +227,6 @@
   {
     color: #ee3124;
   }
-
-
-
 
 
 
