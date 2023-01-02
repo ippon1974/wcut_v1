@@ -52,6 +52,22 @@ const One = () => {
                         </div>
                     </div>
 
+                    <div className={classes.containerPreNextPage}>
+                        <div className={classes.allwork}>
+                            <Image src={'/prev.gif'} width={23} height={23} alt={''} />
+                            
+                            <span><Link href={'/works'} title={"Все работы"}>Работы</Link></span>
+                        </div>
+                        <div></div>
+                        <div className={classes.pre}>
+                           <Image src={'/prev.gif'} width={23} height={23} alt={''} />
+                           <span><Link href={'#'} title={'Предыдущая'}>Предыдущая</Link></span>
+                        </div>
+                        <div className={classes.next}>
+                           <span><Link href={'#'} title={"Следующая"}>Следующая</Link></span>
+                           <Image src={'/next.gif'} width={23} height={23} alt={''} />
+                        </div>
+                    </div>
 
                 </div>
 

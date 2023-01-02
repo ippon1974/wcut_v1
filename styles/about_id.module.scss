@@ -127,6 +127,111 @@
     color: #f6f6c2;
   }
 
+  .maincontext .containerPreNextPage {
+    display: grid;
+    margin: 0 38px 0 35px;
+    padding: 0;
+    grid-template-columns: auto 1fr auto auto;
+    background: black;
+    border-top: 1px solid #f6f6c2;
+  }
+
+  .maincontext .containerPreNextPage div.allwork {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #f6f6c2;
+  }
+
+  .maincontext .containerPreNextPage div.allwork img {
+    margin: 5px 5px 5px 5px;
+    width: 23px;
+    height: 23px;
+    flex: 0 0;
+  }
+
+
+  .maincontext .containerPreNextPage div.allwork span {
+    padding: 0 10px 0 0;
+    margin: 0;
+    flex: 1 0;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+    font-size: 1.1em;
+    letter-spacing: 0;
+    height: 11px;
+  }
+
+  .maincontext .containerPreNextPage div.allwork span a {
+    text-decoration: none;
+    color: #f6f6c2;
+  }
+
+  .maincontext .containerPreNextPage div.allwork span a:hover {
+    color: #ee3124;
+  }
+
+  .maincontext .containerPreNextPage div.pre, 
+  .maincontext .containerPreNextPage div.next {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #f6f6c2;
+  }
+
+  .maincontext .containerPreNextPage div.pre img,
+  .maincontext .containerPreNextPage div.next img {
+    margin: 5px 5px 5px 5px;
+    width: 23px;
+    height: 23px;
+    flex: 0 0;
+  }
+  .maincontext .containerPreNextPage div.pre span
+  {
+    padding: 0;
+    margin: 0 5px 0 0;
+    flex: 1 0;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+    font-size: 1.1em;
+    letter-spacing: 0;
+    height: 11px;
+  }
+
+  .maincontext .containerPreNextPage div.pre span a
+  {
+    text-decoration: none;
+    color: #f6f6c2;
+  }
+
+  .maincontext .containerPreNextPage div.pre span a:hover
+  {
+    color: #ee3124;
+  }
+
+  .maincontext .containerPreNextPage div.next span
+  {
+    padding: 0;
+    margin: 0 1px 0 5px;
+    flex: 1 0;
+    font-family: 'BebasNeueRegular',Arial,sans-serif;
+    font-size: 1.1em;
+    letter-spacing: 0;
+    height: 11px;
+  }
+
+  .maincontext .containerPreNextPage div.next span a
+  {
+    text-decoration: none;
+    color: #f6f6c2;
+  }
+
+  .maincontext .containerPreNextPage div.next span a:hover
+  {
+    color: #ee3124;
+  }
+
+
+
+
+
+
   .asideright {
     grid-area: aright;
   }
