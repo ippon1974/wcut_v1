@@ -161,6 +161,7 @@
   }
 
   .maincontext .containerPreNextPage div.allwork span a {
+    display: block;
     text-decoration: none;
     color: #f6f6c2;
   }
@@ -169,7 +170,13 @@
     color: #ee3124;
   }
 
-  .maincontext .containerPreNextPage div.pre, 
+  .maincontext .containerPreNextPage div.pre
+  {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid #f6f6c2;
+  }
+
   .maincontext .containerPreNextPage div.next {
     display: flex;
     align-items: center;
@@ -196,6 +203,7 @@
 
   .maincontext .containerPreNextPage div.pre span a
   {
+    display: block;
     text-decoration: none;
     color: #f6f6c2;
   }
@@ -218,6 +226,7 @@
 
   .maincontext .containerPreNextPage div.next span a
   {
+    display: block;
     text-decoration: none;
     color: #f6f6c2;
   }
