@@ -118,7 +118,7 @@
   .maincontext div {
     margin: 15px 0 0 0;
   }
-  
+
   .maincontext div > h2 {
     font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
     color: #303028;
@@ -144,6 +144,10 @@
   .maincontext div p .activecalc {
     color: red;
   } 
+
+  .maincontext div p .activecalc:hover {
+    color: #280000;
+  }
   
   .maincontext div p > strong {
     font-weight: bold;

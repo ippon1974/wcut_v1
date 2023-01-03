@@ -13,12 +13,20 @@ const BlockVideoNewsMobile = () => {
     return (
         <>
             <BlockSubNavNews uri = {asPath} item = {itemNews} />
+
             <div className={classes.blockNewsMain}>
                 <div className={classes.newsListMain}>
                     <p>05 March 2020</p>
                     <span>Раздел: <Link href={'/news/cnews'}>компания</Link></span>
                     <h2><Link href="#">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quam quia ad nemo doloribus.</Link></h2>
-                    <Image src={'/news/1033.jpg'} width={'300'} height={'150'} title={''} alt={''} />
+                    {/* <Image src={'/news/1033.jpg'} width={'300'} height={'150'} title={''} alt={''} /> */}
+                    
+                    <video className={classes.responseVideo} width={'300'} height={'150'} controls>
+                        <source src="/video/1_1.mp4" type="video/mp4"/>
+                        <source src="/video/1_1.webm" type="video/webm" />
+                        <p>Ссылка на видео Ютюб: <a href="https://www.youtube.com/watch?v=LyA7VLRZA7k"></a></p>
+                    </video>
+                
                     <p className={classes.ctxNews}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis quaerat recusandae fugiat, odio deleniti autem pariatur excepturi commodi, numquam necessitatibus quos dicta doloremque ratione a.</p>
                 </div>
             </div>

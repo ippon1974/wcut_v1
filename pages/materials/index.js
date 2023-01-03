@@ -48,7 +48,7 @@ export default function Price() {
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
-
+                        
                         <table className={classes.pricematerials}>
                             <tbody>
                             <tr>
@@ -57,17 +57,17 @@ export default function Price() {
                                 <th>Стоимость</th>
                             </tr>
                             <tr>
-                                <td><a class="active" href="#" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
+                                <td><a href={'/materials/id/one'} title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
                                 <td>10 мм.</td>
                                 <td>960 руб. <span class="short">пог. м.</span></td>
                             </tr>
                             <tr>
-                                <td><a class="active" href="#" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
+                                <td><a href={"/materials/id/one"} title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
                                 <td>10 мм.</td>
                                 <td>960 руб. <span class="short">пог. м.</span></td>
                             </tr>
                             <tr>
-                                <td><a class="active" href="#" title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
+                                <td><a href={"/materials/id/one"} title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
                                 <td>10 мм.</td>
                                 <td>960 руб. <span class="short">пог. м.</span></td>
                             </tr>

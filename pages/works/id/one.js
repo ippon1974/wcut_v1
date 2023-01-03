@@ -22,7 +22,7 @@ const One = () => {
 
     return (
         <>
-            <Layout title={'О компании'}>
+            <Layout title={'Работы'}>
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>
