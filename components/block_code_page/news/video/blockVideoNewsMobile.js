@@ -19,9 +19,8 @@ const BlockVideoNewsMobile = () => {
                     <p>05 March 2020</p>
                     <span>Раздел: <Link href={'/news/cnews'}>компания</Link></span>
                     <h2><Link href="#">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quam quia ad nemo doloribus.</Link></h2>
-                    {/* <Image src={'/news/1033.jpg'} width={'300'} height={'150'} title={''} alt={''} /> */}
                     
-                    <video className={classes.responseVideo} width={'300'} height={'150'} controls>
+                    <video className={classes.responseVideo} width={'300'} height={'150'} controls autoplay loop muted  poster="/video/poster/1_1.png">
                         <source src="/video/1_1.mp4" type="video/mp4"/>
                         <source src="/video/1_1.webm" type="video/webm" />
                         <p>Ссылка на видео Ютюб: <a href="https://www.youtube.com/watch?v=LyA7VLRZA7k"></a></p>
