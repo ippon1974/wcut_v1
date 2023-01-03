@@ -18,12 +18,12 @@ const NavigationArticle = () => {
     const [video, setVideo] = useState(false);
 
     const menuArticle = [
-        {id: '1', title: 'Новости', uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
-        {id: '2', title: 'Новости рынка', uri: '/news/marketnews', img: "/news_off.jpg", active: "/news_on.jpg"},
-        {id: '3', title: 'Новости компании', uri: '/news/cnews', img: "/work_off.jpg", active: "/work_on.jpg"},
-        {id: '4', title: 'Выставки', uri: '/news/show', img: "/thoughts_off.jpg", active: "/thoughts_on.jpg"},
-        {id: '5', title: 'Статьи', uri: '/news/item', img: "/topten_off.jpg", active: "/topten_on.jpg"},
-        {id: '6', title: 'Видео', uri: '/news/video', img: "/fun_off.jpg", active: "/fun_on.jpg"}
+        {id: '1', title: 'Новости', item: "", uri: '/news', img: "/allposts_off.jpg", active: "/allposts_on.jpg"},
+        {id: '2', title: 'Новости рынка', item: "marketnews", uri: '/news/marketnews', img: "/news_off.jpg", active: "/news_on.jpg"},
+        {id: '3', title: 'Новости компании', item: "cnews", uri: '/news/cnews', img: "/work_off.jpg", active: "/work_on.jpg"},
+        {id: '4', title: 'Выставки', item: "show", uri: '/news/show', img: "/thoughts_off.jpg", active: "/thoughts_on.jpg"},
+        {id: '5', title: 'Статьи', item: "item", uri: '/news/item', img: "/topten_off.jpg", active: "/topten_on.jpg"},
+        {id: '6', title: 'Видео', item: "video", uri: '/news/video', img: "/fun_off.jpg", active: "/fun_on.jpg"}
         ];
 
     return (

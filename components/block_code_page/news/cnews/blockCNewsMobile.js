@@ -18,7 +18,7 @@ const BlockCNewsMobile = () => {
                 <div className={classes.newsListMain}>
                     <p>05 March 2020</p>
                     <span>Раздел: <Link href={'/news/cnews'}>компания</Link></span>
-                    <h2><Link href="#">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi quam quia ad nemo doloribus.</Link></h2>
+                    <h2><Link href="#">История CAM систем</Link></h2>
                     <Image src={'/news/1033.jpg'} width={'300'} height={'150'} title={''} alt={''} />
                     <p className={classes.ctxNews}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis quaerat recusandae fugiat, odio deleniti autem pariatur excepturi commodi, numquam necessitatibus quos dicta doloremque ratione a.</p>
                 </div>

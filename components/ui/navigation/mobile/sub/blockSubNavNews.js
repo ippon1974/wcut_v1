@@ -3,11 +3,11 @@ import Link from "next/link";
 const blockSubNavNews = (props) => {
 
     const subMenuNews = [
-        {id: '1', title: 'Рынок', uri: '/news/marketnews'},
-        {id: '2', title: 'Компания', uri: '/news/cnews'},
-        {id: '3', title: 'Выставки', uri: '/news/show'},
-        {id: '4', title: 'Статьи', uri: '/news/item'},
-        {id: '5', title: 'Видео', uri: '/news/video'}
+        {id: '1', title: 'Рынок', uri: '/news/marketnews', item: "marketnews"},
+        {id: '2', title: 'Компания', uri: '/news/cnews', item: "cnews"},
+        {id: '3', title: 'Выставки', uri: '/news/show', item: "show"},
+        {id: '4', title: 'Статьи', uri: '/news/item', item: "item"},
+        {id: '5', title: 'Видео', uri: '/news/video', item: "video"}
     ];
 
     return (
