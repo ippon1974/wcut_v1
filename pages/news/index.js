@@ -14,12 +14,33 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function News() {
+export default function News({articals:serverArticals}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
 
+    const [articles, setArticles] = useState(serverArticals);
+    useEffect(()=>{
+        async function load() {
+            const response = await fetch('http://localhost:7000/news/all')
+            const json = await response.json();
+            setArticles(json);
+        }
+        if(!serverArticals){
+            load();
+        }
+    }, []);
+    if(!articles){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    console.log("Json ...", articles);
+
+    let abc = [10, 15, 25, 55, 100];
+
+    
     return(
         <Layout title={'Новости'}>
 
@@ -29,6 +50,15 @@ export default function News() {
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>
             </Head>
+
+
+            {/* <ul>
+                {articles.map(post => (
+                    <li key={post.id}>
+                        <Link href={`/news/[id]`} as={`/news/${post.id}`}>{post.id}</Link>
+                    </li>
+                ))}
+            </ul> */}
 
 
             <div className={classes.wrapper}>
@@ -41,7 +71,7 @@ export default function News() {
             </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockNewsMobile /> : <BlockNews />}
+                    {mobile ? <BlockNewsMobile /> : <BlockNews articles={articles} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 
@@ -67,4 +97,14 @@ export default function News() {
 
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {post:null}
+    }
+    const response = await fetch('http://localhost:7000/news/all')
+    const articles = await response.json();
+
+    return {props: {articles}}
 }
