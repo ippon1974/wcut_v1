@@ -11,6 +11,7 @@ const BlockNews = (props) => {
         return dt.toLocaleDateString();
     }
 
+
     return (
         <>
                 {props.articles.map(articles => (
@@ -21,10 +22,11 @@ const BlockNews = (props) => {
                             <span>Раздел: <Link href="">статьи</Link></span>
                         </div>
                         <div className={classes.newsListMain}>
-                            <h2><Link href={"/news/id/one"}>{articles.title}</Link></h2>
+                            <h2><Link href={`${'news'}/${articles.id}`}>{articles.title}</Link></h2>
                             <p>{articles.titlelong}</p>
+                            {/* <div dangerouslySetInnerHTML={{__html: articles.body}} /> */}
                             <div className={classes.mainlinefooter}>
-                                <span><Link href={'#'} title='Весь текст'>
+                                <span><Link href={`${'news'}/${articles.id}`} title='Весь текст'>
                                 <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />
                                 Весь текст</Link>
                                 </span>

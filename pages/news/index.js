@@ -36,11 +36,7 @@ export default function News({articals:serverArticals}) {
             <p>...Loading</p>
         </Layout>
     }
-    console.log("Json ...", articles);
 
-    let abc = [10, 15, 25, 55, 100];
-
-    
     return(
         <Layout title={'Новости'}>
 
@@ -101,10 +97,11 @@ export default function News({articals:serverArticals}) {
 
 export async function getServerSideProps({req}) {
     if(!req){
-        return {post:null}
+        return {articles:null}
     }
     const response = await fetch('http://localhost:7000/news/all')
     const articles = await response.json();
 
     return {props: {articles}}
 }
+

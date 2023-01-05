@@ -3,14 +3,10 @@ import Layout from "../../../components/layout/Layout";
 import Header from "../../../components/ui/header/Header";
 import Navigation from "../../../components/ui/navigation/main/Navigation";
 import NavigationArticle from "../../../components/ui/navigation/main/news/NavigationArticle";
-
-
 import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
 import BlockShowNews from "../../../components/block_code_page/news/show/blockShowNews";
 import BlockShowNewsMobile from "../../../components/block_code_page/news/show/blockShowNewsMobile";
 import MobileFooter from "../../../components/ui/footer/mobile/MobileFooter";
-
-
 import Footer from "../../../components/ui/footer/main/Footer";
 import classes from '../../../styles/articleShow.module.scss';
 import Link from "next/link";
