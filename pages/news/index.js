@@ -60,7 +60,7 @@ export default function News({articles:serverArticles}) {
             </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockNewsMobile /> : <BlockNews articles={articles} />}
+                    {mobile ? <BlockNewsMobile articles = {articles} /> : <BlockNews articles={articles} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 

@@ -60,7 +60,7 @@ const Article = ({article:serverArticle}) => {
             </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockIdNewsMobile /> : <BlockIdNews article = {article} />}
+                    {mobile ? <BlockIdNewsMobile article = {article} /> : <BlockIdNews article = {article} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
                     <NavigationArticle />

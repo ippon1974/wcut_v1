@@ -3,9 +3,10 @@ import classes from '../../../styles/article.module.scss';
 import BlockSubNavNews from '../../ui/navigation/mobile/sub/blockSubNavNews';
 import Link from "next/link";
 import Image from "next/image";
+import { format } from 'date-fns'
 
 
-const BlockNewsMobile = () => {
+const BlockNewsMobile = (props) => {
 
     const { asPath, pathname } = useRouter();
     const item = asPath.split('/');
@@ -16,7 +17,26 @@ const BlockNewsMobile = () => {
             <BlockSubNavNews uri = {asPath} item = {itemNews} />
 
             <div className={classes.hr}></div>
-            <div className={classes.blockNewsMain}>
+
+           
+
+            {props.articles.map((article) => (
+                <div key={article.id} className={classes.blockNewsMain}>
+                <div className={classes.newsListMain}>
+                <p>{format(new Date(article.dt), 'dd MM yyyy')}</p>
+                <span>Раздел: <Link href={'#'}>статьи</Link></span>
+                <h2>
+                    <Link href={`/news/[id]`} as={`/news/${article.id}`}>
+                        {article.title}
+                    </Link>
+                </h2>
+                <p className={classes.ctxNews}>{article.titlelong}</p>
+                </div>
+                </div>
+            ))}
+           
+
+            {/* <div className={classes.blockNewsMain}>
                 <div className={classes.newsListMain}>
                     <p>05 March 2020</p>
                     <span>Раздел: <Link href={'#'}>статьи</Link></span>
@@ -50,7 +70,7 @@ const BlockNewsMobile = () => {
                     <h2><Link href={'/news/id/one'}>Первая новость из базы данных приходит сюда. История CAM систем</Link></h2>
                     <p className={classes.ctxNews}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum adipisci similique quae rerum, voluptates totam modi id praesentium, sint omnis perspiciatis, veniam magnam soluta quaerat?</p>
                 </div>
-            </div>
+            </div> */}
 
         </>
     )

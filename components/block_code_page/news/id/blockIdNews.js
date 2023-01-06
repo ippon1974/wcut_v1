@@ -4,16 +4,12 @@ import Image from "next/image";
 import { format } from 'date-fns'
 
 const BlockIdNews = (props) => {
-    function fdt(d){
-        let dt = new Date(d);
-        return dt.toLocaleDateString();
-    }
+    
     return (
         <>
             <div className={classes.blockNewsMain}>
                 <div className={classes.dtMainList}>
-                    {/* <p>{fdt(props.article.dt)}</p> */}
-                    <p>{format(new Date(props.article.dt), 'dd.mm.yyyy')}</p>
+                    <p>{format(new Date(props.article.dt), 'dd.MM.yyyy')}</p>
                     <span>Раздел: <Link href="">статьи</Link></span>
                 </div>
                 <div className={classes.newsListMain}>

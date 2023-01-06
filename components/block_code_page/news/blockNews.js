@@ -14,7 +14,7 @@ const BlockNews = (props) => {
                         
                          <div className={classes.dtMainList}>
                             
-                         <p>{format(new Date(article.dt), 'dd.mm.yyyy')}</p>
+                         <p>{format(new Date(article.dt),"dd MM yyyy")}</p>
                             
                         <span>Раздел: <Link href="">статьи</Link></span>
                         </div>
