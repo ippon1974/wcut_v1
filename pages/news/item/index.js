@@ -14,11 +14,30 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function Item() {
+export default function Item({articles:serverArticles}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
+
+    const[articles, setArticles] = useState(serverArticles);
+
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/news/item')
+            const json = await response.json();
+            setArticles(json);
+        }
+        if(!serverArticles){
+            load();
+        }
+    }, [serverArticles])
+
+    if(!articles){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
     return(
         <Layout title={'Статьи'}>
@@ -34,7 +53,7 @@ export default function Item() {
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockItemNewsMobile /> : <BlockItemNews />}
+                    {mobile ? <BlockItemNewsMobile  articles = {articles} /> : <BlockItemNews  articles = {articles} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 
@@ -58,4 +77,13 @@ export default function Item() {
             <div className={classes.endpage}></div>
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {articles:null}
+    }
+    const res = await fetch('http://localhost:7000/news/item')
+    const articles = await res.json();
+    return { props: { articles } }
 }

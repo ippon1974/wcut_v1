@@ -14,11 +14,30 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function Show() {
+export default function Show({articles:serverArticles}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
+
+    const[articles, setArticles] = useState(serverArticles);
+
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/news/show')
+            const json = await response.json();
+            setArticles(json);
+        }
+        if(!serverArticles){
+            load();
+        }
+    }, [serverArticles])
+
+    if(!articles){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
     return(
         <Layout title={'Выставки'}>
@@ -36,7 +55,7 @@ export default function Show() {
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     
-                 {mobile ? <BlockShowNewsMobile /> : <BlockShowNews />} 
+                 {mobile ? <BlockShowNewsMobile articles = {articles} /> : <BlockShowNews articles = {articles} />} 
 
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
@@ -61,4 +80,13 @@ export default function Show() {
             <div className={classes.endpage}></div>
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {articles:null}
+    }
+    const res = await fetch('http://localhost:7000/news/show')
+    const articles = await res.json();
+    return { props: { articles } }
 }

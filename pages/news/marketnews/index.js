@@ -14,11 +14,30 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function Marketnews() {
+export default function Marketnews({articles:serverArticles}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
+
+    const[articles, setArticles] = useState(serverArticles);
+
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/news/market')
+            const json = await response.json();
+            setArticles(json);
+        }
+        if(!serverArticles){
+            load();
+        }
+    }, [serverArticles])
+
+    if(!articles){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
     return(
         <Layout title={'Новости рынка'}>
@@ -37,7 +56,7 @@ export default function Marketnews() {
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockMarketNewsMobile /> : <BlockMarketNews />}
+                    {mobile ? <BlockMarketNewsMobile articles = {articles} /> : <BlockMarketNews articles = {articles} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 
@@ -61,4 +80,13 @@ export default function Marketnews() {
             <div className={classes.endpage}></div>
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {articles:null}
+    }
+    const res = await fetch('http://localhost:7000/news/market')
+    const articles = await res.json();
+    return { props: { articles } }
 }

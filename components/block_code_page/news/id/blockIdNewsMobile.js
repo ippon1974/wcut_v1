@@ -11,6 +11,15 @@ const BlockIdNewsMobile = (props) => {
         const item = asPath.split('/');
         const itemNews = "/" + item[1] + "/" + item[2];
 
+        const menuItem = [
+            {title: 'все новости', uri: '/news'},
+            {title: 'рынок', uri: '/news/marketnews'},
+            {title: 'компания', uri: '/news/cnews'},
+            {title: 'выставки', uri: '/news/show'},
+            {title: 'статьи', uri: '/news/item'},
+            {title: 'видео', uri: '/news/video'}
+            ];
+
     return (
         <>
             <BlockSubNavNews uri = {asPath} item = {itemNews} />
@@ -18,7 +27,7 @@ const BlockIdNewsMobile = (props) => {
             <div className={classes.blockNewsMain}>
                 <div className={classes.newsListMain}>
                     <p>{format(new Date(props.article.dt), 'dd.MM.yyyy')}</p>
-                    <span>Раздел: <Link href={'/news/cnews'}>компания</Link></span>
+                    <span>Раздел: <Link href={menuItem[props.article.title_id].uri} title={menuItem[props.article.title_id].title}>{menuItem[props.article.title_id].title}</Link></span>
                     <h2>{props.article.title}</h2>
                     <div dangerouslySetInnerHTML={{__html: props.article.body}} />
 

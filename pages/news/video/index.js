@@ -3,13 +3,10 @@ import Layout from "../../../components/layout/Layout";
 import Header from "../../../components/ui/header/Header";
 import Navigation from "../../../components/ui/navigation/main/Navigation";
 import NavigationArticle from "../../../components/ui/navigation/main/news/NavigationArticle";
-
-
 import MobileNavigation from "../../../components/ui/navigation/mobile/MobileNavigation";
 import BlockVideoNews from "../../../components/block_code_page/news/video/blockVideoNews";
 import BlockVideoNewsMobile from "../../../components/block_code_page/news/video/blockVideoNewsMobile";
 import MobileFooter from "../../../components/ui/footer/mobile/MobileFooter";
-
 import Footer from "../../../components/ui/footer/main/Footer";
 import classes from '../../../styles/articleVideo.module.scss';
 import Link from "next/link";
@@ -17,11 +14,30 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function Video() {
+export default function Video({articles:serverArticles}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
+
+    const[articles, setArticles] = useState(serverArticles);
+
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/news/video')
+            const json = await response.json();
+            setArticles(json);
+        }
+        if(!serverArticles){
+            load();
+        }
+    }, [serverArticles])
+
+    if(!articles){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
     return(
         <Layout title={'Видео'}>
@@ -37,7 +53,7 @@ export default function Video() {
                 </div>
                
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockVideoNewsMobile /> : <BlockVideoNews />}
+                    {mobile ? <BlockVideoNewsMobile articles = {articles} /> : <BlockVideoNews articles = {articles} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
 
@@ -61,4 +77,13 @@ export default function Video() {
             <div className={classes.endpage}></div>
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {articles:null}
+    }
+    const res = await fetch('http://localhost:7000/news/video')
+    const articles = await res.json();
+    return { props: { articles } }
 }
