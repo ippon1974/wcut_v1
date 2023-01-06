@@ -2,24 +2,21 @@ import React, { useState, useEffect } from 'react';
 import classes from '../../../styles/article.module.scss';
 import Link from "next/link";
 import Image from "next/image";
+import { format } from 'date-fns'
 
 const BlockNews = (props) => {
     
-
-    function fdt(d){
-        let dt = new Date(d);
-        return dt.toLocaleDateString();
-    }
-
     return (
         <>
-                {props.articles.map(article => (
+                {props.articles.map((article) => (
 
                     <div key={article.id} className={classes.blockNewsMain}>
-
+                        
                          <div className={classes.dtMainList}>
-                            <p>{fdt(article.dt)}</p>
-                            <span>Раздел: <Link href="">статьи</Link></span>
+                            
+                         <p>{format(new Date(article.dt), 'dd.mm.yyyy')}</p>
+                            
+                        <span>Раздел: <Link href="">статьи</Link></span>
                         </div>
                         <div className={classes.newsListMain}>
                             <h2>

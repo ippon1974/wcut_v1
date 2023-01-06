@@ -1,6 +1,7 @@
 import classes from '../../../../styles/article_id.module.scss';
 import Link from "next/link";
 import Image from "next/image";
+import { format } from 'date-fns'
 
 const BlockIdNews = (props) => {
     function fdt(d){
@@ -11,12 +12,14 @@ const BlockIdNews = (props) => {
         <>
             <div className={classes.blockNewsMain}>
                 <div className={classes.dtMainList}>
-                    <p>{fdt(props.article.dt)}</p>
+                    {/* <p>{fdt(props.article.dt)}</p> */}
+                    <p>{format(new Date(props.article.dt), 'dd.mm.yyyy')}</p>
                     <span>Раздел: <Link href="">статьи</Link></span>
                 </div>
                 <div className={classes.newsListMain}>
                     <h2>{props.article.title}</h2>
                     <div dangerouslySetInnerHTML={{__html: props.article.body}} />
+                    
                     {/* <h2>История CAM систем</h2>
                     <Image src={'/news/1033.jpg'} width={'460'} height={'345'} alt={''} />
                     <h3>История CAM систем — прошлое, настоящее и будущее</h3>

@@ -14,8 +14,9 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function News({articles:serverArticles}) {
 
+export default function News({articles:serverArticles}) {
+    
      const[mobile, setMobile] = useState(false)
      const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
      useEffect(() => setMobile(isPhone), [isPhone]);
@@ -31,7 +32,7 @@ export default function News({articles:serverArticles}) {
         if(!serverArticles){
             load();
         }
-    }, [])
+    }, [serverArticles])
 
     if(!articles){
         return <Layout>
@@ -87,11 +88,11 @@ export default function News({articles:serverArticles}) {
     );
 }
 
-// export async function getServerSideProps({req}) {
-//     if(!req){
-//         return {articles:null}
-//     }
-//     const res = await fetch('http://localhost:7000/news/all')
-//     const articles = await res.json();
-//     return { props: { articles } }
-// }
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {articles:null}
+    }
+    const res = await fetch('http://localhost:7000/news/all')
+    const articles = await res.json();
+    return { props: { articles } }
+}

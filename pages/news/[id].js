@@ -14,7 +14,7 @@ import classes from '../../styles/article_id.module.scss';
 import Link from "next/link";
 import { useMediaQuery } from 'react-responsive';
 
-const ArticleId = ({article:serverArticle}) => {
+const Article = ({article:serverArticle}) => {
 
     const[mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -32,7 +32,7 @@ const ArticleId = ({article:serverArticle}) => {
         if(!serverArticle){
             load();
         }
-    },[])
+    },[])// eslint-disable-line react-hooks/exhaustive-deps
 
     if(!article){
         return <Layout>
@@ -60,7 +60,7 @@ const ArticleId = ({article:serverArticle}) => {
             </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {/* {mobile ? <BlockIdNewsMobile /> : <BlockIdNews article = {article} />} */}
+                    {mobile ? <BlockIdNewsMobile /> : <BlockIdNews article = {article} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
                     <NavigationArticle />
@@ -75,7 +75,7 @@ const ArticleId = ({article:serverArticle}) => {
     )
 } 
 
-export default ArticleId;
+export default Article;
 
 export async function getServerSideProps({query, req}) {
     if(!req){
