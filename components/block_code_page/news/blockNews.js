@@ -11,22 +11,26 @@ const BlockNews = (props) => {
         return dt.toLocaleDateString();
     }
 
-
     return (
         <>
-                {props.articles.map(articles => (
-                    
-                    <div key={articles.id} className={classes.blockNewsMain}>
+                {props.articles.map(article => (
+
+                    <div key={article.id} className={classes.blockNewsMain}>
+
                          <div className={classes.dtMainList}>
-                            <p>{fdt(articles.dt)}</p>
+                            <p>{fdt(article.dt)}</p>
                             <span>Раздел: <Link href="">статьи</Link></span>
                         </div>
                         <div className={classes.newsListMain}>
-                            <h2><Link href={`${'news'}/${articles.id}`}>{articles.title}</Link></h2>
-                            <p>{articles.titlelong}</p>
-                            {/* <div dangerouslySetInnerHTML={{__html: articles.body}} /> */}
+                            <h2>
+                            <Link href={`/news/[id]`} as={`/news/${article.id}`}>
+                                {article.title}
+                            </Link>
+                            </h2>
+                            
+                            <p>{article.titlelong}</p>
                             <div className={classes.mainlinefooter}>
-                                <span><Link href={`${'news'}/${articles.id}`} title='Весь текст'>
+                                <span><Link href={`${'news'}/${article.id}`} title='Весь текст'>
                                 <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />
                                 Весь текст</Link>
                                 </span>
@@ -94,7 +98,7 @@ export default BlockNews;
 
 // export async function getServerSideProps({req}) {
 //     if(!req){
-//         return {post:null}
+//         return {articles:null}
 //     }
 //     const response = await fetch('http://localhost:7000/news/all')
 //     const articles = await response.json();

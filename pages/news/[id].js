@@ -14,13 +14,13 @@ import classes from '../../styles/article_id.module.scss';
 import Link from "next/link";
 import { useMediaQuery } from 'react-responsive';
 
-const ArticleId = ({airline:serverArticle}) => {
+const ArticleId = ({article:serverArticle}) => {
 
-    const [mobile, setMobile] = useState(false)
+    const[mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
 
-    const [article, setArticle] = useState(serverArticle);
+    const[article, setArticle] = useState(serverArticle);
     const router = useRouter();
 
     useEffect(()=>{
@@ -60,7 +60,7 @@ const ArticleId = ({airline:serverArticle}) => {
             </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockIdNewsMobile /> : <BlockIdNews article = {article} />}
+                    {/* {mobile ? <BlockIdNewsMobile /> : <BlockIdNews article = {article} />} */}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
                     <NavigationArticle />

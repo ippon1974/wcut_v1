@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react'
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/main/Navigation";
@@ -14,23 +14,25 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-export default function News({articals:serverArticals}) {
+export default function News({articles:serverArticles}) {
 
-    const [mobile, setMobile] = useState(false)
-    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
-    useEffect(() => setMobile(isPhone), [isPhone]);
+     const[mobile, setMobile] = useState(false)
+     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+     useEffect(() => setMobile(isPhone), [isPhone]);
 
-    const [articles, setArticles] = useState(serverArticals);
-    useEffect(()=>{
+    const[articles, setArticles] = useState(serverArticles);
+    
+    useEffect(()=> {
         async function load() {
             const response = await fetch('http://localhost:7000/news/all')
             const json = await response.json();
             setArticles(json);
         }
-        if(!serverArticals){
+        if(!serverArticles){
             load();
         }
-    }, []);
+    }, [])
+
     if(!articles){
         return <Layout>
             <p>...Loading</p>
@@ -46,16 +48,6 @@ export default function News({articals:serverArticals}) {
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>
             </Head>
-
-
-            {/* <ul>
-                {articles.map(post => (
-                    <li key={post.id}>
-                        <Link href={`/news/[id]`} as={`/news/${post.id}`}>{post.id}</Link>
-                    </li>
-                ))}
-            </ul> */}
-
 
             <div className={classes.wrapper}>
             <div className={`${classes.item} ${classes.header}`}>
@@ -95,13 +87,11 @@ export default function News({articals:serverArticals}) {
     );
 }
 
-export async function getServerSideProps({req}) {
-    if(!req){
-        return {articles:null}
-    }
-    const response = await fetch('http://localhost:7000/news/all')
-    const articles = await response.json();
-
-    return {props: {articles}}
-}
-
+// export async function getServerSideProps({req}) {
+//     if(!req){
+//         return {articles:null}
+//     }
+//     const res = await fetch('http://localhost:7000/news/all')
+//     const articles = await res.json();
+//     return { props: { articles } }
+// }
