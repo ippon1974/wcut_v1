@@ -29,6 +29,9 @@ const BlockMarketNews = (props) => {
                         </Link>
                     </h2>
                     <p>{article.titlelong}</p>
+                    {article.img_1 ? <Link href={`/news/[id]`} as={`/news/${article.id}`} title={article.title}><Image src={`/news/${article.img_1}.jpg`} width={"460"} height={"345"} alt={article.title} /></Link> : ""}
+                    {article.iframe ? "" : ""}
+                    {article.video ? "" : ""}
                     <div className={classes.mainlinefooter}>
                         <span><Link href={`/news/[id]`} as={`/news/${article.id}`} title='Весь текст'>
                         <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />

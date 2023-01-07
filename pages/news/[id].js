@@ -42,8 +42,10 @@ const Article = ({article:serverArticle}) => {
 
     return (
         <>
-             <Layout title={'Новости'}>
+             <Layout title={`${article.title}`}>
              <Head>
+                <meta name="description" content="" />
+                <meta name="keywords" content="" />
                 <meta name="viewport" content="width=device-width"/>
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>

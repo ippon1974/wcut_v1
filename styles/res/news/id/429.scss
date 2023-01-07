@@ -71,6 +71,24 @@
       width: $max-width;
    }
 
+   .maincontext .blockNewsMain .newsListMain div ul {
+    display: block;
+    margin: 1em 0 0 0;
+    padding: 0;
+    width: auto;
+  }
+  .maincontext .blockNewsMain .newsListMain div ul li {
+    margin: 0.5em 10px 0 15px; 
+    padding: 0;
+    font-size: 95%;
+    font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+    color: #303028;
+  }
+
+  .maincontext .blockNewsMain .newsListMain div a {
+    color: #ee3124;
+  }
+
    .maincontext .blockNewsMain .newsListMain p {
        margin: 1.0em 0 0 0; 
        padding: 0;

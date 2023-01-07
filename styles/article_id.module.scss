@@ -142,6 +142,22 @@
     padding: 0;
   }
 
+  .maincontext .blockNewsMain .newsListMain ul {
+    margin: 1em 0 1em 0;
+    padding: 0;
+  }
+  .maincontext .blockNewsMain .newsListMain ul>li{
+    list-style: disc;
+    font-size: 85%;
+    font-weight: normal;
+    margin: 1em 10px 0 20px;
+    font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+    color: #303028;
+  }
+  .maincontext .blockNewsMain .newsListMain a {
+    color: #ee3124;
+  }
+
   .maincontext div > h2 {
     font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
     color: #303028;

@@ -32,7 +32,10 @@ const BlockItemMobile = (props) => {
                     <h2>
                         <Link href={`/news/[id]`} as={`/news/${article.id}`} title={article.title}>{article.title}</Link>
                     </h2>
-                    <p className={classes.ctxNews}>{article.titlelong}</p>                
+                    <p className={classes.ctxNews}>{article.titlelong}</p>
+                    {article.img_1 ? <Link href={`/news/[id]`} as={`/news/${article.id}`} title={article.title}><Image className={classes.responseImg} src={`/news/${article.img_1}.jpg`} width={"460"} height={"345"} alt={article.title} /></Link> : ""}
+                    {article.iframe ? "" : ""}
+                    {article.video ? "" : ""}                          
                 </div>
             </div>
              ))}
