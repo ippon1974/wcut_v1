@@ -29,10 +29,10 @@ const BlockIdNewsMobile = (props) => {
                     <p>{format(new Date(props.article.dt), 'dd.MM.yyyy')}</p>
                     <span>Раздел: <Link href={menuItem[props.article.title_id].uri} title={menuItem[props.article.title_id].title}>{menuItem[props.article.title_id].title}</Link></span>
                     <h2>{props.article.title}</h2>
-                    <div dangerouslySetInnerHTML={{__html: props.article.body}} />
                     {props.article.img_1 ? <Image className={classes.responseImg} src={`/news/${props.article.img_1}.jpg`} width={"460"} height={"345"} alt={props.article.title} /> : ""}
                     {props.article.iframe ? "" : ""}
                     {props.article.video ? "" : ""}
+                    <div dangerouslySetInnerHTML={{__html: props.article.body}} />
                 </div>
             </div>
         </>
