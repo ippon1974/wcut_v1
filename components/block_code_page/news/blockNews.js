@@ -18,7 +18,6 @@ const BlockNews = (props) => {
     return (
         <>
                 {props.articles.map((article) => (
-
                     <div key={article.id} className={classes.blockNewsMain}>
                          <div className={classes.dtMainList}>
                          <p>{format(new Date(article.dt),"dd MM yyyy")}</p>

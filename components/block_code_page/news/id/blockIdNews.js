@@ -13,7 +13,7 @@ const BlockIdNews = (props) => {
         {title: 'статьи', uri: '/news/item'},
         {title: 'видео', uri: '/news/video'}
         ];
-    
+
     return (
         <>
             <div className={classes.blockNewsMain}>
@@ -26,7 +26,6 @@ const BlockIdNews = (props) => {
                     {props.article.img_1 ? <Image src={`/news/${props.article.img_1}.jpg`} width={"460"} height={"345"} alt={props.article.title} /> : ""}
                     {props.article.iframe ? <div dangerouslySetInnerHTML={{__html: props.article.iframe}} /> : ""}
                     <div dangerouslySetInnerHTML={{__html: props.article.body}} />
-                    
                 </div>
             </div>  
         </>

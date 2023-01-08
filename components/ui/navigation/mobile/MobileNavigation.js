@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from '../../../../components/ui/navigation/mobile/navigationMobile.module.scss'
 
-const MobileNavigation = () => {
+const MobileNavigation = (props) => {
 
     const menu = [
         {id: '1', title: 'Главная', uri: '/'},

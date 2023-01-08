@@ -65,7 +65,7 @@ const Article = ({article:serverArticle}) => {
                     {mobile ? <BlockIdNewsMobile article = {article} /> : <BlockIdNews article = {article} />}
                 </div>
                 <div className={`${classes.item} ${classes.asideright}`}>
-                    <NavigationArticle />
+                    <NavigationArticle article = {article.title_id} />
                 </div>
                 {mobile ? <MobileFooter /> : <Footer />}
             </div>
