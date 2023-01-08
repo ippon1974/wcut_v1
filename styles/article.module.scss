@@ -123,6 +123,15 @@
     margin: 0 0 0.5em 0;
   }
 
+  .maincontext .blockNewsMain .newsListMain video {
+    margin: 1em 0 0 0;
+  }
+
+  .maincontext .blockNewsMain .newsListMain .responseVideo {
+    width: 100%;
+    height: auto;
+  }
+
   .maincontext .blockNewsMain .newsListMain > h2 {
     padding: 0 0 1em 0;
     border-bottom: 1px solid #303028;
@@ -161,6 +170,7 @@
     font-size: 0.8em;
     line-height: 1.4em;
   }
+
   
   .maincontext div p > em {
     font-style: italic;

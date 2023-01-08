@@ -24,8 +24,7 @@ const BlockIdNews = (props) => {
                 <div className={classes.newsListMain}>
                     <h2>{props.article.title}</h2>
                     {props.article.img_1 ? <Image src={`/news/${props.article.img_1}.jpg`} width={"460"} height={"345"} alt={props.article.title} /> : ""}
-                    {props.article.iframe ? "" : ""}
-                    {props.article.video ? "" : ""}
+                    {props.article.iframe ? <div dangerouslySetInnerHTML={{__html: props.article.iframe}} /> : ""}
                     <div dangerouslySetInnerHTML={{__html: props.article.body}} />
                     
                 </div>

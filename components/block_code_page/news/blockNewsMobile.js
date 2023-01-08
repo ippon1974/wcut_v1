@@ -36,9 +36,12 @@ const BlockNewsMobile = (props) => {
                     <Link href={`/news/[id]`} as={`/news/${article.id}`} title={article.title}>{article.title}</Link>
                 </h2>
                 <p className={classes.ctxNews}>{article.titlelong}</p>
-                {article.img_1 ? <Link href={`/news/[id]`} as={`/news/${article.id}`} title={article.title}><Image className={classes.responseImg} src={`/news/${article.img_1}.jpg`} width={"460"} height={"345"} alt={article.title} /></Link> : ""}
-                {article.iframe ? "" : ""}
-                {article.video ? "" : ""}
+                    {article.img_1 ? <Link href={`/news/[id]`} as={`/news/${article.id}`} title={article.title}><Image className={classes.responseImg} src={`/news/${article.img_1}.jpg`} width={"460"} height={"345"} alt={article.title} /></Link> : ""}
+                    {article.video ? 
+                <video className={classes.responseVideo} controls autoplay loop muted poster={`/video/poster/${article.video}_1.png`}>
+                     <source src={`/video/${article.video}_1.mp4`} type="video/mp4"/>
+                     <source src={`/video/${article.video}_2.webm`} type="video/webm" />
+                </video> : ""}
                 </div>
                 </div>
             ))}

@@ -30,8 +30,11 @@ const BlockIdNewsMobile = (props) => {
                     <span>Раздел: <Link href={menuItem[props.article.title_id].uri} title={menuItem[props.article.title_id].title}>{menuItem[props.article.title_id].title}</Link></span>
                     <h2>{props.article.title}</h2>
                     {props.article.img_1 ? <Image className={classes.responseImg} src={`/news/${props.article.img_1}.jpg`} width={"460"} height={"345"} alt={props.article.title} /> : ""}
-                    {props.article.iframe ? "" : ""}
-                    {props.article.video ? "" : ""}
+                    {props.article.video ? 
+                <video className={classes.responseVideo} controls autoplay loop muted poster={`/video/poster/${props.article.video}_1.png`}>
+                     <source src={`/video/${props.article.video}_1.mp4`} type="video/mp4"/>
+                     <source src={`/video/${props.article.video}_2.webm`} type="video/webm" />
+                </video> : ""}
                     <div dangerouslySetInnerHTML={{__html: props.article.body}} />
                 </div>
             </div>
