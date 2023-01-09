@@ -39,7 +39,6 @@ const BlockNews = (props) => {
                                 </span>
                             </div>
                         </div>
-                        
                     </div>
                 ))}
         </>

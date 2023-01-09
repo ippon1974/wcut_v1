@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react'
 import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/main/Navigation";
@@ -14,32 +14,52 @@ import Image from "next/image";
 import $ from 'jquery';  
 import { useMediaQuery } from 'react-responsive';
 
-export default function Works() {
+export default function Works({works:serverWorks}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
 
+    const[works, setWorks] = useState(serverWorks);
+
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/works/all')
+            const json = await response.json();
+            setWorks(json);
+        }
+        if(!serverWorks){
+            load();
+        }
+    }, [serverWorks])
+
+    if(!works){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+
     useEffect(() => {
         $(function(){
             $('.viewportWork').each(function () { var imgHeight =  $(this).find('>img').css('height');  $(this).animate({ height: imgHeight, top: '-' + imgHeight }, { queue: false, duration: 100, easing: 'swing' }).css('overflow', 'visible'); });
             $('.viewportWork').parent().closest('div').parent().hover(function(){$(this).find('.viewportWork').stop().animate({top: 0},{queue:false,duration:250,easing:'swing'}); }, function() { var imgHeight = $(this).find('.viewportWork').find('>img').css('height');  $(this).find('.viewportWork').stop().animate({top:'-'+imgHeight},{queue:false,duration:200,easing:'swing'}); });
-        })
+        }, [])
     }) 
-    const workPort = {
-        height: '0',
-        top:'-228px',
-        margin:'0',
-        padding: '0',
-        position:'relative'
-    }  
 
-    const imgWork = {
-        top: 0,
-        left: 0,
-        border: 0,
-        display: 'block'
-    }
+    // const workPort = {
+    //     height: '0',
+    //     top:'-228px',
+    //     margin:'0',
+    //     padding: '0',
+    //     position:'relative'
+    // }  
+
+    // const imgWork = {
+    //     top: 0,
+    //     left: 0,
+    //     border: 0,
+    //     display: 'block'
+    // }
 
     return(
         <Layout title={'Работы'}>
@@ -57,7 +77,7 @@ export default function Works() {
             
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     
-                   {mobile ? <BlockWorkMobile /> : <BlockWork />}
+                   {mobile ? <BlockWorkMobile /> : <BlockWork works={works} />}
 
                     {/* <div className={`${classes.newListWork}`}>
                         <Link href={'#'}>    
@@ -138,4 +158,13 @@ export default function Works() {
             <div className={classes.endpage}></div>
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {works:null}
+    }
+    const res = await fetch('http://localhost:7000/works/all')
+    const works = await res.json();
+    return { props: { works } }
 }

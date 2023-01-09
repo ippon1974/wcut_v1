@@ -117,6 +117,70 @@
     grid-area: main;
   }
 
+  .maincontext .allContainerWork {
+    display: grid;
+    margin: 15px 37px 0 37px;
+    padding: 0;
+    grid-template-columns: 303px 303px 303px;
+    gap: 13px;
+  }
+  .maincontext .allContainerWork .itemWorks {
+    
+  }
+  
+  .maincontext .allContainerWork .allContainerWorkDesc {
+    height: 140px;
+    background: black;
+  }
+  .maincontext .allContainerWork .allContainerWorkDesc h2 {
+    padding: 0.5em 10px 0 10px;
+  }
+
+  .maincontext .allContainerWork .allContainerWorkDesc h2 a{
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #F2F2BF;
+  }
+
+  .maincontext .allContainerWork .allContainerWorkDesc p {
+    font-size: 0.8em;
+    color: #F2F2BF;
+    padding: 0.5em 10px 1em 10px;
+  }
+
+  .maincontext .allContainerWork .allContainerWorkArrowLink {
+    display: grid;
+    grid-template-columns: 34px auto;
+    align-items: center;
+    background: black;
+    border-top: 1px solid #F6F6C2;
+  }
+
+  .maincontext .allContainerWork .allContainerWorkArrowLink .imgLink {
+    border-right: 1px solid #F6F6C2;
+  }
+
+
+  .maincontext .allContainerWork .allContainerWorkArrowLink .textLink {
+    padding: 0;
+    margin: 0 0 0 5px;
+    font: 18px/28px 'BebasNeueRegular',Arial, sans-serif;
+  }
+
+  .maincontext .allContainerWork .allContainerWorkArrowLink .textLink a {
+    color: #F6F6C2;
+    text-decoration: none;
+  }
+
+  .maincontext .allContainerWork .allContainerWorkArrowLink .textLink a:hover {
+    color: #ee3124;
+    text-decoration: none;
+  }
+
+
+
+
   .maincontext .newListWork {
     display: grid;
     margin: 15px 37px 0 35px;

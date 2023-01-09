@@ -152,16 +152,15 @@
   }
 
   .maincontext .blockNewsMain .newsListMain ul {
-    margin: 1em 0 1em 0;
+    margin: 0 0 0 15px;
     padding: 0;
   }
   .maincontext .blockNewsMain .newsListMain ul>li{
     list-style: disc;
-    font-size: 85%;
-    font-weight: normal;
-    margin: 1em 10px 0 20px;
-    font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+    font-size: 80%;
+    margin: 0.5em 0 0 0;
     color: #303028;
+    word-spacing: 0.1em;
   }
   .maincontext .blockNewsMain .newsListMain a {
     color: #ee3124;
