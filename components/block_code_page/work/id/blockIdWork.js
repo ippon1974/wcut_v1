@@ -3,12 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const BlockIdWork = (props) => {
+
     return (
         <>
             <div className={classes.bannerHeadWork}>
                         <Image src={`/works/filter/${props.work.img_1}.jpg`} width={'935'} height={'172'} alt={''} />
             </div>
-            
                     <div className={classes.logos_nameWork}>
                         <div className={classes.logos_works}>
                             <Image src={'/cs_client_logos.svg'} width={'91'} height={'91'} alt={''} />
@@ -25,10 +25,24 @@ const BlockIdWork = (props) => {
                             <span><Link href={'/works'} title={"Все работы"}>Работы</Link></span>
                         </div>
                         <div></div>
-                        <div className={classes.pre}>
-                           <Image src={'/prev.gif'} width={23} height={23} alt={''} />
-                           <span><Link href={'#'} title={'Предыдущая'}>Предыдущая</Link></span>
-                        </div>
+                        {props.prevPage == 0 ? 
+                             <div className={classes.pre}>
+                             {/* <Image src={'/prev.gif'} width={23} height={23} alt={''} />
+                             <span><Link href={"/works/1"} title={'Предыдущая'}>Предыдущая 1</Link></span> */}
+                             </div>
+                        : 
+                            <div className={classes.pre}>
+                            <Image src={'/prev.gif'} width={23} height={23} alt={''} />
+                            {/* <span><Link href={"/works/[props.prevPage[0].id]"} as={`/works/${props.prevPage[0].id}`} title={'Предыдущая'}>Предыдущая</Link></span> */}
+                            <span><Link href={"/works/[props.prevPage]"} as={`/works/${props.prevPage}`} title={'Предыдущая'}>Предыдущая</Link></span>
+
+                            {/* <Link href={`/works/${props.prevPage[0].id}`}>
+                               Shop by menu
+                            </Link> */}
+
+                            </div>
+                        }
+                        
                         <div className={classes.next}>
                            <span><Link href={'#'} title={"Следующая"}>Следующая</Link></span>
                            <Image src={'/next.gif'} width={23} height={23} alt={''} />
