@@ -1,9 +1,27 @@
+import {useState, useEffect, use} from 'react';
+import {useRouter} from "next/router";
 import classes from '../../../../styles/works_id.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 
 const BlockIdWork = (props) => {
 
+    const router = useRouter();
+    const { asPath, pathname } = useRouter();
+    const idworkold = asPath.split('/');
+    const idworknew = idworkold[2];
+
+    const[w, setW] = useState(props.work);
+    useEffect(()=>{
+        async function load() {
+            const res = await fetch(`http://localhost:7000/works?id=${idworknew}`);
+            const d = await res.json();
+            setW(d);
+        }
+            load();
+    },[idworknew])// eslint-disable-line react-hooks/exhaustive-deps
+
+    
     return (
         <>
             <div className={classes.bannerHeadWork}>
@@ -14,8 +32,8 @@ const BlockIdWork = (props) => {
                             <Image src={'/cs_client_logos.svg'} width={'91'} height={'91'} alt={''} />
                         </div>
                         <div className={classes.nameWork}>
-                            <h1>{props.work.title}</h1>
-                            <p>{props.work.titlelong}</p>
+                            <h1>{w.title}</h1>
+                            <p>{w.titlelong}</p>
                         </div>
                     </div>
 
@@ -25,7 +43,7 @@ const BlockIdWork = (props) => {
                             <span><Link href={'/works'} title={"Все работы"}>Работы</Link></span>
                         </div>
                         <div></div>
-                        {props.prevPage == 0 ? 
+                        {w.id === 1 ?
                              <div className={classes.pre}>
                              {/* <Image src={'/prev.gif'} width={23} height={23} alt={''} />
                              <span><Link href={"/works/1"} title={'Предыдущая'}>Предыдущая 1</Link></span> */}
@@ -34,7 +52,8 @@ const BlockIdWork = (props) => {
                             <div className={classes.pre}>
                             <Image src={'/prev.gif'} width={23} height={23} alt={''} />
                             {/* <span><Link href={"/works/[props.prevPage[0].id]"} as={`/works/${props.prevPage[0].id}`} title={'Предыдущая'}>Предыдущая</Link></span> */}
-                            <span><Link href={"/works/[props.prevPage]"} as={`/works/${props.prevPage}`} title={'Предыдущая'}>Предыдущая</Link></span>
+                            
+                            <span><Link href={`/works/${props.prevPage}`} title={'Предыдущая'}>Предыдущая</Link></span>
 
                             {/* <Link href={`/works/${props.prevPage[0].id}`}>
                                Shop by menu

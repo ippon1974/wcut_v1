@@ -10,21 +10,29 @@ import MobileFooter from "../../components/ui/footer/mobile/MobileFooter";
 import Footer from "../../components/ui/footer/main/Footer";
 import classes from '../../styles/works_id.module.scss';
 import Head from 'next/head';
+import Link from "next/link";
 import { useMediaQuery } from 'react-responsive';
 
 
 const Work = ({work:serverWork, prev:serverPrev}) => {
 
     const router = useRouter();
+    const[prevpage, setPrevPage] = useState(serverPrev);
+    useEffect(()=>{
+       async function load() {
+        const response = await fetch(`http://localhost:7000/works/prev?id=${router.query.id}`);
+        const data = await response.json();
+        if(data[0] == undefined){
+            return
+        }
+        setPrevPage(data[0].id);
+       }
+        load();
+    }, [serverPrev]);// eslint-disable-line react-hooks/exhaustive-deps
 
-    const[prev, setPrev] = useState(serverPrev);
-    const prevPage = prev[0].id;
-    //onsole.log("ole ole", prevPage);
-    
     const[mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
-
 
     const[work, setWork] = useState(serverWork);
     useEffect(()=>{
@@ -36,7 +44,7 @@ const Work = ({work:serverWork, prev:serverPrev}) => {
         if(!serverWork){
             load();
         }
-    },[])// eslint-disable-line react-hooks/exhaustive-deps
+    },[serverWork])// eslint-disable-line react-hooks/exhaustive-deps
 
     if(!work){
         return <Layout>
@@ -44,29 +52,9 @@ const Work = ({work:serverWork, prev:serverPrev}) => {
         </Layout>
     }
 
-    // const[prev, setPrev] = useState(serverPrev);
-    // useEffect(()=>{
-    //     async function load() {
-    //         const response = await fetch(`http://localhost:7000/works/prev?id=${router.query.id}`);
-    //         const data = await response.json();
-    //         setPrev(data);
-    //     }
-    //     if(!serverPrev){
-    //         load();
-    //     }
-    // },[])// eslint-disable-line react-hooks/exhaustive-deps
-
-    if(!prev){
-        return <Layout>
-            <p>...Loading</p>
-        </Layout>
-    }
-
-
-
     return (
         <Layout title={'Работы'}>
-
+           
             <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>
@@ -81,7 +69,7 @@ const Work = ({work:serverWork, prev:serverPrev}) => {
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} /> : <BlockIdWork work = {work} prevPage = {prevPage} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} /> : <BlockIdWork work = {work} prevPage = {prevpage} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}
@@ -89,6 +77,7 @@ const Work = ({work:serverWork, prev:serverPrev}) => {
             </div>
 
             <div className={classes.endpage}></div>
+
             </Layout>
     )
 }
