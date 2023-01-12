@@ -1,4 +1,4 @@
-import {useState, useEffect, use} from 'react';
+import {useState, useEffect} from 'react';
 import {useRouter} from "next/router";
 import classes from '../../../../styles/works_id.module.scss';
 import Link from "next/link";

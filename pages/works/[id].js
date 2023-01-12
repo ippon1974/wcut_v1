@@ -103,7 +103,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} /> : <BlockIdWork work = {work} prevPage = {prevpage} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {prevpage} nextPage = {nextpage} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {prevpage} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}

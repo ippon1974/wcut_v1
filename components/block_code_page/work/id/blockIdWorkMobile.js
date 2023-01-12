@@ -1,36 +1,72 @@
 import classes from '../../../../styles/works_id.module.scss';
+import {useState, useEffect} from 'react';
+import {useRouter} from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
-const BlockIdWorkMobile = () => {
+const BlockIdWorkMobile = (props) => {
+
+    const { asPath, pathname } = useRouter();
+    const idworkold = asPath.split('/');
+    const idworknew = idworkold[2];
+
+    const[w, setW] = useState(props.work);
+    useEffect(()=>{
+        async function load() {
+            const res = await fetch(`http://localhost:7000/works?id=${idworknew}`);
+            const d = await res.json();
+            setW(d);
+        }
+            load();
+    },[idworknew])// eslint-disable-line react-hooks/exhaustive-deps
+
+    // const[work, setWork] = useState(props.work);
+    const[prev, setPrev] = useState(props.prevPage);
+    const[next, setNext] = useState(props.nextPage);
+    const[max, setMax] =  useState(props.maxId);
+    const[min, setMin] =  useState(props.minId);
+
     return (
         <>
              <div className={`${classes.newListWork}`}>
 
-                <h2>Андресная табличка описане заголовок работы</h2>
+                <h2>{w.title}</h2>
                 <div className={classes.subMenuPreNext}>
                   <div><Link href={'/works'} title={'Все работы'}>Работы</Link></div>
                   <div></div>
-                  <div><Link href={'#'} title={"Предыдущая работа"}>&#8592; Предыдущая</Link></div>
-                  <div><Link href={'#'} title={"Следующая работа"}>Следующая &#8594;</Link></div>
+                  {w.id === props.minId  ?
+                    <div>
+                        {/* <Link href={`/works/${props.prevPage}`} title={"Предыдущая работа"}>&#8592; Предыдущая</Link> */}
+                    </div>
+                  : 
+                    <div><Link href={`/works/${props.prevPage}`} title={"Предыдущая работа"}>&#8592; Предыдущая</Link></div>
+                  }
+                    
+                  {w.id === props.maxId  ?
+                  <div>
+                    {/* <Link href={`/works/${props.nextPage}`} title={"Следующая работа"}>Следующая &#8594;</Link> */}
+                  </div>
+                    :
+                  <div>
+                    <Link href={`/works/${props.nextPage}`} title={"Следующая работа"}>Следующая &#8594;</Link>
+                  </div>
+                  }
                 </div>
              
              <div className={classes.hr}></div>
 
              <div className={classes.descwork}>
-                <p><strong>Material</strong>: name </p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor veritatis dolores fugit mollitia cumque non nobis magni nulla molestiae, nesciunt sed aspernatur obcaecati deserunt saepe.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident blanditiis pariatur sapiente tempora beatae, mollitia, quod officia neque quaerat eum atque accusamus obcaecati aperiam quo aliquid incidunt culpa. Molestias asperiores distinctio facilis voluptatem ratione doloremque eos vel beatae sequi quo accusantium, aspernatur dolorum nostrum quam neque vitae similique. Fugit illum voluptates laudantium accusamus, iure suscipit.</p>
+                <p><strong>Материал:</strong>: {w.materialname}</p>
+                <div dangerouslySetInnerHTML={{__html: w.body}} />
              </div>
-             <div>
-                <Image className={classes.responseImg} src={'/works/2_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
-             </div> 
-             <div>
-                <Image className={classes.responseImg} src={'/works/12_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
-             </div>
+
+             {w.img_1 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_1}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""} 
+             {w.img_2 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_2}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_3 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_3}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_4 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_4}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_5 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_5}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+            
             </div>
-            
-            
         </>
     )
 }

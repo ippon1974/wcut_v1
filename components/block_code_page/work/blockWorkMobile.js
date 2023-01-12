@@ -13,13 +13,13 @@ const BlockWorkMobile = (props) => {
 
                             {props.works.map(work => (
                                 <div key={work.id}>  
-                                <Link href={'#'}> 
+                                <Link href={`/works/[id]`} as={`/works/${work.id}`}> 
                                 <div>
-                                    <Image className={classes.responseImg} src={`/works/small/${work.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                                    <Image className={classes.responseImg} src={`/works/small/${work.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image>
                                 </div>
                                 </Link>
                                 <div className={classes.descWork}>
-                                <Link href={'#'} title={work.title}>{work.title}</Link>
+                                <Link href={`/works/[id]`} as={`/works/${work.id}`} title={work.title}>{work.title}</Link>
                                 </div>
                                 
                                 </div>
