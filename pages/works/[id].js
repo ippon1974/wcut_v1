@@ -13,10 +13,30 @@ import Head from 'next/head';
 import Link from "next/link";
 import { useMediaQuery } from 'react-responsive';
 
-
-const Work = ({work:serverWork, prev:serverPrev}) => {
+const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMaxId, minid:serverMinId}) => {
 
     const router = useRouter();
+
+    const[minid, setMinId] = useState(serverMinId);
+    useEffect(()=>{
+        async function load() {
+            const res = await fetch(`http://localhost:7000/works/min`);
+            const min = await res.json();
+            setMinId(min);
+        }
+            load();
+    },[serverMinId])// eslint-disable-line react-hooks/exhaustive-deps
+
+    const[maxid, setMaxId] = useState(serverMaxId);
+    useEffect(()=>{
+        async function load() {
+            const res = await fetch(`http://localhost:7000/works/max`);
+            const max = await res.json();
+            setMaxId(max);
+        }
+            load();
+    },[serverMaxId])// eslint-disable-line react-hooks/exhaustive-deps
+
     const[prevpage, setPrevPage] = useState(serverPrev);
     useEffect(()=>{
        async function load() {
@@ -29,6 +49,20 @@ const Work = ({work:serverWork, prev:serverPrev}) => {
        }
         load();
     }, [serverPrev]);// eslint-disable-line react-hooks/exhaustive-deps
+
+    const[nextpage, setNextPage] = useState(serverNext);
+    useEffect(()=>{
+       async function load() {
+        const response = await fetch(`http://localhost:7000/works/next?id=${router.query.id}`);
+        const data = await response.json();
+        if(data[0] == undefined){
+            return
+        }
+        setNextPage(data[0].id);
+       }
+        load();
+    }, [serverNext]);// eslint-disable-line react-hooks/exhaustive-deps
+
 
     const[mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -69,7 +103,7 @@ const Work = ({work:serverWork, prev:serverPrev}) => {
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} /> : <BlockIdWork work = {work} prevPage = {prevpage} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} /> : <BlockIdWork work = {work} prevPage = {prevpage} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}
@@ -85,11 +119,22 @@ export default Work;
 
 export async function getServerSideProps({query, req}) {
     if(!req){
-        return {work:null, prev:null}
+        return {work:null, prev:null, next:null, maxid:null, minid:null}
     }
     const response = await fetch(`http://localhost:7000/works?id=${query.id}`);
     const work = await response.json();
-    const resp = await fetch(`http://localhost:7000/works/prev?id=${query.id}`);
-    const prev = await resp.json();
-    return {props: {work, prev} }
+
+    const respprev = await fetch(`http://localhost:7000/works/prev?id=${query.id}`);
+    const prev = await respprev.json();
+
+    const respnext = await fetch(`http://localhost:7000/works/next?id=${query.id}`);
+    const next = await respnext.json();
+
+    const respmaxid = await fetch(`http://localhost:7000/works/max`);
+    const maxid = await respmaxid.json();
+
+    const respminid = await fetch(`http://localhost:7000/works/min`);
+    const minid = await respminid.json();
+
+    return {props: {work, prev, next, maxid, minid} }
 }

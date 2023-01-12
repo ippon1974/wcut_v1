@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const BlockIdWork = (props) => {
 
-    const router = useRouter();
     const { asPath, pathname } = useRouter();
     const idworkold = asPath.split('/');
     const idworknew = idworkold[2];
@@ -43,30 +42,31 @@ const BlockIdWork = (props) => {
                             <span><Link href={'/works'} title={"Все работы"}>Работы</Link></span>
                         </div>
                         <div></div>
-                        {w.id === 1 ?
+                        {w.id === props.minId  ?
                              <div className={classes.pre}>
                              {/* <Image src={'/prev.gif'} width={23} height={23} alt={''} />
-                             <span><Link href={"/works/1"} title={'Предыдущая'}>Предыдущая 1</Link></span> */}
+                             <span><Link href={"/works/1"} title={'Предыдущая'}>Предыдущая</Link></span> */}
                              </div>
                         : 
                             <div className={classes.pre}>
-                            <Image src={'/prev.gif'} width={23} height={23} alt={''} />
-                            {/* <span><Link href={"/works/[props.prevPage[0].id]"} as={`/works/${props.prevPage[0].id}`} title={'Предыдущая'}>Предыдущая</Link></span> */}
-                            
+                            <Link href={`/works/${props.prevPage}`}><Image src={'/prev.gif'} width={23} height={23} alt={''} /></Link>
                             <span><Link href={`/works/${props.prevPage}`} title={'Предыдущая'}>Предыдущая</Link></span>
-
-                            {/* <Link href={`/works/${props.prevPage[0].id}`}>
-                               Shop by menu
-                            </Link> */}
-
                             </div>
                         }
                         
+                        {w.id === props.maxId  ?  
                         <div className={classes.next}>
-                           <span><Link href={'#'} title={"Следующая"}>Следующая</Link></span>
-                           <Image src={'/next.gif'} width={23} height={23} alt={''} />
+                           {/* <span><Link href={`/works/${props.nextPage}`} title={"Следующая"}>Следующая</Link></span>
+                           <Image src={'/next.gif'} width={23} height={23} alt={''} /> */}
                         </div>
-                    </div>
+                        :
+                        <div className={classes.next}>
+                           <span><Link href={`/works/${props.nextPage}`} title={"Следующая"}>Следующая</Link></span>
+                           <Link href={`/works/${props.nextPage}`}><Image src={'/next.gif'} width={23} height={23} alt={''} /></Link>
+                        </div>
+                        }
+
+                        </div>
 
                     <div className={classes.contanerPageWork}>
                         <div className={classes.rightDesc}>
@@ -74,16 +74,16 @@ const BlockIdWork = (props) => {
                             <p>{props.work.materialname}</p>
                         </div>
                         <div>
-                            <h3>Процесс</h3>
+                            <h3>Процесс {w.id == 0 ? "yes" : "no"}</h3>
                             <div dangerouslySetInnerHTML={{__html: props.work.body}} />
 
                         </div>
                         <div className={classes.panelImg}>
-                            {props.work.img_1 ? <Image src={`/works/big/${props.work.img_1}.jpg`} width={"460"} height={"345"} alt={props.work.title} /> : ""}
-                            {props.work.img_2 ? <Image src={`/works/big/${props.work.img_2}.jpg`} width={"460"} height={"345"} alt={props.work.title} /> : ""}
-                            {props.work.img_3 ? <Image src={`/works/big/${props.work.img_3}.jpg`} width={"460"} height={"345"} alt={props.work.title} /> : ""}
-                            {props.work.img_4 ? <Image src={`/works/big/${props.work.img_4}.jpg`} width={"460"} height={"345"} alt={props.work.title} /> : ""}
-                            {props.work.img_5 ? <Image src={`/works/big/${props.work.img_5}.jpg`} width={"460"} height={"345"} alt={props.work.title} /> : ""}
+                            {w.img_1 ? <Image src={`/works/big/${w.img_1}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
+                            {w.img_2 ? <Image src={`/works/big/${w.img_2}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
+                            {w.img_3 ? <Image src={`/works/big/${w.img_3}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
+                            {w.img_4 ? <Image src={`/works/big/${w.img_4}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
+                            {w.img_5 ? <Image src={`/works/big/${w.img_5}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
                         </div>
                     </div> 
         </>

@@ -2,8 +2,7 @@ import classes from '../../../styles/works.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 
-const BlockWorkMobile = () => {
-
+const BlockWorkMobile = (props) => {
 
     return (
         <>
@@ -12,7 +11,23 @@ const BlockWorkMobile = () => {
 
                             <div className={classes.hr}></div>
 
-                        <Link href={'/works/id/one'}>    
+                            {props.works.map(work => (
+                                <div key={work.id}>  
+                                <Link href={'#'}> 
+                                <div>
+                                    <Image className={classes.responseImg} src={`/works/small/${work.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                                </div>
+                                </Link>
+                                <div className={classes.descWork}>
+                                <Link href={'#'} title={work.title}>{work.title}</Link>
+                                </div>
+                                
+                                </div>
+                                 
+                            ))}     
+
+
+                        {/* <Link href={'/works/id/one'}>    
                         <div>
                             <Image className={classes.responseImg} src={'/works/2_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
                         </div>
@@ -47,7 +62,7 @@ const BlockWorkMobile = () => {
                         </Link>
                         <div className={classes.descWork}>
                             <Link href={'/works/id/one'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link>
-                        </div>
+                        </div> */}
                     </div>
                    
         </>

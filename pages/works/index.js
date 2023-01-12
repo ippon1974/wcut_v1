@@ -61,7 +61,7 @@ export default function Works({works:serverWorks}) {
                 </div>
             
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                   {mobile ? <BlockWorkMobile /> : <BlockWork works={works} />}
+                   {mobile ? <BlockWorkMobile works={works} /> : <BlockWork works={works} />}
                 </div>
 
                <div className={classes.componentfooter}>
