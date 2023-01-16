@@ -10,7 +10,6 @@ import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive'; 
-import Works from '../works';
 
 export default function Price({materials:serverMaterials, costsize:serverCostSize}) {
 
@@ -20,6 +19,29 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const [aglomerat, setAglomerat] = useState('215');
     const[brass, setBrass] = useState('278');
     const[steel, setSteel] = useState('418');
+
+    const [state, changeState] = useState({
+        name: "215",
+        eventTitle: "",
+        details: "",
+        list: [],
+        toggleIndex: "",
+        editName: "",
+        editEventTitle: "",
+        editDetails: "",
+        editObj: {}
+      });
+
+      const handleName = event => {
+        const { target } = event;
+    
+        changeState(state => ({
+          ...state,
+          name: target.value
+        }));
+      };
+      
+      console.log(handleName, "state name ...", state.name);
 
 
     const [mobile, setMobile] = useState(false)
@@ -97,12 +119,54 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                        
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
-                        {materials.map((m, index)=>{
+                        {/* {materials.map((m, index)=>{
                             if(m.id === 4){return <p key={index}>yes</p>}
                             return <p key={index}>no</p>
-                        })}
-                            
-                                
+                        })} */}
+
+                        <table className={classes.pricematerials}>
+                            <tbody>
+                            <tr>
+                                <th>Материал</th>
+                                <th>Толщина</th>
+                                <th>Стоимость</th>
+                            </tr>
+
+                            {
+                                materials.map((m,index) => 
+                                <tr key={index}>
+                                    <td><Link href={'#'} title={m.material}>{m.material}</Link></td>
+                                    <td>
+                                    <select value={state.name} onChange={handleName}>
+                                    { 
+                                        costsize.map((c, subindex) =>                                            
+                                        <option key={subindex} value={c.cost}>
+                                            {c.material_id == m.id ? c.size : ""}
+                                        </option>)
+                                    }
+                                    </select> мм.
+                                    </td>
+                                    <td>{state.name} руб. <span class="short">пог. м.</span></td>
+                                </tr>
+                                 )
+                            }
+                            </tbody>
+                        </table>      
+
+                       {
+                           materials.map((m,index) => 
+                           <div key={index}>
+                               <h4>{m.material}</h4>
+                               { 
+                                   costsize.map((c, subindex) =>
+                                       <p key={subindex}>
+                                            {c.material_id == m.id ? c.size : ""} {c.material_id == m.id ? c.cost : ""}
+                                       </p>)
+                               }
+                           </div>
+                           )
+                       }
+                        
                         {materials.map((element, index) => {
                                 if (element.id === 2) {
                                 return <h2 key={index}>{element.id}</h2>;
@@ -110,8 +174,11 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
                                 return <h2 key={index}>X</h2>;
                             })}
+
+
+                       
                         
-                        <table className={classes.pricematerials}>
+                        {/* <table className={classes.pricematerials}>
                             <tbody>
                             <tr>
                                 <th>Материал</th>
@@ -175,7 +242,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                             </tr>
                            
                             </tbody>
-                        </table>
+                        </table> */}
 
                         <h3>Принимаем различные форматы файлов для подготовки программы раскроя материалов для гидроабразивных станков</h3>
                         <p><strong>Форматы файлов</strong>: (dwg, dxf, ald, anc, cnc, jpg, gif, pdf, txt, world, excel.).</p>
