@@ -8,9 +8,7 @@ import BlockWorkMobile from "../../components/block_code_page/work/blockWorkMobi
 import MobileFooter from "../../components/ui/footer/mobile/MobileFooter";
 import Footer from "../../components/ui/footer/main/Footer";
 import classes from '../../styles/works.module.scss';
-import Link from "next/link";
 import Head from 'next/head';
-import Image from "next/image";
 import $ from 'jquery';  
 import { useMediaQuery } from 'react-responsive';
 

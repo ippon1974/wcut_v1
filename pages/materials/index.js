@@ -10,38 +10,67 @@ import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive'; 
-import Select from "react-select";
+import Works from '../works';
 
-export default function Price() {
+export default function Price({materials:serverMaterials, costsize:serverCostSize}) {
 
-    const [mobile, setMobile] = useState(false)
-    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
-    useEffect(() => setMobile(isPhone), [isPhone]);
+    const[materials, setMaterials] = useState(serverMaterials);
+    const[costsize, setCostSize] = useState(serverCostSize);
 
     const [aglomerat, setAglomerat] = useState('215');
     const[brass, setBrass] = useState('278');
     const[steel, setSteel] = useState('418');
 
 
-    // const options = [
-    //     { value: "blues", label: "Blues" },
-    //     { value: "rock", label: "Rock" },
-    //     { value: "jazz", label: "Jazz" },
-    //     { value: "orchestra", label: "Orchestra" },
-    //   ];
-
-    // function handleChange(event) {
-	// 	setValue(event.target.value);
-	// }
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
 
 
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/materials/all')
+            const json = await response.json();
+            setMaterials(json);
+
+            const rescost = await fetch('http://localhost:7000/costsize/all')
+            const jcost = await rescost.json();
+            setCostSize(jcost);
+        }
+        if(!serverMaterials){
+            load();
+        }
+        }, [serverMaterials])// eslint-disable-line react-hooks/exhaustive-deps
+
+        if(!materials){
+            return <Layout>
+                <p>...Loading</p>
+            </Layout>
+        }
+
+    // useEffect(()=> {
+    //     async function load() {
+    //         const response = await fetch('http://localhost:7000/costsize/all')
+    //         const json = await response.json();
+    //         setCostSize(json);
+    //     }
+    //     if(!serverCostSize){
+    //         load();
+    //     }
+    //     }, [serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
+
+    //     if(!costsize){
+    //         return <Layout>
+    //             <p>...Loading</p>
+    //         </Layout>
+    //     }
+    
 
     return(
         <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>
-
 
             <div className={classes.wrapper}>
             <div className={`${classes.item} ${classes.header}`}>
@@ -65,34 +94,22 @@ export default function Price() {
                         <p><Link className={classes.activecalc} href="http://calculation.htz.ru/" target={'_blank'} title="Калькулятор гидроабразивной рhttp://localhost:7165/sites/all/themes/tommy/images/iconTwitter.gifезки"><strong>Калькулятор</strong></Link> гидроабразивной резки.</p>
                         <p>Стоимость раскроя материала указана в рублях РФ за один погонный метр <strong>без НДС</strong>. Минимальная стоимость заказа не должна быть <strong>меньше 5000 рублей</strong>.</p>
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
-                        
-                        {/* <select value={value} onChange={handleChange}>
-                            <option value={'o'}>text1</option>
-                            <option>text2</option>
-                            <option>text3</option>
-                            <option>text4</option>
-                        </select>
-                        <p>ваш выбор: {value}</p> */}
-
-                        {/* <select value={value} onChange={(event) => setValue(event.target.value)}>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                    <option value="25">25</option>
-                                    <option value="30">30</option>
-                                    <option value="35">35</option>
-                                    <option value="40">40</option>
-                                    <option value="45">45</option>
-                                    <option value="50">50</option>
-                        </select>
-                        <p>
-                            ваш выбор: {value}
-                        </p> */}
-
-                        {/* <Select options={options} /> */}
-
+                       
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
+
+                        {materials.map((m, index)=>{
+                            if(m.id === 4){return <p key={index}>yes</p>}
+                            return <p key={index}>no</p>
+                        })}
+                            
+                                
+                        {materials.map((element, index) => {
+                                if (element.id === 2) {
+                                return <h2 key={index}>{element.id}</h2>;
+                                }
+
+                                return <h2 key={index}>X</h2>;
+                            })}
                         
                         <table className={classes.pricematerials}>
                             <tbody>
@@ -197,7 +214,18 @@ export default function Price() {
             </div>
             <div className={classes.endpage}></div>
         
-
         </Layout>
     );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {materials:null, costsize:null}
+    }
+    const res = await fetch('http://localhost:7000/materials/all')
+    const materials = await res.json();
+
+    const rescost = await fetch('http://localhost:7000/costsize/all')
+    const costsize = await rescost.json();
+    return { props: { materials, costsize } }
 }
