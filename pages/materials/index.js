@@ -21,7 +21,8 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[steel, setSteel] = useState('418');
 
     const [state, changeState] = useState({
-        name: "215",
+        name: "",
+        steel: "",
         eventTitle: "",
         details: "",
         list: [],
@@ -34,16 +35,35 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
       const handleName = event => {
         const { target } = event;
-    
         changeState(state => ({
           ...state,
           name: target.value
         }));
       };
+
+      const[test, setTest] = useState({
+        selectedValue: ""
+      })
       
-      console.log(handleName, "state name ...", state.name);
+      function handleChange(e) {
+        console.log(e);
+        setTest({ selectedValue: e });
+      }
+    
+      function cs(id){
+        let res = "";
+        materials.map(m => (
+            costsize.map((c, i) => {
+                if(id === c.material_id){
+                    if(i == 0)
+                    res = c.cost; 
+                }
+            })
+        ))
+        return res;
+      }
 
-
+     
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
@@ -69,6 +89,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                 <p>...Loading</p>
             </Layout>
         }
+
 
     // useEffect(()=> {
     //     async function load() {
@@ -123,7 +144,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                             if(m.id === 4){return <p key={index}>yes</p>}
                             return <p key={index}>no</p>
                         })} */}
-
+                            
                         <table className={classes.pricematerials}>
                             <tbody>
                             <tr>
@@ -133,27 +154,36 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                             </tr>
 
                             {
-                                materials.map((m,index) => 
+                                materials.map((m, index) => 
                                 <tr key={index}>
                                     <td><Link href={'#'} title={m.material}>{m.material}</Link></td>
                                     <td>
-                                    <select value={state.name} onChange={handleName}>
+                                    <select onChange={handleChange}>
                                     { 
-                                        costsize.map((c, subindex) =>                                            
-                                        <option key={subindex} value={c.cost}>
-                                            {c.material_id == m.id ? c.size : ""}
-                                        </option>)
+                                        costsize.map((c, subindex) => {
+                                            return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
+                                        }
+                                           
+                                            // <option key={subindex} value={c.cost}>
+                                            //     {/* {c.material_id == m.id ? c.size : ""} */}
+                                            //     1
+                                            // </option>
+                                            
+                                        )
                                     }
                                     </select> мм.
+                                   
                                     </td>
-                                    <td>{state.name} руб. <span class="short">пог. м.</span></td>
+                                    {/* <td>{state.aglomerat ? state.aglomerat : cs(m.id)} руб. <span class="short">пог. м.</span></td> */}
+                                    <td></td>
                                 </tr>
                                  )
+
                             }
                             </tbody>
                         </table>      
 
-                       {
+                       {/* {
                            materials.map((m,index) => 
                            <div key={index}>
                                <h4>{m.material}</h4>
@@ -165,15 +195,15 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                }
                            </div>
                            )
-                       }
+                       } */}
                         
-                        {materials.map((element, index) => {
+                        {/* {materials.map((element, index) => {
                                 if (element.id === 2) {
                                 return <h2 key={index}>{element.id}</h2>;
                                 }
 
                                 return <h2 key={index}>X</h2>;
-                            })}
+                        })} */}
 
 
                        
