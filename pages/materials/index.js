@@ -16,54 +16,76 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
 
-    const [aglomerat, setAglomerat] = useState('215');
-    const[brass, setBrass] = useState('278');
-    const[steel, setSteel] = useState('418');
+    // const[aglomerat, setAglomerat] = useState('215');
+    // const[brass, setBrass] = useState('278');
+    // const[steel, setSteel] = useState('418');
 
-    const [state, changeState] = useState({
-        name: "",
-        steel: "",
-        eventTitle: "",
-        details: "",
-        list: [],
-        toggleIndex: "",
-        editName: "",
-        editEventTitle: "",
-        editDetails: "",
-        editObj: {}
+    // const [state, changeState] = useState({
+    //     name: "",
+    //     phone: "",
+    //     eventTitle: "",
+    //     details: "",
+    //     list: [],
+    //     toggleIndex: "",
+    //     editName: "",
+    //     editEventTitle: "",
+    //     editDetails: "",
+    //     editObj: {}
+    //   });
+
+    //   const handleName = event => {
+    //     const { target } = event;
+    //     changeState(state => ({
+    //       ...state,
+    //       name: target.value
+    //     }));
+    //   };
+
+    //   const handlePhone = event => {
+    //     const { target } = event;
+    //     changeState(state => ({
+    //       ...state,
+    //       phone: target.value
+    //     }));
+    //   };
+
+      const[allmat, setAllMat] = useState({
+        alumin: "",
+        steel: ""
       });
 
-      const handleName = event => {
+      const handleChange = (event, translit) => {
         const { target } = event;
-        changeState(state => ({
-          ...state,
-          name: target.value
-        }));
-      };
 
-      const[test, setTest] = useState({
-        selectedValue: ""
-      })
-      
-      function handleChange(e) {
-        console.log(e);
-        setTest({ selectedValue: e });
+        if(translit == "aglomerat")
+        setAllMat(allmat => ({
+            ...allmat,
+            aglomerat: target.value
+          }));
+
+        if(translit == "steel")
+        setAllMat(allmat => ({
+            ...allmat,
+            steel: target.value
+          }));
+
       }
     
-      function cs(id){
+      function defCost(id){
         let res = "";
         materials.map(m => (
             costsize.map((c, i) => {
                 if(id === c.material_id){
-                    if(i == 0)
-                    res = c.cost; 
+                    if(c.size == 5){
+                        res = c.cost;
+                    }
+
                 }
             })
         ))
         return res;
       }
-
-     
+      
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
@@ -90,7 +112,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             </Layout>
         }
 
-
+    
     // useEffect(()=> {
     //     async function load() {
     //         const response = await fetch('http://localhost:7000/costsize/all')
@@ -139,12 +161,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                        
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
-
-                        {/* {materials.map((m, index)=>{
-                            if(m.id === 4){return <p key={index}>yes</p>}
-                            return <p key={index}>no</p>
-                        })} */}
-                            
                         <table className={classes.pricematerials}>
                             <tbody>
                             <tr>
@@ -158,24 +174,31 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                 <tr key={index}>
                                     <td><Link href={'#'} title={m.material}>{m.material}</Link></td>
                                     <td>
-                                    <select onChange={handleChange}>
-                                    { 
-                                        costsize.map((c, subindex) => {
-                                            return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
-                                        }
-                                           
-                                            // <option key={subindex} value={c.cost}>
-                                            //     {/* {c.material_id == m.id ? c.size : ""} */}
-                                            //     1
-                                            // </option>
+
+                                      <select onChange={event => handleChange(event, m.translit)}>
+                                        { 
+                                            costsize.map((c, subindex) => {
+                                                return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
+                                            }
                                             
-                                        )
-                                    }
+                                                // <option key={subindex} value={c.cost}>
+                                                //     {/* {c.material_id == m.id ? c.size : ""} */}
+                                                //     1
+                                                // </option>
+                                                
+                                            )
+                                        
+                                        }
                                     </select> мм.
-                                   
+                                    
                                     </td>
+                                    
                                     {/* <td>{state.aglomerat ? state.aglomerat : cs(m.id)} руб. <span class="short">пог. м.</span></td> */}
-                                    <td></td>
+                                    {/* <td> */}
+                                    {m.translit == "aglomerat" ? <td>{!allmat.aglomerat ? defCost(m.id) : ""}  {allmat.aglomerat} <span className={'short'}>пог. м.</span></td> : null} 
+                                    {m.translit == "steel" ? <td>{!allmat.steel ? defCost(m.id) : ""} {allmat.steel} <span className={'short'}>пог. м.</span></td> : null} 
+                                       
+                                    {/* </td> */}
                                 </tr>
                                  )
 
