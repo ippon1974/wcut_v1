@@ -49,14 +49,34 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     //     }));
     //   };
 
+    const [users, setUsers] = useState([
+        {
+          id: 1,
+          name: "Joe",
+          type: "admin"
+        }
+      ]);
+      
+      const updateUsers = [
+        ...users,
+        {
+          id:2,  
+          name: "Steve",
+          type: "member"
+        }
+      ];
+
+      console.log(users[0].name ="osel");
+
+
       const[allmat, setAllMat] = useState({
         alumin: "",
-        steel: ""
+        steel: "",
+        granite: ""
       });
 
-      const handleChange = (event, translit) => {
+      const handleChangeCostMaterial = (event, translit) => {
         const { target } = event;
-
         if(translit == "aglomerat")
         setAllMat(allmat => ({
             ...allmat,
@@ -69,6 +89,12 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             steel: target.value
           }));
 
+        if(translit == "granite")
+        setAllMat(allmat => ({
+            ...allmat,
+            granite: target.value
+        }));
+
       }
     
       function defCost(id){
@@ -76,7 +102,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         materials.map(m => (
             costsize.map((c, i) => {
                 if(id === c.material_id){
-                    if(c.size == 5){
+                    if(c.size == 5 || c.size == 20){
                         res = c.cost;
                     }
 
@@ -130,6 +156,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     //         </Layout>
     //     }
     
+        let sizeG = "";
 
     return(
         <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
@@ -172,10 +199,10 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                             {
                                 materials.map((m, index) => 
                                 <tr key={index}>
-                                    <td><Link href={'#'} title={m.material}>{m.material}</Link></td>
+                                    <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/111`} title={m.material}>{m.material}</Link></td>
                                     <td>
 
-                                      <select onChange={event => handleChange(event, m.translit)}>
+                                      <select onChange={event => handleChangeCostMaterial(event, m.translit)}>
                                         { 
                                             costsize.map((c, subindex) => {
                                                 return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
@@ -197,7 +224,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                     {/* <td> */}
                                     {m.translit == "aglomerat" ? <td>{!allmat.aglomerat ? defCost(m.id) : ""}  {allmat.aglomerat} <span className={'short'}>пог. м.</span></td> : null} 
                                     {m.translit == "steel" ? <td>{!allmat.steel ? defCost(m.id) : ""} {allmat.steel} <span className={'short'}>пог. м.</span></td> : null} 
-                                       
+                                    {m.translit == "granite" ? <td>{!allmat.granite ? defCost(m.id) : ""} {allmat.granite} <span className={'short'}>пог. м.</span></td> : null}    
                                     {/* </td> */}
                                 </tr>
                                  )
