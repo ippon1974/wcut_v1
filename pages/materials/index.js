@@ -15,59 +15,24 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
+    
+    const[va, setVa] = useState([
+        {id:1, name: "osel", size: "57"},
+        {id:2, name: "mudilo", size: "6"},
+        {id:3, name: "dolboeb", size: "15"}
+    ])
 
-    // const[aglomerat, setAglomerat] = useState('215');
-    // const[brass, setBrass] = useState('278');
-    // const[steel, setSteel] = useState('418');
+    const handleNameChange = (e) => {
+    const { selectedIndex } = e.target.options;
+    const {id,name,size} = va[selectedIndex];
+    console.log(id, name, size);
+  }
 
-    // const [state, changeState] = useState({
-    //     name: "",
-    //     phone: "",
-    //     eventTitle: "",
-    //     details: "",
-    //     list: [],
-    //     toggleIndex: "",
-    //     editName: "",
-    //     editEventTitle: "",
-    //     editDetails: "",
-    //     editObj: {}
-    //   });
-
-    //   const handleName = event => {
-    //     const { target } = event;
-    //     changeState(state => ({
-    //       ...state,
-    //       name: target.value
-    //     }));
-    //   };
-
-    //   const handlePhone = event => {
-    //     const { target } = event;
-    //     changeState(state => ({
-    //       ...state,
-    //       phone: target.value
-    //     }));
-    //   };
-
-    const [users, setUsers] = useState([
-        {
-          id: 1,
-          name: "Joe",
-          type: "admin"
-        }
-      ]);
-      
-      const updateUsers = [
-        ...users,
-        {
-          id:2,  
-          name: "Steve",
-          type: "member"
-        }
-      ];
-
-      console.log(users[0].name ="osel");
-
+//     const availableProgramNames = va.map(p => {
+//         return (
+//         <option key={p.id}>{p.name}</option>
+//         )
+//     })
 
       const[allmat, setAllMat] = useState({
         alumin: "",
@@ -116,7 +81,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
 
-
     useEffect(()=> {
         async function load() {
             const response = await fetch('http://localhost:7000/materials/all')
@@ -138,26 +102,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             </Layout>
         }
 
-    
-    // useEffect(()=> {
-    //     async function load() {
-    //         const response = await fetch('http://localhost:7000/costsize/all')
-    //         const json = await response.json();
-    //         setCostSize(json);
-    //     }
-    //     if(!serverCostSize){
-    //         load();
-    //     }
-    //     }, [serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
-
-    //     if(!costsize){
-    //         return <Layout>
-    //             <p>...Loading</p>
-    //         </Layout>
-    //     }
-    
-        let sizeG = "";
-
     return(
         <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
              <Head>
@@ -178,6 +122,13 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
+
+                     {/* <div>
+                        <select onChange={handleNameChange}>
+                        {availableProgramNames}
+                        </select>
+                    </div> */}
+
                      <div>
                         <h2>Стоимость раскроя материала с применением технологии гидроабразивной резки</h2>
                         <div className={classes.hr}></div>
@@ -188,6 +139,9 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                        
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
+
+                        
+
                         <table className={classes.pricematerials}>
                             <tbody>
                             <tr>
@@ -203,16 +157,15 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                     <td>
 
                                       <select onChange={event => handleChangeCostMaterial(event, m.translit)}>
+                                      {/* <select onChange={event => handleMyCh(event, m.translit)}> */}
                                         { 
+                                            // costsize.map((c, subindex) => {
+                                            //     return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
+                                            //     }
+                                            // )
                                             costsize.map((c, subindex) => {
-                                                return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
-                                            }
-                                            
-                                                // <option key={subindex} value={c.cost}>
-                                                //     {/* {c.material_id == m.id ? c.size : ""} */}
-                                                //     1
-                                                // </option>
-                                                
+                                                return m.id === c.material_id ? <option key={subindex} value={`${c.cost}`}>{c.size}</option>: "";
+                                                }
                                             )
                                         
                                         }
