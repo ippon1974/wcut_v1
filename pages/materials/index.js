@@ -15,7 +15,21 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
-    
+
+    const[ma, setMa] = useState(serverMaterials);
+    const[co, setCo] = useState(costsize);
+   
+    const aval = co.map((c,subindex) => {return(<option key={subindex}>{c.size}</option>)})
+    const aaaa = "oll";
+
+    const handle = (event, translit) => {
+        const { selectedIndex } = event.target.options;
+        const { c } = co;
+        const {id, cost, size, material_id} = co[selectedIndex];
+        console.log("id", id, "cost", cost, "size", size, "material_id", material_id);
+      }
+
+/////////////////////////////////
     const[va, setVa] = useState([
         {id:1, name: "osel", size: "57"},
         {id:2, name: "mudilo", size: "6"},
@@ -122,13 +136,26 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-
-                     {/* <div>
-                        <select onChange={handleNameChange}>
-                        {availableProgramNames}
-                        </select>
-                    </div> */}
-
+                {console.log(co)}
+                {
+                   
+                    ma.map((mm, i) => 
+                    <div key={i}>
+                        {mm.material} * 
+                        <select onChange={event => handle(event, mm.translit) }>
+                        {/* <select onChange={event => handleChangeCostMaterial(event, m.translit)}> */}
+                            { 
+                                co.map((cc, sub) => {
+                                    return cc.material_id === mm.id ? <option key={sub}>{cc.size} {cc.material_id}</option>: "";
+                                    }
+                                )
+                            }
+                        </select> мм.
+                        
+                    </div>
+                               )
+                }
+                
                      <div>
                         <h2>Стоимость раскроя материала с применением технологии гидроабразивной резки</h2>
                         <div className={classes.hr}></div>
@@ -139,8 +166,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                        
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
-
-                        
 
                         <table className={classes.pricematerials}>
                             <tbody>
@@ -184,7 +209,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
                             }
                             </tbody>
-                        </table>      
+                        </table>    
 
                        {/* {
                            materials.map((m,index) => 
