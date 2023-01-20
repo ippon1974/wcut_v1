@@ -9,7 +9,7 @@ import classes from '../../styles/materials.module.scss';
 import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
-import { useMediaQuery } from 'react-responsive'; 
+import { useMediaQuery } from 'react-responsive';
 
 export default function Price({materials:serverMaterials, costsize:serverCostSize}) {
 
@@ -17,16 +17,61 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[costsize, setCostSize] = useState(serverCostSize);
 
     const[ma, setMa] = useState(serverMaterials);
-    const[co, setCo] = useState(costsize);
+    const[co, setCo] = useState(serverCostSize);
    
-    const aval = co.map((c,subindex) => {return(<option key={subindex}>{c.size}</option>)})
-    const aaaa = "oll";
+    // const aval = co.map((c,subindex) => {return(<option key={subindex}>{c.size}</option>)})
+    
+
+
+    const[nest, setNest] = useState(serverCostSize);
+    
+    let meet = "";
 
     const handle = (event, translit) => {
+        if(translit == "aglomerat"){
         const { selectedIndex } = event.target.options;
-        const { c } = co;
-        const {id, cost, size, material_id} = co[selectedIndex];
-        console.log("id", id, "cost", cost, "size", size, "material_id", material_id);
+        const { target } = event;
+        const{id,cost, size} = nest[selectedIndex];
+        
+        // console.log(selectedIndex);
+        // console.log(id, cost, size);
+        meet = id;
+        console.log(nest[selectedIndex].size, nest[selectedIndex].cost);
+        }
+    console.log("meet ", meet);
+
+    
+      
+        
+
+    //     if(translit == "aglomerat"){
+    //     const { selectedIndex } = event.target.options;
+
+        
+        
+    //     // console.log("Table from JSON ...", co);   
+    //     // console.log("selectedIndex Aglomerat ...", selectedIndex) 
+    //     // console.log("selectedIndex Aglomerat Array ...", co[selectedIndex])
+
+    //     // const {id, cost, size, material_id} = co[selectedIndex];
+    //     // console.log("id aglomerat", id, "cost", cost, "size", size, "material_id", material_id);
+        
+    //    }
+
+        // if(translit == "steel"){
+        //     const { selectedIndex } = event.target.options;
+            
+        //     // // const selectedOption = co.find(option => option.material_id === 3);
+        //     // const selectedOption = co.map(c=>c.material_id==2);
+        //     console.log("Table from JSON ...", co); 
+        //     console.log("selectedIndex Steel ...", selectedIndex)
+        //     console.log("selectedIndex Steel Array ...", co[selectedIndex])
+            
+
+
+        //     // const {id, cost, size, material_id} = co[selectedIndex];
+        //     // console.log("id steel", id, "cost", cost, "size", size, "material_id", material_id);
+        // }
       }
 
 /////////////////////////////////
@@ -136,24 +181,22 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                {console.log(co)}
                 {
-                   
                     ma.map((mm, i) => 
                     <div key={i}>
-                        {mm.material} * 
+                        {mm.material} == 
                         <select onChange={event => handle(event, mm.translit) }>
                         {/* <select onChange={event => handleChangeCostMaterial(event, m.translit)}> */}
                             { 
                                 co.map((cc, sub) => {
-                                    return cc.material_id === mm.id ? <option key={sub}>{cc.size} {cc.material_id}</option>: "";
+                                    return cc.material_id === mm.id ? <option key={sub}>{cc.size}</option>: "";
                                     }
                                 )
                             }
-                        </select> мм.
+                        </select> мм. <p>{meet}</p>
                         
                     </div>
-                               )
+                            )
                 }
                 
                      <div>
