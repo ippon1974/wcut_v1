@@ -16,85 +16,49 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
 
-    const[ma, setMa] = useState(serverMaterials);
-    const[co, setCo] = useState(serverCostSize);
+    const[outprice, setOutPrice] = useState({
+        aglomerat: "",
+        steel: "",
+        granite: ""
+    });
    
-    // const aval = co.map((c,subindex) => {return(<option key={subindex}>{c.size}</option>)})
-    
-
-
-    const[nest, setNest] = useState(serverCostSize);
-    
-    let meet = "";
-
-    const handle = (event, translit) => {
-        if(translit == "aglomerat"){
-        const { selectedIndex } = event.target.options;
-        const { target } = event;
-        const{id,cost, size} = nest[selectedIndex];
-        
-        // console.log(selectedIndex);
-        // console.log(id, cost, size);
-        meet = id;
-        console.log(nest[selectedIndex].size, nest[selectedIndex].cost);
-        }
-    console.log("meet ", meet);
-
-    
-      
-        
-
-    //     if(translit == "aglomerat"){
-    //     const { selectedIndex } = event.target.options;
-
-        
-        
-    //     // console.log("Table from JSON ...", co);   
-    //     // console.log("selectedIndex Aglomerat ...", selectedIndex) 
-    //     // console.log("selectedIndex Aglomerat Array ...", co[selectedIndex])
-
-    //     // const {id, cost, size, material_id} = co[selectedIndex];
-    //     // console.log("id aglomerat", id, "cost", cost, "size", size, "material_id", material_id);
-        
-    //    }
-
-        // if(translit == "steel"){
-        //     const { selectedIndex } = event.target.options;
+    const handle = (event, translit, id) => {
+    const { selectedIndex } = event.target.options;
+    console.log("select", costsize[selectedIndex]);
+    if(translit == "aglomerat"){
+            const{id, cost, size, material_id} = costsize[selectedIndex];
             
-        //     // // const selectedOption = co.find(option => option.material_id === 3);
-        //     // const selectedOption = co.map(c=>c.material_id==2);
-        //     console.log("Table from JSON ...", co); 
-        //     console.log("selectedIndex Steel ...", selectedIndex)
-        //     console.log("selectedIndex Steel Array ...", co[selectedIndex])
+            console.log(material_id);
+            setOutPrice(outprice => ({
+                ...outprice,
+                aglomerat: {id:id, cost:cost, size:size, material_id:material_id}
             
+            }))
 
+    }
 
-        //     // const {id, cost, size, material_id} = co[selectedIndex];
-        //     // console.log("id steel", id, "cost", cost, "size", size, "material_id", material_id);
-        // }
-      }
+    if(translit == "steel" && id == 2){
+        // const { selectedIndex } = event.target.options;
+        const{id, cost, size, material_id} = costsize[selectedIndex];
+        console.log("select", costsize[selectedIndex]);
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel: {id:id, cost:cost, size:size, material_id:material_id}
+    }))
+    }
 
-/////////////////////////////////
-    const[va, setVa] = useState([
-        {id:1, name: "osel", size: "57"},
-        {id:2, name: "mudilo", size: "6"},
-        {id:3, name: "dolboeb", size: "15"}
-    ])
-
-    const handleNameChange = (e) => {
-    const { selectedIndex } = e.target.options;
-    const {id,name,size} = va[selectedIndex];
-    console.log(id, name, size);
-  }
-
-//     const availableProgramNames = va.map(p => {
-//         return (
-//         <option key={p.id}>{p.name}</option>
-//         )
-//     })
+    if(translit == "granite"){
+        // const { selectedIndex } = event.target.options;
+        const{id, cost, size, material_id} = costsize[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            granite: {id:id, cost:cost, size:size, material_id:material_id}
+    }))
+    }
+    }
 
       const[allmat, setAllMat] = useState({
-        alumin: "",
+        aglomerat: "",
         steel: "",
         granite: ""
       });
@@ -181,24 +145,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                {
-                    ma.map((mm, i) => 
-                    <div key={i}>
-                        {mm.material} == 
-                        <select onChange={event => handle(event, mm.translit) }>
-                        {/* <select onChange={event => handleChangeCostMaterial(event, m.translit)}> */}
-                            { 
-                                co.map((cc, sub) => {
-                                    return cc.material_id === mm.id ? <option key={sub}>{cc.size}</option>: "";
-                                    }
-                                )
-                            }
-                        </select> мм. <p>{meet}</p>
-                        
-                    </div>
-                            )
-                }
-                
                      <div>
                         <h2>Стоимость раскроя материала с применением технологии гидроабразивной резки</h2>
                         <div className={classes.hr}></div>
@@ -211,139 +157,41 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
                         <table className={classes.pricematerials}>
-                            <tbody>
+                        <tbody>
                             <tr>
                                 <th>Материал</th>
                                 <th>Толщина</th>
                                 <th>Стоимость</th>
                             </tr>
-
-                            {
-                                materials.map((m, index) => 
-                                <tr key={index}>
-                                    <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/111`} title={m.material}>{m.material}</Link></td>
-                                    <td>
-
-                                      <select onChange={event => handleChangeCostMaterial(event, m.translit)}>
-                                      {/* <select onChange={event => handleMyCh(event, m.translit)}> */}
-                                        { 
-                                            // costsize.map((c, subindex) => {
-                                            //     return m.id === c.material_id ? <option key={subindex} value={c.cost}>{c.size}</option>: "";
-                                            //     }
-                                            // )
-                                            costsize.map((c, subindex) => {
-                                                return m.id === c.material_id ? <option key={subindex} value={`${c.cost}`}>{c.size}</option>: "";
-                                                }
-                                            )
-                                        
+                        {
+                            materials.map((m, index) => 
+                            <tr key={index}>
+                                <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/111`} title={m.material}>{m.material}</Link></td>
+                                <td>
+                                    <select onChange={event => handle(event, m.translit, m.id)}>
+                                    { 
+                                        costsize.map((c, subindex) => {
+                                            // return m.id === c.material_id ? <option key={subindex}>{c.size}</option>: "";
+                                            // {return m.id === c.material_id && m.translit == "aglomerat" ? <option key={subindex}>{c.size}</option>: "";}
+                                            if(c.material_id===1 && m.translit === "aglomerat"){return <option>5</option>}
+                                            if(c.material_id===2 && m.translit === "steel"){return <option>7</option>}
                                         }
-                                    </select> мм.
-                                    
-                                    </td>
-                                    
-                                    {/* <td>{state.aglomerat ? state.aglomerat : cs(m.id)} руб. <span class="short">пог. м.</span></td> */}
-                                    {/* <td> */}
-                                    {m.translit == "aglomerat" ? <td>{!allmat.aglomerat ? defCost(m.id) : ""}  {allmat.aglomerat} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {m.translit == "steel" ? <td>{!allmat.steel ? defCost(m.id) : ""} {allmat.steel} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {m.translit == "granite" ? <td>{!allmat.granite ? defCost(m.id) : ""} {allmat.granite} <span className={'short'}>пог. м.</span></td> : null}    
-                                    {/* </td> */}
+                                        )
+                                        
+
+                
+
+                                    }
+                                </select> мм.
+                                </td>
+                                    {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>пог. м.</span></td> : null} 
+                                    {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>пог. м.</span></td> : null} 
+                                    {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>пог. м.</span></td> : null}    
                                 </tr>
-                                 )
-
-                            }
-                            </tbody>
-                        </table>    
-
-                       {/* {
-                           materials.map((m,index) => 
-                           <div key={index}>
-                               <h4>{m.material}</h4>
-                               { 
-                                   costsize.map((c, subindex) =>
-                                       <p key={subindex}>
-                                            {c.material_id == m.id ? c.size : ""} {c.material_id == m.id ? c.cost : ""}
-                                       </p>)
-                               }
-                           </div>
-                           )
-                       } */}
-                        
-                        {/* {materials.map((element, index) => {
-                                if (element.id === 2) {
-                                return <h2 key={index}>{element.id}</h2>;
-                                }
-
-                                return <h2 key={index}>X</h2>;
-                        })} */}
-
-
-                       
-                        
-                        {/* <table className={classes.pricematerials}>
-                            <tbody>
-                            <tr>
-                                <th>Материал</th>
-                                <th>Толщина</th>
-                                <th>Стоимость</th>
-                            </tr>
-                            <tr>
-                                <td><a href={'/materials/id/one'} title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Агломерат</a></td>
-                                <td>
-                                <select value={aglomerat} onChange={(event) => setAglomerat(event.target.value)}>
-                                    <option value="215">5</option>
-                                    <option value="355">10</option>
-                                    <option value="485">15</option>
-                                    <option value="525">20</option>
-                                    <option value="680">25</option>
-                                    <option value="788">30</option>
-                                    <option value="855">35</option>
-                                    <option value="950">40</option>
-                                    <option value="1050">45</option>
-                                    <option value="1350">50</option>
-                                </select> мм.
-                                </td>
-                                <td>{aglomerat} руб. <span class="short">пог. м.</span></td>
-                            </tr>
-                            <tr>
-                                <td><a href={"/materials/id/one"} title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Латунь</a></td>
-                                <td>
-                                <select value={brass} onChange={(event) => setBrass(event.target.value)}>
-                                    <option value="278">5</option>
-                                    <option value="378">10</option>
-                                    <option value="478">15</option>
-                                    <option value="579">20</option>
-                                    <option value="615">25</option>
-                                    <option value="735">30</option>
-                                    <option value="815">35</option>
-                                    <option value="988">40</option>
-                                    <option value="1150">45</option>
-                                    <option value="1385">50</option>
-                                </select> мм.
-                                </td>
-                                <td>{brass} руб. <span class="short">пог. м.</span></td>
-                            </tr>
-
-                            <tr>
-                                <td><a href={"/materials/id/one"} title="Агломерат. 10 мм. 960 руб. 1 пог. метр. Гидроабразив">Нержавеющая сталь</a></td>
-                                <td>
-                                <select value={steel} onChange={(event) => setSteel(event.target.value)}>
-                                    <option value="418">5</option>
-                                    <option value="535">10</option>
-                                    <option value="682">15</option>
-                                    <option value="766">20</option>
-                                    <option value="825">25</option>
-                                    <option value="818">30</option>
-                                    <option value="1018">35</option>
-                                    <option value="1288">40</option>
-                                    <option value="1378">45</option>
-                                    <option value="1546">50</option>
-                                </select> мм.
-                                </td>
-                                <td>{steel} руб. <span class="short">пог. м.</span></td>
-                            </tr>
-                           
-                            </tbody>
-                        </table> */}
+                                )
+                        }
+                        </tbody>
+                        </table>
 
                         <h3>Принимаем различные форматы файлов для подготовки программы раскроя материалов для гидроабразивных станков</h3>
                         <p><strong>Форматы файлов</strong>: (dwg, dxf, ald, anc, cnc, jpg, gif, pdf, txt, world, excel.).</p>
