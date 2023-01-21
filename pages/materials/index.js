@@ -16,45 +16,121 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
 
+    const[a, setA] = useState([{}]);
+    var nCostSteel = [];
+    for(let i=0; i<costsize.length; i++){
+        if(costsize[i].material_id == 1){
+            nCostSteel[i] = costsize[i];
+        }
+    }
+    console.log(nCostSteel);
+
+
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
         steel: "",
         granite: ""
     });
    
-    const handle = (event, translit, id) => {
-    const { selectedIndex } = event.target.options;
-    console.log("select", costsize[selectedIndex]);
+
+    const handle = (event, translit) => {     
+         
     if(translit == "aglomerat"){
-            const{id, cost, size, material_id} = costsize[selectedIndex];
+            //var nCost = [];
+
+            const { selectedIndex } = event.target.options;
+            const tableJSON = costsize;
+
+            const{ id, material_id } = tableJSON[selectedIndex]; 
+            console.log('id  // mat_id ', id, material_id);
+            console.log("All objects ...", tableJSON)
+            console.log("Obj select ...", tableJSON[selectedIndex]);
+            if(tableJSON[selectedIndex].material_id == 1){
+                console.log("yes");
+            }
+
+
+
+
+            // let {innn} = {};
+            // for(let i=0; i<costsize.length; i++){
+            //     if(costsize[i].material_id == 1){
+            //         innn = selectedIndex;
+            //         nCost[i] = costsize[i];
+            //     }
+            // }
             
-            console.log(material_id);
-            setOutPrice(outprice => ({
-                ...outprice,
-                aglomerat: {id:id, cost:cost, size:size, material_id:material_id}
+            // console.log("new  Cost Aglomerat ", nCost, innn, selectedIndex);
+            // console.log("obj change ", nCost[selectedIndex]);
+
+           // const{id, cost, size, material_id} = nCost[innn];
             
-            }))
+            
+            // setOutPrice(outprice => ({
+            //     ...outprice,
+            //     aglomerat: {id:id}
+            // }))
 
     }
 
-    if(translit == "steel" && id == 2){
-        // const { selectedIndex } = event.target.options;
-        const{id, cost, size, material_id} = costsize[selectedIndex];
-        console.log("select", costsize[selectedIndex]);
-        setOutPrice(outprice => ({
-            ...outprice,
-            steel: {id:id, cost:cost, size:size, material_id:material_id}
-    }))
+    if(translit == "steel"){
+        const { selectedIndex } = event.target.options;
+            const tableJSON = costsize;
+
+            const{ id, material_id } = tableJSON[selectedIndex]; 
+            console.log('id  // mat_id ', id, material_id);
+            console.log("All objects ...", tableJSON)
+            console.log("Obj select ...", tableJSON[selectedIndex]);
+            if(tableJSON[selectedIndex].material_id == 2){
+                console.log("yes");
+            }
     }
 
-    if(translit == "granite"){
-        // const { selectedIndex } = event.target.options;
-        const{id, cost, size, material_id} = costsize[selectedIndex];
-        setOutPrice(outprice => ({
-            ...outprice,
-            granite: {id:id, cost:cost, size:size, material_id:material_id}
-    }))
-    }
+
+
+
+//     if(translit == "steel"){
+//         var nCostSteel = [];
+//         const { selectedIndex } = event.target.options;
+//         let {innn} = {};
+//         for(let i=0; i<costsize.length; i++){
+//             if(costsize[i].material_id == 2){
+//                 innn = selectedIndex;
+//                 nCostSteel[i] = costsize[i];
+//             }
+//         }
+
+//         console.log("new  Cost Steel ", nCostSteel, innn, selectedIndex);
+//         const{id, cost, size, material_id} = nCostSteel[5,6];
+        
+//         console.log(id, cost, size, material_id);
+//         setOutPrice(outpric => ({
+//             ...outpric,
+//             steel: {id:id, cost:cost, size:size, material_id:material_id}
+//         }))
+
+// }
+
+
+    // if(translit == "steel"){
+    //     // const { selectedIndex } = event.target.options;
+    //     const{id, cost, size, material_id} = costsize[selectedIndex];
+    //     console.log("select", costsize[selectedIndex]);
+    //     setOutPrice(outprice => ({
+    //         ...outprice,
+    //         steel: {id:id, cost:cost, size:size, material_id:material_id}
+    // }))
+    // }
+
+    // if(translit == "granite"){
+    //     // const { selectedIndex } = event.target.options;
+    //     const{id, cost, size, material_id} = costsize[selectedIndex];
+    //     setOutPrice(outprice => ({
+    //         ...outprice,
+    //         granite: {id:id, cost:cost, size:size, material_id:material_id}
+    // }))
+    // }
+
     }
 
       const[allmat, setAllMat] = useState({
@@ -156,6 +232,11 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                        
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
+                        
+
+                       
+
+
                         <table className={classes.pricematerials}>
                         <tbody>
                             <tr>
@@ -173,20 +254,34 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                         costsize.map((c, subindex) => {
                                             // return m.id === c.material_id ? <option key={subindex}>{c.size}</option>: "";
                                             // {return m.id === c.material_id && m.translit == "aglomerat" ? <option key={subindex}>{c.size}</option>: "";}
-                                            if(c.material_id===1 && m.translit === "aglomerat"){return <option>5</option>}
-                                            if(c.material_id===2 && m.translit === "steel"){return <option>7</option>}
+                                            if(m.translit == "aglomerat"){
+                                                if(c.material_id == 1){
+                                                    return <option key={subindex}>{c.size}</option>
+                                                }else{
+                                                    return <option style={{ display:"none"}} key={subindex}></option>
+                                                }
+                                            }
+
+                                            if(m.translit == "steel"){
+                                                if(c.material_id == 2){
+                                                    return <option key={subindex}>{c.size}</option>
+                                                }else{
+                                                    return <option key={subindex}></option>
+                                                }
+                                            }
+
+                                            
+                                            // if(c.material_id===1 && m.translit === "aglomerat"){return <option key={subindex}>{c.size} {c.id}</option>}
+                                            // if(c.material_id===2 && m.translit === "steel"){return <option key={subindex} value={subindex}>{c.size} {c.id}</option>}
                                         }
                                         )
-                                        
-
-                
 
                                     }
                                 </select> мм.
                                 </td>
-                                    {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>пог. м.</span></td> : null}    
+                                    {/* {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>пог. м.</span></td> : null}  */}
+                                    {/* {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>пог. м.</span></td> : null}  */}
+                                    {/* {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>пог. м.</span></td> : null}     */}
                                 </tr>
                                 )
                         }
