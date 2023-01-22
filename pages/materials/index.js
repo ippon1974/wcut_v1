@@ -40,6 +40,14 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         }
     }
     const tCoSt = startFromZero(tCostSteel);
+
+    const tCostGranite = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 3){
+            tCostGranite[i] = costsize[i];
+        }
+    }
+    const tCoGra = startFromZero(tCostGranite);
     
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
@@ -47,17 +55,10 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         granite: ""
     });
    
-
     const handle = (event, translit) => {   
-         
     if(translit == "aglomerat"){
         const { selectedIndex } = event.target.options;
-        //console.log("All ...", tCo);
-        //console.log("Index ...", selectedIndex);
-        //console.log("Index ...", selectedIndex);
-        //console.log("Obj select ...", tCo[selectedIndex]);
-        const{ id, cost, size} = tCoAgl[selectedIndex];
-        //console.log(cost, size);
+        const{ id, cost, size} = tCoAgl[selectedIndex]; 
         setOutPrice(outprice => ({
             ...outprice,
             aglomerat: {id:id, cost:cost, size:size}
@@ -67,53 +68,45 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     if(translit == "steel"){
         const { selectedIndex } = event.target.options;
         const{ id, cost, size} = tCoSt[selectedIndex];
-        console.log("cost...", cost)
         setOutPrice(outprice => ({
             ...outprice,
             steel: {id:id, cost:cost, size:size}
         }))
     }
 
+    if(translit == "granite"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoGra[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            granite: {id:id, cost:cost, size:size}
+        }))
+    }
     }
 
-      const[allmat, setAllMat] = useState({
-        aglomerat: "",
-        steel: "",
-        granite: ""
-      });
-
-      const handleChangeCostMaterial = (event, translit) => {
-        const { target } = event;
-        if(translit == "aglomerat")
-        setAllMat(allmat => ({
-            ...allmat,
-            aglomerat: target.value
-          }));
-
-        if(translit == "steel")
-        setAllMat(allmat => ({
-            ...allmat,
-            steel: target.value
-          }));
-
-        if(translit == "granite")
-        setAllMat(allmat => ({
-            ...allmat,
-            granite: target.value
-        }));
-
-      }
-    
       function defCost(id){
         let res = "";
+        let resA = [];
         materials.map(m => (
             costsize.map((c, i) => {
-                if(id === c.material_id){
-                    if(c.size == 5 || c.size == 20){
-                        res = c.cost;
-                    }
+                if(c.material_id === id){
+                    resA.push(c.cost);
+                    res = Math.min(...resA);
+                }   
+            })
+        ))
+        return res;
+      }
 
-                }
+      function defSize(id){
+        let res = "";
+        let resA = [];
+        materials.map(m => (
+            costsize.map((c, i) => {
+                if(c.material_id === id){
+                    resA.push(c.size);
+                    res = Math.min(...resA);
+                }   
             })
         ))
         return res;
@@ -185,23 +178,21 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         {
                             materials.map((m, index) => 
                             <tr key={index}>
-                                <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/111`} title={m.material}>{m.material}</Link></td>
+                                {m.translit === "aglomerat" ? <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size}`} title={`${m.material}. Толщина листа: ${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "steel" ? <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/${!outprice.steel.size ? defSize(m.id):outprice.steel.size}`} title={`${m.material}. Толщина листа: ${!outprice.steel.size ? defSize(m.id):outprice.steel.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "granite" ? <td><Link href={`/materials/[id]/size/[id]`} as={`/materials/${m.id}/size/${!outprice.granite.size ? defSize(m.id):outprice.granite.size}`} title={`${m.material}. Толщина листа: ${!outprice.granite.size ? defSize(m.id):outprice.granite.size} мм.`}>{m.material}</Link></td> : ""}
+                                
                                 <td>
                                 { m.translit == "aglomerat" ?   
                                 <select onChange={event => handle(event, m.translit)}>
-                                     { 
+                                     {   
                                          tCoAgl.map((c, subindex) => {
-                                             // return m.id === c.material_id ? <option key={subindex}>{c.size}</option>: "";
-                                             // {return m.id === c.material_id && m.translit == "aglomerat" ? <option key={subindex}>{c.size}</option>: "";}
-                                             //if(m.translit == "aglomerat"){
-                                                 //if(c.material_id == 1){
-                                                     return <option key={subindex}>{c.size}</option>
-                                                 //}
-                                             //}
+                                            return <option key={subindex}>{c.size}</option>
                                          })
                                      }
                                 </select> : ""
                                 }
+
                                 { m.translit == "steel" ?   
                                 <select onChange={event => handle(event, m.translit)}>
                                      { 
@@ -212,11 +203,20 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                 </select> : ""
                                 }
 
-                                   
+                                { m.translit == "granite" ?   
+                                <select onChange={event => handle(event, m.translit)}>
+                                     { 
+                                         tCoGra.map((c, subindex) => {
+                                            return <option key={subindex}>{c.size}</option>
+                                         })
+                                     }
+                                </select> : ""
+                                }
+                                <span> мм.</span>
                                 </td>
                                     {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>пог. м.</span></td> : null} 
                                     {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {/* {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>пог. м.</span></td> : null}     */}
+                                    {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>пог. м.</span></td> : null}    
                                 </tr>
                                 )
                         }
