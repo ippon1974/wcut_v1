@@ -1,8 +1,12 @@
-const SizeId = () => {
+
+
+const Size = () => {
+
     return (
         <>
             <h1>Size ID</h1>
         </>
     )
+
 }
-export default SizeId;
+export default Size;
