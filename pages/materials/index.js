@@ -200,7 +200,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                             return <option key={subindex}>{c.size}</option>
                                          })
                                      }
-                                </select> : ""
+             office                   </select> : ""
                                 }
 
                                 { m.translit == "granite" ?   
