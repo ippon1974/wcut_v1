@@ -28,9 +28,11 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
             const mname = await res.json();
             setMName(mname);
         }
+            console.log("client Mat ....", mname);
             load();
     },[serverMName])// eslint-disable-line react-hooks/exhaustive-deps
 
+    
     const[costsize, setCostSize] = useState(serverCostSize);
     useEffect(() => {
         async function load() {
@@ -39,8 +41,8 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
             setCostSize(costsize);
         }
             load();
+            console.log("client COST ....", costsize);
     },[serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
-
 
 
     const [mobile, setMobile] = useState(false)
@@ -68,9 +70,9 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                   
-                    {mobile ? <BlockIdMaterialsMobile /> : <BlockIdMaterials mname={mname} costsize={costsize} />}
-                  
+           
+                    {mobile ? <BlockIdMaterialsMobile mname={mname} costsize={costsize} /> : <BlockIdMaterials mname={mname} costsize={costsize} />}
+                    
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>
@@ -108,9 +110,11 @@ export async function getServerSideProps({query, req}) {
     }
     const response = await fetch(`http://localhost:7000/materials?material=${query.material}`);
     const mname = await response.json();
+    console.log("SERVER Name ...", mname, "qu material ", query.material, "id ", mname.id);
 
-    const res = await fetch(`http://localhost:7000/costsize?id=${query.id}&size=${query.size}`);
+    const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${query.size}`);
     const costsize = await res.json();
+    console.log("Server COST", costsize, "query size ", query.size, "query id ", mname.id);
 
     return {props: {mname, costsize} }
 }
