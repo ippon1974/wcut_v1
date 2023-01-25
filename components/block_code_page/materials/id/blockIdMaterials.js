@@ -1,14 +1,42 @@
+import {useState, useEffect} from 'react';
+import {useRouter} from "next/router";
 import classes from '../../../../styles/materials.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 
-const blockIdMateterials = () => {
+const blockIdMateterials = (props) => {
+
+    const { asPath, pathname } = useRouter();
+    const item = asPath.split('/');
+    const mName = item[2];
+    const cSize = item[4];
+
+    const[mat, setMat] = useState(props.mname);
+    useEffect(()=>{
+        async function load() {
+            const res = await fetch(`http://localhost:7000/materials?material=${mName}`);
+            const m = await res.json();
+            setMat(m);
+        }
+            load();
+    },[mName])// eslint-disable-line react-hooks/exhaustive-deps
+
+    const[costsize, setCostSize] = useState(props.costsize);
+    useEffect(()=>{
+        async function load() {
+            const res = await fetch(`http://localhost:7000/costsize?id=${mat.id}&size=${cSize}`);
+            const csize = await res.json();
+            setCostSize(csize);
+        }
+            load();
+    },[cSize])// eslint-disable-line react-hooks/exhaustive-deps
+
     return (
         <>
                  <div>
-                        <h2>Гидроабразивная резка материала. Нержавеющая сталь. Толщина: 5 мм.</h2>
+                        <h2>Гидроабразивная резка материала. {mat.material}. Толщина: {costsize.size} мм.</h2>
                         <div className={classes.hr}></div>
-                        <h3>Стоимость раскроя: 940 руб. за 1 пог. м. </h3>
+                        <h3>Стоимость раскроя: {costsize.cost} руб. за 1 пог. м. </h3>
                         <p><Link className={classes.activecalc} href={'http://calculation.htz.ru/'} title={"Калькулятор гидроабразивной резки"} target={'_blank'}>Калькулятор</Link> гидроабразивной резки</p>
                         <h3>Раскрой нержавеющей стали</h3>
                         <p>Сегодня раскрой металла гидроабразивом находит все более широкое применение не только в строительстве и промышленности. </p>

@@ -2,7 +2,7 @@ import classes from '../../../../styles/materials.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 
-const blockIdMateterialsMobile = () => {
+const blockIdMateterialsMobile = (props) => {
     return (
         <>
              <div>

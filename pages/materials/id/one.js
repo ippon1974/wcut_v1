@@ -71,7 +71,7 @@ const One = () => {
             <div className={classes.endpage}></div>
         
 
-        </Layout>office
+        </Layout>
         </>
     )
 }
