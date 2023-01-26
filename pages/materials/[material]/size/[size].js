@@ -29,8 +29,16 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
             setMName(mname);
         }
             console.log("client Mat ....", mname);
-            load();
+            if(!serverMName){
+                load();
+            }
     },[serverMName])// eslint-disable-line react-hooks/exhaustive-deps
+
+    if(!mname){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
     
     const[costsize, setCostSize] = useState(serverCostSize);
@@ -40,10 +48,26 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
             const costsize = await res.json();
             setCostSize(costsize);
         }
+        if(!serverCostSize){
             load();
-            console.log("client COST ....", costsize);
+        }
+        console.log("client COST ....", costsize);
     },[serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
 
+    const[costsizelist, setCostSizeList] = useState();
+    useEffect(() => {
+        async function load() {
+            const r = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
+            const costsizelist = await r.json();
+            setCostSizeList(costsizelist);
+        }
+        if(!costsizelist){
+            load();
+        }
+        console.log("List of ....", costsizelist);
+    },[costsizelist])// eslint-disable-line react-hooks/exhaustive-deps
+
+    //const handle = (event, translit) => {}
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -70,9 +94,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-           
                     {mobile ? <BlockIdMaterialsMobile mname={mname} costsize={costsize} /> : <BlockIdMaterials mname={mname} costsize={costsize} />}
-                    
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>
@@ -96,7 +118,6 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
             </div>
             <div className={classes.endpage}></div>
         
-
         </Layout>
         </>
     )
@@ -106,7 +127,7 @@ export default Size;
 
 export async function getServerSideProps({query, req}) {
     if(!req){
-        return {mname:null, costsize:null}
+        return {mname:null, costsize:null, costsizelist:null}
     }
     const response = await fetch(`http://localhost:7000/materials?material=${query.material}`);
     const mname = await response.json();
@@ -114,7 +135,11 @@ export async function getServerSideProps({query, req}) {
 
     const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${query.size}`);
     const costsize = await res.json();
-    console.log("Server COST", costsize, "query size ", query.size, "query id ", mname.id);
+    console.log("SERVER Cost ...", costsize, "query size ", query.size, "query id ", mname.id);
 
-    return {props: {mname, costsize} }
+    const re = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
+    const costsizelist = await re.json();
+    console.log("SERVER Cost List Vovan ...", costsizelist);
+
+    return {props: {mname, costsize, costsizelist} }
 }

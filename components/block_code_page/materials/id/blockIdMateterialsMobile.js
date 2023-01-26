@@ -7,11 +7,11 @@ const blockIdMateterialsMobile = (props) => {
     return (
         <>
              <div>
-                        <h2>Гидроабразивная резка. {props.mname.material}.Толщина: {props.costsize.size} мм.</h2>
+                        <h2>Гидроабразивная резка<p>{props.mname.material}</p>Толщина листа: {props.costsize.size} мм</h2>
                         <div className={classes.hr}></div>
-                        <h3>Стоимость раскроя: {props.costsize.cost} руб. за 1 пог. м. </h3>
-                        <p><Link className={classes.activecalc} href={'http://calculation.htz.ru/'} title={"Калькулятор гидроабразивной резки"} target={'_blank'}>Калькулятор</Link> гидроабразивной резки</p>
-                        <h3>Раскрой нержавеющей стали</h3>
+                        <h3>Стоимость раскроя: {props.costsize.cost} руб. за 1 пог. м. <p>Толщина листа: {props.costsize.size} мм.</p></h3>
+                        {/* <p><Link className={classes.activecalc} href={'http://calculation.htz.ru/'} title={"Калькулятор гидроабразивной резки"} target={'_blank'}>Калькулятор</Link> гидроабразивной резки</p> */}
+                        {/* <h3>Раскрой нержавеющей стали</h3> */}
                         <p>Сегодня раскрой металла гидроабразивом находит все более широкое применение не только в строительстве и промышленности. </p>
                         <h3>Достоинства раскроя гидроабразивом:</h3>
                         <ul>

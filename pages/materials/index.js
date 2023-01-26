@@ -179,7 +179,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                             materials.map((m, index) => 
                             <tr key={index}>
                                 {m.translit === "aglomerat" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size}`} title={`${m.material}. Толщина листа: ${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size} мм.`}>{m.material}</Link></td> : ""}
-                                {/* {m.translit === "aglomerat" ? <td><Link href={`/materials/[material]/size/[id]`} as={`/materials/${m.translit}/size/${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size}`} title={`${m.material}. Толщина листа: ${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size} мм.`}>{m.material}</Link></td> : ""} */}
                                 {m.translit === "steel" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.steel.size ? defSize(m.id):outprice.steel.size}`} title={`${m.material}. Толщина листа: ${!outprice.steel.size ? defSize(m.id):outprice.steel.size} мм.`}>{m.material}</Link></td> : ""}
                                 {m.translit === "granite" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.granite.size ? defSize(m.id):outprice.granite.size}`} title={`${m.material}. Толщина листа: ${!outprice.granite.size ? defSize(m.id):outprice.granite.size} мм.`}>{m.material}</Link></td> : ""}
                                 
@@ -215,9 +214,9 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                 }
                                 <span> мм.</span>
                                 </td>
-                                    {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>пог. м.</span></td> : null} 
-                                    {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>пог. м.</span></td> : null}    
+                                    {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
+                                    {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
+                                    {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>руб. пог. м.</span></td> : null}    
                                 </tr>
                                 )
                         }
