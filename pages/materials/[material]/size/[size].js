@@ -21,7 +21,45 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
     const item = asPath.split('/');
     const pathItem = item[2];
     const pathSize = item[4];
-    
+
+    const [mobile, setMobile] = useState(false)
+    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
+    useEffect(() => setMobile(isPhone), [isPhone]);
+
+    const[costsizelist, setCostSizeList] = useState(serverCostSizeList);
+    useEffect(() => {
+        async function load() {
+            const r = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
+            const costsizelist = await r.json();
+            setCostSizeList(costsizelist);
+        }
+        if(!costsizelist){
+            load();
+        }
+        //console.log("List of ....", costsizelist);
+    },[costsizelist])// eslint-disable-line react-hooks/exhaustive-deps
+
+    const[costsize, setCostSize] = useState(serverCostSize);
+    useEffect(() => {
+        async function load() {
+            const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${pathSize}`);
+            const costsize = await res.json();
+            setCostSize(costsize);
+        }
+        if(!serverCostSize){
+            load();
+        }
+        console.log("client COST ....", costsize);
+    },[serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(()=>{
+        costsize.size = pathSize;
+        costsize.cost = serverCostSize.cost;
+        if (router && router.query) {
+        setCostSize({...costsize})
+        }
+     },[serverMName])// eslint-disable-line react-hooks/exhaustive-deps
+
     const[mname, setMName] = useState(serverMName);
     useEffect(() => {
         async function load() {
@@ -41,93 +79,12 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
         </Layout>
     }
 
-    
-    const[costsize, setCostSize] = useState(serverCostSize);
-    useEffect(() => {
-        async function load() {
-            const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${pathSize}`);
-            const costsize = await res.json();
-            setCostSize(costsize);
-        }
-        if(!serverCostSize){
-            load();
-        }
-        console.log("client COST ....", costsize);
-    },[serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
-
-    const[costsizelist, setCostSizeList] = useState(serverCostSizeList);
-    useEffect(() => {
-        async function load() {
-            const r = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
-            const costsizelist = await r.json();
-            setCostSizeList(costsizelist);
-        }
-        if(!costsizelist){
-            load();
-        }
-        //console.log("List of ....", costsizelist);
-    },[costsizelist])// eslint-disable-line react-hooks/exhaustive-deps
-
-
-
 
     const handle = (event) => {
         const size = event.target.value;
-        //console.log("vvvvv ", size);
-        router.push(`/materials/granite/size/${size}`);
-        //console.log("rout query ...", router.query);
-
-        // router.push({
-        //     pathname: `/materials/granite/size/${size}`,
-        //     query: { name: 'size' }
-        // })
-    
-
-        // router.push({
-        //     pathname: `/materials/granite/size/${size}`,
-        //     query: 30
-        //   })
-
-        //setCostSize(costsize);
-        // console.log("aslkdfjasdl;kjfl;asd ..", size);
-        // const { selectedIndex } = event.target.value;
-        // console.log(selectedIndex);
-        
-
-        //console.log("selectedIndex ...", selectedIndex);
-        //setCostSize(costsize);
+        const mat = router.query.material;
+        router.push(`/materials/${mat}/size/${size}`);
     }
-
-    //const [param1, setParam1]=useState("");
-    
-
-    // useEffect(() => {
-    //     if (router && router.query) {
-    //      console.log(router.query);
-    //      setParam1(router.query.param1);
-    //     }
-    //    }, [router]);
-    //   }
-
-    
-    // useEffect(() => {
-    //    if (router && router.query) {
-    //      setCostSize({size: pathSize, cost: costsize.id});
-    //    } 
-    // },[router])// eslint-disable-line react-hooks/exhaustive-deps
-
-    useEffect(()=>{
-        costsize.size = pathSize;
-        costsize.cost = costsize.cost;
-        if (router && router.query) {
-        setCostSize({...costsize})
-        }
-     },[router])
-
-
-    const [mobile, setMobile] = useState(false)
-    const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
-    useEffect(() => setMobile(isPhone), [isPhone]);
 
     return (
         <>
@@ -146,25 +103,12 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
                 </div>
 
                 <div className={`${classes.item} ${classes.asideleft}`}>
-                    <div><p>Цены на раскрой</p>
-
-                    <select onChange={event => handle(event)}>
-                    {
-                        costsizelist.map((csl, i)=>{
-                            if(csl.size == pathSize){
-                            return <option key={i} value={csl.size} selected>{csl.size} {csl.cost}</option>
-                            }
-                            return <option key={i} value={csl.size}>{csl.size} {csl.cost}</option>
-                        })
-                    }
-                    </select>
-
-
-                    </div>
+                    <div><p>Цены на раскрой</p></div>
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                    {mobile ? <BlockIdMaterialsMobile mname={mname} costsize={costsize} /> : <BlockIdMaterials mname={mname} costsize={costsize} />}
+                    {mobile ? <BlockIdMaterialsMobile mname={mname} costsize={costsize} costsizelist={costsizelist} router={router} /> : <BlockIdMaterials mname={mname} costsize={costsize} costsizelist={costsizelist} router={router} />}
+                    {/* {mobile ? <BlockIdMaterialsMobile /> : <BlockIdMaterials router={router} />} */}
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>
@@ -201,24 +145,13 @@ export async function getServerSideProps({query, req}) {
     }
     const response = await fetch(`http://localhost:7000/materials?material=${query.material}`);
     const mname = await response.json();
-    //console.log("SERVER Name ...", mname, "qu material ", query.material, "id ", mname.id);
 
     const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${query.size}`);
     const costsize = await res.json();
-    console.log("SERVER Cost ...", costsize, "query size ", query.size, "query id ", mname.id);
+    //console.log("SERVER Cost ...", costsize, "query size ", query.size, "query id ", mname.id);
 
     const re = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
     const costsizelist = await re.json();
-    //console.log("SERVER Cost List Vovan ...", costsizelist);
-
-    
-
-    //router.push(`/materials/granite/size/${query.size}`);
-
-    // router.push({
-    //     pathname: `/materials/granite/size/${query.size}`,
-    //     query: query.size
-    //   })
 
     return {props: {mname, costsize, costsizelist} }
 }
