@@ -14,8 +14,9 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-const Size = ({mname:serverMName, costsize:serverCostSize}) => {
+const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCostSizeList}) => {
 
+    const router = useRouter();
     const { asPath, pathname } = useRouter();
     const item = asPath.split('/');
     const pathItem = item[2];
@@ -28,7 +29,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
             const mname = await res.json();
             setMName(mname);
         }
-            console.log("client Mat ....", mname);
+            //console.log("client Mat ....", mname);
             if(!serverMName){
                 load();
             }
@@ -54,7 +55,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
         console.log("client COST ....", costsize);
     },[serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
 
-    const[costsizelist, setCostSizeList] = useState();
+    const[costsizelist, setCostSizeList] = useState(serverCostSizeList);
     useEffect(() => {
         async function load() {
             const r = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
@@ -64,10 +65,65 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
         if(!costsizelist){
             load();
         }
-        console.log("List of ....", costsizelist);
+        //console.log("List of ....", costsizelist);
     },[costsizelist])// eslint-disable-line react-hooks/exhaustive-deps
 
-    //const handle = (event, translit) => {}
+
+
+
+    const handle = (event) => {
+        const size = event.target.value;
+        //console.log("vvvvv ", size);
+        router.push(`/materials/granite/size/${size}`);
+        //console.log("rout query ...", router.query);
+
+        // router.push({
+        //     pathname: `/materials/granite/size/${size}`,
+        //     query: { name: 'size' }
+        // })
+    
+
+        // router.push({
+        //     pathname: `/materials/granite/size/${size}`,
+        //     query: 30
+        //   })
+
+        //setCostSize(costsize);
+        // console.log("aslkdfjasdl;kjfl;asd ..", size);
+        // const { selectedIndex } = event.target.value;
+        // console.log(selectedIndex);
+        
+
+        //console.log("selectedIndex ...", selectedIndex);
+        //setCostSize(costsize);
+    }
+
+    //const [param1, setParam1]=useState("");
+    
+
+    // useEffect(() => {
+    //     if (router && router.query) {
+    //      console.log(router.query);
+    //      setParam1(router.query.param1);
+    //     }
+    //    }, [router]);
+    //   }
+
+    
+    // useEffect(() => {
+    //    if (router && router.query) {
+    //      setCostSize({size: pathSize, cost: costsize.id});
+    //    } 
+    // },[router])// eslint-disable-line react-hooks/exhaustive-deps
+
+    useEffect(()=>{
+        costsize.size = pathSize;
+        costsize.cost = costsize.cost;
+        if (router && router.query) {
+        setCostSize({...costsize})
+        }
+     },[router])
+
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -90,7 +146,21 @@ const Size = ({mname:serverMName, costsize:serverCostSize}) => {
                 </div>
 
                 <div className={`${classes.item} ${classes.asideleft}`}>
-                    <div><p>Цены на раскрой</p></div>
+                    <div><p>Цены на раскрой</p>
+
+                    <select onChange={event => handle(event)}>
+                    {
+                        costsizelist.map((csl, i)=>{
+                            if(csl.size == pathSize){
+                            return <option key={i} value={csl.size} selected>{csl.size} {csl.cost}</option>
+                            }
+                            return <option key={i} value={csl.size}>{csl.size} {csl.cost}</option>
+                        })
+                    }
+                    </select>
+
+
+                    </div>
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
@@ -131,7 +201,7 @@ export async function getServerSideProps({query, req}) {
     }
     const response = await fetch(`http://localhost:7000/materials?material=${query.material}`);
     const mname = await response.json();
-    console.log("SERVER Name ...", mname, "qu material ", query.material, "id ", mname.id);
+    //console.log("SERVER Name ...", mname, "qu material ", query.material, "id ", mname.id);
 
     const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${query.size}`);
     const costsize = await res.json();
@@ -139,7 +209,16 @@ export async function getServerSideProps({query, req}) {
 
     const re = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
     const costsizelist = await re.json();
-    console.log("SERVER Cost List Vovan ...", costsizelist);
+    //console.log("SERVER Cost List Vovan ...", costsizelist);
+
+    
+
+    //router.push(`/materials/granite/size/${query.size}`);
+
+    // router.push({
+    //     pathname: `/materials/granite/size/${query.size}`,
+    //     query: query.size
+    //   })
 
     return {props: {mname, costsize, costsizelist} }
 }
