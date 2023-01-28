@@ -16,7 +16,7 @@ import Image from "next/image";
 import $ from 'jquery';
 import { useMediaQuery } from 'react-responsive';  
 
-export  default function Index() {
+export  default function Index({works:serverWorks}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -55,7 +55,26 @@ export  default function Index() {
             $('.viewportWork').each(function () { var imgHeight =  $(this).find('>img').css('height');  $(this).animate({ height: imgHeight, top: '-' + imgHeight }, { queue: false, duration: 100, easing: 'swing' }).css('overflow', 'visible'); });
             $('.viewportWork').parent().closest('div').parent().hover(function(){$(this).find('.viewportWork').stop().animate({top: 0},{queue:false,duration:250,easing:'swing'}); }, function() { var imgHeight = $(this).find('.viewportWork').find('>img').css('height');  $(this).find('.viewportWork').stop().animate({top:'-'+imgHeight},{queue:false,duration:200,easing:'swing'}); });
         })
-    })    
+    })
+    
+    const[works, setWorks] = useState(serverWorks);
+
+    useEffect(()=> {
+        async function load() {
+            const response = await fetch('http://localhost:7000/works/main')
+            const json = await response.json();
+            setWorks(json);
+        }
+        if(!serverWorks){
+            load();
+        }
+    }, [serverWorks])
+
+    if(!works){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
    return (
     <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
@@ -96,22 +115,18 @@ export  default function Index() {
                 </div>
             </div>
             
-            {mobile ? <BlockWorkMobile /> : <BlockWork />}
-
+            {mobile ? <BlockWorkMobile works = {works} /> : <BlockWork works={works} />}
+            
             <div className={`${classes.worksListArrowLink}`}>
-                    <div className={`${classes.block_all}`}>
-                        <div className={`${classes.info_block}`}>
-                            <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
-                            <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
-                        </div>
-                    </div>
-                    <div className={`${classes.block_all}`}>
-                        <div className={`${classes.info_block}`}>
-                            <div className={`${classes.info_block_arrow}`}><Link href={'#'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
-                            <div className={`${classes.info_block_link}`}><Link href={'#'}>Подробнее</Link></div>
-                        </div>
-                    </div>
-            </div>    
+                {works.map((w,i)=>(
+                    <div key={i} className={`${classes.block_all}`}>
+                         <div className={`${classes.info_block}`}>
+                             <div className={`${classes.info_block_arrow}`}><Link href={`/works/${w.id}`}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                             <div className={`${classes.info_block_link}`}><Link href={`/works/${w.id}`}>Подробнее</Link></div>
+                         </div>
+                     </div>
+                ))}
+            </div>   
 
 
             <div className={`${classes.blockRedPrice}`}>
@@ -229,4 +244,13 @@ export  default function Index() {
 </Layout>
        
    );
+}
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {works:null}
+    }
+    const res = await fetch('http://localhost:7000/works/main')
+    const works = await res.json();
+    return { props: { works } }
 }

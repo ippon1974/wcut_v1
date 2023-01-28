@@ -19,8 +19,9 @@ const blockIdMateterialsMobile = (props) => {
 
     return (
         <>
-             <div>
-                        <h2>Гидроабразивная резка<p>{props.mname.material}</p>Толщина листа: {props.costsize.size} мм</h2>
+             <div>      
+                        <p className={classes.linkpricehead} title={"Весь прайс-лист на расркой материала"}><Link href={'/materials'}>Прайс лист</Link></p>
+                        <h2>Гидроабразивная резка {props.mname.material} Толщина листа: {props.costsize.size} мм</h2>
                         <div className={classes.hr}></div>
                         <h3>Стоимость раскроя: {props.costsize.cost} руб. за 1 пог. м.</h3>
                         <h3>Толщина листа:&ensp;

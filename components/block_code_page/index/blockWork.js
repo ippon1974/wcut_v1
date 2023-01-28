@@ -2,7 +2,7 @@ import classes from '../../../styles/index.module.scss';
 import Link from "next/link";
 import Image from "next/image";
 
-const BlockWork = () => {
+const BlockWork = (props) => {
     
         const workPort = {
         height: '0',
@@ -24,35 +24,25 @@ const BlockWork = () => {
         <>
              <div className={`${classes.worksList}`}>
                 
-                <Link href={'#'}>    
-                <div className={`${classes.viewportcontainerWork}`}>
-                    <div className={'viewportWork'} style={workPort}>
-                        <Image style={imgWork} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
-                        <Image style={imgWork} src={'/works/1013_2.jpg'} width={'303'} height={'227'} alt={''}></Image>
+                {props.works.map((w,i)=>(
+                <Link key={i} href={`/works/${w.id}`}>    
+                    <div className={`${classes.viewportcontainerWork}`}>
+                        <div className={'viewportWork'} style={workPort}>
+                            <Image style={imgWork} src={`/works/small/${w.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                            <Image style={imgWork} src={`/works/small/${w.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                        </div>
                     </div>
-                </div>
-                </Link>  
-                
-                <Link href={'#'}>    
-                <div className={classes.viewportcontainerWork}>
-                    <div className={'viewportWork'} style={workPort}>
-                        <Image style={imgWork} src={'/works/8_1.jpg'} width={'303'} height={'227'} alt={''}></Image>
-                        <Image style={imgWork} src={'/works/8_2.jpg'} width={'303'} height={'227'} alt={''}></Image>
-                    </div>
-                </div>
-                </Link>
-            
+                </Link> 
+                ))}
             </div>
 
             <div className={`${classes.worksListDesc}`}>
-                <div className={`${classes.one}`}>
-                <h2><Link href={'#'} title={'Адресная табличка. Охуенная рекомендую.'}>Адресная табличка. Охуенная рекомендую.</Link></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
-                </div>
-                <div className={`${classes.two}`}>
-                    <h2><Link href={'#'} title={'Очень крутая вентиляционная решетка. Покупай пока дешево!'}>Очень крутая вентиляционная решетка. Покупай пока дешево!</Link></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at accusantium impedit magni, nam amet doloremque quos numquam magnam autem vel quaerat cumque. Consequatur, quidem.</p>
-                </div>
+                {props.works.map((w,i)=>(
+                    <div key={i} className={`${classes.one}`}>
+                    <h2><Link href={`/works/${w.id}`} title={w.title}>{w.title}</Link></h2>
+                        <p>{w.titlelong}</p>
+                    </div>
+                ))}
             </div>
         </>
     )

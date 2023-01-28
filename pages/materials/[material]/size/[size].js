@@ -49,7 +49,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
         if(!serverCostSize){
             load();
         }
-        console.log("client COST ....", costsize);
+        //console.log("client COST ....", costsize);
     },[serverCostSize])// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(()=>{
@@ -108,7 +108,6 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     {mobile ? <BlockIdMaterialsMobile mname={mname} costsize={costsize} costsizelist={costsizelist} router={router} /> : <BlockIdMaterials mname={mname} costsize={costsize} costsizelist={costsizelist} router={router} />}
-                    {/* {mobile ? <BlockIdMaterialsMobile /> : <BlockIdMaterials router={router} />} */}
                 </div>
 
                 <div className={`${classes.item} ${classes.asideright}`}>
