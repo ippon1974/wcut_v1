@@ -16,7 +16,7 @@ import Image from "next/image";
 import $ from 'jquery';
 import { useMediaQuery } from 'react-responsive';  
 
-export  default function Index({works:serverWorks}) {
+export  default function Index({works:serverWorks, materials:serverMaterials, costsize:serverCostSize}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -56,21 +56,50 @@ export  default function Index({works:serverWorks}) {
             $('.viewportWork').parent().closest('div').parent().hover(function(){$(this).find('.viewportWork').stop().animate({top: 0},{queue:false,duration:250,easing:'swing'}); }, function() { var imgHeight = $(this).find('.viewportWork').find('>img').css('height');  $(this).find('.viewportWork').stop().animate({top:'-'+imgHeight},{queue:false,duration:200,easing:'swing'}); });
         })
     })
-    
+
     const[works, setWorks] = useState(serverWorks);
+    const[materials, setMaterials] = useState(serverMaterials);
+    const[costsize, setCostSize] = useState(serverCostSize);
 
     useEffect(()=> {
         async function load() {
             const response = await fetch('http://localhost:7000/works/main')
             const json = await response.json();
             setWorks(json);
+
+            const resmaterials = await fetch('http://localhost:7000/materials/all')
+            const mat = await resmaterials.json();
+            setMaterials(mat);
+
+            const rescost = await fetch('http://localhost:7000/costsize/all')
+            const cost = await rescost.json();
+            setCostSize(cost);
+
         }
+
         if(!serverWorks){
             load();
         }
-    }, [serverWorks])
+        if(!serverMaterials){
+            load();
+        }
+        if(!serverCostSize){
+            load();
+        }
+
+    }, [serverWorks,serverMaterials,serverCostSize])
 
     if(!works){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    if(!materials){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    if(!costsize){
         return <Layout>
             <p>...Loading</p>
         </Layout>
@@ -128,7 +157,6 @@ export  default function Index({works:serverWorks}) {
                 ))}
             </div>   
 
-
             <div className={`${classes.blockRedPrice}`}>
                 <div className={`${classes.itemRedPrice}`}>
                     <Image src={'/twitcircle.gif'} width={'60'} height={'60'} alt={''}></Image>
@@ -141,8 +169,22 @@ export  default function Index({works:serverWorks}) {
 
             <section>
                 <ul className={`${classes.priceline}`}>
-                    <li><Link href={"#"}>Медь</Link>. Лист: 10 мм. Цена за пог.м. — 1060 руб.<p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
-                    <li><Link href={"#"}>Алюминий</Link>. Лист: 10 мм. Цена за пог.м. — 1340 руб. <p><Link href={'/materials'}>Полный прайс-лист.</Link></p></li>
+                    
+                    {
+                      materials.map((m,i)=>{
+                        return (
+                            costsize.map((cost,sub) => {
+                                if(m.id == cost.material_id && m.id < 2 && cost.size < 15)
+                                return (
+                                //   <p key={sub}>{m.id} == {cost.size}</p>
+                                  <li key={sub}><Link href={`/materials/${m.translit}/size/${cost.size}`} title={`${m.material} Толщина листа: ${cost.size}`}>{m.material}</Link>. Лист: {cost.size} мм. Цена за пог.м. — {cost.cost} руб.<p><Link href={'/materials'} title={"Весь прайс-лист"}>Полный прайс-лист.</Link></p></li>
+                                );
+                              })
+                        )
+                      })
+                        
+                    }
+               
                 </ul>
             </section>
 
@@ -248,9 +290,16 @@ export  default function Index({works:serverWorks}) {
 
 export async function getServerSideProps({req}) {
     if(!req){
-        return {works:null}
+        return {works:null, materials:null, costsize:null}
     }
     const res = await fetch('http://localhost:7000/works/main')
     const works = await res.json();
-    return { props: { works } }
+
+    const resmat = await fetch('http://localhost:7000/materials/all')
+    const materials = await resmat.json();
+
+    const rescost = await fetch('http://localhost:7000/costsize/all')
+    const costsize = await rescost.json();
+
+    return { props: { works, materials, costsize } }
 }
