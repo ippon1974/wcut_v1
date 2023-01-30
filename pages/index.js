@@ -14,9 +14,10 @@ import Link from "next/link";
 import Head from 'next/head';
 import Image from "next/image";
 import $ from 'jquery';
+import { format } from 'date-fns'
 import { useMediaQuery } from 'react-responsive';  
 
-export  default function Index({works:serverWorks, materials:serverMaterials, costsize:serverCostSize}) {
+export  default function Index({works:serverWorks, materials:serverMaterials, costsize:serverCostSize, news:serverNews, newsitem:serverNewsItem, newsvideo:serverNewsVideo}) {
 
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
@@ -60,6 +61,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     const[works, setWorks] = useState(serverWorks);
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
+    const[news, setNews] = useState(serverNews);
+    const[item, setItem] = useState(serverNewsItem);
+    const[video, setVideo] = useState(serverNewsVideo);
 
     useEffect(()=> {
         async function load() {
@@ -75,6 +79,18 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             const cost = await rescost.json();
             setCostSize(cost);
 
+            const resnews = await fetch('http://localhost:7000/news/main')
+            const news = await resnews.json();
+            setNews(news);
+
+            const resitem = await fetch('http://localhost:7000/news/main/item')
+            const item = await resitem.json();
+            setItem(item);
+
+            const resvideo = await fetch('http://localhost:7000/news/main/video')
+            const video = await resvideo.json();
+            setVideo(video);
+
         }
 
         if(!serverWorks){
@@ -86,8 +102,17 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         if(!serverCostSize){
             load();
         }
+        if(!serverNews){
+            load();
+        }
+        if(!serverNewsItem){
+            load();
+        }
+        if(!serverNewsVideo){
+            load();
+        }
 
-    }, [serverWorks,serverMaterials,serverCostSize])
+    }, [serverWorks, serverMaterials, serverCostSize, serverNews, serverNewsItem, serverNewsVideo])
 
     if(!works){
         return <Layout>
@@ -100,6 +125,21 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         </Layout>
     }
     if(!costsize){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    if(!news){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    if(!item){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    if(!video){
         return <Layout>
             <p>...Loading</p>
         </Layout>
@@ -199,23 +239,17 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             
             <div className = {`${classes.containerNews}`}>
-                <figure className={`${classes.news_all}`}>
-                    <Link href={'#'}><Image className={classes.responseImg} src={'/news/1033.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
-                    <figcaption className={classes.newsfigcaption}>
-                        <h2><Link href={'#'}>Новости производство рынка и другой херни </Link></h2>
-                    </figcaption>
-                    <div className={classes.dtNews}>07 07 2015</div>
-                    <p className={classes.leadNews}><Link href={"#"}>Lorem ium, harum est null</Link></p>
-                </figure>
-                
-                <figure className={`${classes.news_all}`}>
-                    <Link href={'#'}><Image className={classes.responseImg} src={'/works/1013_1.jpg'} width={'303'} height={'227'} alt={''}></Image></Link>
-                    <figcaption className={classes.newsfigcaption}>
-                        <h2><Link href={'#'}>Новости станки материалы запчасти рынок и т д</Link></h2>
-                    </figcaption>
-                    <div className={classes.dtNews}>07 07 2015</div>
-                    <p className={classes.leadNews}><Link href={"#"}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic accusantium, harum est nulla ex velit commodi repudiandae non sed earum aliquam placeat cumque tenetur deleniti!</Link></p>
-                </figure>
+                {news.map((n,i)=>(
+                     <figure key={i} className={`${classes.news_all}`}>
+                     <Link href={`/news/${n.id}`}><Image className={classes.responseImg} src={`/news/${n.img_1}.jpg`} width={'303'} height={'227'} alt={n.title}></Image></Link>
+                     <figcaption className={classes.newsfigcaption}>
+                         <h2><Link href={`/news/${n.id}`}>{n.title}</Link></h2>
+                     </figcaption>
+                     <div className={classes.dtNews}>{format(new Date(n.dt),"dd MM yyyy")}</div>
+                     <p className={classes.leadNews}><Link href={`/news/${n.id}`}>{n.titlelong}</Link></p>
+                    </figure>
+                ))}
+               
             </div>
             <div className={classes.containerNewsBotton}>
                 <div className={classes.newsImg}>
@@ -232,11 +266,12 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                     <h2><Link href={"/news/item"} title={'Статьи'}>Статьи</Link></h2>
                     <p><Link href={"/news/item"} title={'Тематические статьи'}>Тематические статьи</Link></p>
                 </div>
-            </div>
+            </div> 
             <section>
                     <ul className={`${classes.itemline}`}>
-                        <li>История CAM систем. <Link href={'#'}>Весь текст</Link></li>
-                        <li>Обработка латуни. <Link href={'#'}>Весь текст</Link></li>
+                        {item.map((item,i)=>(
+                            <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
+                        ))}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
@@ -257,8 +292,13 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        <li><Link href={'#'}>Раскрой гранита 80 мм.</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
+                        {video.map((video, i)=>(
+                            <li><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
+                        ))}
+
+                        {/* <li><Link href={'#'}>Раскрой гранита 80 мм.</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
                         <li><Link href={'#'}>Раскрой стали 2 мм.</Link> Создание чертежа для изготовления адресной таблички. Гидроабразивная резка.</li>
+                     */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
@@ -290,7 +330,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
 export async function getServerSideProps({req}) {
     if(!req){
-        return {works:null, materials:null, costsize:null}
+        return {works:null, materials:null, costsize:null, news:null, item:null, video:null}
     }
     const res = await fetch('http://localhost:7000/works/main')
     const works = await res.json();
@@ -301,5 +341,14 @@ export async function getServerSideProps({req}) {
     const rescost = await fetch('http://localhost:7000/costsize/all')
     const costsize = await rescost.json();
 
-    return { props: { works, materials, costsize } }
+    const resnews = await fetch('http://localhost:7000/news/main')
+    const news = await resnews.json();
+
+    const resitem = await fetch('http://localhost:7000/news/main/item')
+    const item = await resitem.json();
+
+    const resvideo = await fetch('http://localhost:7000/news/main/video')
+    const video = await resvideo.json();
+
+    return { props: { works, materials, costsize, news, item, video } }
 }
