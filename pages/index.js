@@ -214,9 +214,8 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                       materials.map((m,i)=>{
                         return (
                             costsize.map((cost,sub) => {
-                                if(m.id == cost.material_id && m.id < 2 && cost.size < 15)
+                                if(m.id == cost.material_id && m.id <= 2 && cost.size < 15)
                                 return (
-                                //   <p key={sub}>{m.id} == {cost.size}</p>
                                   <li key={sub}><Link href={`/materials/${m.translit}/size/${cost.size}`} title={`${m.material} Толщина листа: ${cost.size}`}>{m.material}</Link>. Лист: {cost.size} мм. Цена за пог.м. — {cost.cost} руб.<p><Link href={'/materials'} title={"Весь прайс-лист"}>Полный прайс-лист.</Link></p></li>
                                 );
                               })
@@ -293,12 +292,8 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             <section>
                     <ul className={`${classes.videoline}`}>
                         {video.map((video, i)=>(
-                            <li><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
+                            <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
                         ))}
-
-                        {/* <li><Link href={'#'}>Раскрой гранита 80 мм.</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
-                        <li><Link href={'#'}>Раскрой стали 2 мм.</Link> Создание чертежа для изготовления адресной таблички. Гидроабразивная резка.</li>
-                     */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>

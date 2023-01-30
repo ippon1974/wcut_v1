@@ -33,6 +33,14 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
     const tCoAgl = startFromZero(tCostAglomerat);
 
+    const tCostAluminum = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 2){
+            tCostAluminum[i] = costsize[i];
+        }
+    }
+    const tCoAlum = startFromZero(tCostAluminum);
+
     const tCostSteel = [];
     for(let i=0; i < costsize.length; i++){
         if(costsize[i].material_id == 2){
@@ -51,7 +59,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const tCostGranite = [];
     for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 3){
+        if(costsize[i].material_id == 9){
             tCostGranite[i] = costsize[i];
         }
     }
@@ -67,18 +75,58 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const tCostCopper = [];
     for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 5){
+        if(costsize[i].material_id == 3){
             tCostCopper[i] = costsize[i];
         }
     }
     const tCoCopper = startFromZero(tCostCopper);
+
+
+    const tCostPlexiglass = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 5){
+            tCostPlexiglass[i] = costsize[i];
+        }
+    }
+    const tCoPlexiglass = startFromZero(tCostPlexiglass);
+
+    const tCostGlass = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 6){
+            tCostGlass[i] = costsize[i];
+        }
+    }
+    const tCoGlass = startFromZero(tCostGlass);
+
+    const tCostGlassPlastic = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 7){
+            tCostGlassPlastic[i] = costsize[i];
+        }
+    }
+    const tCoGlassPlastic = startFromZero(tCostGlassPlastic);
+
+    const tCostMarble = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 8){
+            tCostMarble[i] = costsize[i];
+        }
+    }
+    const tCoMarble = startFromZero(tCostMarble);
+
+    
     
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
+        aluminum: "",
         steel: "",
         granite: "",
         brass: "",
         copper: "",
+        plexiglass: "",
+        glass: "",
+        glass_plastic: "",
+        marble: "",
         steel_tool: ""
     });
    
@@ -89,6 +137,15 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             aglomerat: {id:id, cost:cost, size:size}
+        }))
+    }
+
+     if(translit == "aluminum"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoAlum[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            aluminum: {id:id, cost:cost, size:size}
         }))
     }
 
@@ -136,6 +193,44 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             copper: {id:id, cost:cost, size:size}
         }))
     }
+
+    if(translit == "plexiglass"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoPlexiglass[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            plexiglass: {id:id, cost:cost, size:size}
+        }))
+    }
+
+    if(translit == "glass"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoGlass[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            glass: {id:id, cost:cost, size:size}
+        }))
+    }
+
+    if(translit == "glass_plastic"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoGlassPlastic[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            glass_plastic: {id:id, cost:cost, size:size}
+        }))
+    }
+
+    if(translit == "marble"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoMarble[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            marble: {id:id, cost:cost, size:size}
+        }))
+    }
+
+
 
     }
 
@@ -234,16 +329,31 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                             materials.map((m, index) => 
                             <tr key={index}>
                                 {m.translit === "aglomerat" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size}`} title={`${m.material}. Толщина листа: ${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "aluminum" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.aluminum.size ? defSize(m.id):outprice.aluminum.size}`} title={`${m.material}. Толщина листа: ${!outprice.aluminum.size ? defSize(m.id):outprice.aluminum.size} мм.`}>{m.material}</Link></td> : ""}
                                 {m.translit === "steel" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.steel.size ? defSize(m.id):outprice.steel.size}`} title={`${m.material}. Толщина листа: ${!outprice.steel.size ? defSize(m.id):outprice.steel.size} мм.`}>{m.material}</Link></td> : ""}
                                 {m.translit === "steel_tool" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.steel_tool.size ? defSize(m.id):outprice.steel_tool.size}`} title={`${m.material}. Толщина листа: ${!outprice.steel_tool.size ? defSize(m.id):outprice.steel_tool.size} мм.`}>{m.material}</Link></td> : ""}
                                 {m.translit === "granite" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.granite.size ? defSize(m.id):outprice.granite.size}`} title={`${m.material}. Толщина листа: ${!outprice.granite.size ? defSize(m.id):outprice.granite.size} мм.`}>{m.material}</Link></td> : ""}
                                 {m.translit === "brass" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.brass.size ? defSize(m.id):outprice.brass.size}`} title={`${m.material}. Толщина листа: ${!outprice.brass.size ? defSize(m.id):outprice.brass.size} мм.`}>{m.material}</Link></td> : ""}
                                 {m.translit === "copper" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.copper.size ? defSize(m.id):outprice.copper.size}`} title={`${m.material}. Толщина листа: ${!outprice.copper.size ? defSize(m.id):outprice.copper.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "plexiglass" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.plexiglass.size ? defSize(m.id):outprice.plexiglass.size}`} title={`${m.material}. Толщина листа: ${!outprice.plexiglass.size ? defSize(m.id):outprice.plexiglass.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "glass" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.glass.size ? defSize(m.id):outprice.glass.size}`} title={`${m.material}. Толщина листа: ${!outprice.glass.size ? defSize(m.id):outprice.glass.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "glass_plastic" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.glass_plastic.size ? defSize(m.id):outprice.glass_plastic.size}`} title={`${m.material}. Толщина листа: ${!outprice.glass_plastic.size ? defSize(m.id):outprice.glass_plastic.size} мм.`}>{m.material}</Link></td> : ""}
+                                {m.translit === "marble" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.marble.size ? defSize(m.id):outprice.marble.size}`} title={`${m.material}. Толщина листа: ${!outprice.marble.size ? defSize(m.id):outprice.marble.size} мм.`}>{m.material}</Link></td> : ""}
                                 <td>
                                 { m.translit == "aglomerat" ?   
                                 <select onChange={event => handle(event, m.translit)}>
                                      {   
                                          tCoAgl.map((c, subindex) => {
+                                            return <option key={subindex}>{c.size}</option>
+                                         })
+                                     }
+                                </select> : ""
+                                }
+
+                                { m.translit == "aluminum" ?   
+                                <select onChange={event => handle(event, m.translit)}>
+                                     {   
+                                         tCoAlum.map((c, subindex) => {
                                             return <option key={subindex}>{c.size}</option>
                                          })
                                      }
@@ -288,6 +398,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                      }
                                 </select> : ""
                                 }
+
                                 { m.translit == "copper" ?   
                                 <select onChange={event => handle(event, m.translit)}>
                                      { 
@@ -297,14 +408,60 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                      }
                                 </select> : ""
                                 }
+
+                                { m.translit == "plexiglass" ?   
+                                <select onChange={event => handle(event, m.translit)}>
+                                     { 
+                                         tCoPlexiglass.map((c, subindex) => {
+                                            return <option key={subindex}>{c.size}</option>
+                                         })
+                                     }
+                                </select> : ""
+                                }
+
+                                { m.translit == "glass" ?   
+                                <select onChange={event => handle(event, m.translit)}>
+                                     { 
+                                         tCoGlass.map((c, subindex) => {
+                                            return <option key={subindex}>{c.size}</option>
+                                         })
+                                     }
+                                </select> : ""
+                                }
+
+                                { m.translit == "glass_plastic" ?   
+                                <select onChange={event => handle(event, m.translit)}>
+                                     { 
+                                         tCoGlassPlastic.map((c, subindex) => {
+                                            return <option key={subindex}>{c.size}</option>
+                                         })
+                                     }
+                                </select> : ""
+                                }
+
+                                { m.translit == "marble" ?   
+                                <select onChange={event => handle(event, m.translit)}>
+                                     { 
+                                         tCoMarble.map((c, subindex) => {
+                                            return <option key={subindex}>{c.size}</option>
+                                         })
+                                     }
+                                </select> : ""
+                                }
+
                                 <span> мм.</span>
                                 </td>
                                     {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
+                                    {m.translit == "aluminum" ? <td>{!outprice.aluminum ? defCost(m.id) : ""}  {outprice.aluminum.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
                                     {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
                                     {m.translit == "steel_tool" ? <td>{!outprice.steel_tool ? defCost(m.id) : ""} {outprice.steel_tool.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
                                     {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
                                     {m.translit == "brass" ? <td>{!outprice.brass ? defCost(m.id) : ""} {outprice.brass.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
-                                    {m.translit == "copper" ? <td>{!outprice.copper ? defCost(m.id) : ""} {outprice.copper.cost} <span className={'short'}>руб. пог. м.</span></td> : null}        
+                                    {m.translit == "copper" ? <td>{!outprice.copper ? defCost(m.id) : ""} {outprice.copper.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
+                                    {m.translit == "plexiglass" ? <td>{!outprice.plexiglass ? defCost(m.id) : ""} {outprice.plexiglass.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
+                                    {m.translit == "glass" ? <td>{!outprice.glass ? defCost(m.id) : ""} {outprice.glass.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
+                                    {m.translit == "glass_plastic" ? <td>{!outprice.glass_plastic ? defCost(m.id) : ""} {outprice.glass_plastic.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
+                                    {m.translit == "marble" ? <td>{!outprice.marble ? defCost(m.id) : ""} {outprice.marble.cost} <span className={'short'}>руб. пог. м.</span></td> : null}                          
                                 </tr>
                                 )
                         }
