@@ -19,12 +19,14 @@ const BlockIdWork = (props) => {
         }
             load();
     },[idworknew])// eslint-disable-line react-hooks/exhaustive-deps
-
     
+
     return (
         <>
             <div className={classes.bannerHeadWork}>
-                        <Image src={`/works/filter/${props.work.img_1}.jpg`} width={'935'} height={'172'} alt={''} />
+                
+            <Image src={`/works/filter/${props.work.img_1}.jpg`} width={'935'} height={'172'} alt={''} />
+                        
             </div>
                     <div className={classes.logos_nameWork}>
                         <div className={classes.logos_works}>
