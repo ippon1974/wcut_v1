@@ -74,16 +74,16 @@ const BlockIdWork = (props) => {
                             <p>{props.work.materialname}</p>
                         </div>
                         <div>
-                            <h3>Процесс {w.id == 0 ? "yes" : "no"}</h3>
+                            <h3>Процесс</h3>
                             <div dangerouslySetInnerHTML={{__html: props.work.body}} />
 
                         </div>
                         <div className={classes.panelImg}>
-                            {w.img_1 ? <Image src={`/works/big/${w.img_1}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
-                            {w.img_2 ? <Image src={`/works/big/${w.img_2}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
-                            {w.img_3 ? <Image src={`/works/big/${w.img_3}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
-                            {w.img_4 ? <Image src={`/works/big/${w.img_4}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
-                            {w.img_5 ? <Image src={`/works/big/${w.img_5}.jpg`} width={"460"} height={"345"} alt={w.title} /> : ""}
+                            {w.img_1 ? <Link href={`/works/big/${w.img_1}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_1}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_2 ? <Link href={`/works/big/${w.img_2}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_2}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_3 ? <Link href={`/works/big/${w.img_3}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_3}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_4 ? <Link href={`/works/big/${w.img_4}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_4}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_5 ? <Link href={`/works/big/${w.img_5}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_5}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
                         </div>
                     </div> 
         </>

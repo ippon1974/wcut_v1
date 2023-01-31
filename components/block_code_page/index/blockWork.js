@@ -28,8 +28,8 @@ const BlockWork = (props) => {
                 <Link key={i} href={`/works/${w.id}`}>    
                     <div className={`${classes.viewportcontainerWork}`}>
                         <div className={'viewportWork'} style={workPort}>
-                            <Image style={imgWork} src={`/works/small/${w.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image>
-                            <Image style={imgWork} src={`/works/small/${w.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                            <Image style={imgWork} src={`/works/front/${w.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                            <Image style={imgWork} src={`/works/front/${w.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
                         </div>
                     </div>
                 </Link> 

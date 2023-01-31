@@ -21,8 +21,8 @@ const blockWork = (props) => {
                          <Link href={`/works/[id]`} as={`/works/${work.id}`} title={work.title}> 
                         <div className={`${classes.viewportcontainerWork}`}>
                             <div className={'viewportWork'} style={workPort}>
-                                <Image src={`/works/small/${work.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image>
-                                <Image src={`/works/small/${work.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                                <Image src={`/works/front/${work.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image>
+                                <Image src={`/works/front/${work.img_2}.jpg`} width={'303'} height={'227'} alt={''}></Image>
                             </div>
                         </div>
                         </Link> 

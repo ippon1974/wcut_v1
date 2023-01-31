@@ -12,7 +12,7 @@ const BlockWorkMobile = (props) => {
                    <div key={i}>  
                    <Link href={`/works/${w.id}`}>
                    <div>
-                    <Image className={classes.responseImg} src={`/works/small/${w.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image> 
+                    <Image className={classes.responseImg} src={`/works/front/${w.img_1}.jpg`} width={'303'} height={'227'} alt={''}></Image> 
                    </div>
                    </Link>
                    <div className={classes.descWork}>

@@ -190,8 +190,8 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 {works.map((w,i)=>(
                     <div key={i} className={`${classes.block_all}`}>
                          <div className={`${classes.info_block}`}>
-                             <div className={`${classes.info_block_arrow}`}><Link href={`/works/${w.id}`}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
-                             <div className={`${classes.info_block_link}`}><Link href={`/works/${w.id}`}>Подробнее</Link></div>
+                             <div className={`${classes.info_block_arrow}`}><Link href={`/works/${w.id}`} title={`${w.title}`}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
+                             <div className={`${classes.info_block_link}`}><Link href={`/works/${w.id}`} title={`${w.title}`}>Подробнее</Link></div>
                          </div>
                      </div>
                 ))}
@@ -214,7 +214,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                       materials.map((m,i)=>{
                         return (
                             costsize.map((cost,sub) => {
-                                if(m.id == cost.material_id && m.id <= 2 && cost.size < 15)
+                                if(m.id == cost.material_id && m.id === 2 && cost.size < 15)
                                 return (
                                   <li key={sub}><Link href={`/materials/${m.translit}/size/${cost.size}`} title={`${m.material} Толщина листа: ${cost.size}`}>{m.material}</Link>. Лист: {cost.size} мм. Цена за пог.м. — {cost.cost} руб.<p><Link href={'/materials'} title={"Весь прайс-лист"}>Полный прайс-лист.</Link></p></li>
                                 );

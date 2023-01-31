@@ -60,11 +60,11 @@ const BlockIdWorkMobile = (props) => {
                 <div dangerouslySetInnerHTML={{__html: w.body}} />
              </div>
 
-             {w.img_1 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_1}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""} 
-             {w.img_2 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_2}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
-             {w.img_3 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_3}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
-             {w.img_4 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_4}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
-             {w.img_5 ? <div><Image className={classes.responseImg} src={`/works/big/${w.img_5}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_1 ? <div><Image className={classes.responseImg} src={`/works/small/${w.img_1}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""} 
+             {w.img_2 ? <div><Image className={classes.responseImg} src={`/works/small/${w.img_2}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_3 ? <div><Image className={classes.responseImg} src={`/works/small/${w.img_3}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_4 ? <div><Image className={classes.responseImg} src={`/works/small/${w.img_4}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
+             {w.img_5 ? <div><Image className={classes.responseImg} src={`/works/small/${w.img_5}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""}
             
             </div>
         </>

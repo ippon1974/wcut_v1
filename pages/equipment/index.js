@@ -118,7 +118,7 @@ export default function Equipment() {
                     </div>
 
                    
-                    <div className={classes.newredhead}>
+                    {/* <div className={classes.newredhead}>
                         <div className={classes.gimg}><Image src="/iconTwitter.gif" width={"29"} height={"29"} alt="" /></div>
                         <div className={classes.gtxt}><Link href={"/materials"}>Стоимость раскроя</Link></div>
                     </div>
@@ -127,7 +127,8 @@ export default function Equipment() {
                     <p className={classes.newredheadp}><Link href = {"/"}>Агломерат 10 мм. 960 руб.</Link></p>
                     <p className={classes.newredheadp}><Link href = {"/"}>Агломерат 10 мм. 960 руб.</Link></p>
                     <p className={classes.newredheadp}><Link href = {"/"}>Агломерат 10 мм. 960 руб.</Link></p>
-                    <div className={classes.linehedhead}></div>
+                    <div className={classes.linehedhead}></div> */}
+
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}
