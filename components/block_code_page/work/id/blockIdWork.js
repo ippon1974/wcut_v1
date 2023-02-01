@@ -81,11 +81,11 @@ const BlockIdWork = (props) => {
 
                         </div>
                         <div className={classes.panelImg}>
-                            {w.img_1 ? <Link href={`/works/big/${w.img_1}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_1}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
-                            {w.img_2 ? <Link href={`/works/big/${w.img_2}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_2}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
-                            {w.img_3 ? <Link href={`/works/big/${w.img_3}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_3}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
-                            {w.img_4 ? <Link href={`/works/big/${w.img_4}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_4}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
-                            {w.img_5 ? <Link href={`/works/big/${w.img_5}.jpg`} target={'_blank'} title={w.title}><Image src={`/works/small/${w.img_5}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_1 ? <Link href={`/works/big/${w.img_1}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_1}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_2 ? <Link href={`/works/big/${w.img_2}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_2}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_3 ? <Link href={`/works/big/${w.img_3}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_3}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_4 ? <Link href={`/works/big/${w.img_4}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_4}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
+                            {w.img_5 ? <Link href={`/works/big/${w.img_5}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_5}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
                         </div>
                     </div> 
         </>
