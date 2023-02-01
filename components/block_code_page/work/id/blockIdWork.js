@@ -25,7 +25,7 @@ const BlockIdWork = (props) => {
         <>
             <div className={classes.bannerHeadWork}>
                 
-            <Image src={`/works/filter/${props.work.img_1}.jpg`} width={'935'} height={'172'} alt={''} />
+            <Image src={`/works/filter/${w.img_1}.jpg`} width={'935'} height={'172'} alt={''} />
                         
             </div>
                     <div className={classes.logos_nameWork}>
@@ -73,11 +73,11 @@ const BlockIdWork = (props) => {
                     <div className={classes.contanerPageWork}>
                         <div className={classes.rightDesc}>
                             <span>Материал</span>
-                            <p>{props.work.materialname}</p>
+                            <p>{w.materialname}</p>
                         </div>
                         <div>
                             <h3>Процесс</h3>
-                            <div dangerouslySetInnerHTML={{__html: props.work.body}} />
+                            <div dangerouslySetInnerHTML={{__html: w.body}} />
 
                         </div>
                         <div className={classes.panelImg}>
@@ -92,3 +92,10 @@ const BlockIdWork = (props) => {
     )
 }
 export default BlockIdWork;
+
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {props:null}
+    }
+    return {props: {props}}
+}

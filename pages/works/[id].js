@@ -10,7 +10,6 @@ import MobileFooter from "../../components/ui/footer/mobile/MobileFooter";
 import Footer from "../../components/ui/footer/main/Footer";
 import classes from '../../styles/works_id.module.scss';
 import Head from 'next/head';
-import Link from "next/link";
 import { useMediaQuery } from 'react-responsive';
 
 const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMaxId, minid:serverMinId}) => {
@@ -87,7 +86,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     }
 
     return (
-        <Layout title={'Работы'}>
+        <Layout title={`${serverWork.title} | ${'Услуги гидроабразивной резки Civek Water Jet'}`}>
            
             <Head>
                 <meta name="viewport" content="width=device-width"/>
