@@ -44,10 +44,12 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
         if(data[0] == undefined){
             return
         }
-        setPrevPage(data[0].id);
+        setPrevPage(data);
        }
         load();
     }, [serverPrev]);// eslint-disable-line react-hooks/exhaustive-deps
+
+    
 
     const[nextpage, setNextPage] = useState(serverNext);
     useEffect(()=>{
@@ -57,7 +59,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
         if(data[0] == undefined){
             return
         }
-        setNextPage(data[0].id);
+        setNextPage(data);
        }
         load();
     }, [serverNext]);// eslint-disable-line react-hooks/exhaustive-deps

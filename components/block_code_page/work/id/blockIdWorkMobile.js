@@ -39,7 +39,7 @@ const BlockIdWorkMobile = (props) => {
                         {/* <Link href={`/works/${props.prevPage}`} title={"Предыдущая работа"}>&#8592; Предыдущая</Link> */}
                     </div>
                   : 
-                    <div><Link href={`/works/${props.prevPage}`} title={"Предыдущая работа"}>&#8592; Предыдущая</Link></div>
+                    <div><Link href={`/works/${props.prevPage[0].id}`} title={"Предыдущая работа"}>&#8592; Предыдущая</Link></div>
                   }
                     
                   {w.id === props.maxId  ?
@@ -48,7 +48,7 @@ const BlockIdWorkMobile = (props) => {
                   </div>
                     :
                   <div>
-                    <Link href={`/works/${props.nextPage}`} title={"Следующая работа"}>Следующая &#8594;</Link>
+                    <Link href={`/works/${props.nextPage[0].id}`} title={"Следующая работа"}>Следующая &#8594;</Link>
                   </div>
                   }
                 </div>
