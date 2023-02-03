@@ -45,9 +45,11 @@ export default function Works({works:serverWorks}) {
     }
 
     return(
-        <Layout title={'Работы'}>
+        <Layout title={'Работы выполненные на станке гидроабразивной резки | Civek Water Jet'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="description" content={"Услуги гидроабразивной резки в Москве и Московской области"} />
+                <meta name="keywords" content={"Услуги гидрорез, гидроабразив, гидроабразивная резка"} />
              </Head>
 
             <div className={classes.wrapper}>

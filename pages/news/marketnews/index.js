@@ -40,7 +40,7 @@ export default function Marketnews({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Новости рынка'}>
+        <Layout title={'Новости рынка | Civek Water Jet'}>
             
             <Head>
                 <meta name="viewport" content="width=device-width"/>

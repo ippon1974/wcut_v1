@@ -18,7 +18,7 @@ export default function Equipment() {
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
-        <Layout title={'Станки | Гидроабразивная резка в Москве и Москвовской области'}>
+        <Layout title={'Станки гидроабразивной резки | Civek Water Jet'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
                 <meta content='true' name='HandheldFriendly'/>

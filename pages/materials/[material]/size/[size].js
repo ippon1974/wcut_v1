@@ -88,9 +88,12 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
 
     return (
         <>
-             <Layout title={`${mname.material}. Толщина: ${costsize.size} мм. Цена раскроя 1 пог. м.: ${costsize.cost} руб | Civek Water Jet гидроабразив`}>
+             <Layout title={`${mname.material}. Толщина: ${costsize.size} мм. Цена 1 пог. м.: ${costsize.cost} руб | Civek Water Jet Гидроабразив`}>
+             
              <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="keywords" content={`Гидроабразивная река, металл, медь, латунь, мрамор, гранит, бронза`} />
+                <meta name="description" content={`Гидроабразивная резка. ${mname.material}. Толщина: ${costsize.size} мм.`} />
             </Head>
 
             <div className={classes.wrapper}>

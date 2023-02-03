@@ -18,7 +18,7 @@ export default function Technology() {
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
-        <Layout title={'Технология'}>
+        <Layout title={'Технология гидроабразивной резки | Civek Water Jet'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
                 <meta content='true' name='HandheldFriendly'/>

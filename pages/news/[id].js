@@ -42,7 +42,7 @@ const Article = ({article:serverArticle}) => {
 
     return (
         <>
-             <Layout title={`${article.title}`}>
+             <Layout title={`${article.title} | Civek Water Jet`}>
              <Head>
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />

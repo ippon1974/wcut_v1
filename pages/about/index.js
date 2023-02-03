@@ -18,7 +18,7 @@ export default function About() {
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
-        <Layout title={'О компании'}>
+        <Layout title={'О компании | Civek Water Jet'}>
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>

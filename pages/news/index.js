@@ -41,7 +41,7 @@ export default function News({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Новости'}>
+        <Layout title={'Новости | Civek Water Jet'}>
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>

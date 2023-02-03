@@ -40,7 +40,7 @@ export default function Video({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Видео'}>
+        <Layout title={'Видео | Civek Water Jet'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>

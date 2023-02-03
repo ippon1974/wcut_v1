@@ -40,7 +40,7 @@ export default function Cnews({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Новости компании'}>
+        <Layout title={'Новости компании | Civek Water Jet'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>
