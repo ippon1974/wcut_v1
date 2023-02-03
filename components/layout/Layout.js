@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const Layout = ({children, title = 'Civek Water Jet', description = 'Можем отрезать что хочешь',keywords = 'Ключевые слова прямо тут бля' }) => {
+const Layout = ({children, title = 'Civek Water Jet', description = '',keywords = '' }) => {
 
         return(
             <>

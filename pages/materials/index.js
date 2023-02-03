@@ -288,7 +288,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         }
 
     return(
-        <Layout title={'Цены на раскрой гидроабразивом | Стоимость раскроя различных материалов с помощью технологии гидроабразивной резки.'}>
+        <Layout title={'Стоимость гидроабразивной резки материалов.| Civek Water Jet - услуги гидроабразивной резки'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>
