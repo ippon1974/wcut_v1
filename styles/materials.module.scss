@@ -231,14 +231,44 @@
     font-size: 0.8em;
     color: #303028;
     padding: 5px 0 6px 0;
-
     border-bottom-color: #b3aeae;
     border-bottom-style: solid;
     border-bottom-width: thin;
     padding: 0.5em 0 0.5em 0;
+  }
 
+  .maincontext .pricematerials tr td > select {
+    //-webkit-appearance: none;
+    -webkit-appearance:caret;
+    -webkit-border-radius:0; 
+    border-radius:0; 
+    //display: block;
+ 	  // margin: auto;
+ 	  // border-radius: 50px;
+ 	  // background: white;
+ 	  // padding: 5px;
+ 	  // max-width: 360px;
+ 	  // text-align: center;
+ 	  // width: 90%;
+ 	   // position: relative;
+     //-webkit-appearance: none;
+     //-moz-appearance: none;
+     //background: gray;
+       // border-bottom: 6px solid black;
+      //  border-left: 6px solid transparent;
+    //  border-right: 6px solid transparent;
+    //  border:1px solid gold;
+ 		//  position: relative;
+    // padding-right: 10px;
+    // outline: none;
+    //background-color: #333;
+  
+    border-radius: 0;
+    width: 40%;
+    border-color: black;
 
   }
+
 
   .maincontext .pricematerials tr td > a {
     font-size: 0.9em;
