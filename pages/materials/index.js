@@ -268,11 +268,11 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     useEffect(()=> {
         async function load() {
-            const response = await fetch('http://localhost:7000/materials/all')
+            const response = await fetch('http://23.105.246.179:7000/materials/all')
             const json = await response.json();
             setMaterials(json);
 
-            const rescost = await fetch('http://localhost:7000/costsize/all')
+            const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
             const jcost = await rescost.json();
             setCostSize(jcost);
         }

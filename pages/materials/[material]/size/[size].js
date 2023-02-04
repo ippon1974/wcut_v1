@@ -29,7 +29,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
     const[costsizelist, setCostSizeList] = useState(serverCostSizeList);
     useEffect(() => {
         async function load() {
-            const r = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
+            const r = await fetch(`http://23.105.246.179:7000/costsize/type?material_id=${mname.id}`);
             const costsizelist = await r.json();
             setCostSizeList(costsizelist);
         }
@@ -42,7 +42,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
     const[costsize, setCostSize] = useState(serverCostSize);
     useEffect(() => {
         async function load() {
-            const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${pathSize}`);
+            const res = await fetch(`http://23.105.246.179:7000/costsize?id=${mname.id}&size=${pathSize}`);
             const costsize = await res.json();
             setCostSize(costsize);
         }
@@ -63,7 +63,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
     const[mname, setMName] = useState(serverMName);
     useEffect(() => {
         async function load() {
-            const res = await fetch(`http://localhost:7000/materials?material=${pathItem}`);
+            const res = await fetch(`http://23.105.246.179:7000/materials?material=${pathItem}`);
             const mname = await res.json();
             setMName(mname);
         }
@@ -145,14 +145,14 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {mname:null, costsize:null, costsizelist:null}
     }
-    const response = await fetch(`http://localhost:7000/materials?material=${query.material}`);
+    const response = await fetch(`http://23.105.246.179:7000/materials?material=${query.material}`);
     const mname = await response.json();
 
-    const res = await fetch(`http://localhost:7000/costsize?id=${mname.id}&size=${query.size}`);
+    const res = await fetch(`http://23.105.246.179:7000/costsize?id=${mname.id}&size=${query.size}`);
     const costsize = await res.json();
     //console.log("SERVER Cost ...", costsize, "query size ", query.size, "query id ", mname.id);
 
-    const re = await fetch(`http://localhost:7000/costsize/type?material_id=${mname.id}`);
+    const re = await fetch(`http://23.105.246.179:7000/costsize/type?material_id=${mname.id}`);
     const costsizelist = await re.json();
 
     return {props: {mname, costsize, costsizelist} }
