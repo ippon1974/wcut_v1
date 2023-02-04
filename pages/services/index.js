@@ -47,7 +47,7 @@ export default function Services() {
                         <h2>Раскрой различных материалов с помощью технологии гидроабразивной резки</h2>
                         <div className={classes.hr}></div>
                         <h3>Материалы для раскроя. Гидроабразивная резка:</h3>
-                        <p><Link className={classes.activecalc} href="http://calculation.htz.ru/" target={'_blank'} title="Калькулятор гидроабразивной рhttp://localhost:7165/sites/all/themes/tommy/images/iconTwitter.gifезки"><strong>Калькулятор</strong></Link> гидроабразивной резки.</p>
+                        {/* <p><Link className={classes.activecalc} href="http://calculation.htz.ru/" target={'_blank'} title="Калькулятор гидроабразивной рhttp://localhost:7165/sites/all/themes/tommy/images/iconTwitter.gifезки"><strong>Калькулятор</strong></Link> гидроабразивной резки.</p> */}
                         <ul>
                             <li>черные металлы и сплавы;</li>
                             <li>труднообрабатываемые легированные стали и сплавы (в том числе: жаропрочные и нержавеющие);</li>
