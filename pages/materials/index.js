@@ -512,10 +512,10 @@ export async function getServerSideProps({req}) {
     if(!req){
         return {materials:null, costsize:null}
     }
-    const res = await fetch('http://localhost:7000/materials/all')
+    const res = await fetch('http://23.105.246.179:7000/materials/all')
     const materials = await res.json();
 
-    const rescost = await fetch('http://localhost:7000/costsize/all')
+    const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
     const costsize = await rescost.json();
     return { props: { materials, costsize } }
 }
