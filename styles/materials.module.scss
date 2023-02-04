@@ -239,9 +239,9 @@
 
   .maincontext .pricematerials tr td > select {
     //-webkit-appearance: none;
-    -webkit-appearance:caret;
-    -webkit-border-radius:0; 
-    border-radius:0; 
+    //-webkit-appearance:caret;
+    //-webkit-border-radius:0; 
+    //border-radius:0; 
     //display: block;
  	  // margin: auto;
  	  // border-radius: 50px;
@@ -264,8 +264,8 @@
     //background-color: #333;
   
     border-radius: 0;
-    width:auto;
-    border-color: black;
+    //width:auto;
+    //border-color: black;
 
   }
 

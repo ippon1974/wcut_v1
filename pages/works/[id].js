@@ -132,19 +132,19 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {work:null, prev:null, next:null, maxid:null, minid:null}
     }
-    const response = await fetch(`http://localhost:7000/works?id=${query.id}`);
+    const response = await fetch(`http://23.105.246.179:7000/works?id=${query.id}`);
     const work = await response.json();
 
-    const respprev = await fetch(`http://localhost:7000/works/prev?id=${query.id}`);
+    const respprev = await fetch(`http://23.105.246.179:7000/works/prev?id=${query.id}`);
     const prev = await respprev.json();
 
-    const respnext = await fetch(`http://localhost:7000/works/next?id=${query.id}`);
+    const respnext = await fetch(`http://23.105.246.179:7000/works/next?id=${query.id}`);
     const next = await respnext.json();
 
-    const respmaxid = await fetch(`http://localhost:7000/works/max`);
+    const respmaxid = await fetch(`http://23.105.246.179:7000/works/max`);
     const maxid = await respmaxid.json();
 
-    const respminid = await fetch(`http://localhost:7000/works/min`);
+    const respminid = await fetch(`http://23.105.246.179:7000/works/min`);
     const minid = await respminid.json();
 
     return {props: {work, prev, next, maxid, minid} }
