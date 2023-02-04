@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const BlockIdWork = (props) => {
+
     const { asPath, pathname } = useRouter();
     const idworkold = asPath.split('/');
     const idworknew = idworkold[2];
@@ -18,6 +19,7 @@ const BlockIdWork = (props) => {
         }
             load();
     },[idworknew])// eslint-disable-line react-hooks/exhaustive-deps
+
 
 
     return (
@@ -49,8 +51,8 @@ const BlockIdWork = (props) => {
                              </div>
                         : 
                             <div className={classes.pre}>
-                            <Link href={`/works/${props.prevPage[0].id}`}><Image src={'/prev.gif'} width={23} height={23} alt={''} /></Link>
-                            <span><Link href={`/works/${props.prevPage[0].id}`} title={'Предыдущая'}>Предыдущая</Link></span>
+                            <Link href={`/works/${props.prev}`}><Image src={'/prev.gif'} width={23} height={23} alt={''} /></Link>
+                            <span><Link href={`/works/${props.prev}`} title={'Предыдущая'}>{props.prev} Предыдущая</Link></span>
                             </div>
                         }
                         
@@ -91,9 +93,9 @@ const BlockIdWork = (props) => {
 }
 export default BlockIdWork;
 
-// export async function getServerSideProps({req}) {
-//     if(!req){
-//         return {props:null, prevPage: null}
-//     }
-//     return {props: {props, prevPage}}
-// }
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {props:null, prevPage: null, prev:null}
+    }
+    return {props: {props, prevPage, prev}}
+}

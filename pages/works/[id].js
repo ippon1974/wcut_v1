@@ -36,7 +36,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
             load();
     },[serverMaxId])// eslint-disable-line react-hooks/exhaustive-deps
 
-    const[prevpage, setPrevPage] = useState(serverPrev);
+    const[prev, setPrevPage] = useState(serverPrev);
     useEffect(()=>{
        async function load() {
         const response = await fetch(`http://localhost:7000/works/prev?id=${router.query.id}`);
@@ -49,7 +49,6 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
         load();
     }, [serverPrev]);// eslint-disable-line react-hooks/exhaustive-deps
 
-    
 
     const[nextpage, setNextPage] = useState(serverNext);
     useEffect(()=>{
@@ -86,6 +85,11 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
             <p>...Loading</p>
         </Layout>
     }
+    if(!prev){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
 
     return (
         <Layout title={`${serverWork.title} | ${'Услуги гидроабразивной резки Civek Water Jet'}`}>
@@ -104,7 +108,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {prevpage} nextPage = {nextpage} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {prevpage} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {prev} nextPage = {nextpage} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {prev} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}
