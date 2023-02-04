@@ -52,7 +52,7 @@ const BlockIdWork = (props) => {
                         : 
                             <div className={classes.pre}>
                             <Link href={`/works/${props.prevPage}`}><Image src={'/prev.gif'} width={23} height={23} alt={''} /></Link>
-                            <span><Link href={`/works/${props.prevPage}`} title={'Предыдущая'}>{props.prevPage} Предыдущая</Link></span>
+                            <span><Link href={`/works/${props.prevPage}`} title={'Предыдущая'}>Предыдущая</Link></span>
                             </div>
                         }
                         
@@ -63,8 +63,8 @@ const BlockIdWork = (props) => {
                         </div>
                         :
                         <div className={classes.next}>
-                           <span><Link href={`/works/${props.nextPage[0].id}`} title={"Следующая"}>Следующая</Link></span>
-                           <Link href={`/works/${props.nextPage[0].id}`}><Image src={'/next.gif'} width={23} height={23} alt={''} /></Link>
+                           <span><Link href={`/works/${props.nextPage}`} title={"Следующая"}>Следующая</Link></span>
+                           <Link href={`/works/${props.nextPage}`}><Image src={'/next.gif'} width={23} height={23} alt={''} /></Link>
                         </div>
                         }
 

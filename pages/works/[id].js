@@ -19,7 +19,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[minid, setMinId] = useState(serverMinId);
     useEffect(()=>{
         async function load() {
-            const res = await fetch(`http://localhost:7000/works/min`);
+            const res = await fetch(`http://23.105.246.179:7000/works/min`);
             const min = await res.json();
             setMinId(min);
         }
@@ -29,7 +29,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[maxid, setMaxId] = useState(serverMaxId);
     useEffect(()=>{
         async function load() {
-            const res = await fetch(`http://localhost:7000/works/max`);
+            const res = await fetch(`http://23.105.246.179:7000/works/max`);
             const max = await res.json();
             setMaxId(max);
         }
@@ -49,13 +49,12 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
         load();
     }, [serverPrev]);// eslint-disable-line react-hooks/exhaustive-deps
 
-    console.log("serverPrev" , serverPrev);
 
 
-    const[nextpage, setNextPage] = useState(serverNext);
+    const[next, setNextPage] = useState(serverNext);
     useEffect(()=>{
        async function load() {
-        const response = await fetch(`http://localhost:7000/works/next?id=${router.query.id}`);
+        const response = await fetch(`http://23.105.246.179:7000/works/next?id=${router.query.id}`);
         const data = await response.json();
         if(data[0] == undefined){
             return
@@ -73,7 +72,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[work, setWork] = useState(serverWork);
     useEffect(()=>{
         async function load() {
-            const response = await fetch(`http://localhost:7000/works?id=${router.query.id}`);
+            const response = await fetch(`http://23.105.246.179:7000/works?id=${router.query.id}`);
             const data = await response.json();
             setWork(data);
         }
@@ -88,6 +87,11 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
         </Layout>
     }
     if(!prev){
+        return <Layout>
+            <p>...Loading</p>
+        </Layout>
+    }
+    if(!next){
         return <Layout>
             <p>...Loading</p>
         </Layout>
@@ -110,7 +114,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {prev} nextPage = {nextpage} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {maxid == work.id ? "" : next[0].id} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {maxid == work.id ? "" : next[0].id} maxId = {maxid} minId= {minid} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}
