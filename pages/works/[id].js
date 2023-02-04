@@ -49,6 +49,8 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
         load();
     }, [serverPrev]);// eslint-disable-line react-hooks/exhaustive-deps
 
+    console.log("serverPrev" , serverPrev);
+
 
     const[nextpage, setNextPage] = useState(serverNext);
     useEffect(()=>{
@@ -100,7 +102,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
 
             <div className={`${classes.wrapper}`}>
             <div className={`${classes.header}`}>
-                <Header />
+                
             </div>
                 
                 <div className={`${classes.nav}`}>
@@ -108,7 +110,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {prev} nextPage = {nextpage} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {prev} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {prev} nextPage = {nextpage} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {minid === work.id ? "" : prev[0].id} nextPage = {nextpage} maxId = {maxid} minId= {minid} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}

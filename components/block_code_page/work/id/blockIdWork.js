@@ -51,8 +51,8 @@ const BlockIdWork = (props) => {
                              </div>
                         : 
                             <div className={classes.pre}>
-                            <Link href={`/works/${props.prev}`}><Image src={'/prev.gif'} width={23} height={23} alt={''} /></Link>
-                            <span><Link href={`/works/${props.prev}`} title={'Предыдущая'}>{props.prev} Предыдущая</Link></span>
+                            <Link href={`/works/${props.prevPage}`}><Image src={'/prev.gif'} width={23} height={23} alt={''} /></Link>
+                            <span><Link href={`/works/${props.prevPage}`} title={'Предыдущая'}>{props.prevPage} Предыдущая</Link></span>
                             </div>
                         }
                         
