@@ -22,6 +22,7 @@ const blockIdMateterials = (props) => {
                  <div>
                         <h2>Гидроабразивная резка<p>{props.mname.material}</p>Толщина листа: {props.costsize.size} мм</h2>
                         <div className={classes.hr}></div>
+                        <h3 className={classes.ndc}>Без НДС!</h3>
                         <h3>Стоимость раскроя: {props.costsize.cost} руб. за 1 пог. м.</h3>
                         <h3>Толщина листа:&ensp;
                             <select onChange={event => handle(event)}>
