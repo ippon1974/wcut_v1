@@ -3,6 +3,8 @@ import Layout from "../../components/layout/Layout";
 import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/main/Navigation";
 import MobileNavigation from "../../components/ui/navigation/mobile/MobileNavigation";
+import BlockMaterial from '../../components/block_code_page/materials/blockMaterial';
+import BlockMateterialMobile from '../../components/block_code_page/materials/blockMaterialMobile';
 import MobileFooter from "../../components/ui/footer/mobile/MobileFooter";
 import Footer from "../../components/ui/footer/main/Footer";
 import classes from '../../styles/materials.module.scss';
@@ -16,6 +18,34 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
 
+    function defCost(id){
+        let res = "";
+        let resA = [];
+        materials.map(m => (
+            costsize.map((c, i) => {
+                if(c.material_id === id){
+                    resA.push(c.cost);
+                    res = Math.min(...resA);
+                }   
+            })
+        ))
+        return res;
+      }
+
+      function defSize(id){
+        let res = "";
+        let resA = [];
+        materials.map(m => (
+            costsize.map((c, i) => {
+                if(c.material_id === id){
+                    resA.push(c.size);
+                    res = Math.min(...resA);
+                }   
+            })
+        ))
+        return res;
+      }
+
     function startFromZero(arr) {
         var newArr = [];
         var count = 0;
@@ -25,6 +55,20 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         return newArr;
     }
 
+    const tAllMaterial = (costsize, material_id )=> {
+        const listCostMat = [];
+        for(let i=0; i < costsize.length; i++){
+            if(costsize[i].material_id == material_id){
+                listCostMat[i] =  costsize[i];
+            }
+        }
+        const tCostMat = startFromZero(listCostMat);
+        return tCostMat;
+    }
+
+    
+    console.log("tAllMaterial ....",  tAllMaterial(costsize,1));
+
     const tCostAglomerat = [];
     for(let i=0; i < costsize.length; i++){
         if(costsize[i].material_id == 1){
@@ -32,6 +76,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         }
     }
     const tCoAgl = startFromZero(tCostAglomerat);
+    console.log("tt", typeof tCoAgl);
 
     const tCostAluminum = [];
     for(let i=0; i < costsize.length; i++){
@@ -114,8 +159,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
     const tCoMarble = startFromZero(tCostMarble);
 
-    
-    
+
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
         aluminum: "",
@@ -234,34 +278,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     }
 
-      function defCost(id){
-        let res = "";
-        let resA = [];
-        materials.map(m => (
-            costsize.map((c, i) => {
-                if(c.material_id === id){
-                    resA.push(c.cost);
-                    res = Math.min(...resA);
-                }   
-            })
-        ))
-        return res;
-      }
-
-      function defSize(id){
-        let res = "";
-        let resA = [];
-        materials.map(m => (
-            costsize.map((c, i) => {
-                if(c.material_id === id){
-                    resA.push(c.size);
-                    res = Math.min(...resA);
-                }   
-            })
-        ))
-        return res;
-      }
-      
+    
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
@@ -317,7 +334,9 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
-                        <table className={classes.pricematerials}>
+                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} startFromZero={startFromZero} handle={handle} tCoAgl = {tCoAgl} tAllMaterial={tAllMaterial} /> : <BlockMaterial />}
+                        
+                        {/* <table className={classes.pricematerials}>
                         <tbody>
                             <tr>
                                 <th>Материал</th>
@@ -465,7 +484,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                                 )
                         }
                         </tbody>
-                        </table>
+                        </table> */}
 
                         <h3>Принимаем различные форматы файлов для подготовки программы раскроя материалов для гидроабразивных станков</h3>
                         <p><strong>Форматы файлов</strong>: (dwg, dxf, ald, anc, cnc, jpg, gif, pdf, txt, world, excel.).</p>
