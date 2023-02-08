@@ -18,7 +18,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
 
-    function defCost(id){
+    function defCost(id){tAllMaterial
         let res = "";
         let resA = [];
         materials.map(m => (
@@ -67,7 +67,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
 
     
-    console.log("tAllMaterial ....",  tAllMaterial(costsize,1));
 
     const tCostAglomerat = [];
     for(let i=0; i < costsize.length; i++){
@@ -76,7 +75,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         }
     }
     const tCoAgl = startFromZero(tCostAglomerat);
-    console.log("tt", typeof tCoAgl);
 
     const tCostAluminum = [];
     for(let i=0; i < costsize.length; i++){
@@ -163,15 +161,13 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
         aluminum: "",
-        steel: "",
         granite: "",
         brass: "",
         copper: "",
         plexiglass: "",
         glass: "",
         glass_plastic: "",
-        marble: "",
-        steel_tool: ""
+        marble: ""
     });
    
     const handle = (event, translit) => {   
@@ -190,24 +186,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             aluminum: {id:id, cost:cost, size:size}
-        }))
-    }
-
-    if(translit == "steel"){
-        const { selectedIndex } = event.target.options;
-        const{ id, cost, size} = tCoSt[selectedIndex];
-        setOutPrice(outprice => ({
-            ...outprice,
-            steel: {id:id, cost:cost, size:size}
-        }))
-    }
-
-    if(translit == "steel_tool"){
-        const { selectedIndex } = event.target.options;
-        const{ id, cost, size} = tCoStTool[selectedIndex];
-        setOutPrice(outprice => ({
-            ...outprice,
-            steel_tool: {id:id, cost:cost, size:size}
         }))
     }
 
@@ -275,7 +253,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
 
 
-
     }
 
     
@@ -334,7 +311,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
-                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} startFromZero={startFromZero} handle={handle} tCoAgl = {tCoAgl} tAllMaterial={tAllMaterial} /> : <BlockMaterial />}
+                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} startFromZero={startFromZero} handle={handle} /> : <BlockMaterial />}
                         
                         {/* <table className={classes.pricematerials}>
                         <tbody>
