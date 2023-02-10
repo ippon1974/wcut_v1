@@ -311,7 +311,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
 
-                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} startFromZero={startFromZero} handle={handle} /> : <BlockMaterial />}
+                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} /> : <BlockMaterial materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} />}
                         
                         {/* <table className={classes.pricematerials}>
                         <tbody>
