@@ -131,17 +131,17 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     }
     if(!news){
         return <Layout>
-            <p>...Loading 5</p>
+            <p>...Loading 4</p>
         </Layout>
     }
     if(!item){
         return <Layout>
-            <p>...Loading 6</p>
+            <p>...Loading 5</p>
         </Layout>
     }
     if(!video){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 6</p>
         </Layout>
     }
 
