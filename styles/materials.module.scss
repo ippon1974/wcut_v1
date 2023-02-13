@@ -278,31 +278,21 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 25px);
-    gap: 7px;
+    gap: 20px;
   }
 
   .maincontext .pr_desc_cost .container_tiles div{
-    // background: rgb(233, 231, 216);
-    // width: 25px;
-    // padding: 3px 0 3px 0;
-    // font-size: 75%;
-    // font-weight: 700;
-    // text-align: center;
+     margin: 0;
+     padding: 0;
   }
 
-  .maincontext .pr_desc_cost .container_tiles div a{
-    // color: #18113b;
-    // display: block;
-    // text-decoration: none;
-  }
-
-  .maincontext .pr_desc_cost .container_tiles div .btn_list_price{
-    width: 25px;
+  .maincontext .pr_desc_cost .container_tiles div .btn_list_price {
+    width: 35px;
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin: 0px;
-    padding: 3px;
+    margin: 0;
+    padding: 5px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -317,11 +307,11 @@
   }
 
   .maincontext .pr_desc_cost .container_tiles div .btn_list_price_disable{
-    width: 25px;
+    width: 35px;
     border-radius: 5px;
     display: block;
-    margin: 0px;
-    padding: 3px;
+    margin: 0;
+    padding: 5px;
     opacity: 10;
     cursor: not-allowed;
     background: #54570930;

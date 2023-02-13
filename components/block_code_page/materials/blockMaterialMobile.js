@@ -18,7 +18,7 @@ const BlockMateterialMobile = (props) => {
                     if(m.translit === name)
                     return <div key={i} className={classes.pr_desc}>
                             <p><Link href={`/materials/${m.translit}/size/${!props.outprice[name].size ? props.defSize(m.id):props.outprice[name].size}`} title={`${m.material}. Толщина листа: ${!props.outprice[name].size ? props.defSize(m.id):props.outprice[name].size} мм.`}>{m.material}</Link></p>
-                            <span>Толщина листа: {props.defSize(m.id)} мм</span>
+                            <span>Толщина листа: {!props.outprice[name] ? props.defSize(m.id):props.outprice[name].size} мм</span>
                            </div>
                  })}
                  
@@ -37,7 +37,6 @@ const BlockMateterialMobile = (props) => {
                         }else{
                             return <div key={subindex}><button className={classes.btn_list_price} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>
                         }
-                        // return <div key={subindex}><button className={classes.btn_list_price} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>    
                     })
                 }
                 </div>
