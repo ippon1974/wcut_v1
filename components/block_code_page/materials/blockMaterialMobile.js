@@ -4,6 +4,9 @@ import Link from "next/link";
 const BlockMateterialMobile = (props) => {
 
     let keyObj = Object.keys(props.outprice);
+    const sayHello = ()=>{
+        console.log("say");
+    }
     
     return (
         <>
@@ -38,7 +41,7 @@ const BlockMateterialMobile = (props) => {
                             props.costsize.map((c, subindex) => {
                             if(m.id === c.material_id)
                                 return <div key={subindex}>
-                                         <button>{c.size}</button>
+                                         <button onClick={sayHello}>{c.size}</button>
                                        </div>
                             })
                         }
