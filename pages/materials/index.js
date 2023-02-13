@@ -169,6 +169,17 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         glass_plastic: "",
         marble: ""
     });
+
+    const handleClick = (event, translit) => {
+        if(translit == "aglomerat"){
+            const { selectedIndex } = event.target.options;
+            const{ id, cost, size} = tCoAgl[selectedIndex]; 
+            setOutPrice(outprice => ({
+                ...outprice,
+                aglomerat: {id:id, cost:cost, size:size}
+            }))
+        }
+    } 
    
     const handle = (event, translit) => {   
     if(translit == "aglomerat"){
@@ -255,7 +266,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     }
 
-    
     const [mobile, setMobile] = useState(false)
     const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
     useEffect(() => setMobile(isPhone), [isPhone]);
@@ -309,9 +319,9 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         {/* <p><Link className={classes.activecalc} href="http://calculation.htz.ru/" target={'_blank'} title="Калькулятор гидроабразивной рhttp://localhost:7165/sites/all/themes/tommy/images/iconTwitter.gifезки"><strong>Калькулятор</strong></Link> гидроабразивной резки.</p> */}
                         <p>Стоимость раскроя материала указана в рублях РФ за один погонный метр <strong className={classes.ndc}>без НДС</strong>. Минимальная стоимость заказа не должна быть <strong>меньше 5000 рублей</strong>.</p>
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
-                        <h3>Таблица стоимости раскроя материала гидроабразивом</h3>
+                        <h3>Таблица стоимости раскроя материала. Гидроабразивная резка.</h3>
 
-                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} /> : <BlockMaterial materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} />}
+                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} handleClick={handleClick} /> : <BlockMaterial materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} />}
                         
                         {/* <table className={classes.pricematerials}>
                         <tbody>
