@@ -288,6 +288,7 @@
 
   .maincontext .pr_desc_cost .container_tiles div .btn_list_price {
     width: 35px;
+    background: rgb(239, 236, 217);
     border-radius: 5px;
     cursor: pointer;
     display: block;
@@ -303,7 +304,7 @@
   }
   .maincontext .pr_desc_cost .container_tiles div .btn_list_price:focus {
     outline: none;
-    box-shadow: 0 0 0 4px #cbd6ee;
+    //box-shadow: 0 0 0 4px #cbd6ee;
   }
 
   .maincontext .pr_desc_cost .container_tiles div .btn_list_price_disable{
