@@ -170,17 +170,65 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         marble: ""
     });
 
-    const handleClick = (event, translit) => {
-        if(translit == "aglomerat"){
-            const { selectedIndex } = event.target.options;
-            const{ id, cost, size} = tCoAgl[selectedIndex]; 
-            setOutPrice(outprice => ({
-                ...outprice,
-                aglomerat: {id:id, cost:cost, size:size}
-            }))
-        }
-    } 
+    const handleClick = (translit, id, cost, size) => {
+       if(translit == "aglomerat"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            aglomerat: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "aluminum"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            aluminum: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "granite"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            granite: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "brass"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            brass: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "copper"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            copper: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "marble"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            marble: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "plexiglass"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            plexiglass: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "glass"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            glass: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "glass_plastic"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            glass_plastic: {id:id, cost:cost, size:size}
+        }))
+       }
+    }
    
+
+
     const handle = (event, translit) => {   
     if(translit == "aglomerat"){
         const { selectedIndex } = event.target.options;

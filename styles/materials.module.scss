@@ -274,27 +274,50 @@
   }
 
   .maincontext .pr_desc_cost .container_tiles  {
-    //min-width: 321px;
     margin: 0; 
     padding: 0;
     display: grid;
-    //grid-template-columns: repeat(15, 1fr);
     grid-template-columns: repeat(auto-fill, 25px);
-    gap: 5px;
+    gap: 7px;
   }
+
   .maincontext .pr_desc_cost .container_tiles div{
-    background: rgb(233, 231, 216);
-    width: 25px;
-    padding: 3px 0 3px 0;
-    font-size: 75%;
-    font-weight: 700;
-    text-align: center;
+    // background: rgb(233, 231, 216);
+    // width: 25px;
+    // padding: 3px 0 3px 0;
+    // font-size: 75%;
+    // font-weight: 700;
+    // text-align: center;
   }
 
   .maincontext .pr_desc_cost .container_tiles div a{
-    color: #18113b;
+    // color: #18113b;
+    // display: block;
+    // text-decoration: none;
+  }
+
+  .maincontext .pr_desc_cost .container_tiles div .btn_list_price{
+    width: 25px;
+    border-radius: 5px;
+    cursor: pointer;
     display: block;
-    text-decoration: none;
+    margin: 0px;
+    padding: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .maincontext .pr_desc_cost .container_tiles div .btn_list_price_disable{
+    width: 25px;
+    border-radius: 5px;
+    display: block;
+    margin: 0px;
+    padding: 3px;
+    opacity: 10;
+    cursor: not-allowed;
+    background: #54570930;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
 

@@ -22,54 +22,27 @@ const BlockMateterialMobile = (props) => {
                            </div>
                  })}
                  
-             {/* <div className={classes.pr_desc}>
-             <p><Link href={'/'}>{m.material}</Link></p><span>Толщина листа: 5 мм</span>
-             </div> */}
-
                 {keyObj.map((name, i) => {
                         if(m.translit === name)
-                        return <div key={i} className={classes.pr_cost}><p>{!props.outprice[name] ? props.defCost(m.id): ""} P <span>без НДС</span></p> <span>За пог. метр.</span></div>
+                        return <div key={i} className={classes.pr_cost}><p>{!props.outprice[name] ? props.defCost(m.id):props.outprice[name].cost} P <span>без НДС</span></p> <span>За пог. метр.</span></div>
                 })}   
 
-             {/* <div className={classes.pr_cost}>
-                <p>1566 P <span>без НДС</span></p><span>За пог. метр.</span>
-             </div> */}
-
-
-             
-                        {   
-                            props.costsize.map((c, subindex) => {
-                            if(m.id === c.material_id)
-                                return <div key={subindex}>
-                                         <button onClick={sayHello}>{c.size}</button>
-                                       </div>
-                            })
+                <div className={classes.pr_box_tiles_size_links}>
+                <div className={classes.container_tiles}>
+                {   
+                    props.costsize.map((c, subindex) => {
+                    if(m.id === c.material_id)
+                        if(c.size == props.outprice[m.translit].size){
+                            return <div key={subindex}><button className={classes.btn_list_price_disable} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>    
+                        }else{
+                            return <div key={subindex}><button className={classes.btn_list_price} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>
                         }
+                        // return <div key={subindex}><button className={classes.btn_list_price} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>    
+                    })
+                }
+                </div>
+                </div>
             
-
-
-             {/* <div className={classes.pr_box_tiles_size_links}>
-               <div className={classes.container_tiles}>
-                
-                <div><Link href={'/'}>10</Link></div>
-                <div><Link href={'/'}>15</Link></div>
-                <div><Link href={'/'}>20</Link></div>
-                <div><Link href={'/'}>25</Link></div>
-                <div><Link href={'/'}>30</Link></div>
-                <div><Link href={'/'}>35</Link></div>
-                <div><Link href={'/'}>40</Link></div>
-                <div><Link href={'/'}>45</Link></div>
-                <div><Link href={'/'}>50</Link></div>
-                <div><Link href={'/'}>55</Link></div>
-                <div><Link href={'/'}>60</Link></div>
-                <div><Link href={'/'}>65</Link></div>
-                <div><Link href={'/'}>70</Link></div>
-                <div><Link href={'/'}>75</Link></div>
-               </div>  
-            </div> */}
-
-
-
             </div>
          )}
 
