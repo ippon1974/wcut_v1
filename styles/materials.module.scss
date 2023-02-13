@@ -305,6 +305,15 @@
     padding: 3px;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
+  }
+
+  .maincontext .pr_desc_cost .container_tiles div .btn_list_price:hover {
+    background: #1d49aa;
+  }
+  .maincontext .pr_desc_cost .container_tiles div .btn_list_price:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
   }
 
   .maincontext .pr_desc_cost .container_tiles div .btn_list_price_disable{
@@ -318,8 +327,8 @@
     background: #54570930;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
   }
-
 
 
   .maincontext .pricematerials {
