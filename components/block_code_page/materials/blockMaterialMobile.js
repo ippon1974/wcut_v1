@@ -30,9 +30,9 @@ const BlockMateterialMobile = (props) => {
                     props.costsize.map((c, subindex) => {
                     if(m.id === c.material_id)
                         if(c.size == props.outprice[m.translit].size){
-                            return <div key={subindex}><button className={classes.btn_list_price_disable} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>    
+                            return <div key={subindex}><button className={classes.btn_list_price_disable} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`${m.material}. Толщина: ${c.size} мм`}>{c.size}</button></div>    
                         }else{
-                            return <div key={subindex}><button className={classes.btn_list_price} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`Толщина материала: ${c.size} мм`}>{c.size}</button></div>
+                            return <div key={subindex}><button className={classes.btn_list_price} onClick={() => props.handleClick(m.translit, m.id, c.cost, c.size)} title={`${m.material}. Толщина: ${c.size} мм`}>{c.size}</button></div>
                         }
                     })
                 }
