@@ -6,10 +6,8 @@ const blockIdMateterialsMobile = (props) => {
 
     const router = props.router;
 
-    const handle = (event) => {
-        const size = event.target.value;
-        const mat = props.router.query.material;
-        props.router.push(`/materials/${mat}/size/${size}`);
+    const handleClick = (path) => {
+        props.router.push(path)
     }
 
     const { asPath, pathname } = router;
@@ -21,24 +19,33 @@ const blockIdMateterialsMobile = (props) => {
         <>
              <div>      
                         <p className={classes.linkpricehead} title={"Весь прайс-лист на расркой материала"}><Link href={'/materials'}>Прайс лист</Link></p>
-                        <h2>Гидроабразивная резка {props.mname.material} Толщина листа: {props.costsize.size} мм</h2>
+                        <h2>Гидроабразивная резка {props.mname.material} <p>Толщина листа: {props.costsize.size} мм</p></h2>
                         <div className={classes.hr}></div>
-                        <h3 className={classes.ndc}>Без НДС!</h3>
-                        <h3>Стоимость: {props.costsize.cost} руб. за 1 пог. м.</h3>
-                        <h3>Толщина листа:&ensp;
-                            <select onChange={event => handle(event)}>
-                            {
-                                props.costsizelist.map((csl, i)=>{
-                                    if(csl.size == pathSize){
-                                    return <option key={i} value={csl.size} selected>{csl.size}</option>
-                                    }
-                                    return <option key={i} value={csl.size}>{csl.size}</option>
-                                })
-                            }
-                            </select>
-                            &ensp;мм.</h3>
-                        {/* <p><Link className={classes.activecalc} href={'http://calculation.htz.ru/'} title={"Калькулятор гидроабразивной резки"} target={'_blank'}>Калькулятор</Link> гидроабразивной резки</p> */}
-                        {/* <h3>Раскрой нержавеющей стали</h3> */}
+                        
+                        <div className={classes.id_cost_container}>
+
+                            <div className={classes.id_cost}>
+                                {props.costsize.cost} <span className={classes.rub_id}></span>
+                            </div>
+
+                            <div className={classes.id_desc_meter}>За метр погон.</div>
+                            <div className={classes.id_desc_ndc}>Без НДС!</div>
+
+                            <div className={classes.id_desc_tiles}>
+                            
+                            <div className={classes.id_tiles_size_container}>
+                            {props.costsizelist.map((size, i)=>{
+                                if(size.size == pathSize){
+                                return <div className={classes.id_tiles_size} key={i}><button className={classes.btn_list_price_id_disable} onClick={() => handleClick(`/materials/${props.mname.translit}/size/${size.size}`)} title={`${props.mname.material}. Толщина: ${size.size} мм`}>{size.size}</button></div>
+                                }
+                                return <div className={classes.id_tiles_size} key={i}><button className={classes.btn_list_price_id} onClick={() => handleClick(`/materials/${props.mname.translit}/size/${size.size}`)} title={`${props.mname.material}. Толщина: ${size.size} мм`}>{size.size}</button></div>
+                            })}
+                            </div>
+
+                            </div>
+                        </div>
+
+                        <h3>Раскрой металла гидроабразивом</h3>
                         <p>Сегодня раскрой металла гидроабразивом находит все более широкое применение не только в строительстве и промышленности. </p>
                         <h3>Достоинства раскроя гидроабразивом:</h3>
                         <ul>

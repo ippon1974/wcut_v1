@@ -108,7 +108,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
                 <div className={`${classes.item} ${classes.asideleft}`}>
                     <div><p>Цены на раскрой</p></div>
                 </div>
-
+                handleClick
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     {mobile ? <BlockIdMaterialsMobile mname={mname} costsize={costsize} costsizelist={costsizelist} router={router} /> : <BlockIdMaterials mname={mname} costsize={costsize} costsizelist={costsizelist} router={router} />}
                 </div>

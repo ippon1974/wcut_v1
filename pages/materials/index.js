@@ -4,7 +4,7 @@ import Header from "../../components/ui/header/Header";
 import Navigation from "../../components/ui/navigation/main/Navigation";
 import MobileNavigation from "../../components/ui/navigation/mobile/MobileNavigation";
 import BlockMaterial from '../../components/block_code_page/materials/blockMaterial';
-import BlockMateterialMobile from '../../components/block_code_page/materials/blockMaterialMobile';
+import BlockMaterialMobile from '../../components/block_code_page/materials/blockMaterialMobile';
 import MobileFooter from "../../components/ui/footer/mobile/MobileFooter";
 import Footer from "../../components/ui/footer/main/Footer";
 import classes from '../../styles/materials.module.scss';
@@ -369,158 +369,8 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         <h3>Таблица стоимости раскроя материала. Гидроабразивная резка.</h3>
 
-                        {mobile ? <BlockMateterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} handleClick={handleClick} /> : <BlockMaterial materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} />}
+                        {mobile ? <BlockMaterialMobile materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handleClick={handleClick} /> : <BlockMaterial materials={materials} costsize={costsize} outprice={outprice} defSize={defSize} defCost={defCost} handle={handle} />}
                         
-                        {/* <table className={classes.pricematerials}>
-                        <tbody>
-                            <tr>
-                                <th>Материал</th>
-                                <th>Толщина</th>
-                                <th>Стоимость</th>
-                            </tr>
-                        {
-                            materials.map((m, index) => 
-                            <tr key={index}>
-                                {m.translit === "aglomerat" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size}`} title={`${m.material}. Толщина листа: ${!outprice.aglomerat.size ? defSize(m.id):outprice.aglomerat.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "aluminum" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.aluminum.size ? defSize(m.id):outprice.aluminum.size}`} title={`${m.material}. Толщина листа: ${!outprice.aluminum.size ? defSize(m.id):outprice.aluminum.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "steel" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.steel.size ? defSize(m.id):outprice.steel.size}`} title={`${m.material}. Толщина листа: ${!outprice.steel.size ? defSize(m.id):outprice.steel.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "steel_tool" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.steel_tool.size ? defSize(m.id):outprice.steel_tool.size}`} title={`${m.material}. Толщина листа: ${!outprice.steel_tool.size ? defSize(m.id):outprice.steel_tool.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "granite" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.granite.size ? defSize(m.id):outprice.granite.size}`} title={`${m.material}. Толщина листа: ${!outprice.granite.size ? defSize(m.id):outprice.granite.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "brass" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.brass.size ? defSize(m.id):outprice.brass.size}`} title={`${m.material}. Толщина листа: ${!outprice.brass.size ? defSize(m.id):outprice.brass.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "copper" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.copper.size ? defSize(m.id):outprice.copper.size}`} title={`${m.material}. Толщина листа: ${!outprice.copper.size ? defSize(m.id):outprice.copper.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "plexiglass" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.plexiglass.size ? defSize(m.id):outprice.plexiglass.size}`} title={`${m.material}. Толщина листа: ${!outprice.plexiglass.size ? defSize(m.id):outprice.plexiglass.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "glass" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.glass.size ? defSize(m.id):outprice.glass.size}`} title={`${m.material}. Толщина листа: ${!outprice.glass.size ? defSize(m.id):outprice.glass.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "glass_plastic" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.glass_plastic.size ? defSize(m.id):outprice.glass_plastic.size}`} title={`${m.material}. Толщина листа: ${!outprice.glass_plastic.size ? defSize(m.id):outprice.glass_plastic.size} мм.`}>{m.material}</Link></td> : ""}
-                                {m.translit === "marble" ? <td><Link href={`/materials/${m.translit}/size/${!outprice.marble.size ? defSize(m.id):outprice.marble.size}`} title={`${m.material}. Толщина листа: ${!outprice.marble.size ? defSize(m.id):outprice.marble.size} мм.`}>{m.material}</Link></td> : ""}
-                                <td>
-                                { m.translit == "aglomerat" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     {   
-                                         tCoAgl.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "aluminum" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     {   
-                                         tCoAlum.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "steel" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoSt.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "steel_tool" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoStTool.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "granite" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoGra.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-                                { m.translit == "brass" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoBrass.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "copper" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoCopper.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "plexiglass" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoPlexiglass.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "glass" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoGlass.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "glass_plastic" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoGlassPlastic.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                { m.translit == "marble" ?   
-                                <select onChange={event => handle(event, m.translit)}>
-                                     { 
-                                         tCoMarble.map((c, subindex) => {
-                                            return <option key={subindex}>{c.size}</option>
-                                         })
-                                     }
-                                </select> : ""
-                                }
-
-                                <span> мм.</span>
-                                </td>
-                                    {m.translit == "aglomerat" ? <td>{!outprice.aglomerat ? defCost(m.id) : ""}  {outprice.aglomerat.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
-                                    {m.translit == "aluminum" ? <td>{!outprice.aluminum ? defCost(m.id) : ""}  {outprice.aluminum.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
-                                    {m.translit == "steel" ? <td>{!outprice.steel ? defCost(m.id) : ""} {outprice.steel.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
-                                    {m.translit == "steel_tool" ? <td>{!outprice.steel_tool ? defCost(m.id) : ""} {outprice.steel_tool.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
-                                    {m.translit == "granite" ? <td>{!outprice.granite ? defCost(m.id) : ""} {outprice.granite.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
-                                    {m.translit == "brass" ? <td>{!outprice.brass ? defCost(m.id) : ""} {outprice.brass.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
-                                    {m.translit == "copper" ? <td>{!outprice.copper ? defCost(m.id) : ""} {outprice.copper.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
-                                    {m.translit == "plexiglass" ? <td>{!outprice.plexiglass ? defCost(m.id) : ""} {outprice.plexiglass.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
-                                    {m.translit == "glass" ? <td>{!outprice.glass ? defCost(m.id) : ""} {outprice.glass.cost} <span className={'short'}>руб. пог. м.</span></td> : null}
-                                    {m.translit == "glass_plastic" ? <td>{!outprice.glass_plastic ? defCost(m.id) : ""} {outprice.glass_plastic.cost} <span className={'short'}>руб. пог. м.</span></td> : null} 
-                                    {m.translit == "marble" ? <td>{!outprice.marble ? defCost(m.id) : ""} {outprice.marble.cost} <span className={'short'}>руб. пог. м.</span></td> : null}                          
-                                </tr>
-                                )
-                        }
-                        </tbody>
-                        </table> */}
-
                         <h3>Принимаем различные форматы файлов для подготовки программы раскроя материалов для гидроабразивных станков</h3>
                         <p><strong>Форматы файлов</strong>: (dwg, dxf, ald, anc, cnc, jpg, gif, pdf, txt, world, excel.).</p>
                         <h3>Расположение производства</h3>
