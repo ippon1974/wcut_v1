@@ -233,6 +233,104 @@
       appearance: none;
     }
 
+    .rub_id::after {
+      content: "\20BD";
+      font-size: 100%;
+      color: #004d40;
+    }
+
+    .id_cost {grid-area: cost;}
+    .id_desc_meter {grid-area: meter;}
+    .id_desc_ndc {grid-area: ndc;}
+    .id_desc_tiles {grid-area: tiles;}
+
+  
+    .id_cost_container{
+      display: grid;
+      grid-template-areas:
+      'cost meter'
+      'cost ndc'
+      'tiles tiles'
+       ;
+      gap: 0;
+    }
+
+    .id_cost_container div {
+      padding: 0; margin: 0;
+    }
+
+    .id_cost_container .id_cost{
+      font-size: 300%;
+      color: #004d40;
+      font-weight: bold;
+    }
+
+     .id_cost_container .id_desc_meter{
+       font-size: 90%;
+     }
+     .id_cost_container .id_desc_ndc {
+      font-size: 90%;
+      color: #ee3124;
+      font-weight: bold;
+     }
+
+    .id_cost_container .id_desc_tiles{
+      border-top: 1px dotted black;
+      border-bottom: 1px solid black;
+      margin: 1em 0;
+      padding: 1em 0;
+    }
+
+    .id_tiles_size_container{
+      margin: 0; padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 55px);
+      gap: 5px;
+    }
+
+    .id_tiles_size_container .id_tiles_size {
+      margin: 0; padding: 0;
+    }
+
+    .id_tiles_size_container .btn_list_price_id {
+      width: 50px;
+      background: #004d40;
+      border-right: 1px solid gray;
+      border-bottom: 1px solid gray;
+      border-top: #f1f1c5;
+      border-left: #f1f1c5;
+      border-radius: 5px;
+      font-size: 110%;
+      color: #f1f1c5;
+      cursor: pointer;
+      display: block;
+      margin: 0;
+      padding: 5px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .id_tiles_size_container .btn_list_price_id_disable {
+      width: 50px;
+      background: #54570930;
+      border-right: 1px solid gray;
+      border-bottom: 1px solid gray;
+      border-top: #f1f1c5;
+      border-left: #f1f1c5;
+      border-radius: 5px;
+      font-size: 110%;
+      color: #004d40;
+      display: block;
+      margin: 0;
+      padding: 5px;
+      opacity: 10;
+      cursor: not-allowed;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
     .maincontext .mainlinefooter {
       display: none;
     }
