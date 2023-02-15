@@ -21,7 +21,7 @@ const BlockNews = (props) => {
                     <div key={article.id} className={classes.blockNewsMain}>
                          <div className={classes.dtMainList}>
                          <p>{format(new Date(article.dt),"dd MM yyyy")}</p>
-                         <span>Раздел:  <Link href={item[article.title_id].uri} title={item[article.title_id].title}>{item[article.title_id].title}</Link></span>
+                         <span>Раздел: <Link href={item[article.title_id].uri} title={item[article.title_id].title}>{item[article.title_id].title}</Link></span>
                         </div>
                         <div className={classes.newsListMain}>
                             <h2>
