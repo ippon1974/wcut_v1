@@ -21,7 +21,7 @@ const BlockIdNews = (props) => {
                     <p>{format(new Date(props.article.dt), 'dd.MM.yyyy')}</p>
                     <span>Раздел: <Link href={menuItem[props.article.title_id].uri} title={menuItem[props.article.title_id].title}>{menuItem[props.article.title_id].title}</Link></span>
                 </div>
-                <div className={classes.newsListMain}>
+                    <div className={props.article.img_1 ? classes.newsListMainNotHr : classes.newsListMain}>
                     <h2>{props.article.title}</h2>
                     {props.article.img_1 ? <Image src={`/news/${props.article.img_1}.jpg`} width={"460"} height={"345"} alt={props.article.title} /> : ""}
                     {props.article.iframe ? <div dangerouslySetInnerHTML={{__html: props.article.iframe}} /> : ""}
