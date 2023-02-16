@@ -159,7 +159,7 @@
     margin: 0 0 0 15px;
     padding: 0;
   }
-  .maincontext .blockNewsMain .newsListMain ul>li{
+  .maincontext .blockNewsMain .newsListMain ul > li{
     list-style: disc;
     font-size: 80%;
     margin: 0.5em 0 0 0;
@@ -168,6 +168,21 @@
   }
   .maincontext .blockNewsMain .newsListMain a {
     color: #ee3124;
+  }
+
+  
+
+  .inbody ul {
+    margin: 1em 0 1em 20px;
+    list-style: disc;
+    line-height: 1.5;
+  }
+
+  .inbody ul > li{
+    font-size: 0.8em;
+    font-weight: inherit;
+    color: #303028;
+    margin: 0.5em 0 0 0;
   }
 
   .maincontext div > h2 {
