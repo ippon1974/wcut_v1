@@ -67,7 +67,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
 
     
-
     const tCostAglomerat = [];
     for(let i=0; i < costsize.length; i++){
         if(costsize[i].material_id == 1){
@@ -83,22 +82,6 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         }
     }
     const tCoAlum = startFromZero(tCostAluminum);
-
-    const tCostSteel = [];
-    for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 2){
-            tCostSteel[i] = costsize[i];
-        }
-    }
-    const tCoSt = startFromZero(tCostSteel);
-
-    const tCostSteelTool = [];
-    for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 6){
-            tCostSteelTool[i] = costsize[i];
-        }
-    }
-    const tCoStTool = startFromZero(tCostSteelTool);
 
     const tCostGranite = [];
     for(let i=0; i < costsize.length; i++){
@@ -157,7 +140,127 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
     const tCoMarble = startFromZero(tCostMarble);
 
+    const tCostCeramics = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 10){
+            tCostCeramics[i] = costsize[i];
+        }
+    }
+    const tCoCeramics = startFromZero(tCostCeramics);
 
+    const tCostSteelStainless = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 11){
+            tCostSteelStainless[i] = costsize[i];
+        }
+    }
+    const tCoSteelStainless = startFromZero(tCostSteelStainless);
+
+    const tCostSteelTool = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 12){
+            tCostSteelTool[i] = costsize[i];
+        }
+    }
+    const tCoSteelTool = startFromZero(tCostSteelTool);
+
+    const tCostSteeBlack = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 13){
+            tCostSteeBlack[i] = costsize[i];
+        }
+    }
+    const tCoSteeBlack = startFromZero(tCostSteeBlack);
+
+    const tCostTitanium = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 14){
+            tCostTitanium[i] = costsize[i];
+        }
+    }
+    const tCoTitanium = startFromZero(tCostTitanium);
+
+    const tCostTextolite = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 15){
+            tCostTextolite[i] = costsize[i];
+        }
+    }
+    const tCoTextolite = startFromZero(tCostTextolite);
+
+    const tCostCorfiberFiberglass = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 16){
+            tCostCorfiberFiberglass[i] = costsize[i];
+        }
+    }
+    const tCoCorfiberFiberglass = startFromZero(tCostCorfiberFiberglass);
+
+    const tCostAcrylic = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 17){
+            tCostAcrylic[i] = costsize[i];
+        }
+    }
+    const tCoAcrylic = startFromZero(tCostAcrylic);
+
+    const tCostPolyethylene = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 18){
+            tCostPolyethylene[i] = costsize[i];
+        }
+    }
+    const tCoPolyethylene = startFromZero(tCostPolyethylene);
+
+    const tCostPVC = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 19){
+            tCostPVC[i] = costsize[i];
+        }
+    }
+    const tCoPVC = startFromZero(tCostPVC);
+
+    const tCostPolypropylene = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 20){
+            tCostPolypropylene[i] = costsize[i];
+        }
+    }
+    const tCoPolypropylene = startFromZero(tCostPolypropylene);
+
+    const tCostFluoroplast = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 20){
+            tCostFluoroplast[i] = costsize[i];
+        }
+    }
+    const tCoFluoroplast = startFromZero(tCostFluoroplast);
+
+    const tCostKaprolon = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 20){
+            tCostKaprolon[i] = costsize[i];
+        }
+    }
+    const tCoKaprolon = startFromZero(tCostKaprolon);
+
+    const tCostRubber = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 20){
+            tCostRubber[i] = costsize[i];
+        }
+    }
+    const tCoRubber = startFromZero(tCostRubber);
+
+    const tCostTree = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 21){
+            tCostTree[i] = costsize[i];
+        }
+    }
+    const tCoTree = startFromZero(tCostTree);
+
+    
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
         aluminum: "",
@@ -167,7 +270,22 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         plexiglass: "",
         glass: "",
         glass_plastic: "",
-        marble: ""
+        marble: "",
+        сeramics: "",
+        steel_stainless: "",
+        steel_tool: "",
+        steel_black: "",
+        titanium: "",
+        textolit: "",
+        corfiber_fiberglass: "",
+        acrylic_stone: "",
+        polyethylene: "",
+        pvc: "",
+        polypropylene: "",
+        fluoroplast: "",
+        kaprolon: "",
+        rubber: "",
+        tree: ""
     });
 
     const handleClick = (translit, id, cost, size) => {
@@ -223,6 +341,96 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             glass_plastic: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "сeramics"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            сeramics: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "steel_stainless"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel_stainless: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "steel_tool"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel_tool: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "steel_black"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel_black: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "titanium"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            titanium: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "textolit"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            textolit: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "corfiber_fiberglass"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            corfiber_fiberglass: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "acrylic_stone"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            acrylic_stone: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "polyethylene"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            polyethylene: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "pvc"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            pvc: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "polypropylene"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            polypropylene: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "fluoroplast"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            fluoroplast: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "kaprolon"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            kaprolon: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "rubber"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            rubber: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "tree"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            tree: {id:id, cost:cost, size:size}
         }))
        }
     }
@@ -310,7 +518,126 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             marble: {id:id, cost:cost, size:size}
         }))
     }
-
+    if(translit == "сeramics"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoCeramics[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            сeramics: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "steel_stainless"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoSteelStainless[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel_stainless: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "steel_tool"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoSteelTool[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel_tool: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "steel_black"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoSteeBlack[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            steel_black: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "titanium"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoTitanium[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            titanium: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "textolit"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoTextolite[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            textolit: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "corfiber_fiberglass"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoCorfiberFiberglass[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            corfiber_fiberglass: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "acrylic_stone"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoAcrylic[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            acrylic_stone: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "polyethylene"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoPolyethylene[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            polyethylene: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "pvc"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoPVC[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            pvc: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "polypropylene"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoPolypropylene[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            polypropylene: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "fluoroplast"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoFluoroplast[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            fluoroplast: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "kaprolon"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoKaprolon[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            kaprolon: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "rubber"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoRubber[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            rubber: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "tree"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoTree[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            tree: {id:id, cost:cost, size:size}
+        }))
+    }
 
     }
 
