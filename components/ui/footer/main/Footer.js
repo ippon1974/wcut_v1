@@ -1,4 +1,5 @@
 import classes from './footer.module.scss';
+import {Helmet} from 'react-helmet';
 
 const Footer = () => {
 
@@ -7,7 +8,7 @@ const Footer = () => {
 
     return (
         <>
-           <div className={`${classes.maincontext} ${classes.footer}`}>
+                   <div className={`${classes.maincontext} ${classes.footer}`}>
                    <div>
                         <p>140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                    </div>

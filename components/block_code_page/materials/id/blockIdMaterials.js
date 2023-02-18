@@ -36,8 +36,9 @@ const blockIdMateterials = (props) => {
                             }
                             </select>
                             &ensp;мм.</h3>
-                        {/* <p><Link className={classes.activecalc} href={'http://calculation.htz.ru/'} title={"Калькулятор гидроабразивной резки"} target={'_blank'}>Калькулятор</Link> гидроабразивной резки</p> */}
-                        {/* <h3>Раскрой нержавеющей стали</h3> */}
+                    
+                        <div dangerouslySetInnerHTML={{__html: props.mname.description_body}} />     
+
                         <p>Сегодня раскрой металла гидроабразивом находит все более широкое применение не только в строительстве и промышленности. </p>
                         <h3>Достоинства раскроя гидроабразивом: </h3>
                         <ul>
