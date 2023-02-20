@@ -1,7 +1,80 @@
-$color: red;
-$font-size: 5em;
+.container404 {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
-.error {
-    color: $color;
-    font-size: $font-size;
+.container404 div {
+    padding: 1em;
+}
+.container404 div h1 {
+    font-size: 250%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container404 div h1 a{
+    color: rgb(131, 46, 46);
+}
+
+.container404Mobile {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container404Mobile div {
+    padding: 1em;
+}
+.container404Mobile div h1 {
+    font-size: 250%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container404Mobile div h1 a{
+    color: yellow;
+}
+
+
+.container500 {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container500 div {
+    padding: 1em;
+}
+.container500 div h1 {
+    font-size: 250%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container500 div h1 a{
+    color: rgb(131, 46, 46);
+}
+
+.container500Mobile {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container500Mobile div {
+    padding: 1em;
+}
+.container500Mobile div h1 {
+    font-size: 250%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.container500Mobile div h1 a{
+    color: yellow;
 }
