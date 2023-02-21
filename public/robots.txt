@@ -1,1 +1,2 @@
+# robots.txt for http://www.wcut.ru
 User-agent: *
