@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
                 <Head>
                     {/* <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /> */}
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
-                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+                    <meta name="yandex-verification" content="fd114d38b8ed3fa4" />
                 </Head>
                 <body>
                 <Main />
