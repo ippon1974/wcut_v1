@@ -54,9 +54,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[next, setNextPage] = useState(serverNext);
     useEffect(()=>{
        async function load() {
-        // const response = await fetch(`http://23.105.246.179:7000/works/next?id=${router.query.id}`);
-        const response = await fetch(`http://localhost:3000/api/works/next/${router.query.id}`);
-
+        const response = await fetch(`http://23.105.246.179:7000/works/next?id=${router.query.id}`);
         const data = await response.json();
         if(data[0] == undefined){
             return
