@@ -105,12 +105,12 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         if(!serverNews){
             load();
         }
-        // if(!serverNewsItem){
-        //     load();
-        // }
-        // if(!serverNewsVideo){
-        //     load();
-        // }
+        if(!serverNewsItem){
+            load();
+        }
+        if(!serverNewsVideo){
+            load();
+        }
 
     }, [serverWorks, serverMaterials, serverCostSize, serverNews, serverNewsItem, serverNewsVideo])
 
