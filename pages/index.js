@@ -116,32 +116,32 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
     if(!works){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 1</p>
         </Layout>
     }
     if(!materials){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 2</p>
         </Layout>
     }
     if(!costsize){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 3</p>
         </Layout>
     }
     if(!news){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 4</p>
         </Layout>
     }
     if(!item){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 5</p>
         </Layout>
     }
     if(!video){
         return <Layout>
-            <p>...Loading</p>
+            <p>...Loading 6</p>
         </Layout>
     }
 
