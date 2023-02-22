@@ -268,9 +268,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div> 
             <section>
                     <ul className={`${classes.itemline}`}>
-                        {item.map((item,i)=>(
+                        {/* {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
-                        ))}
+                        ))} */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
