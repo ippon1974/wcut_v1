@@ -15,8 +15,7 @@ import Head from 'next/head';
 import Image from "next/image";
 import $ from 'jquery';
 import { format } from 'date-fns'
-import { useMediaQuery } from 'react-responsive';  
-import { useRouter } from 'next/router'
+import { useMediaQuery } from 'react-responsive';
 
 export  default function Index({works:serverWorks, materials:serverMaterials, costsize:serverCostSize, news:serverNews, newsitem:serverNewsItem, newsvideo:serverNewsVideo}) {
 
@@ -65,7 +64,6 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     const[news, setNews] = useState(serverNews);
     const[item, setItem] = useState(serverNewsItem);
     const[video, setVideo] = useState(serverNewsVideo);
-    //console.log("w", works);
     
     useEffect(()=> {
         async function load() {

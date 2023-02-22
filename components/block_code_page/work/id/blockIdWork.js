@@ -95,7 +95,7 @@ export default BlockIdWork;
 
 export async function getServerSideProps({req}) {
     if(!req){
-        return {props:null, prevPage: null, prev:null}
+        return {props:null, prevPage: null, prev:null, nextPage: null, next:null}
     }
-    return {props: {props, prevPage, prev}}
+    return {props: {props, prevPage, prev, nextPage, next}}
 }

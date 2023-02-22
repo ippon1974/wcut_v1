@@ -20,7 +20,6 @@ const BlockIdWorkMobile = (props) => {
             load();
     },[idworknew])// eslint-disable-line react-hooks/exhaustive-deps
 
-    // const[work, setWork] = useState(props.work);
     const[prev, setPrev] = useState(props.prevPage);
     const[next, setNext] = useState(props.nextPage);
     const[max, setMax] =  useState(props.maxId);
