@@ -65,6 +65,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     const[news, setNews] = useState(serverNews);
     const[item, setItem] = useState(serverNewsItem);
     const[video, setVideo] = useState(serverNewsVideo);
+    //console.log("w", works);
     
     useEffect(()=> {
         async function load() {
