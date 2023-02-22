@@ -39,7 +39,8 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[prev, setPrevPage] = useState(serverPrev);
     useEffect(()=>{
        async function load() {
-        const response = await fetch(`http://23.105.246.179:7000/works/prev?id=${router.query.id}`);
+        // const response = await fetch(`http://23.105.246.179:7000/works/prev?id=${router.query.id}`);
+        const response = await fetch(`/api/works/prev/${router.query.id}`);
         const data = await response.json();
         if(data[0] == undefined){
             return
@@ -133,10 +134,12 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {work:null, prev:null, next:null, maxid:null, minid:null}
     }
-    const response = await fetch(`http://23.105.246.179:7000/works?id=${query.id}`);
+    // const response = await fetch(`http://23.105.246.179:7000/works?id=${query.id}`);
+    const response = await fetch(`http://23.105.246.179:3000/api/works/id/${query.id}`);
     const work = await response.json();
 
     const respprev = await fetch(`http://23.105.246.179:7000/works/prev?id=${query.id}`);
+    // const respprev = await fetch(`http://23.105.246.179:3000/api/works/prev/${query.id}`);
     const prev = await respprev.json();
 
     // const respnext = await fetch(`http://23.105.246.179:7000/works/next?id=${query.id}`);
