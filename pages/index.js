@@ -85,15 +85,18 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             const cost = await rescost.json();
             setCostSize(cost);
 
-            const resnews = await fetch('http://23.105.246.179:7000/news/main')
+            // const resnews = await fetch('http://23.105.246.179:7000/news/main')
+            const resnews = await fetch('api/news/main/market')
             const news = await resnews.json();
             setNews(news);
 
-            const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
+            // const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
+            const resitem = await fetch('api/news/main/item')
             const item = await resitem.json();
             setItem(item);
 
-            const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
+            // const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
+            const resvideo = await fetch('api/news/main/video')
             const video = await resvideo.json();
             setVideo(video);
 
@@ -245,7 +248,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             
             <div className = {`${classes.containerNews}`}>
-                {/* {news.map((n,i)=>(
+                {news.map((n,i)=>(
                      <figure key={i} className={`${classes.news_all}`}>
                      <Link href={`/news/${n.id}`}><Image className={classes.responseImg} src={`/news/${n.img_1}.jpg`} width={'303'} height={'227'} alt={n.title}></Image></Link>
                      <figcaption className={classes.newsfigcaption}>
@@ -254,7 +257,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                      <div className={classes.dtNews}>{format(new Date(n.dt),"dd MM yyyy")}</div>
                      <p className={classes.leadNews}><Link href={`/news/${n.id}`}>{n.titlelong}</Link></p>
                     </figure>
-                ))} */}
+                ))}
                
             </div> 
             <div className={classes.containerNewsBotton}>
@@ -275,9 +278,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div> 
             <section>
                     <ul className={`${classes.itemline}`}>
-                        {/* {item.map((item,i)=>(
+                        {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
-                        ))} */}
+                        ))}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
@@ -298,9 +301,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        {/* {video.map((video, i)=>(
+                        {video.map((video, i)=>(
                             <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
-                        ))} */}
+                        ))}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
