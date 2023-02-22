@@ -324,27 +324,27 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
    );
 }
 
-export async function getServerSideProps({req}) {
-    if(!req){
-        return {works:null, materials:null, costsize:null, news:null, item:null, video:null}
-    }
-    const resworks = await fetch('http://23.105.246.179:7000/works/main')
-    const works = await resworks.json();
+// export async function getServerSideProps({req}) {
+//     if(!req){
+//         return {works:null, materials:null, costsize:null, news:null, item:null, video:null}
+//     }
+//     const resworks = await fetch('http://23.105.246.179:7000/works/main')
+//     const works = await resworks.json();
 
-    const resmat = await fetch('http://23.105.246.179:7000/materials/all')
-    const materials = await resmat.json();
+//     const resmat = await fetch('http://23.105.246.179:7000/materials/all')
+//     const materials = await resmat.json();
 
-    const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
-    const costsize = await rescost.json();
+//     const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
+//     const costsize = await rescost.json();
 
-    const resnews = await fetch('http://23.105.246.179:7000/news/main')
-    const news = await resnews.json();
+//     const resnews = await fetch('http://23.105.246.179:7000/news/main')
+//     const news = await resnews.json();
 
-    const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
-    const item = await resitem.json();
+//     const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
+//     const item = await resitem.json();
 
-    const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
-    const video = await resvideo.json();
+//     const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
+//     const video = await resvideo.json();
 
-    return { props: { works, materials, costsize, news, item, video } }
-}
+//     return { props: { works, materials, costsize, news, item, video } }
+// }
