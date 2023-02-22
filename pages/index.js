@@ -65,14 +65,12 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     const[news, setNews] = useState(serverNews);
     const[item, setItem] = useState(serverNewsItem);
     const[video, setVideo] = useState(serverNewsVideo);
-    const router = useRouter();
-    console.log('router', router);
-
     
     useEffect(()=> {
         async function load() {
 
-            const resworks = await fetch('http://23.105.246.179:7000/works/main')
+            // const resworks = await fetch('http://23.105.246.179:7000/works/main')
+            const resworks = await fetch('api/hello')
             const works = await resworks.json();
             setWorks(works);
 
