@@ -83,9 +83,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             const news = await resnews.json();
             setNews(news);
 
-            // const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
-            // const item = await resitem.json();
-            // setItem(item);
+            const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
+            const item = await resitem.json();
+            setItem(item);
 
             const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
             const video = await resvideo.json();
@@ -105,9 +105,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         if(!serverNews){
             load();
         }
-        // if(!serverNewsItem){
-        //     load();
-        // }
+        if(!serverNewsItem){
+            load();
+        }
         if(!serverNewsVideo){
             load();
         }
