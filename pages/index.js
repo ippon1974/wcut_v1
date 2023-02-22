@@ -250,9 +250,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 ))}
                
             </div> <ul className={`${classes.itemline}`}>
-                        {item.map((item,i)=>(
+                        {/* {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
-                        ))}
+                        ))} */}
                     </ul>
             <div className={classes.containerNewsBotton}>
                 <div className={classes.newsImg}>
@@ -271,11 +271,11 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 </div>
             </div> 
             <section>
-                    <ul className={`${classes.itemline}`}>
+                    {/* <ul className={`${classes.itemline}`}>
                         {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
                         ))}
-                    </ul>
+                    </ul> */}
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
                 <div className={`${classes.imgAllItem} ${classes.itemAllItem}`}>
@@ -295,9 +295,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        {video.map((video, i)=>(
+                        {/* {video.map((video, i)=>(
                             <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
-                        ))}
+                        ))} */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
