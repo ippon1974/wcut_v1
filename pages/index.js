@@ -75,7 +75,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             const mat = await resmaterials.json();
             setMaterials(mat);
 
-            const rescost = await fetch('http://wcut.ru:7000/costsize/all')
+            const rescost = await fetch('https://wcut.ru:7000/costsize/all')
             const cost = await rescost.json();
             setCostSize(cost);
 
