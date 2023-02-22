@@ -108,9 +108,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         // if(!serverNewsItem){
         //     load();
         // }
-        if(!serverNewsVideo){
-            load();
-        }
+        // if(!serverNewsVideo){
+        //     load();
+        // }
 
     }, [serverWorks, serverMaterials, serverCostSize, serverNews, serverNewsItem, serverNewsVideo])
 
@@ -139,11 +139,11 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     //         <p>...Loading 5</p>
     //     </Layout>
     // }
-    if(!video){
-        return <Layout>
-            <p>...Loading 6</p>
-        </Layout>
-    }
+    // if(!video){
+    //     return <Layout>
+    //         <p>...Loading 6</p>
+    //     </Layout>
+    // }
 
    return (
     <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
