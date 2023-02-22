@@ -249,11 +249,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                     </figure>
                 ))}
                
-            </div> <ul className={`${classes.itemline}`}>
-                        {item.map((item,i)=>(
-                            <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
-                        ))}
-                    </ul>
+            </div> 
             <div className={classes.containerNewsBotton}>
                 <div className={classes.newsImg}>
                     <Link href={'/news'}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt={''}></Image></Link>
