@@ -190,17 +190,17 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 </div>
             </div>
             
-            {mobile ? <BlockWorkMobile works = {works} /> : <BlockWork works={works} />}
+            {/* {mobile ? <BlockWorkMobile works = {works} /> : <BlockWork works={works} />} */}
             
             <div className={`${classes.worksListArrowLink}`}>
-                {works.map((w,i)=>(
+                {/* {works.map((w,i)=>(
                     <div key={i} className={`${classes.block_all}`}>
                          <div className={`${classes.info_block}`}>
                              <div className={`${classes.info_block_arrow}`}><Link href={`/works/${w.id}`} title={`${w.title}`}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
                              <div className={`${classes.info_block_link}`}><Link href={`/works/${w.id}`} title={`${w.title}`}>Подробнее</Link></div>
                          </div>
                      </div>
-                ))}
+                ))} */}
             </div>   
 
             <div className={`${classes.blockRedPrice}`}>
@@ -216,7 +216,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             <section>
                 <ul className={`${classes.priceline}`}>
                     
-                    {
+                    {/* {
                       materials.map((m,i)=>{
                         return (
                             costsize.map((cost,sub) => {
@@ -228,7 +228,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                         )
                       })
                         
-                    }
+                    } */}
                
                 </ul>
             </section>
@@ -244,7 +244,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             
             <div className = {`${classes.containerNews}`}>
-                {news.map((n,i)=>(
+                {/* {news.map((n,i)=>(
                      <figure key={i} className={`${classes.news_all}`}>
                      <Link href={`/news/${n.id}`}><Image className={classes.responseImg} src={`/news/${n.img_1}.jpg`} width={'303'} height={'227'} alt={n.title}></Image></Link>
                      <figcaption className={classes.newsfigcaption}>
@@ -253,7 +253,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                      <div className={classes.dtNews}>{format(new Date(n.dt),"dd MM yyyy")}</div>
                      <p className={classes.leadNews}><Link href={`/news/${n.id}`}>{n.titlelong}</Link></p>
                     </figure>
-                ))}
+                ))} */}
                
             </div> 
             <div className={classes.containerNewsBotton}>
@@ -274,9 +274,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div> 
             <section>
                     <ul className={`${classes.itemline}`}>
-                        {item.map((item,i)=>(
+                        {/* {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
-                        ))}
+                        ))} */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
@@ -297,9 +297,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        {video.map((video, i)=>(
+                        {/* {video.map((video, i)=>(
                             <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
-                        ))}
+                        ))} */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
