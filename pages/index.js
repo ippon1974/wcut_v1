@@ -67,11 +67,11 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
     useEffect(()=> {
         async function load() {
-            const resworks = await fetch('http://wcut.ru:7000/works/main')
+            const resworks = await fetch('http://localhost:7000/works/main')
             const works = await resworks.json();
             setWorks(works);
 
-            const resmaterials = await fetch('http://wcut.ru:7000/materials/all')
+            const resmaterials = await fetch('http://localhost:7000/materials/all')
             const mat = await resmaterials.json();
             setMaterials(mat);
 
