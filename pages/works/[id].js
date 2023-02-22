@@ -54,7 +54,8 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[next, setNextPage] = useState(serverNext);
     useEffect(()=>{
        async function load() {
-        const response = await fetch(`http://23.105.246.179:7000/works/next?id=${router.query.id}`);
+        // const response = await fetch(`http://23.105.246.179:7000/works/next?id=${router.query.id}`);
+        const response = await fetch(`api/works/next?id=${router.query.id}`);
         const data = await response.json();
         if(data[0] == undefined){
             return
@@ -114,7 +115,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
                 </div>
 
                 <div className={`${classes.item} ${classes.maincontext}`}>
-                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {maxid == work.id ? "" : next} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {maxid == work.id ? "" : next[0].id} maxId = {maxid} minId= {minid} />}
+                 {mobile ? <BlockIdWorkMobile work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {maxid == work.id ? "" : next[0].id} maxId = {maxid} minId= {minid} /> : <BlockIdWork work = {work} prevPage = {minid == work.id ? "" : prev[0].id} nextPage = {maxid == work.id ? "" : next[0].id} maxId = {maxid} minId= {minid} />}
                 </div>
 
                 {mobile ? <MobileFooter /> : <Footer />}
