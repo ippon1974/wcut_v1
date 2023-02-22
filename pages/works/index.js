@@ -29,7 +29,7 @@ export default function Works({works:serverWorks}) {
 
     useEffect(()=> {
         async function load() {
-            const response = await fetch('http://23.105.246.179:7000/works/all')
+            const response = await fetch('api/works/all')
             const json = await response.json();
             setWorks(json);
         }
