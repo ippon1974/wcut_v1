@@ -67,27 +67,27 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
     useEffect(()=> {
         async function load() {
-            const resworks = await fetch('https://wcut.ru:7000/works/main')
+            const resworks = await fetch('http://0.0.0.0:7000/works/main')
             const works = await resworks.json();
             setWorks(works);
 
-            const resmaterials = await fetch('https://wcut.ru:7000/materials/all')
+            const resmaterials = await fetch('http://0.0.0.0:7000/materials/all')
             const mat = await resmaterials.json();
             setMaterials(mat);
 
-            const rescost = await fetch('https://wcut.ru:7000/costsize/all')
+            const rescost = await fetch('http://0.0.0.0:7000/costsize/all')
             const cost = await rescost.json();
             setCostSize(cost);
 
-            const resnews = await fetch('https://wcut.ru:7000/news/main')
+            const resnews = await fetch('http://0.0.0.0:7000/news/main')
             const news = await resnews.json();
             setNews(news);
 
-            const resitem = await fetch('https://wcut.ru:7000/news/main/item')
+            const resitem = await fetch('http://0.0.0.0:7000/news/main/item')
             const item = await resitem.json();
             setItem(item);
 
-            const resvideo = await fetch('https://wcut.ru:7000/news/main/video')
+            const resvideo = await fetch('http://0.0.0.0:7000/news/main/video')
             const video = await resvideo.json();
             setVideo(video);
 
@@ -269,9 +269,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div> 
             <section>
                     <ul className={`${classes.itemline}`}>
-                        {/* {item.map((item,i)=>(
+                        {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
-                        ))} */}
+                        ))}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
@@ -292,9 +292,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        {/* {video.map((video, i)=>(
+                        {video.map((video, i)=>(
                             <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
-                        ))} */}
+                        ))}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
