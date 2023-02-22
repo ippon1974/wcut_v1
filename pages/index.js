@@ -291,9 +291,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        {video.map((video, i)=>(
+                        {/* {video.map((video, i)=>(
                             <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
-                        ))}
+                        ))} */}
                     </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allVideoLine}`}>
