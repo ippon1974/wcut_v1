@@ -105,9 +105,9 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         if(!serverNews){
             load();
         }
-        if(!serverNewsItem){
-            load();
-        }
+        // if(!serverNewsItem){
+        //     load();
+        // }
         if(!serverNewsVideo){
             load();
         }
@@ -134,11 +134,11 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             <p>...Loading 4</p>
         </Layout>
     }
-    if(!item){
-        return <Layout>
-            <p>...Loading 5</p>
-        </Layout>
-    }
+    // if(!item){
+    //     return <Layout>
+    //         <p>...Loading 5</p>
+    //     </Layout>
+    // }
     if(!video){
         return <Layout>
             <p>...Loading 6</p>
@@ -271,11 +271,11 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 </div>
             </div> 
             <section>
-                    {/* <ul className={`${classes.itemline}`}>
+                    <ul className={`${classes.itemline}`}>
                         {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
                         ))}
-                    </ul> */}
+                    </ul>
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
                 <div className={`${classes.imgAllItem} ${classes.itemAllItem}`}>
