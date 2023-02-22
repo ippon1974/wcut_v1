@@ -13,7 +13,8 @@ const BlockIdWork = (props) => {
     const[w, setW] = useState(props.work);
     useEffect(()=>{
         async function load() {
-            const res = await fetch(`http://23.105.246.179:7000/works?id=${idworknew}`);
+            const res = await fetch(`/api/works/id/${idworknew}`);
+            // const res = await fetch(`http://23.105.246.179:7000/works?id=${idworknew}`);
             const d = await res.json();
             setW(d);
         }
