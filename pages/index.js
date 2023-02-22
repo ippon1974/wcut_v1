@@ -71,11 +71,12 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
         async function load() {
 
             // const resworks = await fetch('http://23.105.246.179:7000/works/main')
-            const resworks = await fetch('api/hello')
+            const resworks = await fetch('api/works/main');
             const works = await resworks.json();
             setWorks(works);
 
-            const resmaterials = await fetch('http://23.105.246.179:7000/materials/all')
+            // const resmaterials = await fetch('http://23.105.246.179:7000/materials/all')
+            const resmaterials = await fetch('api/materials/all')
             const mat = await resmaterials.json();
             setMaterials(mat);
 
@@ -189,17 +190,17 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 </div>
             </div>
             
-            {/* {mobile ? <BlockWorkMobile works = {works} /> : <BlockWork works={works} />} */}
+            {mobile ? <BlockWorkMobile works = {works} /> : <BlockWork works={works} />}
             
             <div className={`${classes.worksListArrowLink}`}>
-                {/* {works.map((w,i)=>(
+                {works.map((w,i)=>(
                     <div key={i} className={`${classes.block_all}`}>
                          <div className={`${classes.info_block}`}>
                              <div className={`${classes.info_block_arrow}`}><Link href={`/works/${w.id}`} title={`${w.title}`}><Image src={'/morearrow.png'} width={'33'} height={'33'} alt=''></Image></Link></div>
                              <div className={`${classes.info_block_link}`}><Link href={`/works/${w.id}`} title={`${w.title}`}>Подробнее</Link></div>
                          </div>
                      </div>
-                ))} */}
+                ))}
             </div>   
 
             <div className={`${classes.blockRedPrice}`}>
@@ -215,7 +216,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             <section>
                 <ul className={`${classes.priceline}`}>
                     
-                    {/* {
+                    {
                       materials.map((m,i)=>{
                         return (
                             costsize.map((cost,sub) => {
@@ -227,7 +228,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                         )
                       })
                         
-                    } */}
+                    }
                
                 </ul>
             </section>
