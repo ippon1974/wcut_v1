@@ -267,11 +267,11 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
                 </div>
             </div> 
             <section>
-                    <ul className={`${classes.itemline}`}>
+                    {/* <ul className={`${classes.itemline}`}>
                         {item.map((item,i)=>(
                             <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
                         ))}
-                    </ul>
+                    </ul> */}
             </section>
             <div className={`${classes.maincontext} ${classes.allItemLine}`}>
                 <div className={`${classes.imgAllItem} ${classes.itemAllItem}`}>
@@ -327,8 +327,8 @@ export async function getServerSideProps({req}) {
     if(!req){
         return {works:null, materials:null, costsize:null, news:null, item:null, video:null}
     }
-    const res = await fetch('http://23.105.246.179:7000/works/main')
-    const works = await res.json();
+    const resworks = await fetch('http://23.105.246.179:7000/works/main')
+    const works = await resworks.json();
 
     const resmat = await fetch('http://23.105.246.179:7000/materials/all')
     const materials = await resmat.json();
