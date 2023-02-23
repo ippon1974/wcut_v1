@@ -19,7 +19,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[minid, setMinId] = useState(serverMinId);
     useEffect(()=>{
         async function load() {
-            const res = await fetch(`http://23.105.246.179:7000/works/min`);
+            const res = await fetch(`/api/works/min`);
             const min = await res.json();
             setMinId(min);
         }
@@ -29,7 +29,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[maxid, setMaxId] = useState(serverMaxId);
     useEffect(()=>{
         async function load() {
-            const res = await fetch(`http://23.105.246.179:7000/works/max`);
+            const res = await fetch(`/api/works/max`);
             const max = await res.json();
             setMaxId(max);
         }
@@ -74,7 +74,8 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[work, setWork] = useState(serverWork);
     useEffect(()=>{
         async function load() {
-            const response = await fetch(`http://23.105.246.179:7000/works?id=${router.query.id}`);
+            // const response = await fetch(`http://23.105.246.179:7000/works?id=${router.query.id}`);
+            const response = await fetch(`/api/works/id/${router.query.id}`);
             const data = await response.json();
             setWork(data);
         }
@@ -138,8 +139,8 @@ export async function getServerSideProps({query, req}) {
     const response = await fetch(`http://23.105.246.179:3000/api/works/id/${query.id}`);
     const work = await response.json();
 
-    const respprev = await fetch(`http://23.105.246.179:7000/works/prev?id=${query.id}`);
-    // const respprev = await fetch(`http://23.105.246.179:3000/api/works/prev/${query.id}`);
+    // const respprev = await fetch(`http://23.105.246.179:7000/works/prev?id=${query.id}`);
+    const respprev = await fetch(`http://23.105.246.179:3000/api/works/prev/${query.id}`);
     const prev = await respprev.json();
 
     // const respnext = await fetch(`http://23.105.246.179:7000/works/next?id=${query.id}`);
