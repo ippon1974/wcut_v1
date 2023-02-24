@@ -38,8 +38,6 @@ const blockIdMateterials = (props) => {
                             &ensp;мм.</h3>
                     
                         <div dangerouslySetInnerHTML={{__html: props.mname.description_body}} />     
-
-                        <p>Сегодня раскрой металла гидроабразивом находит все более широкое применение не только в строительстве и промышленности. </p>
                         <h3>Достоинства раскроя гидроабразивом: </h3>
                         <ul>
                             <li>Раскрой листового металла</li>

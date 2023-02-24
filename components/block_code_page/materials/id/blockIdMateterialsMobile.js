@@ -45,7 +45,9 @@ const blockIdMateterialsMobile = (props) => {
                             </div>
                         </div>
 
-                        <div dangerouslySetInnerHTML={{__html: props.mname.description_body}} />     
+                        <div dangerouslySetInnerHTML={{__html: props.mname.description_body}} /> 
+                        
+                        
                     
                         <div className={classes.mainlinefooter}>
                             <span><Link href={'/contact'} title='Контакты'>
