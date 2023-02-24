@@ -123,33 +123,33 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
     if(!works){
         return <Layout>
-            <p>...Loading 1</p>
+            <p>...Loading</p>
         </Layout>
     }
     if(!materials){
         return <Layout>
-            <p>...Loading 2</p>
+            <p>...Loading</p>
         </Layout>
     }
     if(!costsize){
         return <Layout>
-            <p>...Loading 3</p>
+            <p>...Loading</p>
         </Layout>
     }
     if(!news){
         return <Layout>
-            <p>...Loading 4</p>
+            <p>...Loading</p>
         </Layout>
     }
     if(!item){
         return <Layout>
-            <p>...Loading 5</p>
+            <p>...Loading</p>
 
         </Layout>
     }
     if(!video){
         return <Layout>
-            <p>...Loading 6</p>
+            <p>...Loading</p>
         </Layout>
     }
 
