@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
         <noscript>
           <div>
           <picture>
-            <img src="https://mc.yandex.ru/watch/12345678" style={{ position:'absolute', left:'-9999px' }} alt="" />
+            <img src="https://mc.yandex.ru/watch/26204994" style={{ position:'absolute', left:'-9999px' }} alt="" />
           </picture>
           </div>
         </noscript>
