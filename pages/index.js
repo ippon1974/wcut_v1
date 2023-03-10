@@ -154,7 +154,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     }
 
    return (
-    <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Про Index'} keywords={'Ключ про Index'}>
+    <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Гидроабразивная резка металла'} keywords={'Водорезка, гидрорез, гидрорезка, гидроабразив'}>
     <Head>
         <meta name="viewport" content="width=device-width"/>
     </Head>
