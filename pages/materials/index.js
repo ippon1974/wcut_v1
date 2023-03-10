@@ -260,6 +260,14 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
     const tCoTree = startFromZero(tCostTree);
 
+    const tCostKeramogranit = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 25){
+            tCostKeramogranit[i] = costsize[i];
+        }
+    }
+    const tCoKeramogranit = startFromZero(tCostKeramogranit);
+
     
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
@@ -285,7 +293,8 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         fluoroplast: "",
         kaprolon: "",
         rubber: "",
-        tree: ""
+        tree: "",
+        keramogranit: ""
     });
 
     const handleClick = (translit, id, cost, size) => {
@@ -431,6 +440,12 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             tree: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "keramogranit"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            keramogranit: {id:id, cost:cost, size:size}
         }))
        }
     }
@@ -636,6 +651,14 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             tree: {id:id, cost:cost, size:size}
+        }))
+    }
+    if(translit == "keramogranit"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoKeramogranit[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            keramogranit: {id:id, cost:cost, size:size}
         }))
     }
 
