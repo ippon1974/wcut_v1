@@ -40,7 +40,7 @@ export default function Item({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Статьи | Civek Water Jet'}>
+        <Layout title={'Статьи | Civek Water Jet'} description = {'Статьи. Новости. Гидроабразивная резка'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>

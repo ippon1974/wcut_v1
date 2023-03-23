@@ -40,7 +40,7 @@ export default function Marketnews({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Новости рынка | Civek Water Jet'}>
+        <Layout title={'Новости рынка | Civek Water Jet'} description = {'Новости рынка. Гидроабразивная резка'}>
             
             <Head>
                 <meta name="viewport" content="width=device-width"/>

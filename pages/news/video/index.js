@@ -40,7 +40,7 @@ export default function Video({articles:serverArticles}) {
     }
 
     return(
-        <Layout title={'Видео | Civek Water Jet'}>
+        <Layout title={'Видео | Civek Water Jet'} description = {'Видеоматериалы гидроабразивная резка'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
             </Head>
