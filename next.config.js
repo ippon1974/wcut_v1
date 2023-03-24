@@ -9,7 +9,6 @@ module.exports = nextConfig
 
 
 module.exports = {
-  // All the other config options you may have...
   async redirects() {
       return [
           {
