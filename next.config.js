@@ -15,7 +15,7 @@ module.exports = {
           {
               source: '/news/id/1040',
               destination: '/news/4',
-              permanent: false
+              permanent: true
           }
       ];
   }
