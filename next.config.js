@@ -23,7 +23,7 @@ module.exports = {
           },
           {
             source: '/news/id/1035',
-            destination: '/news/53',
+            destination: '/news/9',
             permanent: true
           }
       ];
