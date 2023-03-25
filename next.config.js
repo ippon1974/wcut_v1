@@ -20,6 +20,11 @@ module.exports = {
             source: '/works/id/1018',
             destination: '/works/15',
             permanent: true
+          },
+          {
+            source: '/news/id/1035',
+            destination: '/news/53',
+            permanent: true
           }
       ];
   }
