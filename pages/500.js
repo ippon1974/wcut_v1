@@ -4,6 +4,7 @@ import classes from '../styles/error.module.scss';
 import { useMediaQuery } from 'react-responsive';
 
 export default function Custom500() {
+  
   const [mobile, setMobile] = useState(false)
   const isPhone = useMediaQuery({ query: '(max-width: 481px)'})
   useEffect(() => setMobile(isPhone), [isPhone]);

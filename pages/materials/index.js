@@ -279,7 +279,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         glass: "",
         glass_plastic: "",
         marble: "",
-        сeramics: "",
+        ceramics: "",
         steel_stainless: "",
         steel_tool: "",
         steel_black: "",
@@ -352,10 +352,10 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             glass_plastic: {id:id, cost:cost, size:size}
         }))
        }
-       if(translit == "сeramics"){
+       if(translit == "ceramics"){
         setOutPrice(outprice => ({
             ...outprice,
-            сeramics: {id:id, cost:cost, size:size}
+            ceramics: {id:id, cost:cost, size:size}
         }))
        }
        if(translit == "steel_stainless"){
@@ -533,7 +533,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             marble: {id:id, cost:cost, size:size}
         }))
     }
-    if(translit == "сeramics"){
+    if(translit == "ceramics"){
         const { selectedIndex } = event.target.options;
         const{ id, cost, size} = tCoCeramics[selectedIndex];
         setOutPrice(outprice => ({
