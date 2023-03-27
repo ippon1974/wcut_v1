@@ -25,18 +25,11 @@ module.exports = {
             source: '/news/id/1035',
             destination: '/news/9',
             permanent: true
+          },
+          {
+            source: '/sitemap.xml',
+            destination: '/api/sitemap',
           }
       ];
   }
-};
-
-module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-    ]
-  },
 };
