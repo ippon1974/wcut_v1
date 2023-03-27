@@ -29,6 +29,7 @@ module.exports = {
           {
             source: '/sitemap.xml',
             destination: '/api/sitemap',
+            permanent: true
           }
       ];
   }
