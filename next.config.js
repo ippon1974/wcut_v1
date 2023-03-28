@@ -25,7 +25,13 @@ module.exports = {
             source: '/news/id/1035',
             destination: '/news/9',
             permanent: true
+          },
+           {
+            source: '/works/id/1',
+            destination: '/works/3',
+            permanent: true
           }
+
           // {
           //   source: '/sitemap.xml',
           //   destination: '/api/sitemap',
