@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Script from 'next/script'
 
 export function MainLayout({children, title='Civek Water Jet'}) {
     const { asPath, pathname } = useRouter();
@@ -25,6 +26,10 @@ export function MainLayout({children, title='Civek Water Jet'}) {
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+               
+
+
             </Head>
 
             <nav>

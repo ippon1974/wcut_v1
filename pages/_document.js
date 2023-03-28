@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Image from "next/image";
 import Script from 'next/script'
 
 export default class MyDocument extends Document {
@@ -9,26 +8,30 @@ export default class MyDocument extends Document {
                 <Head>
                     {/* <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /> */}
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
-                   
+                  
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
+
+                    <script
+                    dangerouslySetInnerHTML={{__html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                      
+                        gtag('config', 'G-C9ZNZ01609');
+                      `
+                      }}
+                    />
+
+
                 </Head>
 
-              
+
+     
+
                 <body>
-                <Main />
+                <Main /> 
                 <NextScript />
                 
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
-
-                <script
-                 dangerouslySetInnerHTML={{__html: `
-                 window.dataLayer = window.dataLayer || [];
-                 function gtag(){dataLayer.push(arguments);}
-                 gtag('js', new Date());
-                 gtag('config', 'G-C9ZNZ01609');
-                 `,
-                }}
-                />
-
                 <script
                  dangerouslySetInnerHTML={{__html: `
                 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -40,9 +43,9 @@ export default class MyDocument extends Document {
                       trackLinks:true,
                       accurateTrackBounce:true
                 });
-              `,
-            }}
-          />
+               `,
+                  }}
+                />
         <noscript>
           <div>
           <picture>
@@ -50,7 +53,11 @@ export default class MyDocument extends Document {
           </picture>
           </div>
         </noscript>
-                </body>
+
+
+       
+
+            </body>
             </Html>
         )
     }
