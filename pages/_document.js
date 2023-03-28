@@ -9,28 +9,25 @@ export default class MyDocument extends Document {
                 <Head>
                     {/* <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /> */}
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
+                   
                 </Head>
 
-               
-
+              
                 <body>
                 <Main />
                 <NextScript />
+                
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
 
-
-                <Script
-                  src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"
-                  strategy="afterInteractive"
+                <script
+                 dangerouslySetInnerHTML={{__html: `
+                 window.dataLayer = window.dataLayer || [];
+                 function gtag(){dataLayer.push(arguments);}
+                 gtag('js', new Date());
+                 gtag('config', 'G-C9ZNZ01609');
+                 `,
+                }}
                 />
-                <Script id="google-analytics" strategy="afterInteractive">
-                  {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'G-C9ZNZ01609');
-                  `}
-                </Script>
-
 
                 <script
                  dangerouslySetInnerHTML={{__html: `
