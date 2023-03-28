@@ -11,6 +11,13 @@ export default class MyDocument extends Document {
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
                 </Head>
 
+               
+
+                <body>
+                <Main />
+                <NextScript />
+
+
                 <Script
                   src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"
                   strategy="afterInteractive"
@@ -24,9 +31,7 @@ export default class MyDocument extends Document {
                   `}
                 </Script>
 
-                <body>
-                <Main />
-                <NextScript />
+
                 <script
                  dangerouslySetInnerHTML={{__html: `
                 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
