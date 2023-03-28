@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import Image from "next/image";
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
     render() {
@@ -9,6 +10,20 @@ export default class MyDocument extends Document {
                     {/* <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /> */}
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
                 </Head>
+
+                <Script
+                  src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"
+                  strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                  {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-C9ZNZ01609');
+                  `}
+                </Script>
+
                 <body>
                 <Main />
                 <NextScript />
