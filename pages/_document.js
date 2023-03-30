@@ -8,9 +8,9 @@ export default class MyDocument extends Document {
                 <Head>
                     {/* <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" /> */}
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
-                  
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
+                    <link type="image/png" sizes="120x120" rel="icon" href="/favicon-120x120.png"></link>
 
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
                     <script
                     dangerouslySetInnerHTML={{__html: `
                         window.dataLayer = window.dataLayer || [];
@@ -22,12 +22,8 @@ export default class MyDocument extends Document {
                       }}
                     />
 
-
                 </Head>
-
-
-     
-
+                
                 <body>
                 <Main /> 
                 <NextScript />
