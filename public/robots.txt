@@ -1,4 +1,5 @@
 # robots.txt for http://www.wcut.ru
 
 User-agent: *
+Sitemap: https://wcut.ru/sitemap.xml
 Disallow: /bin/
