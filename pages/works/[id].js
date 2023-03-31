@@ -105,6 +105,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
            
             <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="description" content={`${serverWork.title} | Гидроабразив`} />
             </Head>
 
             <div className={`${classes.wrapper}`}>
