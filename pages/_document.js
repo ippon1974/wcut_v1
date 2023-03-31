@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
                     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon"></link>
                     <link type="image/png" sizes="120x120" rel="icon" href="/favicon-120x120.png"></link>
 
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
+                    {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9ZNZ01609"></script>
                     <script
                     dangerouslySetInnerHTML={{__html: `
                         window.dataLayer = window.dataLayer || [];
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
                         gtag('config', 'G-C9ZNZ01609');
                       `
                       }}
-                    />
+                    /> */}
 
                 </Head>
 
