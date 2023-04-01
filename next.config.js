@@ -26,9 +26,19 @@ module.exports = {
             destination: '/news/9',
             permanent: true
           },
-           {
+          {
             source: '/works/id/1',
             destination: '/works/3',
+            permanent: true
+          },
+          {
+            source: '/works/id/1012',
+            destination: '/works/13',
+            permanent: true
+          },
+          {
+            source: '/works/id/1017',
+            destination: '/works/14',
             permanent: true
           }
 
