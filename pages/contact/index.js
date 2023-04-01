@@ -46,14 +46,14 @@ export default function Contact() {
                         <h2>Контакты</h2>
                     </div>
                     
-                    <div className={classes.address}>
-                        <p>Название компании: &laquo;Сивек Water Jet&raquo;</p>
-                        <p>Расположение производства: 140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
+                    <div itemscope itemtype={"http://schema.org/LocalBusiness"} className={classes.address}>
+                        <p itemprop={"name"}>Название компании: &laquo;Сивек Water Jet&raquo;</p>
+                        <p itemprop={"address"}>Расположение производства: 140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
                         <p>Прилегающие населенные пункты: Люберцы, Красково, Коренево, Томилино, Лыткарино, Некрасовка, Октябрьский, Котельники, Малаховка, Дзержинский, Железнодорожный, Раменское, Жуковский, Выхино-Жулебино, Электроугли.</p>
-                        <p>Режим работы: Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни.</p>
-                        <p><strong>Телефон</strong>: +7 (925) 585-33-71 (Мегафон)</p>
+                        <p itemprop={"openingHours"}>Режим работы: Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни.</p>
+                        <p itemprop={"telephone"}>Телефон: +7 (925) 585-33-71 (Мегафон)</p>
                         {/* <p><strong>Электронная почта</strong>: box@wcut.ru</p> */}
-                        <p>Электропочта: <Link style={linksmallcolor} href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#111;&#120;&#64;&#119;&#99;&#117;&#116;&#46;&#114;&#117;">&#98;&#111;&#120;&#64;&#119;&#99;&#117;&#116;&#46;&#114;&#117;</Link></p>
+                        <p itemprop={"email"}>Электропочта: <Link style={linksmallcolor} href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#111;&#120;&#64;&#119;&#99;&#117;&#116;&#46;&#114;&#117;">&#98;&#111;&#120;&#64;&#119;&#99;&#117;&#116;&#46;&#114;&#117;</Link></p>
                         <p className={classes.adrsmall}><strong>Ютуб</strong>: <Link style={linksmallcolor} href="https://www.youtube.com/channel/UCuQWXTAmeMLsruthyDSI5Gg" target="_blank">https://www.youtube.com/</Link></p>
                         <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.663307,37.994535</p>
                         <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/-/CCUrmKWQdB" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
