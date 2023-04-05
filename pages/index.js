@@ -157,6 +157,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Гидроабразивная резка металла'} keywords={'Водорезка, гидрорез, гидрорезка, гидроабразив'}>
     <Head>
         <meta name="viewport" content="width=device-width"/>
+        <link rel="canonical" href="https://wcut.ru/"/>
     </Head>
     <div className={classes.wrapper}>
         
