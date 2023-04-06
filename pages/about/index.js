@@ -22,6 +22,7 @@ export default function About() {
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="description" content={"О компании Сивек Ватер Джет. История компании."} />
             </Head>
 
             <div className={`${classes.wrapper}`}>
