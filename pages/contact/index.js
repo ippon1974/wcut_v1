@@ -55,7 +55,7 @@ export default function Contact() {
                         {/* <p><strong>Электронная почта</strong>: box@wcut.ru</p> */}
                         <p itemprop={"email"}>Электропочта: <Link style={linksmallcolor} href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#111;&#120;&#64;&#119;&#99;&#117;&#116;&#46;&#114;&#117;">&#98;&#111;&#120;&#64;&#119;&#99;&#117;&#116;&#46;&#114;&#117;</Link></p>
                         <p className={classes.adrsmall}><strong>Ютуб</strong>: <Link style={linksmallcolor} href="https://www.youtube.com/channel/UCuQWXTAmeMLsruthyDSI5Gg" target="_blank">https://www.youtube.com/</Link></p>
-                        <p>Канал в Telegram: <Link style={linksmallcolor} href="https://t.me/wcuting" target="_blank">https://t.me/wcuting</Link></p>
+                        <p className={classes.adrsmall}>Канал в Telegram: <Link style={linksmallcolor} href="https://t.me/wcuting" target="_blank">https://t.me/wcuting</Link></p>
                         <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.663307,37.994535</p>
                         <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/-/CCUrmKWQdB" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
                     </div>
