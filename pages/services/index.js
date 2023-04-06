@@ -104,7 +104,6 @@ export default function Services() {
 
                  {mobile ? <MobileFooter /> : <Footer />}
 
-
             </div>
 
             <div className={classes.endpage}></div>
