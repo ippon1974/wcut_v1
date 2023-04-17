@@ -55,6 +55,41 @@ module.exports = {
             source: '/materials/id/19',
             destination: '/materials/steel_black/size/10',
             permanent: true
+          },
+          {
+            source: '/news/id/1039',
+            destination: '/news/5',
+            permanent: true
+          },
+          {
+            source: '/works/id/7',
+            destination: '/works/12',
+            permanent: true
+          },
+          {
+            source: '/works/id/11',
+            destination: '/works/7',
+            permanent: true
+          },
+          {
+            source: '/news/id/19',
+            destination: '/news/18',
+            permanent: true
+          },
+          {
+            source: '/news/id/24',
+            destination: '/news/19',
+            permanent: true
+          },
+          {
+            source: '/news/id/13',
+            destination: '/news/26',
+            permanent: true
+          },
+          {
+            source: '/news/id/16',
+            destination: '/news/23',
+            permanent: true
           }
 
       ];
