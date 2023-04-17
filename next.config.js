@@ -50,7 +50,13 @@ module.exports = {
             source: '/materials/id/56',
             destination: '/materials/fluoroplast/size/10',
             permanent: true
+          },
+          {
+            source: '/materials/id/19',
+            destination: '/materials/steel_black/size/10',
+            permanent: true
           }
+
       ];
   }
 };
