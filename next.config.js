@@ -40,7 +40,24 @@ module.exports = {
             source: '/works/id/1017',
             destination: '/works/14',
             permanent: true
+          },
+           {
+            source: '/materials/id/3',
+            destination: '/materials/marble/size/10',
+            permanent: true
+          },
+           {
+            source: '/materials/id/56/',
+            destination: '/materials/fluoroplast/size/10',
+            permanent: true
+          },
+          {
+            source: '/materials/id/56/',
+            destination: '/materials/fluoroplast/size/10',
+            permanent: true
           }
+
+
 
           // {
           //   source: '/sitemap.xml',
