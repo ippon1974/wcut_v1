@@ -47,7 +47,7 @@ module.exports = {
             permanent: true
           },
            {
-            source: '/materials/id/56/',
+            source: '/materials/id/56',
             destination: '/materials/fluoroplast/size/10',
             permanent: true
           }
