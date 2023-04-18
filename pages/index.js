@@ -62,41 +62,35 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     const[materials, setMaterials] = useState(serverMaterials);
     const[costsize, setCostSize] = useState(serverCostSize);
     const[news, setNews] = useState(serverNews);
-    const[item, setItem] = useState(serverNewsItem);
-    const[video, setVideo] = useState(serverNewsVideo);
+    const[newsitem, setItem] = useState(serverNewsItem);
+    const[newsvideo, setVideo] = useState(serverNewsVideo);
     
     useEffect(()=> {
         async function load() {
 
-            // const resworks = await fetch('http://23.105.246.179:7000/works/main')
             const resworks = await fetch('api/works/main');
             const works = await resworks.json();
             setWorks(works);
 
-            // const resmaterials = await fetch('http://23.105.246.179:7000/materials/all')
             const resmaterials = await fetch('api/materials/all')
             const mat = await resmaterials.json();
             setMaterials(mat);
 
-            // const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
             const rescost = await fetch('api/costsize/all')
             const cost = await rescost.json();
             setCostSize(cost);
 
-            // const resnews = await fetch('http://23.105.246.179:7000/news/main')
             const resnews = await fetch('api/news/main/market')
             const news = await resnews.json();
             setNews(news);
 
-            // const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
             const resitem = await fetch('api/news/main/item')
-            const item = await resitem.json();
-            setItem(item);
+            const newsitem = await resitem.json();
+            setItem(newsitem);
 
-            // const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
             const resvideo = await fetch('api/news/main/video')
-            const video = await resvideo.json();
-            setVideo(video);
+            const newsvideo = await resvideo.json();
+            setVideo(newsvideo);
 
         }
 
@@ -123,7 +117,6 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
     if(!works){
         return <Layout>
-            <Navigation />
             <p>...Loading</p>
         </Layout>
     }
@@ -142,12 +135,12 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             <p>...Loading</p>
         </Layout>
     }
-    if(!item){
+    if(!newsitem){
         return <Layout>
             <p>...Loading</p>
         </Layout>
     }
-    if(!video){
+    if(!newsvideo){
         return <Layout>
             <p>...Loading</p>
         </Layout>
@@ -157,7 +150,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
     <Layout title={'Civek Water Jet | Гидроабразивная резка в Москве и Москвовской области'} description={'Гидроабразивная резка металла'} keywords={'Водорезка, гидрорез, гидрорезка, гидроабразив'}>
     <Head>
         <meta name="viewport" content="width=device-width"/>
-        {/* <link rel="canonical" href="https://wcut.ru/"/> */}
+        <link rel="canonical" href="https://wcut.ru/"/>
     </Head>
     
     <div className={classes.wrapper}>
@@ -278,8 +271,8 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div> 
             <section>
                     <ul className={`${classes.itemline}`}>
-                        {item.map((item,i)=>(
-                            <li key={i}>{item.title}<Link href={`/news/${item.id}`}> Весь текст</Link></li>
+                        {newsitem.map((newsitem,i)=>(
+                            <li key={i}>{newsitem.title}<Link href={`/news/${newsitem.id}`}> Весь текст</Link></li>
                         ))}
                     </ul>
             </section>
@@ -301,8 +294,8 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             </div>
             <section>
                     <ul className={`${classes.videoline}`}>
-                        {video.map((video, i)=>(
-                            <li key={i}><Link href={`/news/${video.id}`}>{video.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
+                        {newsvideo.map((video, i)=>(
+                            <li key={i}><Link href={`/news/${newsvideo.id}`}>{newsvideo.title}</Link> Раскрой гранита толщиной 80 мм. Гидроабарзив.</li>
                         ))}
                     </ul>
             </section>
@@ -329,31 +322,32 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
 
     <div className={classes.endpage}></div>
 </Layout>
-       
+
    );
 }
 
-// export async function getServerSideProps({req}) {
-//     if(!req){
-//         return {works:null, materials:null, costsize:null, news:null, item:null, video:null}
-//     }
-//     const resworks = await fetch('http://23.105.246.179:7000/works/main')
-//     const works = await resworks.json();
+export async function getServerSideProps({req}) {
+    if(!req){
+        return {works:null, materials:null, costsize:null, news:null, newsitem:null, newsvideo:null}
+    }
+    const resworks = await fetch('http://23.105.246.179:7000/works/main')
+    const works = await resworks.json();
 
-//     const resmat = await fetch('http://23.105.246.179:7000/materials/all')
-//     const materials = await resmat.json();
+    const resmat = await fetch('http://23.105.246.179:7000/materials/all')
+    const materials = await resmat.json();
 
-//     const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
-//     const costsize = await rescost.json();
+    const rescost = await fetch('http://23.105.246.179:7000/costsize/all')
+    const costsize = await rescost.json();
 
-//     const resnews = await fetch('http://23.105.246.179:7000/news/main')
-//     const news = await resnews.json();
+    const resnews = await fetch('http://23.105.246.179:7000/news/main')
+    const news = await resnews.json();
 
-//     const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
-//     const item = await resitem.json();
+    const resitem = await fetch('http://23.105.246.179:7000/news/main/item')
+    const newsitem = await resitem.json();
 
-//     const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
-//     const video = await resvideo.json();
+    const resvideo = await fetch('http://23.105.246.179:7000/news/main/video')
+    const newsvideo = await resvideo.json();
 
-//     return { props: { works, materials, costsize, news, item, video } }
-// }
+    return { props: { works, materials, costsize, news, newsitem, newsvideo } }
+
+}

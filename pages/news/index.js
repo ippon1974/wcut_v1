@@ -14,7 +14,6 @@ import Head from 'next/head';
 import Image from "next/image";
 import { useMediaQuery } from 'react-responsive';
 
-
 export default function News({articles:serverArticles}) {
     
      const[mobile, setMobile] = useState(false)
@@ -25,7 +24,7 @@ export default function News({articles:serverArticles}) {
     
     useEffect(()=> {
         async function load() {
-            const response = await fetch('http://23.105.246.179:7000/news/all')
+            const response = await fetch('api/news/main/item');
             const json = await response.json();
             setArticles(json);
         }
