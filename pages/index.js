@@ -72,7 +72,7 @@ export  default function Index({works:serverWorks, materials:serverMaterials, co
             const works = await resworks.json();
             setWorks(works);
 
-            const resmaterials = await fetch('api/materials/all')
+            const resmaterials = await fetch('api/materials/main')
             const mat = await resmaterials.json();
             setMaterials(mat);
 
