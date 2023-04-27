@@ -43,6 +43,7 @@ export default function Cnews({articles:serverArticles}) {
         <Layout title={'Новости компании | Civek Water Jet'} description = {'Новости компании. Гидроабразивная резка'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="keywords" content={`Новости рынка гидроабразивной резки, новики станков, технологии гидроабразивнолй резки`} />
             </Head>
 
             <div className={classes.wrapper}>

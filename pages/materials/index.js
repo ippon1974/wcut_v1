@@ -717,6 +717,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
              <Head>
                 <meta name="viewport" content="width=device-width"/>
                 <meta name="description" content={`Гидроабразивная резка цена. Раскрой более 50 типов материалов различной толщины и плотности`} />
+                <meta name="keywords" content={`Цена гидроабразивной резки, разрезать сталь, разрезать мрамор, разрезать гранит`} />
             </Head>
 
             <div className={classes.wrapper}>

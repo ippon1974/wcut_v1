@@ -22,6 +22,7 @@ export default function Technology() {
             <Head>
                 <meta name="viewport" content="width=device-width"/>
                 <meta name="description" content={`Технология гидроабразивной резки | Гидроабразив`} />
+                <meta name="keywords" content={`Гидрорезка, водорезка, гидроабразивная резка`} />
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>

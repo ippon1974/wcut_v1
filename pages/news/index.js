@@ -44,6 +44,7 @@ export default function News({articles:serverArticles}) {
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="keywords" content={`Новости рынка гидроабразивной резки, новики станков, технологии гидроабразивнолй резки`} />
             </Head>
 
             <div className={classes.wrapper}>

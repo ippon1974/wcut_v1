@@ -43,6 +43,7 @@ export default function Show({articles:serverArticles}) {
         <Layout title={'Выставки | Civek Water Jet'} description = {'Выставки. Новости. Гидроабразивная резка'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="keywords" content={`Новости рынка гидроабразивной резки, новики станков, технологии гидроабразивнолй резки`} />
             </Head>
 
             <div className={classes.wrapper}>

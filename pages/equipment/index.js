@@ -21,7 +21,8 @@ export default function Equipment() {
         <Layout title={'Станки гидроабразивной резки | Civek Water Jet'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
-                <meta name="description" content={"Парк станков MultiCam гидроабразивной резки компании Сивек Ватер Джет"} />
+                <meta name="description" content={"MultiCam, KMT. Станки компании Civek Water Jet"} />
+                <meta name="keywords" content={"Станки для гидроабразивной резки,гидрорезка, водорезка"} />
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>

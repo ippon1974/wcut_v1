@@ -43,6 +43,7 @@ export default function Video({articles:serverArticles}) {
         <Layout title={'Видео | Civek Water Jet'} description = {'Видеоматериалы гидроабразивная резка'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
+                <meta name="keywords" content={`Новости рынка гидроабразивной резки, новики станков, технологии гидроабразивнолй резки`} />
             </Head>
             <div className={classes.wrapper}>
                 <div className={`${classes.item} ${classes.header}`}>
