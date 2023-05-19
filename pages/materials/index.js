@@ -254,7 +254,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const tCostTree = [];
     for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 21){
+        if(costsize[i].material_id == 24){
             tCostTree[i] = costsize[i];
         }
     }
