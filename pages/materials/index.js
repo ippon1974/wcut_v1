@@ -553,7 +553,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         const{ id, cost, size} = tCoCeramics[selectedIndex];
         setOutPrice(outprice => ({
             ...outprice,
-            сeramics: {id:id, cost:cost, size:size}
+            ceramics: {id:id, cost:cost, size:size}
         }))
     }
     if(translit == "steel_stainless"){
