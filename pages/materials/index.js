@@ -230,7 +230,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const tCostFluoroplast = [];
     for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 20){
+        if(costsize[i].material_id == 21){
             tCostFluoroplast[i] = costsize[i];
         }
     }
@@ -238,7 +238,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const tCostKaprolon = [];
     for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 20){
+        if(costsize[i].material_id == 22){
             tCostKaprolon[i] = costsize[i];
         }
     }
@@ -246,7 +246,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
 
     const tCostRubber = [];
     for(let i=0; i < costsize.length; i++){
-        if(costsize[i].material_id == 20){
+        if(costsize[i].material_id == 23){
             tCostRubber[i] = costsize[i];
         }
     }
@@ -276,7 +276,15 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
     const tCoVinylplast = startFromZero(tCostVinylplast);
 
-    
+    const tCostPolyurethane = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 27){
+            tCostPolyurethane[i] = costsize[i];
+        }
+    }
+    const tCoPolyurethane = startFromZero(tCostPolyurethane);
+
+
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
         aluminum: "",
@@ -303,7 +311,8 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         rubber: "",
         tree: "",
         keramogranit: "",
-        vinylplast: ""
+        vinylplast: "",
+        polyurethane: ""
     });
 
     const handleClick = (translit, id, cost, size) => {
@@ -463,9 +472,14 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
             vinylplast: {id:id, cost:cost, size:size}
         }))
        }
+       if(translit == "polyurethane"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            polyurethane: {id:id, cost:cost, size:size}
+        }))
+       }
     }
    
-
 
     const handle = (event, translit) => {   
     if(translit == "aglomerat"){
@@ -682,6 +696,15 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             vinylplast: {id:id, cost:cost, size:size}
+        }))
+    }
+
+    if(translit == "polyurethane"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoPolyurethane[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            polyurethane: {id:id, cost:cost, size:size}
         }))
     }
 
