@@ -58,7 +58,7 @@ export default function Contact() {
                         <p className={classes.adrsmall}><strong>Канал в Telegram</strong>: <Link style={linksmallcolor} href="https://t.me/wcuting" target="_blank">https://t.me/wcuting</Link></p>
                         <p className={classes.adrsmall}><strong>Инстаграм</strong>: <Link style={linksmallcolor} href="https://www.instagram.com/civekwaterjet/" target="_blank">https://www.instagram.com/civekwaterjet/</Link></p>
                         <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.660831, 37.924976</p>
-                        <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/-/CCUrmKWQdB" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
+                        <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/?um=constructor%3Ade84ff7336f23544fdfd2395bf3a76bf62c3e486a7449dd5f751dba73997184a&source=constructorLink" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
                     </div>
                 </div>
 
