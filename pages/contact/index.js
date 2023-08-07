@@ -41,14 +41,13 @@ export default function Contact() {
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     <div>
                         <div className={classes.map}>
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade84ff7336f23544fdfd2395bf3a76bf62c3e486a7449dd5f751dba73997184a&amp;source=constructor" width="550" height="650" frameborder="0"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade84ff7336f23544fdfd2395bf3a76bf62c3e486a7449dd5f751dba73997184a&amp;source=constructor" width="550" height="650" frameborder="0"></iframe>                        
                         </div>
                         <h2>Контакты</h2>
                     </div>
-                    
                     <div itemscope itemtype={"http://schema.org/LocalBusiness"} className={classes.address}>
                         <p itemprop={"name"}>Название компании: &laquo;Сивек Water Jet&raquo;</p>
-                        <p itemprop={"address"}>Расположение производства: 140080 ул. Карла Маркса д. 117 &lsquo;Б&rsquo;, офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института &laquo;ВНИИСТРОМ&raquo;</p>
+                        <p itemprop={"address"}>Расположение производства: Посёлок ВУГИ, 1с4, Люберцы, Московская область, 140004. Территория института &laquo;ННЦ ГП - ИГД им. А.А. Скочинского&raquo;</p>
                         <p>Прилегающие населенные пункты: Люберцы, Красково, Коренево, Томилино, Лыткарино, Некрасовка, Октябрьский, Котельники, Малаховка, Дзержинский, Железнодорожный, Раменское, Жуковский, Выхино-Жулебино, Электроугли.</p>
                         <p itemprop={"openingHours"}>Режим работы: Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни.</p>
                         <p className={classes.adrsmall} itemprop={"telephone"}><strong>Телефон</strong>: +7 (925) 585-33-71 (Мегафон)</p>
@@ -58,7 +57,7 @@ export default function Contact() {
                         <p className={classes.adrsmall}><strong>Ютуб</strong>: <Link style={linksmallcolor} href="https://www.youtube.com/channel/UCuQWXTAmeMLsruthyDSI5Gg" target="_blank">https://www.youtube.com/</Link></p>
                         <p className={classes.adrsmall}><strong>Канал в Telegram</strong>: <Link style={linksmallcolor} href="https://t.me/wcuting" target="_blank">https://t.me/wcuting</Link></p>
                         <p className={classes.adrsmall}><strong>Инстаграм</strong>: <Link style={linksmallcolor} href="https://www.instagram.com/civekwaterjet/" target="_blank">https://www.instagram.com/civekwaterjet/</Link></p>
-                        <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.663307,37.994535</p>
+                        <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.660831, 37.924976</p>
                         <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/-/CCUrmKWQdB" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
                     </div>
                 </div>
