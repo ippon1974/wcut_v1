@@ -209,6 +209,10 @@
     line-height: 1.4em;
   }
   
+  .maincontext div p > strong {
+    font-weight: bolder;
+  }
+
   .maincontext div p > em {
     font-style: italic;
   }
