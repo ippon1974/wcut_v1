@@ -124,7 +124,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
                 {mobile ? <MobileFooter /> : <Footer />}
                 
             </div>
-
+            
             <div className={classes.endpage}></div>
 
             </Layout>
