@@ -79,12 +79,7 @@ const BlockIdWork = (props) => {
                         <div>
                             <h3>Процесс</h3>
                             <div dangerouslySetInnerHTML={{__html: w.body}} />
-                            <div><Link style={{
-                                    textDecoration: 'none',
-                                    color: 'red',
-                                    fontSize: 12,
-                                    }}
-                href={"/materials"} title={"Весь прайс литс на раскрой"}>Весь прайс литс на раскрой</Link></div>
+                            
                         </div>
                         <div className={classes.panelImg}>
                             {w.img_1 ? <Link href={`/works/big/${w.img_1}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_1}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
