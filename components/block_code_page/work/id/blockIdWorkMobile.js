@@ -61,7 +61,7 @@ const BlockIdWorkMobile = (props) => {
                 <div><Link style={{
                 textDecoration: 'none',
                 color: 'red',
-                fontSize: 10,
+                fontSize: 12,
               }}
                 href={"/materials"} title={"Весь прайс литс на раскрой"}>Весь прайс литс на раскрой</Link></div>
              </div>
