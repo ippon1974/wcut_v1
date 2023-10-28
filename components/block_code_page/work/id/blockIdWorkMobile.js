@@ -58,7 +58,12 @@ const BlockIdWorkMobile = (props) => {
              <div className={classes.descwork}>
                 <p><strong>Материал:</strong>: {w.materialname}</p>
                 <div dangerouslySetInnerHTML={{__html: w.body}} />
-                <div className={classes.subMenuPreNext}><Link href={"/materials"} title={"Весь прайс литс на раскрой"}>Весь прайс литс на раскрой</Link></div>
+                <div><Link style={{
+                textDecoration: 'none',
+                color: 'red',
+                fontSize: 30,
+              }}
+                href={"/materials"} title={"Весь прайс литс на раскрой"}>Весь прайс литс на раскрой</Link></div>
              </div>
 
              {w.img_1 ? <div><Image className={classes.responseImg} src={`/works/small/${w.img_1}.jpg`} width={'303'} height={'227'} alt={w.title}></Image></div> : ""} 
