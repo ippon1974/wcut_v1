@@ -79,8 +79,8 @@ const BlockIdWork = (props) => {
                         <div>
                             <h3>Процесс</h3>
                             <div dangerouslySetInnerHTML={{__html: w.body}} />
-                            <br />
-                            <div><Link style={{
+                            <div><br />
+                                <Link style={{
                                 textDecoration: 'none',
                                 color: 'red',
                                 fontSize: 12,
