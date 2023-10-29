@@ -83,8 +83,9 @@ const BlockIdWork = (props) => {
                                 textDecoration: 'none',
                                 color: 'red',
                                 fontSize: 12,
+                                marginTop: 5,
                                 }}
-                href={"/materials"} title={"Весь прайс литс на раскрой"}>Весь прайс на раскрой</Link></div>
+                href={"/materials"} title={"Весь прайс на раскрой"}>Весь прайс на раскрой</Link></div>
                         </div>
                         <div className={classes.panelImg}>
                             {w.img_1 ? <Link href={`/works/big/${w.img_1}.jpg`} target={'_blank'} title={w.title}><Image className={classes.responseImg} src={`/works/small/${w.img_1}.jpg`} width={"461"} height={"345"} alt={w.title} /></Link> : ""}
