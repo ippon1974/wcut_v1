@@ -292,6 +292,14 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
     }
     const tCoBronze = startFromZero(tCostBronze);
 
+    const tCostPlumbum = [];
+    for(let i=0; i < costsize.length; i++){
+        if(costsize[i].material_id == 29){
+            tCostPlumbum[i] = costsize[i];
+        }
+    }
+    const tCoPlumbum = startFromZero(tCostPlumbum);
+
 
     const[outprice, setOutPrice] = useState({
         aglomerat: "",
@@ -321,7 +329,8 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         keramogranit: "",
         vinylplast: "",
         polyurethane: "",
-        bronze: ""
+        bronze: "",
+        plumbum: ""
     });
 
     const handleClick = (translit, id, cost, size) => {
@@ -491,6 +500,12 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             bronze: {id:id, cost:cost, size:size}
+        }))
+       }
+       if(translit == "plumbum"){
+        setOutPrice(outprice => ({
+            ...outprice,
+            plumbum: {id:id, cost:cost, size:size}
         }))
        }
     }
@@ -729,6 +744,15 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         setOutPrice(outprice => ({
             ...outprice,
             bronze: {id:id, cost:cost, size:size}
+        }))
+    }
+
+    if(translit == "plumbum"){
+        const { selectedIndex } = event.target.options;
+        const{ id, cost, size} = tCoPlumbum[selectedIndex];
+        setOutPrice(outprice => ({
+            ...outprice,
+            plumbum: {id:id, cost:cost, size:size}
         }))
     }
 
