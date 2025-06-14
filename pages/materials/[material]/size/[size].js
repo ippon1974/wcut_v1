@@ -145,14 +145,14 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {mname:null, costsize:null, costsizelist:null}
     }
-    const response = await fetch(`http://23.105.246.179:7000/materials?material=${query.material}`);
+    const response = await fetch(`http://23.111.202.203:7000/materials?material=${query.material}`);
     const mname = await response.json();
 
-    const res = await fetch(`http://23.105.246.179:7000/costsize?id=${mname.id}&size=${query.size}`);
+    const res = await fetch(`http://23.111.202.203:7000/costsize?id=${mname.id}&size=${query.size}`);
     const costsize = await res.json();
     //console.log("SERVER Cost ...", costsize, "query size ", query.size, "query id ", mname.id);
 
-    const re = await fetch(`http://23.105.246.179:7000/costsize/type?material_id=${mname.id}`);
+    const re = await fetch(`http://23.111.202.203:7000/costsize/type?material_id=${mname.id}`);
     const costsizelist = await re.json();
 
     return {props: {mname, costsize, costsizelist} }

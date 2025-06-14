@@ -24,7 +24,7 @@ export default function Item({articles:serverArticles}) {
 
     useEffect(()=> {
         async function load() {
-            const response = await fetch('http://23.105.246.179:7000/news/item')
+            const response = await fetch('http://23.111.202.203:7000/news/item')
             const json = await response.json();
             setArticles(json);
         }
@@ -84,7 +84,7 @@ export async function getServerSideProps({req}) {
     if(!req){
         return {articles:null}
     }
-    const res = await fetch('http://23.105.246.179:7000/news/item')
+    const res = await fetch('http://23.111.202.203:7000/news/item')
     const articles = await res.json();
     return { props: { articles } }
 }

@@ -25,7 +25,7 @@ const Article = ({article:serverArticle}) => {
 
     useEffect(()=>{
         async function load() {
-            const response = await fetch(`http://23.105.246.179:7000/news?id=${router.query.id}`);
+            const response = await fetch(`http://23.111.202.203:7000/news?id=${router.query.id}`);
             const data = await response.json();
             setArticle(data);
         }
@@ -83,7 +83,7 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {article:null}
     }
-    const response = await fetch(`http://23.105.246.179:7000/news?id=${query.id}`);
+    const response = await fetch(`http://23.111.202.203:7000/news?id=${query.id}`);
     const article = await response.json();
     return {props: {article}}
 }
