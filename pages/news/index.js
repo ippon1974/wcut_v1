@@ -89,7 +89,7 @@ export async function getServerSideProps({req}) {
     if(!req){
         return {articles:null}
     }
-    const res = await fetch('http://23.111.202.203:7000/news/all')
+    const res = await fetch('http://90.156.202.71:7000/news/all')
     const articles = await res.json();
     return { props: { articles } }
 }

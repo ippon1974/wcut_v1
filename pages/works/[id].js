@@ -39,7 +39,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[prev, setPrevPage] = useState(serverPrev);
     useEffect(()=>{
        async function load() {
-        // const response = await fetch(`http://23.111.202.203:7000/works/prev?id=${router.query.id}`);
+        // const response = await fetch(`http://90.156.202.71:7000/works/prev?id=${router.query.id}`);
         const response = await fetch(`/api/works/prev/${router.query.id}`);
         const data = await response.json();
         if(data[0] == undefined){
@@ -55,7 +55,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[next, setNextPage] = useState(serverNext);
     useEffect(()=>{
        async function load() {
-        // const response = await fetch(`http://23.111.202.203:7000/works/next?id=${router.query.id}`);
+        // const response = await fetch(`http://90.156.202.71:7000/works/next?id=${router.query.id}`);
         const response = await fetch(`/api/works/next/${router.query.id}`);
         const data = await response.json();
         if(data[0] == undefined){
@@ -74,7 +74,7 @@ const Work = ({work:serverWork, prev:serverPrev, next:serverNext, maxid:serverMa
     const[work, setWork] = useState(serverWork);
     useEffect(()=>{
         async function load() {
-            // const response = await fetch(`http://23.111.202.203:7000/works?id=${router.query.id}`);
+            // const response = await fetch(`http://90.156.202.71:7000/works?id=${router.query.id}`);
             const response = await fetch(`/api/works/id/${router.query.id}`);
             const data = await response.json();
             setWork(data);
@@ -136,22 +136,22 @@ export async function getServerSideProps({query, req}) {
     if(!req){
         return {work:null, prev:null, next:null, maxid:null, minid:null}
     }
-    // const response = await fetch(`http://23.111.202.203:7000/works?id=${query.id}`);
-    const response = await fetch(`http://23.111.202.203:3000/api/works/id/${query.id}`);
+    // const response = await fetch(`http://90.156.202.71:7000/works?id=${query.id}`);
+    const response = await fetch(`http://90.156.202.71:3000/api/works/id/${query.id}`);
     const work = await response.json();
 
-    // const respprev = await fetch(`http://23.111.202.203:7000/works/prev?id=${query.id}`);
-    const respprev = await fetch(`http://23.111.202.203:3000/api/works/prev/${query.id}`);
+    // const respprev = await fetch(`http://90.156.202.71:7000/works/prev?id=${query.id}`);
+    const respprev = await fetch(`http://90.156.202.71:3000/api/works/prev/${query.id}`);
     const prev = await respprev.json();
 
-    // const respnext = await fetch(`http://23.111.202.203:7000/works/next?id=${query.id}`);
-    const respnext = await fetch(`http://23.111.202.203:3000/api/works/next/${query.id}`);
+    // const respnext = await fetch(`http://90.156.202.71:7000/works/next?id=${query.id}`);
+    const respnext = await fetch(`http://90.156.202.71:3000/api/works/next/${query.id}`);
     const next = await respnext.json();
 
-    const respmaxid = await fetch(`http://23.111.202.203:7000/works/max`);
+    const respmaxid = await fetch(`http://90.156.202.71:7000/works/max`);
     const maxid = await respmaxid.json();
 
-    const respminid = await fetch(`http://23.111.202.203:7000/works/min`);
+    const respminid = await fetch(`http://90.156.202.71:7000/works/min`);
     const minid = await respminid.json();
 
     return {props: {work, prev, next, maxid, minid} }
