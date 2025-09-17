@@ -40,15 +40,15 @@ export default function Contact() {
                 </div>
                 <div className={`${classes.item} ${classes.maincontext}`}>
                     <div>
-                        <div className={classes.map}>
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade84ff7336f23544fdfd2395bf3a76bf62c3e486a7449dd5f751dba73997184a&amp;source=constructor" width="550" height="650" frameborder="0"></iframe>                        
+                        <div className={classes.map}>                        
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6564f972cb60a9098183cc7f8b1f0af3d765ce7fc3126705e5a8b7c50e6a9e31&amp;source=constructor" width="550" height="650" frameborder="0"></iframe>
                         </div>
                         <h2>Контакты</h2>
                     </div>
                     <div itemscope itemtype={"http://schema.org/LocalBusiness"} className={classes.address}>
-                        <p itemprop={"name"}>Название компании: &laquo;Сивек Water Jet&raquo;</p>
-                        <p itemprop={"address"}>Расположение производства: Посёлок ВУГИ, 1с4, Люберцы, Московская область, 140004. Территория института &laquo;ННЦ ГП - ИГД им. А.А. Скочинского&raquo;</p>
-                        <p>Прилегающие населенные пункты: Люберцы, Красково, Коренево, Томилино, Лыткарино, Некрасовка, Октябрьский, Котельники, Малаховка, Дзержинский, Железнодорожный, Раменское, Жуковский, Выхино-Жулебино, Электроугли.</p>
+                        <p itemprop={"name"}>Название компании: &laquo;Сивек Ватер Джет&raquo;</p>
+                        <p itemprop={"address"}>Расположение производства: 121357, г.Москва, ул.Верейская,д.29 С 82</p>
+                        <p>Прилегающие населенные пункты: Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково.</p>
                         <p itemprop={"openingHours"}>Режим работы: Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни.</p>
                         <p className={classes.adrsmall} itemprop={"telephone"}><strong>Телефон</strong>: +7 (925) 585-33-71 (Мегафон)</p>
                         <p className={classes.adrsmall} itemprop={"telephone"}><strong>Мессенджер</strong>: <Link style={linksmallcolor} href={"https://wa.me/79255853371"}>Whatsapp</Link></p>
@@ -57,8 +57,8 @@ export default function Contact() {
                         <p className={classes.adrsmall}><strong>Ютуб</strong>: <Link style={linksmallcolor} href="https://www.youtube.com/channel/UCuQWXTAmeMLsruthyDSI5Gg" target="_blank">https://www.youtube.com/</Link></p>
                         <p className={classes.adrsmall}><strong>Канал в Telegram</strong>: <Link style={linksmallcolor} href="https://t.me/wcuting" target="_blank">https://t.me/wcuting</Link></p>
                         <p className={classes.adrsmall}><strong>Инстаграм</strong>: <Link style={linksmallcolor} href="https://www.instagram.com/civekwaterjet/" target="_blank">https://www.instagram.com/civekwaterjet/</Link></p>
-                        <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.660831, 37.924976</p>
-                        <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/?um=constructor%3Ade84ff7336f23544fdfd2395bf3a76bf62c3e486a7449dd5f751dba73997184a&source=constructorLink" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
+                        <p className={classes.adrsmall}><strong>Координаты для навигатора</strong>: 55.709064, 37.425656</p>
+                        <p className={classes.adrsmall}><Link style={linksmallcolor} href="https://yandex.ru/maps/?um=constructor%3A6564f972cb60a9098183cc7f8b1f0af3d765ce7fc3126705e5a8b7c50e6a9e31&source=constructorLink" target="_blank">Найти адрес компании в Яндекс Картах</Link></p>
                     </div>
                 </div>
 

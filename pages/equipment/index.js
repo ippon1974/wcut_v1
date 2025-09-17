@@ -98,7 +98,7 @@ export default function Equipment() {
                         <Image className={classes.responseImg} src={"/mf4.jpg"} width={"460"} height={"345"} alt="img"></Image>
 
                         <h3>Расположение производства</h3>
-                        <p>Адрес: 140004 Посёлок ВУГИ, 1с4, Люберцы, Московская область. Территория института &laquo;ННЦ ГП&ndash;ИГД им. А.А. Скочинского&raquo;</p>
+                        <p>Адрес: 121357, г.Москва, ул.Верейская,д.29 С 82</p>
                         <div className={classes.mainlinefooter}>
                             <span><Link href={'/services'} title='Услуги'>
                             <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />

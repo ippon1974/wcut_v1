@@ -10,10 +10,10 @@ const MobileFooter = () => {
         <>
            <div className={`${classes.footerMobile}`}>
                    <div>
-                        <p>Посёлок ВУГИ, 1с4, Люберцы, Московская область, 140004. Территория института &laquo;ННЦ ГП - ИГД им. А.А. Скочинского&raquo;</p>
+                        <p>121357, г.Москва, ул.Верейская,д.29 С 82</p>
                    </div>
             </div>
-            <div className={classes.footerlineMobile}><div><span>&copy; {year} &laquo;Сивек Water Jet&raquo;</span></div></div>
+            <div className={classes.footerlineMobile}><div><span>&copy; {year} &laquo;Сивек Ватер Джет&raquo;</span></div></div>
         </>
     )
 }
