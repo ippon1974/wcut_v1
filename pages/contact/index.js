@@ -48,7 +48,7 @@ export default function Contact() {
                     <div itemscope itemtype={"http://schema.org/LocalBusiness"} className={classes.address}>
                         <p itemprop={"name"}>Название компании: &laquo;Сивек Ватер Джет&raquo;</p>
                         <p itemprop={"address"}>Расположение производства: 121357, г.Москва, ул.Верейская,д.29 С 82</p>
-                        <p>Прилегающие населенные пункты: Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково.</p>
+                        <p>Прилегающие районы: Внуково, Дорогомилово, Крылатское, Кунцево, Можайский, Ново-Переделкино, Очаково-Матвеевское, Проспек Вернадского, Раменки, Солнцево, Тропарёво-Никулино, Филёвский парк, Фили-Давыдково.</p>
                         <p itemprop={"openingHours"}>Режим работы: Пн-Пт с 9:00 до 19:00. Суббота и воскресенье выходные дни.</p>
                         <p className={classes.adrsmall} itemprop={"telephone"}><strong>Телефон</strong>: +7 (925) 585-33-71 (Мегафон)</p>
                         <p className={classes.adrsmall} itemprop={"telephone"}><strong>Мессенджер</strong>: <Link style={linksmallcolor} href={"https://wa.me/79255853371"}>Whatsapp</Link></p>

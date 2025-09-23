@@ -21,7 +21,7 @@ export function MainLayout({children, title='Civek Water Jet'}) {
     return(
         <>
             <Head>
-                <title>{title} | Гидроабразивная резка в Москве и Москвовской области</title>
+                <title>{title} | Резка водой, гидроабразивная резка в Москве и Москвовской области</title>
                 <meta name="description" content="" />
                 <meta name="description" content="" />
                 <meta name="keywords" content="" />
@@ -58,7 +58,7 @@ export function MainLayout({children, title='Civek Water Jet'}) {
 
             {/*<footer>*/}
             {/*    <hr/>footer*/}
-            {/*    140080 ул. Карла Маркса д. 117'Б', офис № 503 Люберецкий р-н, пос. Красково, МО. Территория института «ВНИИСТРОМ»<br/>*/}
+            {/*    121357, г.Москва, ул.Верейская,д.29 С 82 <br/>*/}
             {/*    © 2022 «Сивек Water Jet»*/}
             {/*</footer>*/}
 

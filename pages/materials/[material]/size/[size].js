@@ -92,8 +92,8 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
              
              <Head>
                 <meta name="viewport" content="width=device-width"/>
-                <meta name="keywords" content={`Гидроабразивная река, металл, медь, латунь, мрамор, гранит, бронза`} />
-                <meta name="description" content={`Гидроабразивная резка. ${mname.material}. Толщина: ${costsize.size} мм.`} />
+                <meta name="keywords" content={`Резка водой ,гидроабразивная река, металл, медь, латунь, мрамор, гранит, бронза`} />
+                <meta name="description" content={`Резка водой, гидроабразивная резка. ${mname.material}. Толщина: ${costsize.size} мм.`} />
             </Head>
 
             <div className={classes.wrapper}>

@@ -787,8 +787,8 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
         <Layout title={'Стоимость гидроабразивной резки материалов.| Civek Water Jet - услуги гидроабразивной резки'}>
              <Head>
                 <meta name="viewport" content="width=device-width"/>
-                <meta name="description" content={`Гидроабразивная резка цена. Раскрой более 50 типов материалов различной толщины и плотности`} />
-                <meta name="keywords" content={`Цена гидроабразивной резки, разрезать сталь, разрезать мрамор, разрезать гранит`} />
+                <meta name="description" content={`Гидроабразивная резка, резка водй цена. Раскрой более 50 типов материалов различной толщины и плотности`} />
+                <meta name="keywords" content={`Цена гидроабразивной резки, резки водой, разрезать сталь, разрезать мрамор, разрезать гранит`} />
             </Head>
 
             <div className={classes.wrapper}>
@@ -811,7 +811,7 @@ export default function Price({materials:serverMaterials, costsize:serverCostSiz
                         <h3>Стоимость</h3>
                         <p>Точная стоимость услуг по гидроабразивной резке определяется после получения чертежей и составления технологии резки, оптимизации раскроя.</p>
                         {/* <p><Link className={classes.activecalc} href="http://calculation.htz.ru/" target={'_blank'} title="Калькулятор гидроабразивной рhttp://localhost:7165/sites/all/themes/tommy/images/iconTwitter.gifезки"><strong>Калькулятор</strong></Link> гидроабразивной резки.</p> */}
-                        <p>Стоимость раскроя материала указана в рублях РФ за один погонный метр <strong className={classes.ndc}>без НДС</strong>. Минимальная стоимость <strong className={classes.ndc}>заказа не должна быть меньше 30000 рублей</strong>.</p>
+                        <p>Стоимость раскроя материала указана в рублях РФ за один погонный метр <strong className={classes.ndc}>без НДС</strong>. Минимальная стоимость <strong className={classes.ndc}>заказа не должна быть меньше 50000 рублей</strong>.</p>
                         <p>Стоимость программы для раскроя — 2500 рублей.</p>
                         <h3>Таблица стоимости раскроя материала. Гидроабразивная резка.</h3>
 

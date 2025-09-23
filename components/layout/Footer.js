@@ -1,7 +1,7 @@
 const Footer = () => (
     <div className="Footer">
         <hr/>
-        © 2022 «Сивек Water Jet»
+        © 2025 «Сивек Ватер Джет»
     </div>
 );
 
