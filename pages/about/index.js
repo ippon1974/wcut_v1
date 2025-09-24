@@ -18,7 +18,7 @@ export default function About() {
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
-        <Layout title={'О компании | Civek Water Jet'}>
+        <Layout title={'О компании | Сивек Ватер Джет'}>
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>
@@ -56,7 +56,7 @@ export default function About() {
                         <h3>Расположение производство</h3>
                         <p>Адрес: 121357, г.Москва, ул.Верейская,д.29 С 82</p>
                         <p>Ждем Вас у себя на производстве.</p>
-                        <p><em>С уважение коллектив компании &laquo;Сивек Water Jet&raquo;</em></p>
+                        <p><em>С уважение коллектив компании &laquo;Сивек Ватер Джет&raquo;</em></p>
                         <div className={classes.mainlinefooter}>
                             <span><Link href={'/contact'} title='Контакты'>
                             <Image src="/blogarrow.png" width={"15"} height={"15"} alt="img" />

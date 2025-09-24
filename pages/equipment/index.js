@@ -18,11 +18,11 @@ export default function Equipment() {
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
-        <Layout title={'Станки гидроабразивной резки | Civek Water Jet'}>
+        <Layout title={'Станки гидроабразивной резки | Сивек Ватер Джет'}>
             <Head>
                 <meta name="viewport" content="width=device-width"/>
                 <meta name="description" content={"MultiCam, KMT. Станки компании Civek Water Jet"} />
-                <meta name="keywords" content={"Станки для гидроабразивной резки,гидрорезка, водорезка"} />
+                <meta name="keywords" content={"Станки для гидроабразивной резки,гидрорезка, водорезка, резка водой"} />
                 <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/>

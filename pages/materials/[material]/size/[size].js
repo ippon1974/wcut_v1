@@ -88,7 +88,7 @@ const Size = ({mname:serverMName, costsize:serverCostSize, costsizelist:serverCo
 
     return (
         <>
-             <Layout title={`${mname.material}. Толщина: ${costsize.size} мм. Цена 1 пог. м.: ${costsize.cost} руб | Civek Water Jet Гидроабразив`}>
+             <Layout title={`${mname.material}. Толщина: ${costsize.size} мм. Цена 1 пог. м.: ${costsize.cost} руб | Сивек Ватер Джет Гидроабразив`}>
              
              <Head>
                 <meta name="viewport" content="width=device-width"/>

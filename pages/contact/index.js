@@ -22,7 +22,7 @@ export default function Contact() {
     }
 
     return(
-        <Layout title={'Контакты | Civek Water Jet'} description={'Гидроабарзивная резка услуги'} keywords={'Гидрорез, гидроабразив, гидроабразивная резка'}>
+        <Layout title={'Контакты | Сивек Ватер Джет'} description={'Гидроабарзивная резка услуги'} keywords={'Гидрорез, гидроабразив, гидроабразивная резка'}>
             
             <Head>
                 <meta name="viewport" content="width=device-width"/>

@@ -18,12 +18,12 @@ export default function Services() {
     useEffect(() => setMobile(isPhone), [isPhone]);
 
     return(
-       <Layout title={'Услуги гидроабразивной резки | Civek Water Jet '}>
+       <Layout title={'Услуги гидроабразивной резки | Сивек Ватер Джет'}>
 
             <Head>
                 <meta name="viewport" content="width=device-width"/>
                 <meta name="description" content={"Услуги гидроабразивной резки в Москве и Московской области"} />
-                <meta name="keywords" content={"Гидрорез, гидроабразив, гидроабразивная резка"} />
+                <meta name="keywords" content={"Резка водой, гидрорез, гидроабразив, гидроабразивная резка"} />
                 {/* <meta content='true' name='HandheldFriendly'/>
                 <meta content='width' name='MobileOptimized'/>
                 <meta content='yes' name='apple-mobile-web-app-capable'/> */}
